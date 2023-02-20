@@ -136,6 +136,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/goalobjective/{id}', [GoalobjectiveController::class, 'update'])->name('goalobjective.update');
     Route::delete('/goalobjective/{id}', [GoalobjectiveControlleR::class, 'destroy'])->name('goalobjective.destroy');
 
+    //Formation History
+    Route::get('/formationhistory', [FormationhistoryController::class, 'index'])->name('formationhistory.index');
+    Route::get('/formationhistory/create', [FormationhistoryController::class, 'create'])->name('formationhistory.create');
+    Route::post('/formationhistory', [FormationhistoryController::class, 'store'])->name('formationhistory.store');
+    Route::get('/formationhistory/edit/{id}', [FormationhistoryController::class, 'edit'])->name('formationhistory.edit');
+    Route::put('/formationhistory/{id}', [FormationhistoryController::class, 'update'])->name('formationhistory.update');
+    Route::delete('/formationhistory/{id}', [FormationhistoryContoller::class, 'destroy'])->name('formationhistory.destroy');
+
 });
 
 
