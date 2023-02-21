@@ -11,10 +11,12 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\Profile\IssueController;
+use App\Http\Controllers\Profil\IssueController;
+use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
-use App\Http\Controllers\Profile\TaskfunctionController;
+use App\Http\Controllers\Profil\TaskfunctionController;
 use App\Http\Controllers\Profil\PolicydirectionController;
+use App\Http\Controllers\Profil\FormationhistoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,6 +145,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/formationhistory/edit/{id}', [FormationhistoryController::class, 'edit'])->name('formationhistory.edit');
     Route::put('/formationhistory/{id}', [FormationhistoryController::class, 'update'])->name('formationhistory.update');
     Route::delete('/formationhistory/{id}', [FormationhistoryContoller::class, 'destroy'])->name('formationhistory.destroy');
+
+    //Service Order
+    Route::get('/serviceorder', [ServiceorderController::class, 'index'])->name('serviceorder.index');
+    Route::get('/serviceorder/create', [ServiceorderController::class, 'create'])->name('serviceorder.create');
+    Route::post('/serviceorder', [ServiceorderController::class, 'store'])->name('serviceorder.store');
+    Route::get('/serviceorder/edit/{id}', [ServiceorderController::class, 'edit'])->name('serviceorder.edit');
+    Route::put('/serviceorder/{id}', [ServiceorderController::class, 'update'])->name('serviceorder.update');
+    Route::delete('/serviceorder/{id}', [ServiceorderController::class, 'destroy'])->name('serviceorder.destroy');
 
 });
 
