@@ -2,6 +2,7 @@
 
 use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Infopublik\SopController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -13,8 +14,8 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Profil\IssueController;
 use App\Http\Controllers\Profil\ServiceorderController;
-use App\Http\Controllers\Profil\GoalobjectiveController;
 use App\Http\Controllers\Profil\TaskfunctionController;
+use App\Http\Controllers\Profil\GoalobjectiveController;
 use App\Http\Controllers\Profil\PolicydirectionController;
 use App\Http\Controllers\Profil\FormationhistoryController;
 
@@ -154,6 +155,13 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/serviceorder/{id}', [ServiceorderController::class, 'update'])->name('serviceorder.update');
     Route::delete('/serviceorder/{id}', [ServiceorderController::class, 'destroy'])->name('serviceorder.destroy');
 
+    //SOP
+    Route::get('/sop', [SopController::class, 'index'])->name('sop.index');
+    Route::get('/sop/create', [SopController::class, 'create'])->name('sop.create');
+    Route::post('/sop', [SopController::class, 'store'])->name('sop.store');
+    Route::get('/sop/edit/{id}', [SopController::class, 'edit'])->name('sop.edit');
+    Route::put('/sop/{id}', [SopController::class, 'update'])->name('sop.update');
+    Route::delete('/sop/{id}', [SopController::class, 'destroy'])->name('sop.destroy');
 });
 
 

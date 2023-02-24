@@ -47,4 +47,10 @@ class User extends Authenticatable
     protected $attributes=[
         'level'=> 2,
     ];
+
+
+    public function post()
+    {
+        return $this->hasMany(Post::class, 'user_id', 'id');
+    }
 }
