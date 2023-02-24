@@ -39,6 +39,7 @@
                   <th>Gambar</th>
                   <th>Kategori</th>
                   <th>Status</th>
+                  <th>Penulis</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -50,6 +51,7 @@
                   <td><img src="{{asset('image-post/'. $posts->image_post)}}" width="80px"></td>
                   <td>{{$posts->category->title_category}}</td>
                   <td>{{$posts->status == 0 ? 'Draft':'Publish'}}</td>
+                  <td>{{$posts->user->username}}</td>
                   <td>
                       <a href="{{route('post.edit', $posts->id)}}" class="btn btn-warning btn-sm">
                         <i class="fas fa-edit"></i>

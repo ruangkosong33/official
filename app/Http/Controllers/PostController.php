@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -19,8 +21,9 @@ class PostController extends Controller
     public function create()
     {
         $category=Category::all();
+        $user=User::all();
 
-        return view('admin.pages.post.create-post', ['category'=>$category]);
+        return view('admin.pages.post.create-post', ['category'=>$category,'user'=>$user]);
     }
 
     public function upload(Request $request)
@@ -49,7 +52,6 @@ class PostController extends Controller
         $post=$request->validate([
             'title_post'=>'required',
             'description_post'=>'required',
-            'category_id'=>'required',
             'image_post'=>'required|mimes:jpg,png,jpeg|max:3000',
             'status'=>'required',
         ]);
@@ -68,6 +70,7 @@ class PostController extends Controller
             'description_post'=>$request->description_post,
             'image_post'=>$imageextension,
             'category_id'=>$request->category_id,
+            'user_id'=>Auth::id(),
             'status'=>$request->status,
         ]);
 
