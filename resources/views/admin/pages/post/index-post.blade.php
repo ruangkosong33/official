@@ -47,10 +47,10 @@
               @foreach ($post as $key=>$posts)
                 <tr>
                   <td>{{$loop->iteration}}</td>
-                  <td>{{$posts->title_post}}</td>
+                  <td>{{Str::limit($posts->title_post, '15', '....')}}</td>
                   <td><img src="{{asset('image-post/'. $posts->image_post)}}" width="80px"></td>
                   <td>{{$posts->category->title_category}}</td>
-                  <td>{{$posts->status == 0 ? 'Draft':'Publish'}}</td>
+                  <td><span class="badge badge-pill badge-success">{{$posts->status == 0 ? 'Draft':'Publish'}}</span></td>
                   <td>{{$posts->user->username}}</td>
                   <td>
                       <a href="{{route('post.edit', $posts->id)}}" class="btn btn-warning btn-sm">

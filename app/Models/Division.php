@@ -14,4 +14,10 @@ class Division extends Model
     protected $fillable=['name_divisions', 'slug'];
 
     protected $hidden=[];
+
+
+    public function employee()
+    {
+        return $this->hasMany(Employee::class, 'employee_id', 'id');
+    }
 }
