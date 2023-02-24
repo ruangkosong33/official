@@ -2,7 +2,7 @@
 
 use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Infopublik\SopController;
+use App\Http\Controllers\PadController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -13,6 +13,7 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Profil\IssueController;
+use App\Http\Controllers\Infopublik\SopController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
@@ -162,6 +163,9 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/sop/edit/{id}', [SopController::class, 'edit'])->name('sop.edit');
     Route::put('/sop/{id}', [SopController::class, 'update'])->name('sop.update');
     Route::delete('/sop/{id}', [SopController::class, 'destroy'])->name('sop.destroy');
+
+    //PAD
+    Route::get('/pad', [PadController::class, 'index'])->name('pad.index');
 });
 
 
