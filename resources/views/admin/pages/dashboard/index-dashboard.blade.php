@@ -1,6 +1,7 @@
 @extends('admin.layouts.b-main')
 
 @section('content')
+@section('dashboard', 'active')
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

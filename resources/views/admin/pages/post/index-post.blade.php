@@ -1,6 +1,7 @@
 @extends('admin.layouts.b-main')
 
 @section('content')
+@section('post.index', 'active')
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

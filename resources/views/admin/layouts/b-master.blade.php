@@ -56,5 +56,9 @@
   @yield('ck-editor')
 <!-- End CK Editor -->
 
+<!-- Sweat Alert -->
+ @include('sweetalert::alert')
+<!-- End Sweat Alert -->
+
 </body>
 </html>

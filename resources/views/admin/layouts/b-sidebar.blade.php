@@ -23,7 +23,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{route('dashboard')}}" class="nav-link active">
+            <a href="{{route('dashboard')}}" class="nav-link @yield('dashboard')">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
@@ -32,7 +32,7 @@
           </li>
           <li class="nav-header">Menu</li>
           <li class="nav-item">
-            <a href="{{route('userlist.index')}}" class="nav-link">
+            <a href="{{route('userlist.index')}}"  class="nav-link @yield('userlist.index')">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 User List
@@ -40,7 +40,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('category.index')}}" class="nav-link">
+            <a href="{{route('category.index')}}" class="nav-link @yield('category.index')">
               <i class="nav-icon fas fa-tags"></i>
               <p>
                 Kategori
@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('post.index')}}" class="nav-link">
+            <a href="{{route('post.index')}}" class="nav-link @yield('post.index')">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>
                 Berita
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('banner.index')}}" class="nav-link">
+            <a href="{{route('banner.index')}}" class="nav-link @yield('banner.index')">
               <i class="nav-icon fas fa-image"></i>
               <p>
                 Slider Banner
@@ -64,7 +64,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('division.index')}}" class="nav-link">
+            <a href="{{route('division.index')}}" class="nav-link @yield('division.index')">
               <i class=""></i>
               <p>
                 Bidang

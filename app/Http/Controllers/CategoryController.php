@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class CategoryController extends Controller
 {
@@ -56,6 +58,7 @@ class CategoryController extends Controller
             'slug'=>Str::slug($request->title_category),
         ]);
 
+        Alert::success('Success Title', 'Success Message');
         return redirect()->route('category.index');
     }
 
@@ -87,6 +90,8 @@ class CategoryController extends Controller
         $category=Category::findOrFail($id);
 
         $category->delete();
+
+        Alert::success('Error Title', 'Error Message');
 
         return redirect()->route('category.index');
     }
