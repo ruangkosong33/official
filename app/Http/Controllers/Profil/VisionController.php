@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vision;
 use Illuminate\Http\Request;
 
 class VisionController extends Controller
@@ -52,6 +53,15 @@ class VisionController extends Controller
             'title_vision'=>$request->vision,
             'slug'=>Str::slug($request->vision),
         ]);
+
+        return redirect()->route('vision.index');
+    }
+
+    public function destroy($id)
+    {
+        $vision=Vision::findOrFail($id);
+
+        $vision->delete();
 
         return redirect()->route('vision.index');
     }

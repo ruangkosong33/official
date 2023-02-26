@@ -63,7 +63,7 @@ class PolicydirectionController extends Controller
 
     public function destroy($id)
     {
-        $policydirection=findOrFail($id);
+        $policydirection=Policydirection::findOrFail($id);
 
         $policydirection->delete();
 

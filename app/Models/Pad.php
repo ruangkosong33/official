@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Pad extends Model
 {
     use HasFactory;
+
+    protected $table='pads';
+
+    protected $fillable=['title_pad', 'slug', 'filename_pad', 'description_pad'];
+
+    protected $hidden=[];
 }

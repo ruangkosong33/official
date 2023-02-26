@@ -37,4 +37,11 @@ class GoalobjectiveController extends Controller
         return redirect()->route('goalobjective.index');
 
     }
+
+    public function edit($id)
+    {
+        $goalobjective=Goalobjective::findOrFail($id);
+
+        return view();
+    }
 }

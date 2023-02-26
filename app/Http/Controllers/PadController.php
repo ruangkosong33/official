@@ -36,6 +36,17 @@ class PadController extends Controller
 
         return redirect()->route('pad.index');
 
+    }
 
+    public function edit($id)
+    {
+        $pad=findOrFail($id);
+
+        return view('admin.pages.pad.edit-pad', ['pad'=>$pad]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        
     }
 }
