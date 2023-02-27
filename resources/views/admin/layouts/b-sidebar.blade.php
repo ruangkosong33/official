@@ -30,7 +30,30 @@
               </p>
             </a>
           </li>
-          <li class="nav-header">Menu</li>
+          <li class="nav-header">Item</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Profil
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Isu Strategis</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tujuan & Sasaran</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="{{route('userlist.index')}}"  class="nav-link @yield('userlist.index')">
               <i class="nav-icon fas fa-users"></i>
@@ -57,43 +80,35 @@
           </li>
           <li class="nav-item">
             <a href="{{route('banner.index')}}" class="nav-link @yield('banner.index')">
-              <i class="nav-icon fas fa-image"></i>
+              <i class="nav-icon fas fa-folder-open"></i>
               <p>
                 Slider Banner
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{route('division.index')}}" class="nav-link @yield('division.index')">
-              <i class=""></i>
-              <p>
-                Bidang
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon fas fa-image"></i>
-              <p>
-                Pegawai
-              </p>
-            </a>
-          </li>
+          <li class="nav-header">Item</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-image"></i>
+              <i class="nav-icon fas fa-list"></i>
               <p>
-                Video
+                Organisasi
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-image"></i>
-              <p>
-                Foto
-              </p>
-            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bidang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pegawai</p>
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </nav>

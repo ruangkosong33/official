@@ -1,7 +1,7 @@
 @extends('admin.layouts.b-main')
 
+@section('category.index', 'active')-->
 @section('content')
-@section('category.index', 'active')
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
