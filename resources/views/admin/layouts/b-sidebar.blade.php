@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{asset('rk88/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">BPKAD Kaltim</span>
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
 
     <!-- Sidebar -->
@@ -23,92 +23,50 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{route('dashboard')}}" class="nav-link @yield('dashboard')">
+            <a href="{{route('dashboard')}}" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
               </p>
             </a>
           </li>
-          <li class="nav-header">Item</li>
+          <li class="nav-header">Menu</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
+              <i class="nav-icon fas fa-table"></i>
               <p>
                 Profil
-                <i class="right fas fa-angle-left"></i>
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="pages/tables/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Isu Strategis</p>
+                  <p>Visi & Misi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="pages/tables/data.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tujuan & Sasaran</p>
+                  <p>Sejarah Pembentukan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/jsgrid.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>jsGrid</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="{{route('userlist.index')}}"  class="nav-link @yield('userlist.index')">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                User List
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('category.index')}}" class="nav-link @yield('category.index')">
-              <i class="nav-icon fas fa-tags"></i>
+            <a href="{{route('category.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-tag"></i>
               <p>
                 Kategori
               </p>
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('post.index')}}" class="nav-link @yield('post.index')">
-              <i class="nav-icon fas fa-newspaper"></i>
-              <p>
-                Berita
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('banner.index')}}" class="nav-link @yield('banner.index')">
-              <i class="nav-icon fas fa-folder-open"></i>
-              <p>
-                Slider Banner
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">Item</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
-              <p>
-                Organisasi
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Bidang</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pegawai</p>
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
       </nav>

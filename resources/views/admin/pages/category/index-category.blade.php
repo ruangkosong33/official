@@ -1,6 +1,6 @@
 @extends('admin.layouts.b-main')
 
-@section('category.index', 'active')-->
+@section('category.index', 'active')
 @section('content')
 
 <div class="content-wrapper">
