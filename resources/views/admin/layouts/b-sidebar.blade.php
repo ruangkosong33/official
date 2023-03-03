@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{asset('rk88/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">Admin BPKAD</span>
     </a>
 
     <!-- Sidebar -->
@@ -23,7 +23,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{route('dashboard')}}" class="nav-link">
+            <a href="{{route('dashboard')}}" class="nav-link @yield('dashboard')">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
@@ -33,7 +33,7 @@
           <li class="nav-header">Menu</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fas fa-list"></i>
               <p>
                 Profil
                 <i class="fas fa-angle-left right"></i>
@@ -55,16 +55,194 @@
               <li class="nav-item">
                 <a href="pages/tables/jsgrid.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
+                  <p>Isu Strategis</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/jsgrid.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tujuan & Sasaran</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/jsgrid.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tugas Pokok & Fungsi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/jsgrid.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Arah Kebijakan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/jsgrid.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tertib Pelayanan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/tables/data.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kepala Badan</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a href="{{route('category.index')}}" class="nav-link">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+                Organisasi
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('division.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bidang</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('employee.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Pegawai</p>
+                  </a>
+                </li>
+              </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-clipboard"></i>
+              <p>
+                Program Kegiatan
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Bidang</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Data Pegawai</p>
+                  </a>
+                </li>
+              </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-layer-group"></i>
+              <p>
+                Potensi
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('division.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PAD</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('employee.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Aset</p>
+                  </a>
+                </li>
+              </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bullhorn"></i>
+              <p>
+                Info Publik
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('division.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PAD</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('employee.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Aset</p>
+                  </a>
+                </li>
+              </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('category.index')}}" class="nav-link @yield('category.index')">
               <i class="nav-icon fas fa-tag"></i>
               <p>
                 Kategori
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('post.index')}}" class="nav-link @yield('post.index')">
+              <i class="nav-icon fas fa-newspaper"></i>
+              <p>
+                Berita
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('userlist.index')}}" class="nav-link @yield('userlist.index')">
+              <i class="nav-icon fas fa-gavel"></i>
+              <p>
+                Produk Hukum
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('banner.index')}}" class="nav-link @yield('banner.index')">
+              <i class="nav-icon fas fa-inbox"></i>
+              <p>
+                Slider Banner
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-image"></i>
+              <p>
+                Galeri
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('userlist.index')}}" class="nav-link @yield('userlist.index')">
+              <i class="nav-icon fas fa-video"></i>
+              <p>
+                Video
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('userlist.index')}}" class="nav-link @yield('userlist.index')">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Userlist
               </p>
             </a>
           </li>
