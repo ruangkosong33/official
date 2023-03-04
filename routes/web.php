@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PadController;
 use App\Http\Controllers\AuthController;
@@ -173,8 +172,13 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/pad/{id}', [PadControllerc::class, 'update'])->name('pad.update');
     Route::delete('/pad/{id}', [PadController::class, 'destroy'])->name('pad.destroy');
 
-    //Bansos
-    Route::get('/bansos', [BansosController::class, 'index'])->name('bansos.index');
+    // //Bansos
+    // Route::get('/bansos', [BansosController::class, 'index'])->name('bansos.index');
+    // Rpute::get('/bansos/create', [BansosController::class, 'create'])->name('bansos.create');
+    // Route::post('/bansos', [BansosController::class, 'store'])->name('bansos.store');
+    // Route::get('/bansos/edit/id}', [BansosController::class, 'edit'])->name('bansos.edit');
+    // Route::put('/bansos/{id}', [BansosController::class, 'update'])->name('bansos.update');
+    // Route::delete('/bansos/{id}', [BansosController::class, 'destroy'])->name('bansos.destroy');
 
 
 });
