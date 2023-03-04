@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\BansosController;
 use App\Http\Controllers\VisionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisionController;
@@ -37,7 +38,6 @@ use App\Http\Controllers\Profil\FormationhistoryController;
 
 //Register
 Route::get('/register', [AuthController::class, 'register'])->name('register.index');
-Route::post('/registerpost', [AuthController::class, 'registerpost'])->name('register.post');
 Route::post('/registerpost', [AuthController::class, 'registerpost'])->name('register.post');
 
 //Login
@@ -167,6 +167,16 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
 
     //PAD
     Route::get('/pad', [PadController::class, 'index'])->name('pad.index');
+    Route::get('/pad/create', [PadController::class, 'create'])->name('pad.create');
+    Route::post('/pad', [PadController::class, 'store'])->name('pad.store');
+    Route::get('/pad/edit/{id}', [PadController::class, 'edit'])->name('pad.edit');
+    Route::put('/pad/{id}', [PadControllerc::class, 'update'])->name('pad.update');
+    Route::delete('/pad/{id}', [PadController::class, 'destroy'])->name('pad.destroy');
+
+    //Bansos
+    Route::get('/bansos', [BansosController::class, 'index'])->name('bansos.index');
+
+
 });
 
 
