@@ -38,6 +38,7 @@ use App\Http\Controllers\Profil\FormationhistoryController;
 //Register
 Route::get('/register', [AuthController::class, 'register'])->name('register.index');
 Route::post('/registerpost', [AuthController::class, 'registerpost'])->name('register.post');
+Route::post('/registerpost', [AuthController::class, 'registerpost'])->name('register.post');
 
 //Login
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
