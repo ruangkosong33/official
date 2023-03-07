@@ -174,7 +174,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
 
     //Bansos
     Route::get('/bansos', [BansosController::class, 'index'])->name('bansos.index');
-    Rpute::get('/bansos/create', [BansosController::class, 'create'])->name('bansos.create');
+    Route::get('/bansos/create', [BansosController::class, 'create'])->name('bansos.create');
     Route::post('/bansos', [BansosController::class, 'store'])->name('bansos.store');
     Route::get('/bansos/edit/id}', [BansosController::class, 'edit'])->name('bansos.edit');
     Route::put('/bansos/{id}', [BansosController::class, 'update'])->name('bansos.update');

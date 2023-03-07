@@ -52,6 +52,7 @@
                                 <a href="{{route('vision.edit', $visions->id)}}" class="btn btn-warning btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </a>
+                                <!-- Form-->
                                 <form method="post" action="{{route('vision.destroy')}}">
                                     @csrf
                                     @method('DELETE')
@@ -59,6 +60,7 @@
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
+                                <!-- End Form -->
                             </td>
                         </tr>
                         @endforeach

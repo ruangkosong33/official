@@ -4,11 +4,12 @@
 
 <!-- Wrapper -->
 <div class="content-wrapper">
+
     <!-- Content Header -->
     <div class="content-header">
         <div class="container-fluid">
-            <div class="row mb-0">
-                <div class="col sm-6">
+            <div class="row mb-2">
+                <div class="col-sm-6">
                     <h1 class="m-0">Visi & Misi</h1>
                 </div>
             </div>
@@ -57,6 +58,7 @@
                 </div>
             </form>
             <!-- End Form -->
+
         </div>
 
     </section>

@@ -44,7 +44,22 @@ class BansosController extends Controller
     public function update(Request $request, $id)
     {
         $bansos=$request->validate([
-
+            
         ]);
+
+        Alert::success();
+
+        return redirect()->route('bansos.index');
+    }
+
+    public function destroy($id)
+    {
+        $bansos=Bansos::findOrFail($id);
+
+        $bansos->delete();
+
+        Alert::success();
+
+        return redirect()->route('bansos.index');
     }
 }
