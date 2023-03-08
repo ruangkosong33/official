@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vision;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class VisionController extends Controller
@@ -11,7 +12,7 @@ class VisionController extends Controller
     {
         $vision=Vision::all();
 
-        return view('admin.pages.vision.index-vision');
+        return view('admin.pages.vision.index-vision', ['vision'=>$vision]);
     }
 
     public function create()
@@ -29,6 +30,7 @@ class VisionController extends Controller
         $vision=Vision::create([
             'title_vision'=>$request->title_vision,
             'slug'=>Str::slug($request->title_vision),
+            'description_vision'=>$request->description_vision,
         ]);
 
         return redirect()->route('vision.index');
@@ -52,6 +54,7 @@ class VisionController extends Controller
         $vision->update([
             'title_vision'=>$request->vision,
             'slug'=>Str::slug($request->vision),
+            'description_vision'=>$request->description_vision,
         ]);
 
         return redirect()->route('vision.index');

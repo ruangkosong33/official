@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('bansoss', function (Blueprint $table) {
             $table->id();
-            $table->string('title_banssos');
+            $table->string('title_bansos');
             $table->string('slug');
-            $table->string('description_bansos');
+            $table->string('filename_bansos');
             $table->timestamps();
         });
     }

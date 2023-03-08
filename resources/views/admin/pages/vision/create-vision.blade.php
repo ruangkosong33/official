@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('vision.create')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('vision.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
@@ -41,8 +41,8 @@
                                 <div class="form-group row">
                                     <label for="description_vision" class="col-sm-2 col-form-label">Deskripsi</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control @error('description_vision') is-invalid @enderror" id="description_vision"
-                                        placeholder="Deskripsi">
+                                        <textarea class="form-control @error('description_vision') is-invalid @enderror" id="description_vision"
+                                        placeholder="Deskripsi" name="description_vision"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -65,32 +65,3 @@
 
 @endsection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@endsection
