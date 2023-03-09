@@ -43,11 +43,11 @@
                             @foreach ($serviceorder as $serviceorders)
                             <tr>
                                 <td width="30%">Sub Judul</td>
-                                <td>{{$serviceorder->title_serviceorder}}</td>
+                                <td>{{$serviceorders->title_serviceorder}}</td>
                             </tr>
                             <tr>
                                 <td width="30%">Deskripsi</td>
-                                <td>{{$serviceorder->description_serviceorder}}</td>
+                                <td>{{$serviceorders->description_serviceorder}}</td>
                             </tr>
                             @endforeach
                         </tbody>

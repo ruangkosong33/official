@@ -39,7 +39,7 @@ class ServiceorderController extends Controller
 
     public function edit($id)
     {
-        $serviceorder=findOrFail($id);
+        $serviceorder=Serviceorder::findOrFail($id);
 
         return view('admin.pages.serviceorder.edit-serviceorder', ['serviceorder'=>$serviceorder]);
     }

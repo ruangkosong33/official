@@ -32,8 +32,8 @@
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="title_serviceorder" class="form-label col-sm-2">Sub Judul</label>
-                                <input type="text" class="form-control @error('title_serviceorder') is-invalid @enderror" name="title_issue" placeholder="Sub Judul"
-                                id="title_issue" value="{{old('title_serviceorder') ?? $issue->title_serviceorder}}">
+                                <input type="text" class="form-control @error('title_serviceorder') is-invalid @enderror" name="title_serviceorder" placeholder="Sub Judul"
+                                id="title_serviceorder" value="{{old('title_serviceorder') ?? $serviceorder->title_serviceorder}}">
 
                                 @error('title_serviceorder')
                                 <span class="invalid-feedback">{{$message}}</span>

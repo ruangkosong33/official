@@ -147,12 +147,12 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/formationhistory/{id}', [FormationhistoryContoller::class, 'destroy'])->name('formationhistory.destroy');
 
     //Service Order
-    Route::get('/serviceorder', [ServiceorderController::class, 'index'])->name('serviceorder.index');
-    Route::get('/serviceorder/create', [ServiceorderController::class, 'create'])->name('serviceorder.create');
-    Route::post('/serviceorder', [ServiceorderController::class, 'store'])->name('serviceorder.store');
-    Route::get('/serviceorder/edit/{id}', [ServiceorderController::class, 'edit'])->name('serviceorder.edit');
-    Route::put('/serviceorder/{id}', [ServiceorderController::class, 'update'])->name('serviceorder.update');
-    Route::delete('/serviceorder/{id}', [ServiceorderController::class, 'destroy'])->name('serviceorder.destroy');
+    Route::get('/profil/serviceorder', [ServiceorderController::class, 'index'])->name('serviceorder.index');
+    Route::get('/profil/serviceorder/create', [ServiceorderController::class, 'create'])->name('serviceorder.create');
+    Route::post('/profil/serviceorder', [ServiceorderController::class, 'store'])->name('serviceorder.store');
+    Route::get('/profil/serviceorder/edit/{id}', [ServiceorderController::class, 'edit'])->name('serviceorder.edit');
+    Route::put('/profil/serviceorder/{id}', [ServiceorderController::class, 'update'])->name('serviceorder.update');
+    Route::delete('/profil/serviceorder/{id}', [ServiceorderController::class, 'destroy'])->name('serviceorder.destroy');
 
     //SOP
     Route::get('/sop', [SopController::class, 'index'])->name('sop.index');
