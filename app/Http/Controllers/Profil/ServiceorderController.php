@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Profil;
 use Illuminate\Support\Str;
 use App\Models\Serviceorder;
 use Illuminate\Http\Request;
-use Illuminate\Http\Controller\Controllers;
+use App\Http\Controllers\Controller;
 
 class ServiceorderController extends Controller
 {
@@ -13,7 +13,7 @@ class ServiceorderController extends Controller
     {
         $serviceorder=Serviceorder::latest()->paginate(6);
 
-        return view('admin.pages.serviceorder.index-serviceorder');
+        return view('admin.pages.serviceorder.index-serviceorder', ['serviceorder'=>$serviceorder]);
     }
 
     public function create()

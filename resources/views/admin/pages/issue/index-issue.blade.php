@@ -28,11 +28,11 @@
                             <li class="nav-item">
                                 <a class="nav-link btn-info active mr-1" href="{{route('issue.create')}}" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="fas fa-plus"></i></a>
                             </li>
-                            @foreach ($issue as $issues)
                             <li class="nav-item">
-                                <a class="nav-link btn-primary active mr-1" href="{{route('vision.edit', $issues->id)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+                                @foreach ($issue as $issues)
+                                <a class="nav-link btn-primary active mr-1" href="{{route('issue.edit', $issues->id)}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fas fa-edit"></i></a>
+                                @endforeach
                             </li>
-                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -40,14 +40,14 @@
                 <div class="card-body">
                     <table class="table table-striped table-bordered" id="table1">
                         <tbody>
-                            @foreach ($vision as $visions)
+                            @foreach ($issue as $issues)
                             <tr>
                                 <td width="30%">Sub Judul</td>
-                                <td>{{$visions->title_vision}}</td>
+                                <td>{{$issues->title_issue}}</td>
                             </tr>
                             <tr>
                                 <td width="30%">Deskripsi</td>
-                                <td>{{$visions->description_vision}}</td>
+                                <td>{{$issues->description_issue}}</td>
                             </tr>
                             @endforeach
                         </tbody>

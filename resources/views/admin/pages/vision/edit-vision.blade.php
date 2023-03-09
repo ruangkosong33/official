@@ -26,7 +26,7 @@
                 </div>
 
                 <!-- Form -->
-                <form action="{{route('vision.edit', $vision->id)}}" method="post" class="form-horizontal">
+                <form action="{{route('vision.update', $vision->id)}}" method="post" class="form-horizontal">
                     @csrf
                     @method('PUT')
                     <div class="card-body">

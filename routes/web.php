@@ -7,12 +7,12 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BansosController;
-use App\Http\Controllers\VisionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Profil\IssueController;
+use App\Http\Controllers\Profil\VisionController;
 use App\Http\Controllers\Infopublik\SopController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
@@ -57,8 +57,6 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/userlist/{id}', [UserController::class, 'update'])->name('userlist.update');
     Route::delete('/userlist/{id}', [UserController::class, 'destroy'])->name('userlist.destroy');
 
-    //Profile
-    Route::get('/profile/issue/', [IssueController::class, 'index'])->name('issue.index');
     //Category
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
@@ -109,28 +107,28 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/taskfunction/{id}', [TaskfunctionController::class, 'destroy'])->name('taskfunction.destroy');
 
     //Vision
-    Route::get('/vision', [VisionController::class, 'index'])->name('vision.index');
-    Route::get('/vision/create', [VisionController::class, 'create'])->name('vision.create');
-    Route::post('/vision', [VisionController::class, 'store'])->name('vision.store');
-    Route::get('/vision/edit/{id}', [VisionController::class, 'edit'])->name('vision.edit');
-    Route::put('/vision/{id}', [VisionController::class, 'update'])->name('vision.update');
-    Route::delete('/vision/{id}', [VisionController::class, 'destroy'])->name('vision.destroy');
+    Route::get('/profil/vision', [VisionController::class, 'index'])->name('vision.index');
+    Route::get('/profil/vision/create', [VisionController::class, 'create'])->name('vision.create');
+    Route::post('/profil/vision', [VisionController::class, 'store'])->name('vision.store');
+    Route::get('/profil/vision/edit/{id}', [VisionController::class, 'edit'])->name('vision.edit');
+    Route::put('/profil/vision/{id}', [VisionController::class, 'update'])->name('vision.update');
+    Route::delete('/profil/vision/{id}', [VisionController::class, 'destroy'])->name('vision.destroy');
 
     //Issue
-    Route::get('/issue', [IssueController::class, 'index'])->name('issue.index');
-    Route::get('/issue/create', [IssueController::class, 'cretae'])->name('issue.create');
-    Route::post('/issue', [IssueController::class, 'store'])->name('issue.store');
-    Route::get('/issue/edit/{id}', [IssueController::class, 'edit'])->name('issue.edit');
-    Route::put('/issue/{id}', [IssueController::class, 'update'])->name('issue.update');
-    Route::delete('/issue/{id}', [IssueController::class, 'destroy'])->name('issue.destroy');
+    Route::get('/profil/issue', [IssueController::class, 'index'])->name('issue.index');
+    Route::get('/profil/issue/create', [IssueController::class, 'create'])->name('issue.create');
+    Route::post('/profil/issue/', [IssueController::class, 'store'])->name('issue.store');
+    Route::get('/profil/issue/edit/{id}', [IssueController::class, 'edit'])->name('issue.edit');
+    Route::put('/profil/issue/{id}', [IssueController::class, 'update'])->name('issue.update');
+    Route::delete('/profil/issue/{id}', [IssueController::class, 'destroy'])->name('issue.destroy');
 
     //Policy Direction
-    Route::get('/policydirection', [PolicydirectionController::class, 'index'])->name('policydirection.index');
-    Route::get('/policydirection/create', [PolicydirectionController::class, 'create'])->name('policydirection.create');
-    Route::post('/policydirection', [PolicydirectionController::class, 'store'])->name('policydirection.store');
-    Route::get('/policydirection/edit/{id}', [PolicydirectionController::class, 'edit'])->name('policydirection.edit');
-    Route::put('/policydirection/{id}', [PolicydirectionController::class, 'update'])->name('policydirection.update');
-    Route::delete('/policydirection/{id}', [PolicydirectionController::class, 'destroy'])->name('policydirection.destroy');
+    Route::get('/profil/policydirection', [PolicydirectionController::class, 'index'])->name('policydirection.index');
+    Route::get('/profil/policydirection/create', [PolicydirectionController::class, 'create'])->name('policydirection.create');
+    Route::post('/profil/policydirection', [PolicydirectionController::class, 'store'])->name('policydirection.store');
+    Route::get('/profil/policydirection/edit/{id}', [PolicydirectionController::class, 'edit'])->name('policydirection.edit');
+    Route::put('/profil/policydirection/{id}', [PolicydirectionController::class, 'update'])->name('policydirection.update');
+    Route::delete('/profil/policydirection/{id}', [PolicydirectionController::class, 'destroy'])->name('policydirection.destroy');
 
     //Goal Objective
     Route::get('/goalobjective', [GoalobjectiveController::class, 'index'])->name('goalobjective.index');

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Profil;
 
 use App\Models\Vision;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class VisionController extends Controller
 {
@@ -25,6 +26,7 @@ class VisionController extends Controller
     {
         $vision=$request->validate([
             'title_vision'=>'required',
+            'description_vision'=>'required',
         ]);
 
         $vision=Vision::create([
@@ -47,13 +49,14 @@ class VisionController extends Controller
     {
         $vision=$request->validate([
             'title_vision'=>'required',
+            'description_vision'=>'required',
         ]);
 
         $vision=Vision::findOrFail($id);
 
         $vision->update([
-            'title_vision'=>$request->vision,
-            'slug'=>Str::slug($request->vision),
+            'title_vision'=>$request->title_vision,
+            'slug'=>Str::slug($request->title_vision),
             'description_vision'=>$request->description_vision,
         ]);
 

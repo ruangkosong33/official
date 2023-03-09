@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Profil;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Policydirection;
-use Illuminate\Http\Controller\Controllers;
+use App\Http\Controllers\Controller;
 
 class PolicydirectionController extends Controller
 {
@@ -30,7 +31,7 @@ class PolicydirectionController extends Controller
         $policydirection=Policydirection::create([
             'title_policydirection'=>$request->title_policydirection,
             'slug'=>Str::slug($request->policydirection),
-            'description_policydirection'=>$request->policydirection,
+            'description_policydirection'=>$request->description_policydirection,
         ]);
 
         return redirect()->route('policydirection.index');
@@ -38,7 +39,7 @@ class PolicydirectionController extends Controller
 
     public function edit($id)
     {
-        $policydirection=findOrFail($id);
+        $policydirection=Policydirection::findOrFail($id);
 
         return view('admin.pages.policydirection.edit-policydirection', ['policydirection'=>$policydirection]);
     }
@@ -47,15 +48,15 @@ class PolicydirectionController extends Controller
     {
         $policydirection=$request->validate([
             'title_policydirection'=>'required',
-            'decription_policydirection'=>'required',
+            'description_policydirection'=>'required',
         ]);
 
-        $policydirection=findOrFail($id);
+        $policydirection=Policydirection::findOrFail($id);
 
         $policydirection->update([
             'title_policydirection'=>$request->title_policydirection,
             'slug'=>Str::slug($request->title_policydirection),
-            'description_policydirection'=>$request->description_policydescription,
+            'description_policydirection'=>$request->description_policydirection,
         ]);
 
         return redirect()->route('policydirection.index');

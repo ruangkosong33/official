@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Profil;
 
+use App\Models\Issue;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Http\Controller\Controllers;
+use App\Http\Controllers\Controller;
 
 class IssueController extends Controller
 {
@@ -39,7 +41,7 @@ class IssueController extends Controller
     {
         $issue=Issue::findOrFail($id);
 
-        return view('admin.pages.issue.edit-issue');
+        return view('admin.pages.issue.edit-issue', ['issue'=>$issue]);
     }
 
     public function update(Request $request, $id)
@@ -51,7 +53,7 @@ class IssueController extends Controller
 
         $issue=Issue::findOrFail($id);
 
-        $issue=Issue::create([
+        $issue->update([
             'title_issue'=>$request->title_issue,
             'slug'=>Str::slug($request->title_issue),
             'description_issue'=>$request->description_issue,
