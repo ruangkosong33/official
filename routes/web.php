@@ -31,9 +31,9 @@ use App\Http\Controllers\Profil\FormationhistoryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //Register
 Route::get('/register', [AuthController::class, 'register'])->name('register.index');
@@ -99,12 +99,12 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/employee/{id}', [EmployeeController::class, 'destroy'])->name('employee.destroy');
 
     //Taskfunction
-    Route::get('/taskfunction', [TaskfunctionController::class, 'index'])->name('taskfunction.index');
-    Route::get('/taskfunction/create', [TaskfunctionControlle::class, 'create'])->name('taskfunction.create');
-    Route::post('/taskfunction', [TaskfunctionController::class, 'store'])->name('taskfunction.store');
-    Route::get('/taskfunction/edit/{id', [TaskfunctionController::class, 'edit'])->name('taskfuntion.edit');
-    Route::put('/taskfunction/{id}', [TaskfunctionController::class, 'update'])->name('taskfunction.update');
-    Route::delete('/taskfunction/{id}', [TaskfunctionController::class, 'destroy'])->name('taskfunction.destroy');
+    Route::get('/profil/taskfunction', [TaskfunctionController::class, 'index'])->name('taskfunction.index');
+    Route::get('/profil/taskfunction/create', [TaskfunctionController::class, 'create'])->name('taskfunction.create');
+    Route::post('/profil/taskfunction', [TaskfunctionController::class, 'store'])->name('taskfunction.store');
+    Route::get('/profil/taskfunction/edit/{id}', [TaskfunctionController::class, 'edit'])->name('taskfunction.edit');
+    Route::put('/profil/taskfunction/{id}', [TaskfunctionController::class, 'update'])->name('taskfunction.update');
+    Route::delete('/profil/taskfunction/{id}', [TaskfunctionController::class, 'destroy'])->name('taskfunction.destroy');
 
     //Vision
     Route::get('/profil/vision', [VisionController::class, 'index'])->name('vision.index');
@@ -115,7 +115,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/profil/vision/{id}', [VisionController::class, 'destroy'])->name('vision.destroy');
 
     //Issue
-    Route::get('/profil/issue', [IssueController::class, 'index'])->name('issue.index');
+    Route::get('/profil/issue/', [IssueController::class, 'index'])->name('issue.index');
     Route::get('/profil/issue/create', [IssueController::class, 'create'])->name('issue.create');
     Route::post('/profil/issue/', [IssueController::class, 'store'])->name('issue.store');
     Route::get('/profil/issue/edit/{id}', [IssueController::class, 'edit'])->name('issue.edit');
@@ -131,12 +131,12 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/profil/policydirection/{id}', [PolicydirectionController::class, 'destroy'])->name('policydirection.destroy');
 
     //Goal Objective
-    Route::get('/goalobjective', [GoalobjectiveController::class, 'index'])->name('goalobjective.index');
-    Route::get('/goalobjective/create', [GoalobjectiveController::class, 'create'])->name('goalobjective.create');
-    Route::post('/goalobjective', [GoalobjectiveController::class, 'store'])->name('goalobjective.store');
-    Route::get('/goalobjective/edit/{id}', [GoalobjectiveController::class, 'edit'])->name('goalobjective.edit');
-    Route::put('/goalobjective/{id}', [GoalobjectiveController::class, 'update'])->name('goalobjective.update');
-    Route::delete('/goalobjective/{id}', [GoalobjectiveControlleR::class, 'destroy'])->name('goalobjective.destroy');
+    Route::get('/profil/goalobjective', [GoalobjectiveController::class, 'index'])->name('goalobjective.index');
+    Route::get('/profil/goalobjective/create', [GoalobjectiveController::class, 'create'])->name('goalobjective.create');
+    Route::post('/profil/goalobjective', [GoalobjectiveController::class, 'store'])->name('goalobjective.store');
+    Route::get('/profil/goalobjective/edit/{id}', [GoalobjectiveController::class, 'edit'])->name('goalobjective.edit');
+    Route::put('/profil/goalobjective/{id}', [GoalobjectiveController::class, 'update'])->name('goalobjective.update');
+    Route::delete('/profil/goalobjective/{id}', [GoalobjectiveControlleR::class, 'destroy'])->name('goalobjective.destroy');
 
     //Formation History
     Route::get('/formationhistory', [FormationhistoryController::class, 'index'])->name('formationhistory.index');

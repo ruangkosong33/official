@@ -26,16 +26,16 @@
                 </div>
 
                 <!-- Form -->
-                <form action="{{route('taskfunction.edit', $taskfunction->id)}}" method="post" class="form-horizontal">
+                <form action="{{route('taskfunction.update', $taskfunction->id)}}" method="post" class="form-horizontal">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="title_taskfunction" class="form-label col-sm-2">Sub Judul</label>
                                 <input type="text" class="form-control @error('title_taskfunction') is-invalid @enderror" name="title_taskfunction" placeholder="Sub Judul"
-                                id="title_taskfunction" value="{{old('title_taskfunction') ?? $vision->title_taskfunction}}">
+                                id="title_taskfunction" value="{{old('title_taskfunction') ?? $taskfunction->title_taskfunction}}">
 
-                                @error('title_vision')
+                                @error('title_taskfunction')
                                 <span class="invalid-feedback">{{$message}}</span>
                                 @enderror
 
@@ -44,7 +44,7 @@
                         <div class="form-group row">
                             <label for="description_taskfunction" class="form-label col-sm-2">Deskripsi</label>
                                 <textarea class="form-control @error('description_taskfunction') is-invalid @enderror" name="description_taskfunction"
-                                id="description_taskfunction">{{old('description_taskfunction') ?? $vision->description_taskfunction}}</textarea>
+                                id="description_taskfunction">{{old('description_taskfunction') ?? $taskfunction->description_taskfunction}}</textarea>
 
                                 @error ('description_taskfunction')
                                     <span class="invalid-feedback">{{$message}}</span>

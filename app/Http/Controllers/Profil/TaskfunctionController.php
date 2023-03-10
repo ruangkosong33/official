@@ -13,7 +13,7 @@ class TaskfunctionController extends Controller
     {
         $taskfunction=Taskfunction::latest()->paginate(7);
 
-        return view('admin.pages.taskfunction.index-taskfunction');
+        return view('admin.pages.taskfunction.index-taskfunction', ['taskfunction'=>$taskfunction]);
     }
 
     public function create()

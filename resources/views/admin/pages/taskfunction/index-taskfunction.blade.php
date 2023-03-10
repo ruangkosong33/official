@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h3 class="m-0">Tugas & Fungsi</h3>
+                    <h3 class="m-0">Tugas Pokok & Fungsi</h3>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Tugas & Fungsi</h3>
+                    <h3 class="card-title">Data Tugas Pokok & Fungsi</h3>
                     <div class="card-tools">
                         <ul class="nav nav-pills ml-auto">
                             <li class="nav-item">
