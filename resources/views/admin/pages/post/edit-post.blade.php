@@ -1,4 +1,4 @@
-@extends('admin.layouts.b_main')
+@extends('admin.layouts.b-main')
 
 @section('content')
 
@@ -28,9 +28,9 @@
           @method('PUT')
           <div class="card-body">
             <div class="form-group row">
-              <label for="title_category" class="col-sm-2 col-form-label">Judul</label>
+              <label for="title_post" class="col-sm-2 col-form-label">Judul</label>
               <div class="col-sm-6">
-                <input type="text" name="title_category" value="{{old('title_post') ?? $category->title_post}}"
+                <input type="text" name="title_post" value="{{old('title_post') ?? $post->title_post}}"
                 class="form-control @error('title_post') is-invalid @enderror" id="title_post" placeholder="Judul Berita">
 
                 @error('title_post')
@@ -63,14 +63,18 @@
             </div>
 
             <div class="form-group row">
-                <label for="image_post" class="col-sm-2">Gambar Post</label>
+                <label for="image_post" class="col-sm-2 col-form-label">Gambar</label>
                 <div class="col-sm-6">
-                 <input type="file" class="form-control @error('image_post') is-invalid @enderror" id="image_post" name="image_post"
-                 placeholder="Gambar Post">
+                  <input type="file" class="form control @error('image_post') is-invalid @enderror" id="image" placeholder="Gambar"
+                  name="image_post" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+
+                  @error('image_post')
+                      <span class="invalid-feedback">{{$message}}</span>
+                  @enderror
                 </div>
+                <div class="mt-3"><img src="{{asset('image-post/'. $post->image_post)}}" id="output" width="500"></div>
+
             </div>
-
-
 
 
 
@@ -78,7 +82,7 @@
           <!-- /.card-body -->
           <div class="card-footer">
             <button type="submit" class="btn btn-info">Simpan</button>
-            <a href="{{route ('category.index')}}" button type="submit" class="btn btn-default">Kembali</a>
+            <a href="{{route ('post.index')}}" button type="submit" class="btn btn-default">Kembali</a>
           </div>
           <!-- /.card-footer -->
         </form>

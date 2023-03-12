@@ -102,6 +102,9 @@ class PostController extends Controller
             $image_posts=$request->file('image_post');
             $imageextension=$image_posts->getClientOriginalName();
             $request->file('image_post')->move(public_path('image-post', $imageextension));
+        }else{
+
+            unset($employee['image_post']);
         }
 
         $post->update([

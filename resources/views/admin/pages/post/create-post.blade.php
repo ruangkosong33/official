@@ -72,8 +72,8 @@
                         <label for="category_id" class="col-sm-2">Kategori</label>
                         <div class="col-sm-6">
                           <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
+                            <option value="">--Pilih--</option>
                             @foreach ($category as $categorys)
-                            <option>--Pilih--</option>
                             <option value={{$categorys->id}}>{{$categorys->title_category}}</option>
                             @endforeach
                           </select>
