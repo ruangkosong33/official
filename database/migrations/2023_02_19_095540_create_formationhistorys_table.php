@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('formationhistorys', function (Blueprint $table) {
             $table->id();
-            $table->string('title_formationhistorys');
+            $table->string('title_formationhistory');
             $table->string('slug');
-            $table->string('description_formationhistorys');
+            $table->string('description_formationhistory');
             $table->timestamps();
         });
     }

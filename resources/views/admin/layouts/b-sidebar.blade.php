@@ -47,7 +47,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="{{route('formationhistory.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sejarah Pembentukan</p>
                 </a>
@@ -83,7 +83,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kepala Badan</p>
                 </a>

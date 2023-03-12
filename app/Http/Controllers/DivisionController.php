@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Division;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class DivisionController extends Controller
@@ -11,7 +12,7 @@ class DivisionController extends Controller
     {
         $division=Division::all();
 
-        return view('admin.pages.division.index-division');
+        return view('admin.pages.division.index-division', ['division'=>$division]);
     }
 
     public function create()
@@ -45,6 +46,8 @@ class DivisionController extends Controller
         $division=$request->validate([
             'name_division'=>'required',
         ]);
+
+        $division=Division::findOrFail($id);
 
         $division->update([
             'name_division'=>$request->name_division,

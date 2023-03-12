@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Profil;
 
 use Illuminate\Support\Str;
-use Illuminate\Http\Controller\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Formationhistory;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FormationhistoryController extends Controller
 {
@@ -13,12 +14,12 @@ class FormationhistoryController extends Controller
     {
         $formationhistory=Formationhistory::all();
 
-        return view('admin.pages.formationhistory.create-history', ['history'=>$formationhistory]);
+        return view('admin.pages.formationhistory.index-formationhistory', ['formationhistory'=>$formationhistory]);
     }
 
     public function create()
     {
-        return view('admin.pages.formationhistory.create-history');
+        return view('admin.pages.formationhistory.create-formationhistory');
     }
 
     public function store(Request $request)
@@ -29,10 +30,12 @@ class FormationhistoryController extends Controller
         ]);
 
         $formationhistory=Formationhistory::create([
-            'title_formationhistoy'=>$request->formationhistory,
-            'slug'=>Str::slug($request->formationhistory),
-            'description_formationhistory'=>$request->formationhistory,
+            'title_formationhistory'=>$request->title_formationhistory,
+            'slug'=>Str::slug($request->title_formationhistory),
+            'description_formationhistory'=>$request->description_formationhistory,
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
 
         return redirect()->route('formationhistory.index');
     }
@@ -41,7 +44,7 @@ class FormationhistoryController extends Controller
     {
         $formationhistory=Formationhistory::findOrFail($id);
 
-        return view('adnin.pages.formationhsitory.edit-formationhistory', ['formationhistory'=>$formationhistory]);
+        return view('admin.pages.formationhistory.edit-formationhistory', ['formationhistory'=>$formationhistory]);
     }
 
     public function update(Request $request, $id)
@@ -54,9 +57,9 @@ class FormationhistoryController extends Controller
         $formationhistory=Formationhistory::findOrFail($id);
 
         $formationhistory->update([
-            'title_formationhistoy'=>$request->formationhistory,
-            'slug'=>Str::slug($request->formationhistory),
-            'description_formationhistory'=>$request->formationhistory,
+            'title_formationhistory'=>$request->title_formationhistory,
+            'slug'=>Str::slug($request->title_formationhistory),
+            'description_formationhistory'=>$request->description_formationhistory,
         ]);
 
         return redirect()->route('formationhistory.index');
