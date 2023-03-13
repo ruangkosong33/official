@@ -28,14 +28,15 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('employee.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('employee.update', $employee->id)}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
+                            @method('PUT')
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="name_employee" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="name_employee" class="form-control @error('name_employee') is-invalid @enderror"
-                                        id="name_employee" placeholder="Nama Pegawai">
+                                        id="name_employee" placeholder="Nama Pegawai" value="{{old('name_employee') ?? $employee->name_employee}}">
 
                                         @error('name_employee')
                                         <span class="invalid-feedback">{{$message}}</span>
@@ -47,7 +48,8 @@
                                 <div class="form-group row">
                                     <label for="nip" class="col-sm-2 col-form-label">Nip</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="nip" class="form-control @error('nip') is-invalid @enderror" id="nip" placeholder="Nip">
+                                        <input type="text" name="nip" class="form-control @error('nip') is-invalid @enderror" id="nip" placeholder="Nip"
+                                        value="{{old('nip') ?? $employee->nip}}">
 
                                         @error('nip')
                                         <span class="invalid-feedback"{{$message}}></span>
@@ -59,9 +61,8 @@
                                     <label for="division_id" class="col-sm-2">Bidang</label>
                                     <div class="col-sm-6">
                                       <select name="division_id" class="form-control @error('division_id') is-invalid @enderror" id="division_id">
-                                        <option value="">--Pilih--</option>
                                         @foreach ($division as $divisions)
-                                        <option value={{$divisions->id}}>{{$divisions->name_division}}</option>
+                                        <option value={{$divisions->id}} {{$divisions->id == $divisions->name_division ?? 'selected'}}>{{$divisions->name_division}}</option>
                                         @endforeach
                                       </select>
 
@@ -86,13 +87,14 @@
                                     </div>
                                 </div>
                                     <!--ImageDisplay -->
-                                    <div class="mt-3"><img src="" id="output" width="10%"></div>
+                                    <div class="mt-3"><img src="{{asset('uploads/image-pegawai/'. $employee->image_employee)}}" id="output" width="10%"></div>
                                     <!-- End -->
 
                                 <div class="form-group row">
                                     <label for="position" class="col-sm-2 col-form-label">Jabatan</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="position" class="form-control @error('position') is-invalid @enderror" id="nip" placeholder="Posisi">
+                                        <input type="text" name="position" class="form-control @error('position') is-invalid @enderror" id="nip" placeholder="Posisi"
+                                        value="{{old('position') ?? $employee->position}}">
 
                                         @error('position')
                                             <span class="invalid-feedback"{{$message}}></span>
@@ -104,7 +106,8 @@
                                 <div class="form-group row">
                                     <label for="status" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="status" class="form-control @error('status') is-invalid @enderror" id="status" placeholder="Aktif / Tidak Aktif">
+                                        <input type="text" name="status" class="form-control @error('status') is-invalid @enderror" id="status" placeholder="Aktif / Tidak Aktif"
+                                        value="{{old('status') ?? $employee->status}}">
 
                                         @error('status')
                                             <span class="invalid-feedback"{{$message}}></span>
@@ -116,7 +119,8 @@
                                 <div class="form-group row">
                                     <label for="religion" class="col-sm-2 col-form-label">Agama</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="religion" class="form-control @error('religion') is-invalid @enderror" id="religion" placeholder="Agama">
+                                        <input type="text" name="religion" class="form-control @error('religion') is-invalid @enderror" id="religion" placeholder="Agama"
+                                        value="{{old('religion') ?? $employee->religion}}">
 
                                         @error('religion')
                                             <span class="invalid-feedback"{{$message}}></span>
@@ -129,7 +133,7 @@
                                     <label for="education_school" class="col-sm-2 col-form-label">Riwayat</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="education_school" class="form-control @error('education_school') is-invalid @enderror"
-                                        id="education_school" placeholder="Pendidikan">
+                                        id="education_school" placeholder="Pendidikan" value="{{old('education_school') ?? $employee->education_school}}">
 
                                         @error('education_school')
                                             <span class="invalid-feedback"{{$message}}></span>
@@ -142,7 +146,7 @@
                                     <label for="education_work" class="col-sm-2 col-form-label">Riwayat</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="education_work" class="form-control @error('education_work') is-invalid @enderror"
-                                        id="education_work" placeholder="Diklat">
+                                        id="education_work" placeholder="Diklat" value="{{old('education_word') ?? $employee->education_work}}">
 
                                         @error('education_work')
                                             <span class="invalid-feedback"{{$message}}></span>

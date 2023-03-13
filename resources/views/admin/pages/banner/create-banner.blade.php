@@ -32,7 +32,7 @@
                       <label for="image_banner" class="col-sm-2 col-form-label">Gambar</label>
                       <div class="col-sm-10">
                         <input type="file" class="form-control @error('image_banner') is-invalid @enderror" id="image_banner" accept="image/*"
-                        name="image_banner" value="{{old('image_banner')}}" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+                        name="image_banner" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
 
                         @error('image_banner')
                             <span class="invalid-feedback">{{$message}}</span>
