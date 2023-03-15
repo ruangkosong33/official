@@ -12,6 +12,7 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Profil\IssueController;
+use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
 use App\Http\Controllers\Infopublik\SopController;
 use App\Http\Controllers\Profil\ServiceorderController;
@@ -153,6 +154,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/profil/serviceorder/edit/{id}', [ServiceorderController::class, 'edit'])->name('serviceorder.edit');
     Route::put('/profil/serviceorder/{id}', [ServiceorderController::class, 'update'])->name('serviceorder.update');
     Route::delete('/profil/serviceorder/{id}', [ServiceorderController::class, 'destroy'])->name('serviceorder.destroy');
+
+    //Leader
+    Route::get('/profil/leader', [LeaderController::class, 'index'])->name('leader.index');
+    Route::get('/profil/leader/create', [LeaderController::class, 'create'])->name('leader.create');
+    Route::post('/profil/leader', [LeaderController::class, 'store'])->name('leader.store');
+    Route::get('/profil/leader/edit/{id}', [LeaderController::class, 'edit'])->name('leader.edit');
+    Route::put('/profil/leader/{id}', [LeaderController::class, 'update'])->name('leader.update');
+    Route::get('/profil/leader/{id}', [LeaderController::class, 'destroy'])->name('leader.destroy');
 
     //SOP
     Route::get('/sop', [SopController::class, 'index'])->name('sop.index');
