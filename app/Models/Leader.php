@@ -11,7 +11,7 @@ class Leader extends Model
 
     protected $table='leaders';
 
-    protected $fillable=['name_leader', 'slug', 'image_leader', 'periode'];
+    protected $fillable=['name_leader', 'slug', 'periode', 'image_leader'];
 
     protected $hidden=[];
 }

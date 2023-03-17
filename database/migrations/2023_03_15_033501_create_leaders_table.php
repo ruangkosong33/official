@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name_leader');
             $table->string('slug');
-            $table->string('image_leader');
             $table->string('periode');
+            $table->string('image_leader');
             $table->timestamps();
         });
     }
