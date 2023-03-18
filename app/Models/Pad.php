@@ -11,7 +11,13 @@ class Pad extends Model
 
     protected $table='pads';
 
-    protected $fillable=['title_pad', 'slug', 'filename_pad', 'description_pad'];
+    protected $fillable=['title_pad', 'slug'];
 
     protected $hidden=[];
+
+
+    public function filepad()
+    {
+        return $this->hasMany(Filepad::class, 'filepad_id', 'id');
+    }
 }

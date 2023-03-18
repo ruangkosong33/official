@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pad;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class PadController extends Controller
@@ -23,30 +24,48 @@ class PadController extends Controller
     {
         $pad=$request->validate([
             'title_pad'=>'required',
-            'description_pad'=>'required',
-            'file_pad'=>'required|mimes:pdf,jpg,jpeg,doc,docx,png|max:5000',
         ]);
 
         $pad=Pad::create([
             'title_pad'=>$request->title_pad,
             'slug'=>Str::slug($request->title_pad),
-            'description_pad'=>$request->description_pad,
-            'file_pad'=>$file_pad,
         ]);
 
         return redirect()->route('pad.index');
-
     }
 
     public function edit($id)
     {
-        $pad=findOrFail($id);
+        $pad=Pad::findOrFail($id);
 
         return view('admin.pages.pad.edit-pad', ['pad'=>$pad]);
     }
 
     public function update(Request $request, $id)
     {
-        
+
+        $pad=$request->validate([
+            'title_pad'=>'required',
+        ]);
+
+        $pad=Pad::findOrFail($id);
+
+        $pad->update([
+            'title_pad'=>$request->title_pad,
+            'slug'=>Str::slug($request->title_pad),
+        ]);
+
+        return redirect()->route('pad.index');
     }
+
+    public function destroy($id)
+    {
+        $pad=Pad::findOrFail($id);
+
+        $pad->delete();
+
+        return redirect()->route('pad.index');
+    }
+
+
 }

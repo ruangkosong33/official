@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pads', function (Blueprint $table) {
-            $table->id();
-            $table->string('title_pad');
-            $table->string('slug');
-            $table->timestamps();
+        Schema::table('filepads', function (Blueprint $table) {
+            //
+
+            $table->unsignedBigInteger('pad_id')->after('file_pad');
+            $table->foreign('pad_id')->references('id')->on('pads');
         });
     }
 
@@ -24,6 +24,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pads');
+        Schema::table('filepads', function (Blueprint $table) {
+            //
+        });
     }
 };

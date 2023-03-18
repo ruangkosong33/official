@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BansosController;
+use App\Http\Controllers\FilepadController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\EmployeeController;
@@ -176,8 +177,17 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/pad/create', [PadController::class, 'create'])->name('pad.create');
     Route::post('/pad', [PadController::class, 'store'])->name('pad.store');
     Route::get('/pad/edit/{id}', [PadController::class, 'edit'])->name('pad.edit');
-    Route::put('/pad/{id}', [PadControllerc::class, 'update'])->name('pad.update');
+    Route::put('/pad/{id}', [PadController::class, 'update'])->name('pad.update');
     Route::delete('/pad/{id}', [PadController::class, 'destroy'])->name('pad.destroy');
+
+     //FILE-PAD
+     Route::get('/filepad', [FilepadController::class, 'index'])->name('filepad.index');
+     Route::get('/filepad/create', [FilepadController::class, 'create'])->name('filepad.create');
+     Route::post('/filepad', [FilepadController::class, 'store'])->name('filepad.store');
+     Route::get('/filepad/edit/{id}', [FilepadController::class, 'edit'])->name('filepad.edit');
+     Route::put('/filepad/{id}', [FilepadControllerc::class, 'update'])->name('filepad.update');
+     Route::delete('/filepad/{id}', [FilepadController::class, 'destroy'])->name('filepad.destroy');
+
 
     //Bansos
     Route::get('/bansos', [BansosController::class, 'index'])->name('bansos.index');

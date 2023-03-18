@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pads', function (Blueprint $table) {
+        Schema::create('filepads', function (Blueprint $table) {
             $table->id();
-            $table->string('title_pad');
+            $table->string('title_filepad');
             $table->string('slug');
+            $table->string('file_pad');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pads');
+        Schema::dropIfExists('filepads');
     }
 };
