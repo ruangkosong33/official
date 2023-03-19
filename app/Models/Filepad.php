@@ -11,10 +11,10 @@ class Filepad extends Model
 
     protected $table='filepads';
 
-    protected $fillable=['title_filepad', 'slug', 'file_pad'];
+    protected $fillable=['title_filepad', 'slug', 'file_pad', 'pad_id'];
 
     protected $hidden=[];
-    
+
 
     public function pad()
     {

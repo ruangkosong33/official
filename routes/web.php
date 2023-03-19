@@ -181,7 +181,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/pad/{id}', [PadController::class, 'destroy'])->name('pad.destroy');
 
      //FILE-PAD
-     Route::get('/filepad', [FilepadController::class, 'index'])->name('filepad.index');
+     Route::get('filepad', [FilepadController::class, 'index'])->name('filepad.index');
      Route::get('/filepad/create', [FilepadController::class, 'create'])->name('filepad.create');
      Route::post('/filepad', [FilepadController::class, 'store'])->name('filepad.store');
      Route::get('/filepad/edit/{id}', [FilepadController::class, 'edit'])->name('filepad.edit');
