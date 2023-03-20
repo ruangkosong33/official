@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pad;
+use App\Models\Filepad;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -66,6 +68,5 @@ class PadController extends Controller
 
         return redirect()->route('pad.index');
     }
-
 
 }

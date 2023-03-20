@@ -1,7 +1,6 @@
 @extends('admin.layouts.b-main')
 
 @section('content')
-@section('vision', 'active')
 
 <!-- Wrapper -->
 <div class="content-wrapper">
@@ -27,7 +26,7 @@
                     <div class="card-tools">
                         <ul class="nav nav-pills ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link active mr-2" href="{{route('filepad.create')}}"><i class="fas fa-plus"></i></a>
+                                <a class="nav-link active mr-2" href="{{route('filepad.create', ['pad'=>$pad])}}"><i class="fas fa-plus"></i></a>
                             </li>
                         </ul>
                     </div>

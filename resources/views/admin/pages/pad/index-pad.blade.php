@@ -59,7 +59,7 @@
                                             <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
-                                    <a href="{{route('filepad.index')}}" class="btn btn-info btn-sm">
+                                    <a href="{{route('filepad.index', $pads)}}" class="btn btn-info btn-sm">
                                         <i class="fas fa-list"></i>
                                     </a>
                                     <!-- End Form -->

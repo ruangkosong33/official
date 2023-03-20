@@ -181,12 +181,10 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/pad/{id}', [PadController::class, 'destroy'])->name('pad.destroy');
 
      //FILE-PAD
-     Route::get('filepad', [FilepadController::class, 'index'])->name('filepad.index');
-     Route::get('/filepad/create', [FilepadController::class, 'create'])->name('filepad.create');
-     Route::post('/filepad', [FilepadController::class, 'store'])->name('filepad.store');
-     Route::get('/filepad/edit/{id}', [FilepadController::class, 'edit'])->name('filepad.edit');
-     Route::put('/filepad/{id}', [FilepadControllerc::class, 'update'])->name('filepad.update');
-     Route::delete('/filepad/{id}', [FilepadController::class, 'destroy'])->name('filepad.destroy');
+     Route::get('pad/{pad}/filepad', [FilepadController::class, 'index'])->name('filepad.index');
+     Route::get('pad/{pad}/filepad/create', [FilepadController::class, 'create'])->name('filepad.create');
+     Route::post('pad/{pad}/filepad', [FilepadController::class, 'store'])->name('filepad.store');
+     
 
 
     //Bansos

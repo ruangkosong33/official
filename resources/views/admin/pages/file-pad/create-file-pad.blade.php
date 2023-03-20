@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('filepad.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('filepad.store', ['pad'=>$pad])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
@@ -57,27 +57,10 @@
 
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="category_id" class="col-sm-2">Kategori</label>
-                                    <div class="col-sm-6">
-                                      <select name="pad_id" class="form-control @error('pad_id') is-invalid @enderror" id="pad_id">
-                                        <option value="">--Pilih--</option>
-                                        @foreach ($pad as $pads)
-                                        <option value={{$pads->id}}>{{$pads->title_pad}}</option>
-                                        @endforeach
-                                      </select>
-
-                                      @error('pad_id')
-                                      <span class="invalid-feedback">{{$message}}</span>
-                                      @enderror
-
-                                    </div>
-                                </div>
-
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('filepad.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('filepad.index', ['pad'=>$pad])}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->
