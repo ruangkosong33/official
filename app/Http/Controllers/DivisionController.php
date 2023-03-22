@@ -17,6 +17,7 @@ class DivisionController extends Controller
 
     public function create()
     {
+
         return view('admin.pages.division.create-division');
     }
 
