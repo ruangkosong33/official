@@ -196,6 +196,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/bansos/{id}', [BansosController::class, 'update'])->name('bansos.update');
     Route::delete('/bansos/{id}', [BansosController::class, 'destroy'])->name('bansos.destroy');
 
+    //VIDEO
+    Route::get('/video', [VideoController::class, 'index'])->name('video.index');
+    Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');
+    Route::post('/video' , [VideoController::class, 'store'])->name('video.store');
+    Route::get('/video/edit/{id}', [VideoController::class, 'edit'])->name('video.edit');
+    Route::put('/video/{id}', [VideoController::class, 'update'])->name('video.update');
+    Route::delete('/video/{id}', [VideoController::class, 'destroy'])->name('video.destroy');
+
 
 });
 

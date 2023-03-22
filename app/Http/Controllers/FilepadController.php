@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Pad;
 use App\Models\Filepad;
 use Cviebrock\EloquentSluggable\Services\SlugService;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class FilepadController extends Controller
@@ -26,22 +25,20 @@ class FilepadController extends Controller
     {
         $filepad=$request->validate([
             'title_filepad'=>'required',
-            'file_pad'=>'max:3000|mimes:pdf,doc,docx',
+            'file_pad'=>'required|max:3000|mimes:pdf,doc,docx',
 
         ]);
 
         if($request->file('file_pad'))
         {
             $file = $request->file('file_pad');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
+            $extention = $file->getClientOriginalName();
+            $filename = $extention;
             $file->move('uploads/file-pad/', $filename);
         }
 
-
         $filepad=Filepad::create([
             'title_filepad'=>$request->title_filepad,
-            'slug'=>Str::slug($request->title_filepad),
             'file_pad'=>$filename,
             'pad_id'=>$pad->id,
         ]);
@@ -49,5 +46,35 @@ class FilepadController extends Controller
         return redirect()->route('filepad.index', ['pad'=>$pad]);
     }
 
+    public function edit(pad $pad)
+    {
+
+        return view('admin.pages.file-pad.edit-file-pad', ['pad'=>$pad]);
+    }
+
+    public function update(Request $request, Pad $pad)
+    {
+        $filepad=$request->validate([
+            'title_filepad'=>'required',
+            'file_pad'=>'max:3000|mimes:pdf,doc,docx',
+
+        ]);
+
+        if($request->file('file_pad'))
+        {
+            $file = $request->file('file_pad');
+            $extention = $file->getClientOriginalName();
+            $filename = $extention;
+            $file->move('uploads/file-pad/', $filename);
+        }
+
+        $filepad=Filepad::create([
+            'title_filepad'=>$request->title_filepad,
+            'file_pad'=>$filename,
+            'pad_id'=>$pad->id,
+        ]);
+
+        return redirect()->route('filepad.index', ['pad'=>$pad]);
+    }
 
 }

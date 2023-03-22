@@ -36,12 +36,12 @@
                                     <div class="col-sm-10">
                                         <input type="text" name="title_filepad" class="form-control @error('title_filepad') is-invalid @enderror"
                                         id="title_filepad" placeholder="Sub Judul">
+
+                                        @error('title_filepad')
+                                        <span class="invalid-feedback">{{$message}}</span>
+                                        @enderror
+
                                     </div>
-
-                                    @error('title_filepad')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
-
                                 </div>
 
                                 <div class="form-group row">
@@ -49,12 +49,12 @@
                                     <div class="col-sm-10">
                                         <input type="file" name="file_pad" class="form-control @error('file_pad') is-invalid @enderror"
                                         id="file_pad">
+
+                                        @error('file_pad')
+                                        <span class="invalid-feedback">{{$message}}</span>
+                                        @enderror
+
                                     </div>
-
-                                    @error('file_pad')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
-
                                 </div>
 
                             </div>

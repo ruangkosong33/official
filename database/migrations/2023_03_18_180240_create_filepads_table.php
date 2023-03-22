@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title_filepad');
             $table->string('slug');
             $table->string('file_pad');
+            $table->foreignId('pad_id')->constrained('pads')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
