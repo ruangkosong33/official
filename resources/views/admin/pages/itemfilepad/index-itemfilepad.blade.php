@@ -26,7 +26,7 @@
                     <div class="card-tools">
                         <ul class="nav nav-pills ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link active mr-2" href="{{route('filepad.create', ['pad'=>$pad])}}"><i class="fas fa-plus"></i></a>
+                                <a class="nav-link active mr-2" href="{{route('itemfilepad.create', ['pad'=>$pad])}}"><i class="fas fa-plus"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -42,16 +42,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($filepad as $filepads)
+                            @foreach ($itemfilepad as $itemfilepads)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$filepads->title_filepad}}</td>
+                                <td>{{$itemfilepads->title_itemfilepad}}</td>
                                 <td>
-                                    <a href="{{route('filepad.edit', $filepads->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('itemfilepad.edit', $itemfilepads->id)}}" class="btn btn-warning btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Form-->
-                                    <form method="post" action="{{route('filepad.destroy', $filepads->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('itemfilepad.destroy', $itemfilepads->id)}}" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm">

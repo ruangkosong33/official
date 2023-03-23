@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('filepad.store', ['pad'=>$pad])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('filepad.store', ['pad'=>$pad, 'filepad'=>$filepad])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
@@ -60,7 +60,7 @@
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('filepad.index', ['pad'=>$pad])}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('filepad.index', ['pad'=>$pad, 'filepad'=>$filepad])}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->

@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('filepads', function (Blueprint $table) {
+        Schema::create('itemfilepads', function (Blueprint $table) {
             $table->id();
-            $table->string('title_filepad');
-            $table->string('slug');
-            $table->string('file_pad');
-            $table->foreignId('pad_id')->constrained('pads')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('title_itemfilepad');
+            $table->foreignId('pad_id')->constrained('pads');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('filepads');
+        Schema::dropIfExists('itemfilepads');
     }
 };

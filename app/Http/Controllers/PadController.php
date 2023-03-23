@@ -12,7 +12,7 @@ class PadController extends Controller
 {
     public function index()
     {
-        $pad=Pad::all();
+        $pad=Pad::all(); 
 
         return view('admin.pages.pad.index-pad', ['pad'=>$pad]);
     }

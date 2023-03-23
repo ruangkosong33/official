@@ -18,9 +18,9 @@ class Pad extends Model
     protected $hidden=[];
 
 
-    public function filepad()
+    public function itemfilepad()
     {
-        return $this->hasMany(Filepad::class, 'filepad_id', 'id');
+        return $this->hasMany(Filepad::class, 'pad_id', 'id');
     }
 
     public function sluggable(): array
