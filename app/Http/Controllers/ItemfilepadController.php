@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pad;
+use App\Models\Filepad;
+use App\Models\Itemfilepad;
 use Illuminate\Http\Request;
 
-class Itemfilepad extends Controller
+class ItemfilepadController extends Controller
 {
     public function index(Pad $pad)
     {
-        $itemfilepad=Pad::where('pad_id', $pad->id)-get();
+        $itemfilepad=Itemfilepad::where('pad_id', $pad->id)->get();
 
-        return view('admin.pages.itemfilepad.index-itemfilepad', ['itemfilepad'=>$itemfilepad]);
+        return view('admin.pages.itemfilepad.index-itemfilepad', ['itemfilepad'=>$itemfilepad, 'pad'=>$pad]);
     }
 
     public function create(Pad $pad)
     {
-        return view('admin.pages.item-filepad.create-item-filepad', ['pad'=>$pad]);
+        return view('admin.pages.itemfilepad.create-itemfilepad', ['pad'=>$pad]);
     }
 
     public function store(Request $request, Pad $pad)
@@ -31,5 +33,10 @@ class Itemfilepad extends Controller
         ]);
 
         return redirect()->route('itemfilepad.index', ['pad'=>$pad]);
+    }
+
+    public function edit(Itemfilepad $itemfilepad)
+    {
+        return view('admin.pages.itemfilepad.edit-itemfilepad', ['itemfilepad'=>$itemfilepad]);
     }
 }

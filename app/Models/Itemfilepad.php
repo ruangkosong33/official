@@ -20,4 +20,9 @@ class Itemfilepad extends Model
     {
         return $this->belongsTo(Pad::class, 'pad_id', 'id');
     }
+
+    public function filepad()
+    {
+        return $this->hasMany(Filepad::class, 'filepad_id', 'id');
+    }
 }

@@ -28,29 +28,16 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('filepad.store', ['pad'=>$pad, 'filepad'=>$filepad])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('itemfilepad.store', ['pad'=>$pad])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="title_filepad" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="title_itemfilepad" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_filepad" class="form-control @error('title_filepad') is-invalid @enderror"
-                                        id="title_filepad" placeholder="Sub Judul">
+                                        <input type="text" name="title_itemfilepad" class="form-control @error('title_itemfilepad') is-invalid @enderror"
+                                        id="title_itemfilepad" placeholder="Sub Judul">
 
-                                        @error('title_filepad')
-                                        <span class="invalid-feedback">{{$message}}</span>
-                                        @enderror
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="file_pad" class="col-sm-2 col-form-label">File PAD</label>
-                                    <div class="col-sm-10">
-                                        <input type="file" name="file_pad" class="form-control @error('file_pad') is-invalid @enderror"
-                                        id="file_pad">
-
-                                        @error('file_pad')
+                                        @error('title_itemfilepad')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -60,7 +47,7 @@
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('filepad.index', ['pad'=>$pad, 'filepad'=>$filepad])}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('itemfilepad.index', ['pad'=>$pad])}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->

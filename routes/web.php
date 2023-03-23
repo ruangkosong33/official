@@ -7,11 +7,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BansosController;
-use App\Http\Controllers\FilepadController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ItemfilepadController;
 use App\Http\Controllers\Profil\IssueController;
 use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
@@ -181,12 +181,12 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/pad/{id}', [PadController::class, 'destroy'])->name('pad.destroy');
 
      //Item-Filepad
-     Route::get('/pad/{pad}/itemfilepad', [FilepadController::class, 'index'])->name('filepad.index');
-     Route::get('/pad/{pad}/itemfilepad/create', [FilepadController::class, 'create'])->name('filepad.create');
-     Route::post('pad/{pad}/itemfilepad', [FilepadController::class, 'store'])->name('filepad.store');
-     Route::get('/pad/edit/{itemfilepad}', [FilepadController::class, 'edit'])->name('filepad.edit');
-     Route::put('/pad/{filepad}', [FilepadController::class, 'update'])->name('filepad.update');
-     Route::delete('/pad/{filepad}', [FilepadController::class, 'destroy'])->name('filepad.destroy');
+     Route::get('/pad/{pad}/itemfilepad', [ItemfilepadController::class, 'index'])->name('itemfilepad.index');
+     Route::get('/pad/{pad}/itemfilepad/create', [ItemfilepadController::class, 'create'])->name('itemfilepad.create');
+     Route::post('pad/{pad}/itemfilepad', [ItemfilepadController::class, 'store'])->name('itemfilepad.store');
+     Route::get('/pad/itemfilepad/edit/{itemfilepad}', [ItemfilepadController::class, 'edit'])->name('itemfilepad.edit');
+     Route::put('/pad/itemfilepad/{itemfilepad}', [ItemfilepadController::class, 'update'])->name('itemfilepad.update');
+     Route::delete('/pad/{itemfilepad}', [ItemfilepadController::class, 'destroy'])->name('itemfilepad.destroy');
 
     //Bansos
     Route::get('/bansos', [BansosController::class, 'index'])->name('bansos.index');

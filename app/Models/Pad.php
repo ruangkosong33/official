@@ -3,13 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pad extends Model
 {
     use HasFactory;
-    use Sluggable;
 
     protected $table='pads';
 
@@ -20,15 +18,6 @@ class Pad extends Model
 
     public function itemfilepad()
     {
-        return $this->hasMany(Filepad::class, 'pad_id', 'id');
-    }
-
-    public function sluggable(): array
-    {
-        return [
-            'slug' => [
-                'source' => 'title'
-            ]
-        ];
+        return $this->hasMany(itemfilepad::class, 'itemfilepad_id', 'id');
     }
 }
