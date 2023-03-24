@@ -11,7 +11,7 @@ class Itemfilepad extends Model
 
     protected $table='itemfilepads';
 
-    protected $fillable=['title_itemfilepad', 'pad_id'];
+    protected $fillable=['title_itemfilepad','file_itemfilepad', 'pad_id'];
 
     protected $hidden=[];
 
@@ -21,8 +21,4 @@ class Itemfilepad extends Model
         return $this->belongsTo(Pad::class, 'pad_id', 'id');
     }
 
-    public function filepad()
-    {
-        return $this->hasMany(Filepad::class, 'filepad_id', 'id');
-    }
 }

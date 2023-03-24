@@ -38,6 +38,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul</th>
+                                <th>File</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -46,6 +47,7 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$itemfilepads->title_itemfilepad}}</td>
+                                <td>{{$itemfilepads->file_itemfilepad}}</td>
                                 <td>
                                     <a href="{{route('itemfilepad.edit', $itemfilepads->id)}}" class="btn btn-warning btn-sm">
                                         <i class="fas fa-edit"></i>

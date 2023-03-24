@@ -44,6 +44,19 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group row">
+                                    <label for="file_itemfilepad" class="col-sm-2 col-form-label">File PAD</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="file_itemfilepad" class="form-control @error('file_itemfilepad') is-invalid @enderror"
+                                        id="file_itemfilepad">
+
+                                        @error('file_itemfilepad')
+                                        <span class="invalid-feedback">{{$message}}</span>
+                                        @enderror
+
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>

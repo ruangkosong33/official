@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('itemfilepads', function (Blueprint $table) {
             $table->id();
             $table->string('title_itemfilepad');
-            $table->foreignId('pad_id')->constrained('pads');
+            $table->string('file_itemfilepad');
+            $table->foreignId('pad_id')->constrained('pads')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
