@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('itemfilepad.update', ['itemfilepad'=>$itemfilepad])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('itemfilepad.update',['itemfilepad'=>$itemfilepad])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             @method('PUT')
                             <div class="card-body">

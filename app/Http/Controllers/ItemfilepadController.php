@@ -12,7 +12,7 @@ class ItemfilepadController extends Controller
 {
     public function index(Pad $pad)
     {
-        $itemfilepad=Itemfilepad::where('pad_id', $pad->id)->get();
+        $itemfilepad=Itemfilepad::where('pad_id',$pad->id)->get();
 
         return view('admin.pages.itemfilepad.index-itemfilepad', ['itemfilepad'=>$itemfilepad, 'pad'=>$pad]);
     }
@@ -46,14 +46,15 @@ class ItemfilepadController extends Controller
         return redirect()->route('itemfilepad.index', ['pad'=>$pad]);
     }
 
-    public function edit(Itemfilepad $itemfilepad, Pad $pad)
+    public function edit(Pad $pad, Itemfilepad $itemfilepad)
     {
-        return view('admin.pages.itemfilepad.edit-itemfilepad', ['itemfilepad'=>$itemfilepad, 'pad'=>$pad]);
+        return view('admin.pages.itemfilepad.edit-itemfilepad', ['pad'=>$pad, 'itemfilepad'=>$itemfilepad]);
     }
 
-    public function update(Request $request, Itemfilepad $itemfilepad, Pad $pad)
+    public function update(Request $request,itemfilepad $itemfilepad)
     {
-        $itemfilepad=$request->validate([
+
+        $this->validate($request,[
             'title_itemfilepad'=>'required',
             'file_itemfilepad'=>'required|mimes:pdf',
         ]);
@@ -66,14 +67,23 @@ class ItemfilepadController extends Controller
             $file->move('uploads/File-PAD/', $filename);
         }
 
-         $itemfilepad=Itemfilepad::where('itemfilepad_id', $itemfilepad)->update([
+        $itemfilepad=Itemfilepad::where('id',$itemfilepad->id);
 
+        $itemfilepad->update([
             'title_itemfilepad'=>$request->title_itemfilepad,
             'file_itemfilepad'=>$filename,
+        ]);
 
+        return redirect('admin/pages/index-itemfilepad');
 
-         ]);
+    }
 
-        return redirect()->route('itemfilepad.index', ['itemfilepad'=>$itemfilepad]);
+    public function destroy(Itemfilepad $itemfilepad)
+    {
+        $itemfilepad=Itemfilepad::where('id', $itemfilepad->id);
+
+        $itemfilepad->delete();
+
+        return back();
     }
 }

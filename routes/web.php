@@ -16,6 +16,7 @@ use App\Http\Controllers\Profil\IssueController;
 use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
 use App\Http\Controllers\Infopublik\SopController;
+use App\Http\Controllers\Infopublik\HostelController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
@@ -203,6 +204,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/video/edit/{id}', [VideoController::class, 'edit'])->name('video.edit');
     Route::put('/video/{id}', [VideoController::class, 'update'])->name('video.update');
     Route::delete('/video/{id}', [VideoController::class, 'destroy'])->name('video.destroy');
+
+    //Hostel
+    Route::get('/infopublik/hostel', [HostelController::class, 'index'])->name('hostel.index');
+    Route::get('/infopublik/hostel/create', [HostelController::class, 'create'])->name('hostel.create');
+    Route::post('/infopublik/hostel', [HostelController::class, 'store'])->name('hostel.store');
+    Route::get('/infopublik/hostel/edit/{hostel}', [HostelController::class, 'edit'])->name('hostel.edit');
+    Route::put('/infopublik/hostel/{hostel}', [HostelController::class, 'update'])->name('hostel.update');
+    Route::delete('/infopublik/hostel/{hostel}', [hostelController::class, 'destroy'])->name('hostel.destroy');
 
 
 });

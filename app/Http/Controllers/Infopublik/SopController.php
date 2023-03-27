@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Infopublik;
 
 use App\Models\Sop;
 use Illuminate\Http\Request;
-use Illuminate\Http\Controller\Controllers;
+use App\Http\Controllers\Controller;
 
 class SopController extends Controller
 {

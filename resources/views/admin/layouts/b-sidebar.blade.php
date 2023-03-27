@@ -175,20 +175,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('division.index')}}" class="nav-link">
+                <a href="{{route('hostel.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>PAD</p>
+                  <p>Asrama</p>
                 </a>
               </li>
             </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{route('employee.index')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Aset</p>
-                  </a>
-                </li>
-              </ul>
           </li>
           <li class="nav-item">
             <a href="{{route('category.index')}}" class="nav-link @yield('category.index')">

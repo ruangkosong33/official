@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function userlist(Request $request)
+    public function userlist()
     {
         $user=User::where('status', 'inactive')->orWhere('level', '2')->get();
 
