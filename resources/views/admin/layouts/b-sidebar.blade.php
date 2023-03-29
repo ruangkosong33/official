@@ -199,7 +199,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('userlist.index')}}" class="nav-link @yield('userlist.index')">
+            <a href="{{route('law.index')}}" class="nav-link @yield('law.index')">
               <i class="nav-icon fas fa-gavel"></i>
               <p>
                 Produk Hukum

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LawController;
 use App\Http\Controllers\PadController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
@@ -213,6 +214,13 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/infopublik/hostel/{hostel}', [HostelController::class, 'update'])->name('hostel.update');
     Route::delete('/infopublik/hostel/{hostel}', [hostelController::class, 'destroy'])->name('hostel.destroy');
 
+    //law
+    Route::get('/law', [LawController::class, 'index'])->name('law.index');
+    Route::get('law/create', [LawController::class, 'create'])->name('law.create');
+    Route::post('.law', [LawController::class, 'store'])->name('law.store');
+    Route::get('/law/edit/{law}', [LawController::class, 'edit'])->name('law.edit');
+    Route::put('/law/{law}', [LawController::class, 'update'])->name('law.update');
+    Route::delete('/law/{law}', [LawController::class, 'destroy'])->name('law.destroy');
 
 });
 

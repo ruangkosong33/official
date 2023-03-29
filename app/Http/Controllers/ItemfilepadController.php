@@ -67,14 +67,12 @@ class ItemfilepadController extends Controller
             $file->move('uploads/File-PAD/', $filename);
         }
 
-        $itemfilepad=Itemfilepad::where('id',$itemfilepad->id);
-
-        $itemfilepad->update([
+        $itemfilepad=Itemfilepad::where('id',$itemfilepad->id)->update([
             'title_itemfilepad'=>$request->title_itemfilepad,
             'file_itemfilepad'=>$filename,
         ]);
 
-        return redirect('admin/pages/index-itemfilepad');
+        return redirect()->route('pad.index', ['itemfilepad'=>$itemfilepad]);
 
     }
 
