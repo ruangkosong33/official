@@ -228,7 +228,8 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/law/{law}/filelaw/create,', [FilelawController::class, 'create'])->name('filelaw.create');
     Route::post('/law/{law}/filelaw', [FilelawController::class, 'store'])->name('filelaw.store');
     Route::edit('/law/filelaw/edit/{filelaw}', [FilelawController::class, 'edit'])->name('filelaw.edit');
-
+    Route::update('/law/filelaw/{filelaw}', [FilelawController::class, 'update'])->name('filelaw.update');
+    Route::delete('/law/filelaw/{filelaw}', [FilelawController::class, 'destroy'])->name('filelaw.destroy');
 
 });
 
