@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Bidang</h1>
+                    <h1 class="m-0">Produk Hukum</h1>
                 </div>
             </div>
         </div>
@@ -22,20 +22,20 @@
         <div class="container-fluid">
             <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Edit Data Asrama</h3>
+                    <h3 class="card-title">Edit Data Produk Hukum</h3>
                 </div>
 
                 <!-- Form -->
-                <form action="{{route('hostel.update', $hostel->id)}}" method="post" class="form-horizontal">
+                <form action="{{route('law.update', $law->id)}}" method="post" class="form-horizontal">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="name_division" class="form-label col-sm-2">Nama</label>
-                                <input type="text" class="form-control @error('name_hostel') is-invalid @enderror" name="name_division" placeholder="Nama Bidang"
-                                id="name_division" value="{{old('name_hostel') ?? $hostel->name_hostel}}">
+                            <label for="title_law" class="form-label col-sm-2">Kategori</label>
+                                <input type="text" class="form-control @error('title_law') is-invalid @enderror" name="title_law" placeholder="Produk Hukum"
+                                id="title_law" value="{{old('title_law') ?? $law->title_law}}">
 
-                                @error('name_division')
+                                @error('title_law')
                                 <span class="invalid-feedback">{{$message}}</span>
                                 @enderror
 
@@ -44,7 +44,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Simpan</button>
-                        <a href="{{route('hostel.index')}}" button type="submit" class="btn btn-default">Kembali</a></button>
+                        <a href="{{route('law.index')}}" button type="submit" class="btn btn-default">Kembali</a></button>
                     </div>
                 </form>
                 <!-- End Form -->

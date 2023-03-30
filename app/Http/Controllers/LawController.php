@@ -44,11 +44,12 @@ class LawController extends Controller
 
     public function update(Request $request, Law $law)
     {
-        $law=$request->validate([
+        $this->validate($request, [
             'title_law'=>'required',
         ]);
 
-        $law->update([
+        $law=Law::where('id', $law->id)->update([
+
             'title_law'=>$request->title_law,
             'slug'=>Str::slug($request->title_law),
         ]);
@@ -60,7 +61,7 @@ class LawController extends Controller
 
     public function destroy(Law $law)
     {
-        $law=Law::findOrFail($law);
+        $law=Law::where('id', $law->id);
 
         $law->delete();
 

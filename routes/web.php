@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BansosController;
+use App\Http\Controllers\FilelawController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\EmployeeController;
@@ -217,10 +218,17 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     //law
     Route::get('/law', [LawController::class, 'index'])->name('law.index');
     Route::get('law/create', [LawController::class, 'create'])->name('law.create');
-    Route::post('.law', [LawController::class, 'store'])->name('law.store');
+    Route::post('/law', [LawController::class, 'store'])->name('law.store');
     Route::get('/law/edit/{law}', [LawController::class, 'edit'])->name('law.edit');
     Route::put('/law/{law}', [LawController::class, 'update'])->name('law.update');
     Route::delete('/law/{law}', [LawController::class, 'destroy'])->name('law.destroy');
+
+    //Filelaw
+    Route::get('/law/{law}/filewlaw', [FilelawController::class, 'index'])->name('filelaw.index');
+    Route::get('/law/{law}/filelaw/create,', [FilelawController::class, 'create'])->name('filelaw.create');
+    Route::post('/law/{law}/filelaw', [FilelawController::class, 'store'])->name('filelaw.store');
+    Route::edit('/law/filelaw/edit/{filelaw}', [FilelawController::class, 'edit'])->name('filelaw.edit');
+
 
 });
 
