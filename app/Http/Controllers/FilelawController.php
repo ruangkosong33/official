@@ -6,17 +6,18 @@ use App\Models\Law;
 use App\Models\Filelaw;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FilelawController extends Controller
 {
     public function index(Law $law)
     {
-        $filelaw=Law::where('id',$law->id)->get();
+        $filelaw=filelaw::where('law_id',$law->id)->get();
 
-        return view('admin.pages.filelaw.index-filelaw', ['filelaw'=>$filelaw]);
+        return view('admin.pages.filelaw.index-filelaw', ['law'=>$law, 'filelaw'=>$filelaw]);
     }
 
-    public function create(law $law)
+    public function create(Law $law)
     {
         return view('admin.pages.filelaw.create-filelaw', ['law'=>$law]);
     }
@@ -25,21 +26,21 @@ class FilelawController extends Controller
     {
         $filelaw=$request->validate([
             'title_filelaw'=>'required',
-            'filelaw'=>'requried|mimes:pdf|max:3000',
+            'file_filelaw'=>'required|mimes:pdf|max:3000',
         ]);
 
-        if($request->file('filelaw'))
+        if($request->file('file_filelaw'))
         {
-            $file=$request->file('filelaw');
+            $file=$request->file('file_filelaw');
             $extension=$file->getClientOriginalName();
             $filename=$extension;
-            $file->move('/uploads/Produk-Hukum', $filename);
+            $file->move('uploads/Produk-Hukum', $filename);
         }
 
         $filelaw=Filelaw::create([
             'title_filelaw'=>$request->title_filelaw,
             'slug'=>Str::slug($request->title_filelaw),
-            'filelaw'=>$filename,
+            'file_filelaw'=>$filename,
             'law_id'=>$law->id,
         ]);
 

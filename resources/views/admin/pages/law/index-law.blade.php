@@ -60,6 +60,9 @@
                                         </button>
                                     </form>
                                     <!-- End Form -->
+                                    <a href="{{route('filelaw.index', $laws)}}" class="btn btn-info btn-sm">
+                                        <i class="fas fa-list"></i>
+                                    </a>
                                 </td>
                             </tr>
                             @endforeach

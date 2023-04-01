@@ -11,10 +11,10 @@ class Filelaw extends Model
 
     protected $table='filelaws';
 
-    protected $fillable=['title_file_law', 'slug', 'file_filelaw', 'law_id'];
+    protected $fillable=['title_filelaw', 'slug', 'file_filelaw', 'law_id'];
 
     protected $hidden=[];
-    
+
 
     public function law()
     {

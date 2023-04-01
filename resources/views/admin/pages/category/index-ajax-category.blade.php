@@ -6,48 +6,53 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap4.min.css">
 @endpush
 
-
+<!-- Wrapper -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+
+    <!--Content Header-->
     <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Kategori</h1>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main Content -->
-    <section class="content">
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Data Kategori</h3>
-            <div class="card-tools">
-              <ul class="nav nav-pills ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="{{route('category.create')}}"><i class="fas fa-plus"></i></a>
-                </li>
-              </ul>
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Kategori</h1>
+                </div>
             </div>
-          </div>
+        </div>
+    </div>
+    <!-- End Content Header -->
 
-         <div class="card-body">
-            <table class="table table-bordered table-striped" id="table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Kategori</th>
-                        <th>Slug</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-            </table>
-         </div>
+    <!-- Section Content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Data Kategori</h3>
+                    <div class="card-tools">
+                    <ul class="nav nav-pills ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{route('category.create')}}"><i class="fas fa-plus"></i></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <table class="table table-bordered table-striped" id="myTable">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Kategori</th>
+                                <th>Slug</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                
+            </div>
         </div>
     </section>
+    <!-- End Section Content -->
 
     @push('js-datatable')
         <!-- DataTables  & Plugins -->
@@ -66,7 +71,7 @@
     <script type="text/javascript">
         $(document).ready(function()
         {
-           $('#table').DataTable({
+           $('#myTable').DataTable({
                 processing :true,
                 serverside : true,
                 ajax : "{{route('category.index')}}",
@@ -81,6 +86,8 @@
            });
         });
     </script>
+
 </div>
+<!-- End Wrapper -->
 
 @endsection

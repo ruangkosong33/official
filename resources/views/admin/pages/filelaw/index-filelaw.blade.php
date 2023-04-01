@@ -1,7 +1,6 @@
 @extends('admin.layouts.b-main')
 
 @section('content')
-@section('hostel', 'active')
 
 <!-- Wrapper -->
 <div class="content-wrapper">
@@ -11,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h3 class="m-0">File Produk Hukum</h3>
+                    <h3 class="m-0">File</h3>
                 </div>
             </div>
         </div>
@@ -23,11 +22,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data File Produk Huku,</h3>
+                    <h3 class="card-title">Data File</h3>
                     <div class="card-tools">
                         <ul class="nav nav-pills ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link active mr-2" href="{{route('filelaw.create')}}"><i class="fas fa-plus"></i></a>
+                                <a class="nav-link active mr-2" href="{{route('filelaw.create', ['law'=>$law])}}"><i class="fas fa-plus"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -48,13 +47,17 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$filelaws->title_filelaw}}</td>
-                                <td>{{$filelaws->file_filelaw}}</td>
+                                <td>
+                                    <a href="uploads/Produk-Hukum/{{$filelaws->file_filelaw}}">
+                                        <button class="btn btn-info btn-sm" type="button">Download</button>
+                                    </a>
+                                </td>
                                 <td>
                                     <a href="{{route('filelaw.edit', $filelaws->id)}}" class="btn btn-warning btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Form-->
-                                    <form method="post" action="{{route('hostel.destroy', $hostels->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('filelaw.destroy', $filelaws->id)}}" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-sm">

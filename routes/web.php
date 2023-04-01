@@ -17,7 +17,6 @@ use App\Http\Controllers\ItemfilepadController;
 use App\Http\Controllers\Profil\IssueController;
 use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
-use App\Http\Controllers\Infopublik\SopController;
 use App\Http\Controllers\Infopublik\HostelController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
@@ -191,6 +190,22 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
      Route::put('/pad/itemfilepad/{itemfilepad}/', [ItemfilepadController::class, 'update'])->name('itemfilepad.update');
      Route::delete('/pad/itemfilepad/{itemfilepad}', [ItemfilepadController::class, 'destroy'])->name('itemfilepad.destroy');
 
+    //law
+    Route::get('/law', [LawController::class, 'index'])->name('law.index');
+    Route::get('law/create', [LawController::class, 'create'])->name('law.create');
+    Route::post('/law', [LawController::class, 'store'])->name('law.store');
+    Route::get('/law/edit/{law}', [LawController::class, 'edit'])->name('law.edit');
+    Route::put('/law/{law}', [LawController::class, 'update'])->name('law.update');
+    Route::delete('/law/{law}', [LawController::class, 'destroy'])->name('law.destroy');
+
+    //Filelaw
+    Route::get('/law/{law}/filelaw', [FilelawController::class, 'index'])->name('filelaw.index');
+    Route::get('/law/{law}/filelaw/create', [FilelawController::class, 'create'])->name('filelaw.create');
+    Route::post('/law/{law}/filelaw', [FilelawController::class, 'store'])->name('filelaw.store');
+    Route::get('/law/filelaw/edit/{filelaw}', [FilelawController::class, 'edit'])->name('filelaw.edit');
+    Route::put('/law/filelaw/{filelaw}', [FilelawController::class, 'update'])->name('filelaw.update');
+    Route::delete('/law/filelaw/{filelaw}', [FilelawController::class, 'destroy'])->name('filelaw.destroy');
+
     //Bansos
     Route::get('/bansos', [BansosController::class, 'index'])->name('bansos.index');
     Route::get('/bansos/create', [BansosController::class, 'create'])->name('bansos.create');
@@ -215,21 +230,6 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/infopublik/hostel/{hostel}', [HostelController::class, 'update'])->name('hostel.update');
     Route::delete('/infopublik/hostel/{hostel}', [hostelController::class, 'destroy'])->name('hostel.destroy');
 
-    //law
-    Route::get('/law', [LawController::class, 'index'])->name('law.index');
-    Route::get('law/create', [LawController::class, 'create'])->name('law.create');
-    Route::post('/law', [LawController::class, 'store'])->name('law.store');
-    Route::get('/law/edit/{law}', [LawController::class, 'edit'])->name('law.edit');
-    Route::put('/law/{law}', [LawController::class, 'update'])->name('law.update');
-    Route::delete('/law/{law}', [LawController::class, 'destroy'])->name('law.destroy');
-
-    //Filelaw
-    Route::get('/law/{law}/filewlaw', [FilelawController::class, 'index'])->name('filelaw.index');
-    Route::get('/law/{law}/filelaw/create,', [FilelawController::class, 'create'])->name('filelaw.create');
-    Route::post('/law/{law}/filelaw', [FilelawController::class, 'store'])->name('filelaw.store');
-    Route::edit('/law/filelaw/edit/{filelaw}', [FilelawController::class, 'edit'])->name('filelaw.edit');
-    Route::update('/law/filelaw/{filelaw}', [FilelawController::class, 'update'])->name('filelaw.update');
-    Route::delete('/law/filelaw/{filelaw}', [FilelawController::class, 'destroy'])->name('filelaw.destroy');
 
 });
 

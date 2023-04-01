@@ -6,6 +6,7 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Yajra\DataTables\Facades\DataTables;
 
 
 class CategoryController extends Controller
@@ -22,24 +23,36 @@ class CategoryController extends Controller
         //     ->make(true);
         // }
 
-        // if($request->ajax())
-        // {
-        //     // return Datatable()->of(Category::select('*'))
-        //     $category=Category::orderBy('id', 'asc');
-        //     return Datatables()->of($category)
-        //         ->addIndexColumn()
-        //         ->addColumn('action', function($row)
-        //         {
-        //             $btn = '<a href="javascript:void(0)" class="edit btn btn-primary btn-sm">View</a>';
-        //             return $btn;
-        //         })
-        //         ->rawColumns(['action'])
-        //         ->make(true);
-        // }
+        if($request->ajax())
+        {
+            // return Datatable()->of(Category::select('*'))
+            $category=Category::orderBy('id', 'asc');
+            return Datatables()->of($category)
+                ->addIndexColumn()
+                ->addColumn('action', function($row)
+                {
+                    $btn = '<a href="javascript:void(0)" data-id="{{$category->id}}" class="edit btn btn-warning btn-sm "><i class="fas fa-edit"></i></a>';
+                    $btn = $btn. '<a href="javascript:void(0)" class="destroy btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></a>';
 
-        $category=Category::all();
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
 
-        return view('admin.pages.category.index-category', ['category'=>$category]);
+        // $category=Category::all();
+
+        // $category=Category::orderBy('title_category', 'asc');
+
+        // return DataTables::of($category)
+        //             ->addIndexColumn()
+        //             ->addColumn('action', function($category)
+        //             {
+        //                 return view('admin.pages.category.tombol')->with('category',$category);
+        //             })
+        //             ->make(true);
+
+        // return view('admin.pages.category.index-ajax-category');
     }
 
     public function create()
