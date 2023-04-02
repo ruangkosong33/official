@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bansos;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BansosController extends Controller
 {
@@ -23,14 +25,25 @@ class BansosController extends Controller
     {
         $bansos=$request->validate([
             'title_bansos'=>'required',
-            'file_bansos'=>'required|mimes:doc,docx,pdf,xls|max:3000',
+            'file_bansos'=>'required|mimes:pdf|max:3000',
         ]);
 
-        $bansos=Bansos::create([
+        if($request->file('file_bansos'))
+        {
+            $file=$request->file('file_bansos');
+            $extension=$file->getClientOriginalName();
+            $bansoss=$extension;
+            $file->move('uploads/File-Bansos', $bansoss);
+        }
 
+        $bansos=Bansos::create([
+            'title_bansos'=>$request->title_bansos,
+            'slug'=>Str::slug($request->title_bansos),
+            'file_bansos'=>$filebansoss,
         ]);
 
         Alert::success('Berhasil', 'Data Telah Di Simpan');
+
         return redirect()->route('bansos.index');
     }
 
@@ -44,10 +57,27 @@ class BansosController extends Controller
     public function update(Request $request, $id)
     {
         $bansos=$request->validate([
-            
+            'title_bansos'=>'required',
+            'file_bansos'=>'required|mimes:pdf|max:3000',
         ]);
 
-        Alert::success();
+        if($request->file('file_bansos'))
+        {
+            $file=$request->file('file_bansos');
+            $extension=$file->getClientOriginalName();
+            $bansoss=$extension;
+            $file->move('uploads/File-Bansos', $bansoss);
+        }
+
+        $bansos=Bansos::findOrFail($id);
+
+        $bansos->update([
+            'title_bansos'=>$request->title_bansos,
+            'slug'=>Str::slug($request->title_bansos),
+            'file_bansos'=>$filebansoss,
+        ]);
+
+        Alert::success('Berhasil', 'Data Telah Di Update');
 
         return redirect()->route('bansos.index');
     }
@@ -58,7 +88,7 @@ class BansosController extends Controller
 
         $bansos->delete();
 
-        Alert::success();
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->route('bansos.index');
     }

@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Infopublik;
+namespace App\Http\Controllers;
 
 use App\Models\Sop;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SopController extends Controller
 {
     public function index()
     {
-        $sop=Sop::latest()->paginate(7);
+        $sop=Sop::all();
 
-        return view('admin.pages.sop.index-sop');
+        return view('admin.pages.sop.index-sop', ['sop'=>$sop]);
     }
 
     public function create()
@@ -24,22 +25,14 @@ class SopController extends Controller
     {
         $sop=$request->validate([
             'title_sop'=>'required',
-            'description_sop'=>'required',
-            'image_sop'=>'required|mimes:jpeg,jpg,svg,png|max"3000',
-            'file_sop'=>'required|mimes:pdf,doc,xls',
         ]);
 
-        if($request->file('image_sop'))
-        {
-            $file=$request->file('image_sop');
-            $extension=$file->getClientOriginalName();
-        }
         $sop=Sop::create([
             'title_sop'=>$request->title_sop,
             'slug'=>Str::slug($request->title_sop),
-            'description_sop'=>$request->description_sop,
-
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
 
         return redirect()->route('sop.index');
     }
@@ -54,19 +47,17 @@ class SopController extends Controller
     public function update(Request $request, $id)
     {
         $sop=$request->validate([
-            'title_sop'=>$request->title_sop,
-            'slug'=>Str::slug($request->title_sop),
-            'description_sop'=>$request->description_sop,
-
+            'title_sop'=>'required',
         ]);
 
         $sop=Sop::findOrFail($id);
 
-        if($request->file('image_sop'))
-        {
-            $file=$request->file('image_sop');
-            $extension=$file->getClientOriginalName();
-        }
+        $sop->update([
+            'title_sop'=>$request->title_sop,
+            'slug'=>Str::slug($request->title_sop),
+        ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
 
         return redirect()->route('sop.index');
     }
@@ -76,6 +67,8 @@ class SopController extends Controller
         $sop=Sop::findOrFail($id);
 
         $sop->delete();
+
+        Alert::success('Berhasil','Data Berhasil Di Hapus');
 
         return redirect()->route('sop.index');
     }

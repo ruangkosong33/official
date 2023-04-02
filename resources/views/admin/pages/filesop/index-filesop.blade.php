@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">SOP</h1>
+                    <h1 class="m-0">File SOP</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data SOP</h3>
+                    <h3 class="card-title">Data File SOP</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('sop.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('category.create', ['sop'=$sop])}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -40,28 +40,29 @@
                     <table class="table table-bordered table-striped" id="myTable">
                         <thead>
                             <tr>
-                                <th>Nomor</th>
-                                <th>Nama</th>
+                                <th>Nama File</th>
+                                <th>File</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($sop as $key=>$sops)
+                            @foreach ($filesop as $filesops)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$sops->title_sop}}</td>
+                                <td>{{$filesops->name_filesop}}</td>
+                                <td>{{$filesops->file_sop}}</td>
                                 <td>
-                                    <a href="{{route('sop.edit', $sops->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('filesop.edit', $filesops->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('sop.destroy', $sops->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('filesop.destroy', $filesops->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="{{route('filesop.index', $sops)}}" class="btn btn-info btn-sm">
+                                    <a href="#" class="btn btn-info btn-sm">
                                       <i class="fas fa-eye"></i>
                                     </a>
                                 </td>

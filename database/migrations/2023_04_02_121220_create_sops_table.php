@@ -15,9 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('title_sop');
             $table->string('slug');
-            $table->string('description_sop')->nullable();
-            $table->string('image_sop')->nullable();
-            $table->string('file_sop')->nullable();
             $table->timestamps();
         });
     }

@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawController;
 use App\Http\Controllers\PadController;
+use App\Http\Controllers\SopController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BansosController;
 use App\Http\Controllers\FilelawController;
+use App\Http\Controllers\FilesopController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\EmployeeController;
@@ -173,6 +175,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/sop/edit/{id}', [SopController::class, 'edit'])->name('sop.edit');
     Route::put('/sop/{id}', [SopController::class, 'update'])->name('sop.update');
     Route::delete('/sop/{id}', [SopController::class, 'destroy'])->name('sop.destroy');
+
+    //File SOP
+    Route::get('/sop/{sop}/filesop', [FilesopController::class, 'index'])->name('filesop.index');
+    Route::get('/sop/{sop}/filesop/create', [FilesopController::class, 'create'])->name('filesop.create');
+    Route::post('/sop/{sop}/filesop', [FilesopController::class, 'store'])->name('filesop.store');
+    Route::get('/sop/filesop/edit/{filesop}', [FilesopController::class, 'edit'])->name('filesop.edit');
+    Route::put('/sop/filesop/{filesop}', [FilesopController::class, 'update'])->name('filesop.update');
+    Route::delete('/sop/filesop/{filesop}', [FilesopController::class, 'destroy'])->name('filesop.destroy');
 
     //PAD
     Route::get('/pad', [PadController::class, 'index'])->name('pad.index');

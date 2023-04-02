@@ -11,7 +11,13 @@ class Sop extends Model
 
     protected $table='sops';
 
-    protected $fillable=['title_sop', 'slug', 'description_sop', 'image_sop', 'file_sop'];
+    protected $fillable=['title_sop', 'slug'];
 
     protected $hidden=[];
+
+
+    public function filesop()
+    {
+        return $this->hasMany(Filesop::class, 'filesop_id', 'id');
+    }
 }

@@ -23,24 +23,24 @@ class CategoryController extends Controller
         //     ->make(true);
         // }
 
-        if($request->ajax())
-        {
-            // return Datatable()->of(Category::select('*'))
-            $category=Category::orderBy('id', 'asc');
-            return Datatables()->of($category)
-                ->addIndexColumn()
-                ->addColumn('action', function($row)
-                {
-                    $btn = '<a href="javascript:void(0)" data-id="{{$category->id}}" class="edit btn btn-warning btn-sm "><i class="fas fa-edit"></i></a>';
-                    $btn = $btn. '<a href="javascript:void(0)" class="destroy btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></a>';
+        // if($request->ajax())
+        // {
+        //     // return Datatable()->of(Category::select('*'))
+        //     $category=Category::orderBy('id', 'asc');
+        //     return Datatables()->of($category)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($row)
+        //         {
+        //             $btn = '<a href="" class="edit btn btn-warning btn-sm "><i class="fas fa-edit"></i></a>';
+        //             $btn = $btn. '<a href="javascript:void(0)" class="destroy btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></a>';
 
-                    return $btn;
-                })
-                ->rawColumns(['action'])
-                ->make(true);
-        }
+        //             return $btn;
+        //         })
+        //         ->rawColumns(['action'])
+        //         ->make(true);
+        // }
 
-        // $category=Category::all();
+        $category=Category::all();
 
         // $category=Category::orderBy('title_category', 'asc');
 
@@ -52,7 +52,7 @@ class CategoryController extends Controller
         //             })
         //             ->make(true);
 
-        // return view('admin.pages.category.index-ajax-category');
+        return view('admin.pages.category.index-category', ['category'=>$category]);
     }
 
     public function create()

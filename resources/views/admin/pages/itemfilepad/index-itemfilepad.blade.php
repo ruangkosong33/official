@@ -43,9 +43,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($itemfilepad as $itemfilepads)
+                            @foreach ($itemfilepad as $key=>$itemfilepads)
                             <tr>
-                                <td>{{$loop->iteration}}</td>
+                                <td>{{$key+1}}</td>
                                 <td>{{$itemfilepads->title_itemfilepad}}</td>
                                 <td>{{$itemfilepads->file_itemfilepad}}</td>
                                 <td>

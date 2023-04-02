@@ -44,9 +44,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($hostel as $hostels)
+                            @foreach ($hostel as $key=>$hostels)
                             <tr>
-                                <td>{{$loop->iteration}}</td>
+                                <td>{{$key+1}}</td>
                                 <td>{{$hostels->name_hostel}}</td>
                                 <td>{{$hostels->address_hostel}}</td>
                                 <td>

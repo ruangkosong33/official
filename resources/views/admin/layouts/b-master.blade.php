@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="{{asset('rk88/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('rk88/plugins/summernote/summernote-bs4.min.css')}}">
-
+  
   @stack('css')
 
 </head>
