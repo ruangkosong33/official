@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Infopublik;
 
 use App\Models\Apbd;
+use App\Models\City;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\Controller;
 
 class ApbdController extends Controller
 {
@@ -61,7 +63,7 @@ class ApbdController extends Controller
             'year'=>$request->year,
         ]);
 
-        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
 
         return redirect()->route('apbd.index');
     }

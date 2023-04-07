@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('periode');
             $table->string('slug');
-            $table->integer('year');
+            $table->string('year');
             $table->timestamps();
         });
     }

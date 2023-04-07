@@ -5,6 +5,7 @@ use App\Http\Controllers\LawController;
 use App\Http\Controllers\PadController;
 use App\Http\Controllers\SopController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CityController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BannerController;
@@ -20,6 +21,7 @@ use App\Http\Controllers\Profil\IssueController;
 use App\Http\Controllers\TransparencyController;
 use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
+use App\Http\Controllers\Infopublik\ApbdController;
 use App\Http\Controllers\FiletransparencyController;
 use App\Http\Controllers\Infopublik\HostelController;
 use App\Http\Controllers\Profil\ServiceorderController;
@@ -256,9 +258,23 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/transparency/create', [FiletransparencyController::class, 'create'])->name('tranparency.create');
     Route::post('/transparency', [FiletransparencyController::class, 'store'])->name('transparency.store');
     Route::get('/transparency/edit/{id}', [FiletransparencyController::class, 'edit'])->name('transparency.edit');
-    Route::put('/transparency/{id}', [FiletransparencyController::class, 'update'])->name('transparency.update');
     Route::delete('/transparency/{id}', [FiletransparencyController::class, 'destroy'])->name('transparency.destroy');
 
+    //APBD
+    Route::get('/infopublik/apbd', [ApbdController::class, 'index'])->name('apbd.index');
+    Route::get('/infopublik/apbd/create', [ApbdController::class, 'create'])->name('apbd.create');
+    Route::post('/infopublik/apbd', [ApbdController::class, 'store'])->name('apbd.store');
+    Route::get('/infopublik/apbd/edit/{id}', [ApbdController::class, 'edit'])->name('apbd.edit');
+    Route::put('/infopublik/apbd/{id}', [ApbdController::class, 'update'])->name('apbd.update');
+    Route::delete('/infopublik/apbd/{id}', [ApbdController::class, 'destroy'])->name('apbd.destroy');
+
+    //City
+    Route::get('/city', [CityController::class, 'index'])->name('city.index');
+    Route::get('/city/create', [CityController::class, 'create'])->name('city.create');
+    Route::post('/city', [CityController::class, 'store'])->name('city.store');
+    Route::get('/city/edit/{id}', [CityController::class, 'edit'])->name('city.edit');
+    Route::put('/city/{id}', [CityController::class, 'update'])->name('city.update');
+    Route::delete('/city/{id}', [CityController::class, 'destroy'])->name('city.destroy');
 
 });
 
