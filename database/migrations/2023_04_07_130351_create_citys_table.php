@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('citys', function (Blueprint $table) {
             $table->id();
             $table->string('name_city');
-            $table->slug('slug');
+            $table->string('slug');
             $table->string('file_apbd');
-            $table->foreingId('apbd_id')->constrained('apbds')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('apbd_id')->constrained('apbds')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
