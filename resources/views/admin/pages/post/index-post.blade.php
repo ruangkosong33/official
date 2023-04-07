@@ -3,6 +3,10 @@
 @section('content')
 @section('post.index', 'active')
 
+@push('css')
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap4.min.css">
+@endpush
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -32,7 +36,7 @@
                 </div>
 
                 <!-- /.card-header -->
-                <div class="card-body p-0">
+                <div class="card-body">
                     <table class="table table-bordered table-striped" id="myTable">
                         <thead>
                             <tr>
@@ -48,7 +52,7 @@
                         <tbody>
                             @foreach ($post as $key=>$posts)
                             <tr>
-                                <td>{{$loop->iteration}}</td>
+                                <td>{{$key+1}}</td>
                                 <td>{{Str::limit($posts->title_post, '15', '....')}}</td>
                                 <td><img src="{{asset('image-post/'. $posts->image_post)}}" width="80px"></td>
                                 <td>{{$posts->category->title_category}}</td>
@@ -78,6 +82,28 @@
         </div>
     </section>
     <!-- /.col -->
+
+    @push('js-datatable')
+        <!-- DataTables  & Plugins -->
+        <script src="{{asset('rk88/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+        <script src="{{asset('rk88/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+        <script src="{{asset('rk88/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+        <script src="{{asset('rk88/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+        <script src="{{asset('rk88/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+        <script src="{{asset('rk88/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+    @endpush
+
+    <script src=" https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src=" https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src=" https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+           $('#myTable').DataTable();
+        });
+    </script>
+
 </div>
 
 @endsection

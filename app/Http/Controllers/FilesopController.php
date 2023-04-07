@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sop;
 use App\Models\Filesop;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\File;
 
 class FilesopController extends Controller
 {
@@ -12,12 +15,12 @@ class FilesopController extends Controller
     {
         $filesop=Filesop::where('sop_id', $sop->id)->get();
 
-        return view('admin.pages.filesop.index-filesop', ['filesop'=>$filesop]);
+        return view('admin.pages.filesop.index-filesop', ['sop'=>$sop, 'filesop'=>$filesop]);
     }
 
     public function create(Sop $sop)
     {
-        return view('admin.pages.filesop.create-filesop', ['pad'=>$pad]);
+        return view('admin.pages.filesop.create-filesop', ['sop'=>$sop]);
     }
 
     public function store(Request $request, Sop $sop)
@@ -32,19 +35,19 @@ class FilesopController extends Controller
             $file=$request->file('file_sop');
             $extension=$file->getClientOriginalName();
             $filesops=$extension;
-            $file->move('uplaods/file-sop', $filesops);
+            $file->move('uploads/file-sop', $filesops);
         }
 
         $filesop=Filesop::create([
-            'name_sop'=>$request->name_filesop,
+            'name_filesop'=>$request->name_filesop,
             'slug'=>Str::slug($request->name_filesop),
             'file_sop'=>$filesops,
-            'pad_id'=>$pad->id,
+            'sop_id'=>$sop->id,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
 
-        return redirect()->route('filesop.index', ['pad'=>$pad]);
+        return redirect()->route('filesop.index', ['sop'=>$sop]);
     }
 
     public function edit(Filesop $filesop)
@@ -69,7 +72,7 @@ class FilesopController extends Controller
         }
 
         filesop::where('id', $filesop->id)->update([
-            'title_filesop'=>$request->name_filesop,
+            'name_filesop'=>$request->name_filesop,
             'slug'=>Str::slug($request->name_filesop),
             'file_sop'=>$filesops,
         ]);
@@ -90,4 +93,13 @@ class FilesopController extends Controller
         return redirect()->back();
     }
 
+    public function download(Filesop $filesop)
+    {
+        $filepath=public_path("uploads/file-sop/{$filesop->file_sop}");
+
+        return response()->download($filepath);
+
+    }
+
 }
+

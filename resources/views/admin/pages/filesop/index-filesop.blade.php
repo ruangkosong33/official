@@ -30,7 +30,7 @@
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('category.create', ['sop'=$sop])}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('filesop.create', ['sop'=>$sop])}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -40,17 +40,18 @@
                     <table class="table table-bordered table-striped" id="myTable">
                         <thead>
                             <tr>
-                                <th>Nama File</th>
+                                <th>No</th>
+                                <th>Nama</th>
                                 <th>File</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($filesop as $filesops)
+                            @foreach ($filesop as $key=>$filesops)
                               <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$filesops->name_filesop}}</td>
-                                <td>{{$filesops->file_sop}}</td>
+                                <td><a href="{{route('filesop.download', $filesops->id)}}">{{$filesops->file_sop}}</td>
                                 <td>
                                     <a href="{{route('filesop.edit', $filesops->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
@@ -62,9 +63,6 @@
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="#" class="btn btn-info btn-sm">
-                                      <i class="fas fa-eye"></i>
-                                    </a>
                                 </td>
                               </tr>
                             @endforeach

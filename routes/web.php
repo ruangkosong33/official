@@ -17,8 +17,10 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemfilepadController;
 use App\Http\Controllers\Profil\IssueController;
+use App\Http\Controllers\TransparencyController;
 use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
+use App\Http\Controllers\FiletransparencyController;
 use App\Http\Controllers\Infopublik\HostelController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
@@ -183,6 +185,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/sop/filesop/edit/{filesop}', [FilesopController::class, 'edit'])->name('filesop.edit');
     Route::put('/sop/filesop/{filesop}', [FilesopController::class, 'update'])->name('filesop.update');
     Route::delete('/sop/filesop/{filesop}', [FilesopController::class, 'destroy'])->name('filesop.destroy');
+    Route::get('/sop/filesop/{filesop}', [FilesopController::class, 'download'])->name('filesop.download');
 
     //PAD
     Route::get('/pad', [PadController::class, 'index'])->name('pad.index');
@@ -224,7 +227,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/bansos/{id}', [BansosController::class, 'update'])->name('bansos.update');
     Route::delete('/bansos/{id}', [BansosController::class, 'destroy'])->name('bansos.destroy');
 
-    //VIDEO
+    //Video
     Route::get('/video', [VideoController::class, 'index'])->name('video.index');
     Route::get('/video/create', [VideoController::class, 'create'])->name('video.create');
     Route::post('/video' , [VideoController::class, 'store'])->name('video.store');
@@ -239,6 +242,22 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/infopublik/hostel/edit/{hostel}', [HostelController::class, 'edit'])->name('hostel.edit');
     Route::put('/infopublik/hostel/{hostel}', [HostelController::class, 'update'])->name('hostel.update');
     Route::delete('/infopublik/hostel/{hostel}', [hostelController::class, 'destroy'])->name('hostel.destroy');
+
+    //Transparency
+    Route::get('/transparency', [TransparencyController::class, 'index'])->name('transparency.index');
+    Route::get('/transparency/create', [TransparencyController::class, 'create'])->name('tranparency.create');
+    Route::post('/transparency', [TransparencyController::class, 'store'])->name('transparency.store');
+    Route::get('/transparency/edit/{id}', [TransparencyController::class, 'edit'])->name('transparency.edit');
+    Route::put('/transparency/{id}', [TransparencyController::class, 'update'])->name('transparency.update');
+    Route::delete('/transparency/{id}', [TransparencyController::class, 'destroy'])->name('transparency.destroy');
+
+    //File Transparency
+    Route::get('/transparency', [FiletransparencyController::class, 'index'])->name('transparency.index');
+    Route::get('/transparency/create', [FiletransparencyController::class, 'create'])->name('tranparency.create');
+    Route::post('/transparency', [FiletransparencyController::class, 'store'])->name('transparency.store');
+    Route::get('/transparency/edit/{id}', [FiletransparencyController::class, 'edit'])->name('transparency.edit');
+    Route::put('/transparency/{id}', [FiletransparencyController::class, 'update'])->name('transparency.update');
+    Route::delete('/transparency/{id}', [FiletransparencyController::class, 'destroy'])->name('transparency.destroy');
 
 
 });
