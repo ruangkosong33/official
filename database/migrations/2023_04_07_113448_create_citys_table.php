@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('leaders', function (Blueprint $table) {
+        Schema::create('citys', function (Blueprint $table) {
             $table->id();
-            $table->string('name_leader');
-            $table->string('slug');
-            $table->integer('periode');
-            $table->string('image_leader');
+            $table->string('name_city');
+            $table->slug('slug');
+            $table->string('file_apbd');
+            $table->foreingId('apbd_id')->constrained('apbds')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('leaders');
+        Schema::dropIfExists('citys');
     }
 };

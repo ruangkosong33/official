@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apbd;
+use App\Models\City;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CityController extends Controller
 {
     public function index()
     {
-        $city=City::with('apbd')->get();
+        $city=City::with('apbd')->where('apbd_id', $apbd->id)->get();
 
         return view('admin.pages.city.index-city', ['city'=>$city, 'apbd'=>$apbd]);
     }
@@ -17,7 +21,7 @@ class CityController extends Controller
     {
         $apbd=Apbd::all();
 
-        return view('admin.pages.city.create-city', ['city'=>$city]);
+        return view('admin.pages.city.create-city');
     }
 
     public function store(Request $request)
@@ -37,6 +41,9 @@ class CityController extends Controller
 
         $city=City::create([
             'name_city'=>$request->name_city,
+            'slug'=>Str::slug($request->name_city),
+            'file_apbd'=>$citys,
+            'apbd_id'=>$apbd->id,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
@@ -50,7 +57,7 @@ class CityController extends Controller
 
         $city=City::findOrFail($id);
 
-        return view('admin.pages.city.edit-city', ['apbd'=>$apbd]);
+        return view('admin.pages.city.edit-city', ['city'=>$city, 'apbd'=>$apbd]);
     }
 
     public function update(Request $request, $id)
@@ -72,10 +79,22 @@ class CityController extends Controller
 
         $city->update([
             'name_city'=>$request->name_city,
+            'file_apbd'=>$citys,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Update');
 
         return redirect()->route('city.index');
+    }
+
+    public function destroy($id)
+    {
+        $city=City::findOrFail($id);
+
+        $city->delete();
+
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
+
+        return redirect()->back();
     }
 }

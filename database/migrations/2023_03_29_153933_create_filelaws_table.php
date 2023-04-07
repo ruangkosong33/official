@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title_filelaw');
             $table->string('slug');
             $table->string('file_filelaw');
-            $table->foreignId('law_id')->constrained('laws');
+            $table->foreignId('law_id')->constrained('laws')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

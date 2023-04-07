@@ -14,4 +14,10 @@ class Apbd extends Model
     protected $fillable=['periode', 'slug', 'year'];
 
     protected $hidden=[];
+
+
+    public function city()
+    {
+        return $this->hasMany(City::class, 'city_id', 'id');
+    }
 }

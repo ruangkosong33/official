@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apbd;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ApbdController extends Controller
 {
@@ -71,7 +74,7 @@ class ApbdController extends Controller
 
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
-        Return redirect()->route('apbd.index');
+        return redirect()->route('apbd.index');
     }
 
 }
