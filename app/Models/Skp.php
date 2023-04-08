@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lppd extends Model
+class Skp extends Model
 {
     use HasFactory;
 
-    protected $table='lppds';
+    protected $table='skps';
 
-    protected $fillable=['title_lppd', 'slug', 'year', 'file_lppd'];
+    protected $fillable=['title_skp', 'slug', 'file_skp'];
 
     protected $hidden=[];
 }

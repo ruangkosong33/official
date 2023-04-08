@@ -181,19 +181,44 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bezier-curve"></i>
+              <p>
+                Integrasi Data
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('apbd.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>APBD</p>
+                </a>
+              </li>
+            </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('sop.index')}}" class="nav-link">
+                  <a href="{{route('renja.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>SOP</p>
+                    <p>Rencana Kerja</p>
                   </a>
                 </li>
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('apbd.index')}}" class="nav-link">
+                  <a href="{{route('renstra.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>APBD</p>
+                    <p>Rencana Strategi</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('sop.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SOP</p>
                   </a>
                 </li>
             </ul>

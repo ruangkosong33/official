@@ -20,8 +20,8 @@ use App\Http\Controllers\Profil\IssueController;
 use App\Http\Controllers\TransparencyController;
 use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
-use App\Http\Controllers\Infopublik\ApbdController;
-use App\Http\Controllers\Infopublik\CityController;
+use App\Http\Controllers\Integrasi\ApbdController;
+use App\Http\Controllers\Integrasi\CityController;
 use App\Http\Controllers\FiletransparencyController;
 use App\Http\Controllers\Infopublik\HostelController;
 use App\Http\Controllers\Profil\ServiceorderController;
@@ -262,20 +262,20 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/transparency/{id}', [FiletransparencyController::class, 'destroy'])->name('transparency.destroy');
 
     //APBD
-    Route::get('/infopublik/apbd', [ApbdController::class, 'index'])->name('apbd.index');
-    Route::get('/infopublik/apbd/create', [ApbdController::class, 'create'])->name('apbd.create');
-    Route::post('/infopublik/apbd', [ApbdController::class, 'store'])->name('apbd.store');
-    Route::get('/infopublik/apbd/edit/{apbd}', [ApbdController::class, 'edit'])->name('apbd.edit');
-    Route::put('/infopublik/apbd/{apbd}', [ApbdController::class, 'update'])->name('apbd.update');
-    Route::delete('/infopublik/apbd/{apbd}', [ApbdController::class, 'destroy'])->name('apbd.destroy');
+    Route::get('/integrasi/apbd', [ApbdController::class, 'index'])->name('apbd.index');
+    Route::get('/integrasi/apbd/create', [ApbdController::class, 'create'])->name('apbd.create');
+    Route::post('/integrasi/apbd', [ApbdController::class, 'store'])->name('apbd.store');
+    Route::get('/integrasi/apbd/t/{apbd}', [ApbdController::class, 'edit'])->name('apbd.edit');
+    Route::put('/integrasi/apbd/{apbd}', [ApbdController::class, 'update'])->name('apbd.update');
+    Route::delete('/integrasi/apbd/{apbd}', [ApbdController::class, 'destroy'])->name('apbd.destroy');
 
     //City
-    Route::get('/infopublik/apbd/{apbd}/city', [CityController::class, 'index'])->name('city.index');
-    Route::get('/infopublik/apbd/{apbd}/city/create', [CityController::class, 'create'])->name('city.create');
-    Route::post('/infopublik/apbd/{apbd}/city', [CityController::class, 'store'])->name('city.store');
-    Route::get('/infopublik/apbd/city/edit/{city}', [CityController::class, 'edit'])->name('city.edit');
-    Route::put('/infopublik/apbd/city/{city}', [CityController::class, 'update'])->name('city.update');
-    Route::delete('/infopublik/apbd/city/{city}', [CityController::class, 'destroy'])->name('city.destroy');
+    Route::get('/integrasi/apbd/{apbd}/city', [CityController::class, 'index'])->name('city.index');
+    Route::get('/integrasi/apbd/{apbd}/city/create', [CityController::class, 'create'])->name('city.create');
+    Route::post('/integrasi/apbd/{apbd}/city', [CityController::class, 'store'])->name('city.store');
+    Route::get('/integrasi/apbd/city/edit/{city}', [CityController::class, 'edit'])->name('city.edit');
+    Route::put('/integrasi/apbd/city/{city}', [CityController::class, 'update'])->name('city.update');
+    Route::delete('/integrasi/apbd/city/{city}', [CityController::class, 'destroy'])->name('city.destroy');
 
     //Actionplan
     Route::get('/actionplan', [ActionplanController::class, 'index'])->name('actionplan.index');
@@ -284,6 +284,22 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/actionplan/edit/{id}', [ActionplanController::class, 'edit'])->name('actionplan.edit');
     Route::put('/actionplan/{id}', [ActionplanController::class, 'update'])->name('actionplan.update');
     Route::delete('/actionplan/{id}', [ActionplanController::class, 'destroy'])->name('actionplan.destroy');
+
+    //Rencana Kerja
+    Route::get('/integrasi/renja', [RenjaController::class, 'index'])->name('renja.index');
+    Route::get('/integrasi/renja/create', [RenjaController::class, 'create'])->name('renja.create');
+    Route::post('/integrasi/renja', [RenjaController::class, 'store'])->name('renja.store');
+    Route::get('/integrasi/renja.edit/{id}', [RenjaController::class, 'edit'])->name('renja,edit');
+    Route::put('/integrasi/renja/{id}', [RenjaController::class, 'update'])->name('renja.update');
+    Route::delete('/integrasi/renja/{id}', [RenjaController::class, 'destroy'])->name('renja.destroy');
+
+    //Rencana Strategi
+    Route::get('/integrasi/renstra', [RenjaController::class, 'index'])->name('renstra.index');
+    Route::get('/integrasi/renstra/create', [RenjaController::class, 'create'])->name('renstra.create');
+    Route::post('/integrasi/renstra', [RenjaController::class, 'store'])->name('renstra.store');
+    Route::get('/integrasi/renstra.edit/{id}', [RenjaController::class, 'edit'])->name('renstredit');
+    Route::put('/integrasi/renstra/{id}', [RenjaController::class, 'update'])->name('renstra.update');
+    Route::delete('/integrasi/renstra/{id}', [RenjaController::class, 'destroy'])->name('renstra.destroy');
 
 });
 

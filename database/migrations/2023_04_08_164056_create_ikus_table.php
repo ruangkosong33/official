@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lppd', function (Blueprint $table) {
+        Schema::create('ikus', function (Blueprint $table) {
             $table->id();
+            $table->string('title_iku');
+            $table->string('slug');
+            $table->integer('year');
+            $table->string('file_iku');
             $table->timestamps();
         });
     }
@@ -22,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lppd');
+        Schema::dropIfExists('ikus');
     }
 };
