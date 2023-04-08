@@ -43,7 +43,6 @@
                                 <th>No</th>
                                 <th>Periode</th>
                                 <th>Tahun</th>
-                                <th>Kota</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -53,7 +52,6 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$apbds->periode}}</td>
                                 <td>{{$apbds->year}}</td>
-                                
                                 <td>
                                     <a href="{{route('apbd.edit', $apbds->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
@@ -65,8 +63,8 @@
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="#" class="btn btn-info btn-sm">
-                                      <i class="fas fa-eye"></i>
+                                    <a href="{{route('city.index', $apbds)}}" class="btn btn-info btn-sm">
+                                      <i class="fas fa-list"></i>
                                     </a>
                                 </td>
                               </tr>

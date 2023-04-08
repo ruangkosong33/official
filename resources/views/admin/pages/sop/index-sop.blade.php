@@ -62,7 +62,7 @@
                                     </button>
                                     </form>
                                     <a href="{{route('filesop.index', $sops)}}" class="btn btn-info btn-sm">
-                                      <i class="fas fa-eye"></i>
+                                      <i class="fas fa-list"></i>
                                     </a>
                                 </td>
                               </tr>

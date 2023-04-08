@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name_city');
             $table->string('slug');
             $table->string('file_apbd');
-            $table->foreignId('apbd_id')->constrained('apbds')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

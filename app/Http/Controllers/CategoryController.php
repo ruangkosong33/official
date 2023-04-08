@@ -71,7 +71,8 @@ class CategoryController extends Controller
             'slug'=>Str::slug($request->title_category),
         ]);
 
-        Alert::success('Success Title', 'Success Message');
+        Alert::success('Berhasil', 'Data Berhasil DI Simpan');
+
         return redirect()->route('category.index');
     }
 
@@ -95,6 +96,8 @@ class CategoryController extends Controller
             'slug'=>Str::slug($request->title_category),
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
+
         return redirect()->route('category.index');
     }
 
@@ -104,7 +107,7 @@ class CategoryController extends Controller
 
         $category->delete();
 
-        Alert::success('Error Title', 'Error Message');
+        Alert::success('Berhasil' ,'Data Berhasil Di Hapus');
 
         return redirect()->route('category.index');
     }

@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Infopublik;
+namespace App\Http\Controllers\Integrasi;
 
 use App\Models\Apbd;
-use App\Models\City;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\Controller;
 
+
 class ApbdController extends Controller
 {
     public function index()
     {
-        $apbd=Apbd::with('City')->get();
+        $apbd=Apbd::all();
 
         return view('admin.pages.apbd.index-apbd', ['apbd'=>$apbd]);
     }
@@ -41,21 +41,17 @@ class ApbdController extends Controller
         return redirect()->route('apbd.index');
     }
 
-    public function edit($id)
+    public function edit(Apbd $apbd)
     {
-        $apbd=Apbd::findOrFail($id);
-
         return view('admin.pages.apbd.edit-apbd', ['apbd'=>$apbd]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Apbd $apbd)
     {
         $apbd=$request->validate([
             'periode'=>'required',
             'year'=>'required',
         ]);
-
-        $apbd=Apbd::findOrFail($id);
 
         $apbd->update([
             'periode'=>$request->periode,
@@ -68,9 +64,9 @@ class ApbdController extends Controller
         return redirect()->route('apbd.index');
     }
 
-    public function destroy($id)
+    public function destroy(Apbd $apbd)
     {
-        $apbd=Apbd::findOrFail($id);
+        $apbd=Apbd::where('id', $apbd->id);
 
         $apbd->delete();
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Infopublik;
+namespace App\Http\Controllers\Integrasi;
 
 use App\Models\Apbd;
 use App\Models\City;
@@ -11,21 +11,19 @@ use App\Http\Controllers\Controller;
 
 class CityController extends Controller
 {
-    public function index()
+    public function index(Apbd $apbd)
     {
-        $city=City::with('apbd')->where('apbd_id', $apbd->id)->get();
+        $city=City::where('apbd_id',$apbd->id)->get();
 
         return view('admin.pages.city.index-city', ['city'=>$city, 'apbd'=>$apbd]);
     }
 
-    public function create()
+    public function create(Apbd $apbd)
     {
-        $apbd=Apbd::all();
-
-        return view('admin.pages.city.create-city');
+        return view('admin.pages.city.create-city', ['apbd'=>$apbd]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Apbd $apbd)
     {
         $city=$request->validate([
             'name_city'=>'required',
@@ -49,19 +47,16 @@ class CityController extends Controller
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
 
-        return redirect()->route('city.index');
+        return redirect()->route('city.index', ['apbd'=>$apbd]);
     }
 
-    public function edit($id)
+    public function edit(City $city)
     {
-        $apbd=Apbd::all();
 
-        $city=City::findOrFail($id);
-
-        return view('admin.pages.city.edit-city', ['city'=>$city, 'apbd'=>$apbd]);
+        return view('admin.pages.city.edit-city', ['city'=>$city]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, City $city)
     {
         $city=$request->validate([
             'name_city'=>'required',
@@ -76,8 +71,6 @@ class CityController extends Controller
             $file->move('uploads/file-apbd', $citys);
         }
 
-        $city=City::findOrFail($id);
-
         $city->update([
             'name_city'=>$request->name_city,
             'file_apbd'=>$citys,
@@ -88,9 +81,9 @@ class CityController extends Controller
         return redirect()->route('city.index');
     }
 
-    public function destroy($id)
+    public function destroy(City $city)
     {
-        $city=City::findOrFail($id);
+        $city=City::where('id', $city->id);
 
         $city->delete();
 

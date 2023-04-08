@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('employees', function (Blueprint $table) {
-            //
-
-            $table->unsignedBigInteger('division_id')->after('nip')->nullable();
-            $table->foreign('division_id')->references('id')->on('divisions');
+        Schema::create('lppd', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -24,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('employees', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('lppd');
     }
 };

@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">APBD</h1>
+                    <h1 class="m-0">Kabupaten/Kota</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Kota</h3>
+                    <h3 class="card-title">Data Kabupaten/Kota</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('city.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('city.create', ['apbd'=>$apbd])}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -42,23 +42,25 @@
                             <tr>
                                 <th>No</th>
                                 <th>Kota</th>
-                                <th></th>
-                                <th>Kota</th>
+                                <th>Apbd</th>
+                                <th>File</th>
+                                <th>Tahun</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($apbd as $key=>$apbds)
+                            @foreach ($city as $key=>$citys)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$apbds->periode}}</td>
-                                <td>{{$apbds->year}}</td>
-                                <td>{{$apbds->city->name_city}}</td>
+                                <td>{{$citys->name_city}}</td>
+                                <td>{{$citys->apbd->periode}}</td>
+                                <td>{{$citys->file_apbd}}</td>
+                                <td>{{$citys->apbd->year}}</td>
                                 <td>
-                                    <a href="{{route('apbd.edit', $apbds->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('city.edit', $citys->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('apbd.destroy', $apbds->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('city.destroy', $citys->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
