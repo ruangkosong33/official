@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Rencana Kerja</h1>
+                    <h1 class="m-0">LPPD</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Rencana Kerja</h3>
+                    <h3 class="card-title">Data LPPD</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('renja.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('lppd.create')}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -48,17 +48,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($renja as $key=>$renjas)
+                            @foreach ($lppd as $key=>$lppds)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$renjas->title_renja}}</td>
-                                <td>{{$renjas->year}}</td>
-                                <td>{{$renjas->file_renja}}</td>
+                                <td>{{$lppds->title_lppd}}</td>
+                                <td>{{$lppds->year}}</td>
+                                <td>{{$lppsd->file_lppd}}</td>
                                 <td>
-                                    <a href="{{route('renja.edit', $renjas->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('lppd.edit', $lppd->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('renja.destroy', $renjas->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('lppd.destroy', $lppd->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">

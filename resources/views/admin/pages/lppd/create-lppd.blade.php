@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="mb-0">Rencana Kerja</h1>
+                    <h1 class="mb-0">LPPD</h1>
                 </div>
             </div>
         </div>
@@ -24,20 +24,20 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data Rencana Kerja</h3>
+                            <h3 class="card-title">Tambah Data LPPD</h3>
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('renja.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('lppd.create')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="title_renja" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="title_lppd" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_renja" class="form-control @error('title_renja') is-invalid @enderror"
-                                        id="name_city" placeholder="Renja">
+                                        <input type="text" name="title_lppd" class="form-control @error('title_lppd') is-invalid @enderror"
+                                        id="title_lppd" placeholder="LPPD" value="{{old('title_lppd')}}">
 
-                                        @error('title_renja')
+                                        @error('title_lppd')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -47,8 +47,8 @@
                                 <div class="form-group row">
                                     <label for="year" class="col-sm-2 col-form-label">Tahun</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="year" class="form-control @error('year') is-invalid @enderror"
-                                        id="year" placeholder="Tahun">
+                                        <input type="integer" name="year" class="form-control @error('year') is-invalid @enderror"
+                                        id="year" placeholder="Tahun" value="{{old('year')}}">
 
                                         @error('year')
                                         <span class="invalid-feedback">{{$message}}</span>
@@ -58,12 +58,12 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_renja" class="col-sm-2 col-form-label">File Renja</label>
+                                    <label for="file_lppd" class="col-sm-2 col-form-label">File LPPD</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file_renja" class="form-control @error('file_renja') is-invalid @enderror"
-                                        id="file_renja">
+                                        <input type="file" name="file_renja" class="form-control @error('file_lppd') is-invalid @enderror"
+                                        id="file_lppd">
 
-                                        @error('file_renja')
+                                        @error('file_lppd')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -73,7 +73,7 @@
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('renja.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('lppd.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->

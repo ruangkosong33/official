@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Integrasi;
 
-use App\Http\Controllers\Controller;
+use App\Models\Renja;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RenjaController extends Controller
 {
@@ -38,6 +41,7 @@ class RenjaController extends Controller
         $renja=Renja::create([
             'title_renja'=>$request->title_renja,
             'slug'=>Str::slug($request->title_renja),
+            'year'=>$request->year,
             'file_renja'=>$renjas,
         ]);
 
@@ -74,6 +78,7 @@ class RenjaController extends Controller
         $renja->update([
             'title_renja'=>$request->title_renja,
             'slug'=>Str::slug($request->title_renja),
+            'year'=>$request->year,
             'file_renja'=>$renjas,
         ]);
 

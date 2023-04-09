@@ -22,8 +22,14 @@ use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
 use App\Http\Controllers\Integrasi\ApbdController;
 use App\Http\Controllers\Integrasi\CityController;
+use App\Http\Controllers\Integrasi\LppdController;
+use App\Http\Controllers\Integrasi\LkjipController;
+use App\Http\Controllers\Integrasi\RenjaController;
+use App\Http\Controllers\Integrasi\RpjmdController;
 use App\Http\Controllers\FiletransparencyController;
+use App\Http\Controllers\Integrasi\SidataController;
 use App\Http\Controllers\Infopublik\HostelController;
+use App\Http\Controllers\Integrasi\RenstraController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
@@ -289,17 +295,49 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/integrasi/renja', [RenjaController::class, 'index'])->name('renja.index');
     Route::get('/integrasi/renja/create', [RenjaController::class, 'create'])->name('renja.create');
     Route::post('/integrasi/renja', [RenjaController::class, 'store'])->name('renja.store');
-    Route::get('/integrasi/renja.edit/{id}', [RenjaController::class, 'edit'])->name('renja,edit');
+    Route::get('/integrasi/renja/edit/{id}', [RenjaController::class, 'edit'])->name('renja.edit');
     Route::put('/integrasi/renja/{id}', [RenjaController::class, 'update'])->name('renja.update');
     Route::delete('/integrasi/renja/{id}', [RenjaController::class, 'destroy'])->name('renja.destroy');
 
     //Rencana Strategi
-    Route::get('/integrasi/renstra', [RenjaController::class, 'index'])->name('renstra.index');
-    Route::get('/integrasi/renstra/create', [RenjaController::class, 'create'])->name('renstra.create');
-    Route::post('/integrasi/renstra', [RenjaController::class, 'store'])->name('renstra.store');
-    Route::get('/integrasi/renstra.edit/{id}', [RenjaController::class, 'edit'])->name('renstredit');
-    Route::put('/integrasi/renstra/{id}', [RenjaController::class, 'update'])->name('renstra.update');
-    Route::delete('/integrasi/renstra/{id}', [RenjaController::class, 'destroy'])->name('renstra.destroy');
+    Route::get('/integrasi/renstra', [RenstraController::class, 'index'])->name('renstra.index');
+    Route::get('/integrasi/renstra/create', [RenstraController::class, 'create'])->name('renstra.create');
+    Route::post('/integrasi/renstra', [RenstraController::class, 'store'])->name('renstra.store');
+    Route::get('/integrasi/renstra/edit/{id}', [RenstraController::class, 'edit'])->name('renstra.edit');
+    Route::put('/integrasi/renstra/{id}', [RenstraController::class, 'update'])->name('renstra.update');
+    Route::delete('/integrasi/renstra/{id}', [RenstraController::class, 'destroy'])->name('renstra.destroy');
+
+    //RPJMD
+    Route::get('/integrasi/rpjmd', [RpjmdController::class, 'index'])->name('rpjmd.index');
+    Route::get('/integrasi/rpjmd/create', [RpjmdController::class, 'create'])->name('rpjmd.create');
+    Route::post('/integrasi/rpjmd', [RpjmdController::class, 'store'])->name('rpjmd.store');
+    Route::get('/integrasi/rpjmd/edit/{id}', [RpjmdController::class, 'edit'])->name('rpjmd.edit');
+    Route::put('/integrasi/rpjmd/{id}', [RpjmdController::class, 'update'])->name('rpjmd.update');
+    Route::delete('/integrasi/rpjmd/{id}', [RpjmdController::class, 'destroy'])->name('rpjmd.destroy');
+
+    //LJKIP
+    Route::get('/integrasi/lkjip', [LkjipController::class, 'index'])->name('lkjip.index');
+    Route::get('/integrasi/lkjip/create', [LkjipController::class, 'create'])->name('lkjip.create');
+    Route::post('/integrasi/lkjip', [LkjipController::class, 'store'])->name('lkjip.store');
+    Route::get('/integrasi/lkjip/edit/{id}', [LkjipController::class, 'edit'])->name('lkjip.edit');
+    Route::put('/integrasi/lkjip/{id}', [LkjipController::class, 'update'])->name('lkjip.update');
+    Route::delete('/integrasi/lkjip/{id}', [LkjipController::class, 'destroy'])->name('lkjip.destroy');
+
+    //LPPD
+    Route::get('/integrasi/lppd', [LppdController::class, 'index'])->name('lppd.index');
+    Route::get('/integrasi/lppd/create', [LppdController::class, 'create'])->name('lppd.create');
+    Route::post('/integrasi/lppd', [LppdController::class, 'store'])->name('lppd.store');
+    Route::get('/integrasi/lppd/edit/{id}', [LppdController::class, 'edit'])->name('lppd.edit');
+    Route::put('/integrasi/lppd/{id}', [LppdController::class, 'update'])->name('lppd.update');
+    Route::delete('/integrasi/lppd/{id}', [LppdController::class, 'destroy'])->name('lppd.destroy');
+
+    //SIDATA
+    Route::get('/integrasi/sidata', [SidataController::class, 'index'])->name('sidata.index');
+    Route::get('/integrasi/sidata/create', [SidataController::class, 'create'])->name('sidata.create');
+    Route::post('/integrasi/sidata', [SidataController::class, 'store'])->name('sidata.store');
+    Route::get('/integrasi/sidata/edit/{id}', [SidataController::class, 'edit'])->name('sidata.edit');
+    Route::put('/integrasi/sidata/{id}', [SidataController::class, 'update'])->name('sidata.update');
+    Route::delete('/integrasi/sidata/{id}', [SidataController::class, 'destroy'])->name('sidata.destroy');
 
 });
 

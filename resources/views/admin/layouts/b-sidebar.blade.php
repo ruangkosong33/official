@@ -222,6 +222,38 @@
                   </a>
                 </li>
             </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('rpjmd.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>RPJMD</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('lkjip.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>LKJIP</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('lppd.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>LPPD</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('sidata.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SIDATA</p>
+                  </a>
+                </li>
+            </ul>
           </li>
           <li class="nav-item">
             <a href="{{route('category.index')}}" class="nav-link @yield('category.index')">
