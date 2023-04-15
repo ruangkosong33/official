@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('itemfilepads', function (Blueprint $table) {
+        Schema::create('renstras', function (Blueprint $table) {
             $table->id();
-            $table->string('title_itemfilepad');
-            $table->string('file_itemfilepad');
-            $table->foreignId('pad_id')->constrained('pads')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('title_renstra');
+            $table->string('slug');
+            $table->integer('year');
+            $table->string('file_renstra');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('itemfilepads');
+        Schema::dropIfExists('renstras');
     }
 };

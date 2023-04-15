@@ -6,6 +6,7 @@ use App\Models\Auction;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuctionController extends Controller
 {
@@ -30,16 +31,16 @@ class AuctionController extends Controller
 
         if($request->file('file_auction'))
         {
-            $pf=$request->file('file_auction');
+            $file=$request->file('file_auction');
             $extension=$file->getClientOriginalName();
-            $ex=$extension;
-            $pf->move('/uploads/file-auction/', $pf);
+            $auctions=$extension;
+            $file->move('/uploads/file-auction/', $auctions);
         }
 
         $auction=Auction::create([
             'title_auction'=>$request->title_auction,
             'slug'=>Str::slug($request->title_auction),
-            'file_auction'=>$pf,
+            'file_auction'=>$auctions,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
@@ -52,7 +53,7 @@ class AuctionController extends Controller
         return view('admin.pages.auction.edit-auction', ['auction'=>$auction]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request, Auction $auction)
     {
         $auction=$request->validate([
             'title_hostel'=>'required',
@@ -61,16 +62,16 @@ class AuctionController extends Controller
 
         if($request->file('file_auction'))
         {
-            $pf=$request->file('file_auction');
+            $file=$request->file('file_auction');
             $extension=$file->getClientOriginalName();
-            $ex=$extension;
-            $pf->move('/uploads/file-auction/', $pf);
+            $auctions=$extension;
+            $file->move('/uploads/file-auction/', $auctions);
         }
 
         $auction->update([
             'title_auction'=>$request->title_auction,
             'slug'=>Str::slug($request->title_auction),
-            'file_auction'=>$pf,
+            'file_auction'=>$auctions,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Update');

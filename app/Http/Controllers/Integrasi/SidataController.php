@@ -14,7 +14,7 @@ class SidataController extends Controller
     {
         $sidata=Sidata::all();
 
-        return view('admin.pages.sidata.index=sidata', ['sidata'=>$sidata]);
+        return view('admin.pages.sidata.index-sidata', ['sidata'=>$sidata]);
     }
 
     public function create()
@@ -85,7 +85,7 @@ class SidataController extends Controller
 
     public function destroy($id)
     {
-        $sidata=Sidata::findOFail($id);
+        $sidata=Sidata::findOrFail($id);
 
         $sidata->delete();
 

@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="mb-0">Rencana Strategi</h1>
+                    <h1 class="mb-0">Lelang</h1>
                 </div>
             </div>
         </div>
@@ -24,20 +24,20 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data Renstra</h3>
+                            <h3 class="card-title">Edit Data Lelang</h3>
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('renstra.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('auction.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="title_renstra" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="title_auction" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_renstra" class="form-control @error('title_renstra') is-invalid @enderror"
-                                        id="title_sidata" placeholder="Judul">
+                                        <input type="text" name="title_auction" class="form-control @error('title_auction') is-invalid @enderror"
+                                        id="name_city" placeholder="Lelang" value="{{old('title_auction') ?? $auction->title_auction}}">
 
-                                        @error('title_renstra')
+                                        @error('title_auction')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -45,25 +45,12 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="year" class="col-sm-2 col-form-label">Tahun</label>
+                                    <label for="file_auction" class="col-sm-2 col-form-label">File Lelang</label>
                                     <div class="col-sm-10">
-                                        <input type="number" name="year" class="form-control @error('year') is-invalid @enderror"
-                                        id="title_sidata" placeholder="Judul">
+                                        <input type="file" name="file_auction" class="form-control @error('file_auction') is-invalid @enderror"
+                                        id="file_auction">
 
-                                        @error('year')
-                                        <span class="invalid-feedback">{{$message}}</span>
-                                        @enderror
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="file_resntra" class="col-sm-2 col-form-label">File Renstra</label>
-                                    <div class="col-sm-10">
-                                        <input type="file" name="file_renstra" class="form-control @error('file_renstra') is-invalid @enderror"
-                                        id="file_renstra">
-
-                                        @error('file_renstra')
+                                        @error('file_auction')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -73,7 +60,7 @@
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('renstra.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('auction.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->

@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Potention;
 
 use App\Models\Pad;
 use App\Models\Filepad;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Contollers\Controller;
 
 class PadController extends Controller
 {
     public function index()
     {
-        $pad=Pad::all(); 
+        $pad=Pad::all();
 
         return view('admin.pages.pad.index-pad', ['pad'=>$pad]);
     }

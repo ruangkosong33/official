@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Integrasi;
 
-use App\Http\Controllers\Controller;
+use App\Models\Renstra;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RenstraController extends Controller
 {
@@ -23,13 +26,14 @@ class RenstraController extends Controller
     {
         $renstra=$request->validate([
             'title_renstra'=>'required',
+            'year'=>'required',
             'file_renstra'=>'required|mimes:pdf|max:2048',
         ]);
 
         if($request->file('file_renstra'))
         {
             $file=$request->file('file_renstra');
-            $extension=$file-getClientOriginalName();
+            $extension=$file->getClientOriginalName();
             $renstras=$extension;
             $file->move('uploads/file-renstra', $renstras);
         }
@@ -37,6 +41,7 @@ class RenstraController extends Controller
         $renstra=Renstra::create([
             'title_renstra'=>$request->title_renstra,
             'slug'=>Str::slug($request->title_renstra),
+            'year'=>$request->year,
             'file_renstra'=>$renstras,
         ]);
 

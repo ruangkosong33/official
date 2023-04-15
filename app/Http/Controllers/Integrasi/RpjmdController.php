@@ -26,13 +26,13 @@ class RpjmdController extends Controller
     {
         $rpjmd=$request->validate([
             'title_rpjmd'=>'required',
-            'year'=>'requried',
-            'file_rpjmd'=>'required|mimes:2048|max:2048',
+            'year'=>'required',
+            'file_rpjmd'=>'required|mimes:pdf|max:2048',
         ]);
 
         if($request->file('file_rpjmd'))
         {
-            $file=$request->file('file_rpmjd');
+            $file=$request->file('file_rpjmd');
             $extension=$file->getClientOriginalName();
             $rpjmds=$extension;
             $file->move('uploads/file-rpjmd', $rpjmds);
@@ -61,13 +61,13 @@ class RpjmdController extends Controller
     {
         $rpjmd=$request->validate([
             'title_rpjmd'=>'required',
-            'year'=>'requried',
-            'file_rpjmd'=>'required|mimes:2048|max:2048',
+            'year'=>'required',
+            'file_rpjmd'=>'required|mimes:pdf|max:2048',
         ]);
 
         if($request->file('file_rpjmd'))
         {
-            $file=$request->file('file_rpmjd');
+            $file=$request->file('file_rpjmd');
             $extension=$file->getClientOriginalName();
             $rpjmds=$extension;
             $file->move('uploads/file-rpjmd', $rpjmds);

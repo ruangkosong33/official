@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Integrasi;
 
 use App\Models\Sop;
 use App\Models\Filesop;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\File;
+use App\Http\Controllers\Controller;
 
 class FilesopController extends Controller
 {

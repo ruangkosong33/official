@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Rencana Kerja</h1>
+                    <h1 class="m-0">RPJMD</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Rencana Kerja</h3>
+                    <h3 class="card-title">Data RPJMD</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('renja.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('rpjmd.create')}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -48,17 +48,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($renstra as $key=>$renstras)
+                            @foreach ($rpjmd as $key=>$rpjmds)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$renstras->title_renstra}}</td>
-                                <td>{{$renstras->year}}</td>
-                                <td>{{$renstras->file_renstra}}</td>
+                                <td>{{$rpjmds->title_rpjmd}}</td>
+                                <td>{{$rpjmds->year}}</td>
+                                <td>{{$rpjmds->file_rpjmd}}</td>
                                 <td>
-                                    <a href="{{route('renstra.edit', $renstras->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('rpjmd.edit', $rpjmds->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('renstra.destroy', $renstras->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('rpjmd.destroy', $rpjmds->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">

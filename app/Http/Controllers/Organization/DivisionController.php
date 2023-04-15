@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Organization;
 
 use App\Models\Division;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DivisionController extends Controller
 {
@@ -17,7 +18,6 @@ class DivisionController extends Controller
 
     public function create()
     {
-
         return view('admin.pages.division.create-division');
     }
 

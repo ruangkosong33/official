@@ -11,13 +11,13 @@ class Filepad extends Model
 
     protected $table='filepads';
 
-    protected $fillable=['file_pad', 'itemfilepad_id'];
+    protected $fillable=['title_filepad', 'slug', 'file_filepad'];
 
     protected $hidden=[];
 
 
-    public function itemfilepad()
+    public function Pad()
     {
-        return $this->belongsTo(Itemfilepad::class, 'itemfilepad_id', 'id');
+        return $this->belongsTo(Pad::class, 'pad_id', 'id');
     }
 }

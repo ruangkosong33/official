@@ -31,6 +31,7 @@
             </a>
           </li>
           <li class="nav-header">Menu</li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
@@ -88,8 +89,15 @@
                   <p>Kepala Badan</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('event.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Agenda Kegiatan</p>
+                </a>
+              </li>
             </ul>
           </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-building"></i>
@@ -115,56 +123,7 @@
                 </li>
               </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-clipboard"></i>
-              <p>
-                Program Kegiatan
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Bidang</p>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data Pegawai</p>
-                  </a>
-                </li>
-              </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-layer-group"></i>
-              <p>
-                Potensi
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('pad.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>PAD</p>
-                </a>
-              </li>
-            </ul>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{route('employee.index')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Aset</p>
-                  </a>
-                </li>
-              </ul>
-          </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-bullhorn"></i>
@@ -181,7 +140,16 @@
                 </a>
               </li>
             </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('auction.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lelang</p>
+                  </a>
+                </li>
+              </ul>
           </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-bezier-curve"></i>
@@ -255,6 +223,67 @@
                 </li>
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-clipboard"></i>
+              <p>
+                Program Kegiatan
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('realisation.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Realisasi</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('bansos.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Bantuan Sosial</p>
+                  </a>
+                </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('responsible.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Penanggung Jawab</p>
+                  </a>
+                </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-layer-group"></i>
+              <p>
+                Potensi
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('pad.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PAD</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('employee.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Aset</p>
+                  </a>
+                </li>
+              </ul>
+          </li>
+
           <li class="nav-item">
             <a href="{{route('category.index')}}" class="nav-link @yield('category.index')">
               <i class="nav-icon fas fa-tag"></i>
@@ -263,6 +292,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{route('post.index')}}" class="nav-link @yield('post.index')">
               <i class="nav-icon fas fa-newspaper"></i>
@@ -271,6 +301,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{route('law.index')}}" class="nav-link @yield('law.index')">
               <i class="nav-icon fas fa-gavel"></i>
@@ -279,6 +310,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{route('banner.index')}}" class="nav-link @yield('banner.index')">
               <i class="nav-icon fas fa-inbox"></i>
@@ -287,6 +319,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-image"></i>
@@ -295,6 +328,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{route('userlist.index')}}" class="nav-link @yield('userlist.index')">
               <i class="nav-icon fas fa-video"></i>
@@ -303,6 +337,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{route('userlist.index')}}" class="nav-link @yield('userlist.index')">
               <i class="nav-icon fas fa-user"></i>
@@ -311,6 +346,7 @@
               </p>
             </a>
           </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

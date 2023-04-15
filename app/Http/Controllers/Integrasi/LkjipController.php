@@ -35,7 +35,7 @@ class LkjipController extends Controller
             $file=$request->file('file_lkjip');
             $extension=$file->getClientOriginalName();
             $lkjips=$extension;
-            $file->move('uploads/file=-lkjip', $lkjips);
+            $file->move('uploads/file-lkjip', $lkjips);
         }
 
         $lkjip=Lkjip::create([
@@ -72,6 +72,8 @@ class LkjipController extends Controller
             $lkjips=$extension;
             $file->move('uploads/file=-lkjip', $lkjips);
         }
+
+        $lkjip=Lkjip::findOrFail($id);
 
         $lkjip->update([
             'title_lkjip'=>$request->title_lkjip,

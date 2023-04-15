@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="mb-0">LKJIP</h1>
+                    <h1 class="mb-0">RPJMD</h1>
                 </div>
             </div>
         </div>
@@ -24,21 +24,21 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Edit Data LKJIP</h3>
+                            <h3 class="card-title">Tambah Data RPJMD</h3>
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('lkjip.update', $lkjip->id)}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('rpjmd.update', $rpjmd->id)}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="title_lkjip" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="title_rpjmd" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_lkjip" class="form-control @error('title_lkjip') is-invalid @enderror"
-                                        id="title_lkjip" placeholder="LKJIP" value="{{old('title_lkjip') ?? $lkjip->title_lkjip}}">
+                                        <input type="text" name="title_rpjmd" class="form-control @error('title_rpjmd') is-invalid @enderror"
+                                        id="title_pjmd" placeholder="Judul" value="{{old('title_rpjmd') ?? $rpjmd->title_rpjmd}}">
 
-                                        @error('title_lkjip')
+                                        @error('title_rpjmd')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -49,7 +49,7 @@
                                     <label for="year" class="col-sm-2 col-form-label">Tahun</label>
                                     <div class="col-sm-10">
                                         <input type="number" name="year" class="form-control @error('year') is-invalid @enderror"
-                                        id="year" placeholder="Tahun" value="{{old('year') ?? $lkjip->year}}">
+                                        id="year" placeholder="Tahun" value="{{old('year') ?? $rpjmd->year}}">
 
                                         @error('year')
                                         <span class="invalid-feedback">{{$message}}</span>
@@ -59,12 +59,12 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_lkjip" class="col-sm-2 col-form-label">File LKJIP</label>
+                                    <label for="file_rpjmd" class="col-sm-2 col-form-label">File RPJMD</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file_lkjip" class="form-control @error('file_lkjip') is-invalid @enderror"
-                                        id="file_lkjip">
+                                        <input type="file" name="file_rpjmd" class="form-control @error('file_rpjmd') is-invalid @enderror"
+                                        id="file_renstra">
 
-                                        @error('file_lkjip')
+                                        @error('file_rpjmd')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -74,7 +74,7 @@
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('lkjip.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('rpjmd.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->
