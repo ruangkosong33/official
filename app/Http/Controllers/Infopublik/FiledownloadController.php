@@ -2,29 +2,92 @@
 
 namespace App\Http\Controllers\Infopublik;
 
-use App\Http\Controllers\Controller;
+use App\Models\Download;
+use App\Models\Filedownload;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class FiledownloadController extends Controller
 {
 
-    public function index()
+    public function index(Download $download)
     {
-        $filedownload=Filedownload::all();
+        $filedownload=Filedownload::where('download_id', $download->id)->get();
 
-        return view('admin.pages.filedownload.index-filedownload', ['filedownload'=>$filedownload]);
+        return view('admin.pages.filedownload.index-filedownload', ['download'=>$download, 'filedownload'=>$filedownload]);
     }
 
-    public function create()
+    public function create(Download $download)
     {
-        return view('admin.pages.filedownload.create-filedownload');
+        return view('admin.pages.filedownload.create-filedownload', ['download'=>$download]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Download $download)
     {
         $filedownload=$request->validate([
+            'title_filedownload'=>'required',
             'file_download'=>'required|mimes:pdf|max:2048',
         ]);
+
+        if($request->file('file_download'))
+        {
+            $file=$request->file('file_download');
+            $extension=$file->getClientOriginalName();
+            $filedownloads=$extension;
+            $file->move('uploads/file-download', $filedownloads);
+        }
+        
+        $filedownload=Filedownload::create([
+            'title_filedownload'=>$request->title_filedownload,
+            'slug'=>Str::slug($request->title_filedownload),
+            'file_download'=>$filedownloads,
+            'download_id'=>$download->id,
+        ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
+        return redirect()->route('filedownload.index', ['download'=>$download]);
+    }
+
+    public function edit(Filedownload $filedownload)
+    {
+        return view('admin.pages.file-download-edit-filedownload', ['filedownload'=>$filedownload]);
+    }
+
+    public function update(Request $request, Filedownload $filedownload)
+    {
+        $filedownload=$request->validate([
+            'title_filedownload'=>'required',
+            'file_download'=>'required|mimes:pdf|max:2048',
+        ]);
+
+        if($request->file('file_download'))
+        {
+            $file=$request->file('file_download');
+            $extension=$file->getClientOriginalName();
+            $filedownloads=$extension;
+            $file->move('uploads/file-download', $filedownloads);
+        }
+        
+        $filedownload->where('id', $filedownload->id)->update([
+            'title_filedownload'=>$request->title_filedownload,
+            'slug'=>Str::slug($request->title_filedowwnload),
+            'file_download'=>$filedownloads,
+        ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
+
+        return redirect()->route('filedownload.index', ['download'=>$download]);
+    }
+
+    public function destroy(Filedownload $filedownload)
+    {
+        $filedownload=Filedownload::where('id',$download->id)->delete();
+
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
+
+        return redirect()->back();
     }
 
 }

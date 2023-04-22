@@ -11,7 +11,7 @@ class Filedownload extends Model
 
     protected $table='filedownloads';
 
-    protected $fillable=['file_download', 'slug', 'download_id'];
+    protected $fillable=['title_filedownload', 'slug', 'file_download', 'download_id'];
 
     protected $hidden=[];
 

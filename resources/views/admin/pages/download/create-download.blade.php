@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="mb-0">Aset</h1>
+                    <h1 class="mb-0">Download</h1>
                 </div>
             </div>
         </div>
@@ -24,43 +24,31 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data Aset</h3>
+                            <h3 class="card-title">Tambah Data Kategori Download</h3>
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('asset.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('download.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="title_asset" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="category_download" class="col-sm-2 col-form-label">Kategori</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_asset" class="form-control @error('title_asset') is-invalid @enderror"
-                                        id="name_city" placeholder="Aset">
+                                        <input type="text" name="category_download" class="form-control @error('category_download') is-invalid @enderror"
+                                        id="category_download" placeholder="Download">
 
-                                        @error('title_asset')
+                                        @error('category_download')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
-                                    <label for="year" class="col-sm-2 col-form-label">File</label>
-                                    <div class="col-sm-10">
-                                        <input type="file" name="file_asset" class="form-control @error('file_asset') is-invalid @enderror"
-                                        id="file_asset">
-
-                                        @error('file_asset')
-                                        <span class="invalid-feedback">{{$message}}</span>
-                                        @enderror
-
-                                    </div>
-                                </div>
+                            </div>
 
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('asset.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('download.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->

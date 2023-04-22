@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Infopublik;
 
-use App\Http\Controllers\Controller;
+use App\Models\Download;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DownloadController extends Controller
 {
@@ -35,14 +38,12 @@ class DownloadController extends Controller
         return redirect()->route('download.index');
     }
 
-    public function edit($id)
+    public function edit(Download $download)
     {
-        $download=Download::findOrFail($id);
-
         return view('admin.pages.download.edit-download', ['download'=>$download]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Download $download)
     {
         $download=$request->validate([
             'category_download'=>'required',
@@ -58,9 +59,9 @@ class DownloadController extends Controller
         return redirect()->route('download.index');
     }
 
-    public function destroy($id)
+    public function destroy(Download $download)
     {
-        $download=Download::findOrFail($id);
+        $download=Download::where('id', $download->id);
 
         $download->delete();
 

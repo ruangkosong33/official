@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="mb-0">File</h1>
+                    <h1 class="mb-0">File Produk Hukum</h1>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data File</h3>
+                            <h3 class="card-title">Tambah Data File Produk Hukum</h3>
                         </div>
 
                         <!-- Form -->
@@ -35,7 +35,7 @@
                                     <label for="title_filelaw" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="title_filelaw" class="form-control @error('title_law') is-invalid @enderror"
-                                        id="title_filelaw" placeholder="Judul File">
+                                        id="title_filelaw" placeholder="File Produk Hukum">
 
                                         @error('title_filelaw')
                                         <span class="invalid-feedback">{{$message}}</span>
@@ -48,7 +48,7 @@
                                     <label for="file_filelaw" class="col-sm-2 col-form-label">File</label>
                                     <div class="col-sm-10">
                                         <input type="file" name="file_filelaw" class="form-control @error('file_filelaw') is-invalid @enderror"
-                                        id="file_filelaw" placeholder="file_filelaw">
+                                        id="file_filelaw">
 
                                         @error('file_filelaw')
                                         <span class="invalid-feedback">{{$message}}</span>

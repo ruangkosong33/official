@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\FilelawController;
+use App\Http\Controllers\Bbh\Sp2dController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Profil\EventController;
@@ -31,6 +32,7 @@ use App\Http\Controllers\Integrasi\FilesopController;
 use App\Http\Controllers\Integrasi\RenstraController;
 use App\Http\Controllers\Potention\FilepadController;
 use App\Http\Controllers\Infopublik\AuctionController;
+use App\Http\Controllers\Infopublik\DownloadController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
 use App\Http\Controllers\Activity\RealisationController;
@@ -40,6 +42,7 @@ use App\Http\Controllers\Profil\GoalobjectiveController;
 use App\Http\Controllers\Organization\DivisionController;
 use App\Http\Controllers\Organization\EmployeeController;
 use App\Http\Controllers\Profil\PolicydirectionController;
+use App\Http\Controllers\Infopublik\FiledownloadController;
 use App\Http\Controllers\Profil\FormationhistoryController;
 
 
@@ -212,12 +215,29 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/infopublik/auction/{auction}', [AuctionController::class, 'update'])->name('auction.update');
     Route::delete('/infopublik/auction/{auction}', [AuctionController::class, 'destroy'])->name('auction.destroy');
 
+    //Download
+    Route::get('/infopublik/download', [DownloadController::class, 'index'])->name('download.index');
+    Route::get('/infopublik/download/create', [DownloadController::class, 'create'])->name('download.create');
+    Route::post('/infopublik/download', [DownloadController::class, 'store'])->name('download.store');
+    Route::get('/infopublik/download/edit/{id}', [DownloadController::class, 'edit'])->name('download.edit');
+    Route::put('/infopublik/dowload/{id}', [DownloadController::class, 'update'])->name('download.update');
+    Route::delete('/infopublik/download/{id}', [DownloadController::class, 'destroy'])->name('download.destroy');
+
+    //FileDownload
+    Route::get('/infopublik/{download}/filedownload', [FiledownloadController::class, 'index'])->name('filedownload.index');
+    Route::get('/infopublik/{download}/filedownload/create', [FiledownloadController::class, 'create'])->name('filedownload.create');
+    Route::post('/infopublik/{download}/filedownload', [FiledownloadController::class, 'store'])->name('filedownload.store');
+    Route::get('/infopublik/filedownload/edit/{id}', [FiledownloadController::class, 'edit'])->name('filedownload.edit');
+    Route::put('/infopublik/filedowload/{id}', [FiledownloadController::class, 'update'])->name('filedownload.update');
+    Route::delete('/infopublik/filedownload/{id}', [FiledownloadController::class, 'destroy'])->name('filedownload.destroy');
+
+
     //INTEGRATION//
     //APBD
     Route::get('/integrasi/apbd', [ApbdController::class, 'index'])->name('apbd.index');
     Route::get('/integrasi/apbd/create', [ApbdController::class, 'create'])->name('apbd.create');
     Route::post('/integrasi/apbd', [ApbdController::class, 'store'])->name('apbd.store');
-    Route::get('/integrasi/apbd/t/{apbd}', [ApbdController::class, 'edit'])->name('apbd.edit');
+    Route::get('/integrasi/apbd/{apbd}', [ApbdController::class, 'edit'])->name('apbd.edit');
     Route::put('/integrasi/apbd/{apbd}', [ApbdController::class, 'update'])->name('apbd.update');
     Route::delete('/integrasi/apbd/{apbd}', [ApbdController::class, 'destroy'])->name('apbd.destroy');
 
@@ -383,6 +403,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/law/filelaw/edit/{filelaw}', [FilelawController::class, 'edit'])->name('filelaw.edit');
     Route::put('/law/filelaw/{filelaw}', [FilelawController::class, 'update'])->name('filelaw.update');
     Route::delete('/law/filelaw/{filelaw}', [FilelawController::class, 'destroy'])->name('filelaw.destroy');
+
+    //Belanja Bagi Hasil( BBH )//(
+    Route::get('/sp2d', [Sp2dController::class, 'index'])->name('sp2d.index');
+    Route::get('/sp2d/create', [Sp2dController::class, 'create'])->name('sp2d.create');
+    Route::post('/sp2d', [Sp2dController::class, 'store'])->name('sp2d.store');
+    Route::get('sp2d/edit/{sp2d}', [Sp2dController::class, 'edit'])->name('sp2d.edit');
+    Route::put('/sp2d/{sp2d}', [Sp2dController::class, 'update'])->name('sp2d.update');
+    Route::delete('/sp2d/{sp2d}', [Sp2dController::class, 'destroy'])->name('sp2d.destroy');
 
 });
 

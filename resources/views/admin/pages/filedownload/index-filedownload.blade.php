@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Produk Hukum</h1>
+                    <h1 class="m-0">Kategori File Download</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Produk Hukum</h3>
+                    <h3 class="card-title">Data File Download</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('law.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('filedownload.create', ['download'=>$download])}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -41,29 +41,27 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Judul</th>
+                                <th>Kategori</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($law as $key=>$laws)
+                            @foreach ($filedownload as $key=>$filedownloads)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$laws->title_law}}</td>
+                                <td>{{$filedownloads->title_filedownload}}</td>
+                                <td>{{$filedownloads->filedownload}}</td>
                                 <td>
-                                    <a href="{{route('law.edit', $laws->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('filedownload.edit', $filedownloads->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('law.destroy', $laws->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('filedowmload.destroy', $filedownloads->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="{{route('filelaw.index', $laws->id)}}" class="btn btn-info btn-sm">
-                                      <i class="fas fa-list"></i>
-                                    </a>
                                 </td>
                               </tr>
                             @endforeach

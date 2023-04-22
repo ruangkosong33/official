@@ -148,6 +148,14 @@
                   </a>
                 </li>
               </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('download.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Download</p>
+                  </a>
+                </li>
+              </ul>
           </li>
 
           <li class="nav-item">
@@ -276,7 +284,7 @@
             </ul>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('employee.index')}}" class="nav-link">
+                  <a href="{{route('asset.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Aset</p>
                   </a>
