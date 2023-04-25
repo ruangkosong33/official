@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sp2ds', function (Blueprint $table) {
             $table->id();
-            $table->string('city_kab');
+            $table->foreignId('city')->constrained('citys');
             $table->string('title_sp2d');
             $table->string('slug');
             $table->string('file_sp2d');

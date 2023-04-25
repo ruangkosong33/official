@@ -20,4 +20,9 @@ class City extends Model
     {
         return $this->belongsTo(Apbd::class, 'apbd_id', 'id');
     }
+
+    public function filesp2d(): HasMany
+    {
+        return $this->hasMany(Filesp2d::class, 'filesp2d_id', 'id')   ;
+    }
 }

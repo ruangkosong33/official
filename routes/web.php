@@ -8,9 +8,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\FilelawController;
-use App\Http\Controllers\Bbh\Sp2dController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Bbh\Filesp2dController;
 use App\Http\Controllers\Profil\EventController;
 use App\Http\Controllers\Profil\IssueController;
 use App\Http\Controllers\Integrasi\SopController;
@@ -404,13 +404,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/law/filelaw/{filelaw}', [FilelawController::class, 'update'])->name('filelaw.update');
     Route::delete('/law/filelaw/{filelaw}', [FilelawController::class, 'destroy'])->name('filelaw.destroy');
 
-    //Belanja Bagi Hasil( BBH )//(
-    Route::get('/sp2d', [Sp2dController::class, 'index'])->name('sp2d.index');
-    Route::get('/sp2d/create', [Sp2dController::class, 'create'])->name('sp2d.create');
-    Route::post('/sp2d', [Sp2dController::class, 'store'])->name('sp2d.store');
-    Route::get('sp2d/edit/{sp2d}', [Sp2dController::class, 'edit'])->name('sp2d.edit');
-    Route::put('/sp2d/{sp2d}', [Sp2dController::class, 'update'])->name('sp2d.update');
-    Route::delete('/sp2d/{sp2d}', [Sp2dController::class, 'destroy'])->name('sp2d.destroy');
+    //Belanja Bagi Hasil( BBH )//
+    //File SP2D
+    Route::get('/filesp2d', [Filesp2dController::class, 'index'])->name('filesp2d.index');
+    Route::get('/filesp2d/create', [Filesp2dController::class, 'create'])->name('filesp2d.create');
+    Route::post('/filesp2d', [Filesp2dController::class, 'store'])->name('filesp2d.store');
+    Route::get('/filesp2d/edit/{sp2d}', [Filesp2dController::class, 'edit'])->name('filesp2d.edit');
+    Route::put('/filesp2d/{sp2d}', [Filesp2dController::class, 'update'])->name('filesp2d.update');
+    Route::delete('/filesp2d/{sp2d}', [Filesp2dController::class, 'destroy'])->name('filesp2d.destroy');
 
 });
 
