@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Profil;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Formationhistory;
-use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\Controller;
 
 class FormationhistoryController extends Controller
 {

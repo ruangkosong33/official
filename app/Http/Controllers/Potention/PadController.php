@@ -6,7 +6,7 @@ use App\Models\Pad;
 use App\Models\Filepad;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Http\Contollers\Controller;
+use App\Http\Controllers\Controller;
 
 class PadController extends Controller
 {

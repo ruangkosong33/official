@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LawController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BannerController;
@@ -46,6 +47,7 @@ use App\Http\Controllers\Infopublik\FiledownloadController;
 use App\Http\Controllers\Profil\FormationhistoryController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,6 +77,10 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
 {
     //Dashboard
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/test', [TestController::class, 'index'])->name('test.index');
+    Route::post('/test', [TestController::class, 'store'])->name('test.store');
+    
 
     //UserList
     Route::get('/userlist', [UserController::class, 'userlist'])->name('userlist.index');
@@ -130,7 +136,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::post('/profil/formationhistory', [FormationhistoryController::class, 'store'])->name('formationhistory.store');
     Route::get('/profil/formationhistory/edit/{id}', [FormationhistoryController::class, 'edit'])->name('formationhistory.edit');
     Route::put('/profil/formationhistory/{id}', [FormationhistoryController::class, 'update'])->name('formationhistory.update');
-    Route::delete('/profil/formationhistory/{id}', [FormationhistoryContoller::class, 'destroy'])->name('formationhistory.destroy');
+    Route::delete('/profil/formationhistory/{id}', [FormationhistoryController::class, 'destroy'])->name('formationhistory.destroy');
 
     //Service Order
     Route::get('/profil/serviceorder', [ServiceorderController::class, 'index'])->name('serviceorder.index');
