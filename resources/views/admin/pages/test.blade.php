@@ -54,7 +54,7 @@
 
             </div>
         </div>
-    
+    </section>
     <!-- End Section Content -->
 
     <!-- Modal -->
@@ -71,8 +71,7 @@
 
                 <div class="modal-body">
                     <!-- Form -->
-                    <form action="{{route('test.store')}}" id="forms" class="form-horizontal" method="post">
-                        @csrf
+                    <form id="forms" class="form-horizontal" method="post">
                         <div class="form-group row">
                             <label for="name" class="col-sm-2 col-form-label">Nama</label>
                                 <div class="col-sm-10">
@@ -88,7 +87,7 @@
                                     id="category" placeholder="Kategori">
                                 </div>
                         </div>
-                    {{-- </form> --}}
+                    </form>
                     <!-- End Form -->
                 </div>
 
@@ -151,17 +150,16 @@
                     {
                         url:"{{route('test.store')}}",
                         type:'POST',
-                        data: 
-                        
-                            $('#forms').serialize(),
-                            
-                        
-                        contentType: false,
-                        processData: false,
+                        data:
+                        {
+                            "_token":"{{csrf_token()}}",
+                            name : $('#name').val(),
+                            category : $('#category').val(),
+                        },
                         success:function(response)
                         {
                             console.log(response);
-                            // $('#myTable').DataTable().ajax.reload();
+                            $('#myTable').DataTable().ajax.reload();
                         }
                     }
                 );
@@ -191,8 +189,6 @@
         //     )
         // })
     </script>
-    </section>
-
 </div>
 <!-- End Wrapper -->
 

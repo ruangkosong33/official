@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\FilelawController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Bbh\Filesp2dController;
@@ -384,6 +385,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/banner/edit/{id}', [BannerController::class, 'edit'])->name('banner.edit');
     Route::put('/banner/{id}', [BannerController::class, 'update'])->name('banner.update');
     Route::delete('/banner/{id}', [BannerController::class, 'destroy'])->name('banner.destroy');
+
+    //GALgallery
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
+    Route::post('/gallery' , [GalleryController::class, 'store'])->name('gallery.store');
+    Route::get('/gallery/edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
+    Route::put('/gallery/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+    Route::delete('/gallery/{id}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
 
     //VIDEO//
     Route::get('/video', [VideoController::class, 'index'])->name('video.index');

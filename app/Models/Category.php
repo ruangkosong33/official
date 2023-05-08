@@ -19,8 +19,15 @@ class Category extends Model
 
     // public $sortable =['title_category', 'slug'];
 
+
+
     public function post()
     {
         return $this->hasMany(Post::class, 'post_id', 'id');
+    }
+
+    public function gallery()
+    {
+        return $this->hasMany(Gallery::class, 'gallery_id', 'id');
     }
 }
