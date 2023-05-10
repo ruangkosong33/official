@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use App\Models\Taskfunction;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TaskfunctionController extends Controller
 {
@@ -33,6 +34,8 @@ class TaskfunctionController extends Controller
             'description_taskfunction'=>$request->description_taskfunction,
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
         return redirect()->route('taskfunction.index');
     }
 
@@ -57,6 +60,8 @@ class TaskfunctionController extends Controller
             'description_taskfunction'=>$request->description_taskfunction,
 
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
 
         return redirect()->route('taskfunction.index');
     }

@@ -62,6 +62,8 @@ class FormationhistoryController extends Controller
             'description_formationhistory'=>$request->description_formationhistory,
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
+        
         return redirect()->route('formationhistory.index');
     }
 

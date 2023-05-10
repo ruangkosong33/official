@@ -36,6 +36,7 @@ class HostelController extends Controller
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
         return redirect()->route('hostel.index');
     }
 
@@ -47,15 +48,14 @@ class HostelController extends Controller
     public function update(Request $request, Hostel $hostel)
     {
         $hostel=$request->validate([
-            'title_hostel'=>'required',
+            'name_hostel'=>'required',
             'address_hostel'=>'required',
         ]);
 
-        $hostel=Hostel::findOrFail($hostel);
-        
         $hostel->update([
-            'title_auction'=>$request->name_hostel,
-            'slug'=>Str::slug($request->address_hostel)
+            'name_hostel'=>$request->name_hostel,
+            'slug'=>Str::slug($request->name_hostel),
+            'address_hostel'=>$request->address_hostel,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Update');
@@ -65,7 +65,7 @@ class HostelController extends Controller
 
     public function destroy(Hostel $hostel)
     {
-        $hostel=Auction::where('id', $hostel->id);
+        $hostel=Hostel::where('id', $hostel->id);
 
         $hostel->delete();
 

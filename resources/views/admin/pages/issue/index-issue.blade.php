@@ -26,7 +26,9 @@
                     <div class="card-tools">
                         <ul class="nav nav-pills ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link btn-info active mr-1" href="{{route('issue.create')}}" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="fas fa-plus"></i></a>
+                                @if($issue->isEmpty())
+                                    <a class="nav-link btn-info active mr-1" href="{{route('issue.create')}}" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="fas fa-plus"></i></a>
+                                @endif
                             </li>
                             <li class="nav-item">
                                 @foreach ($issue as $issues)

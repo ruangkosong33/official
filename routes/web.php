@@ -81,7 +81,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
 
     Route::get('/test', [TestController::class, 'index'])->name('test.index');
     Route::post('/test', [TestController::class, 'store'])->name('test.store');
-    
+
 
     //UserList
     Route::get('/userlist', [UserController::class, 'userlist'])->name('userlist.index');
@@ -179,6 +179,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/organization/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
     Route::put('/organization/employee/{id}', [EmployeeController::class, 'update'])->name('employee.update');
     Route::delete('/organization/employee/{id}', [EmployeeController::class, 'destroy'])->name('employee.destroy');
+    Route::get('/organization/employee/show/{id}', [EmployeeController::class, 'show'])->name('employee.show');
 
     //ACTIVITY//
     //Realisasi

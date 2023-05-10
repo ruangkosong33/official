@@ -35,26 +35,26 @@
                                     <label for="name_division" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="name_hostel" class="form-control @error('name_hostel') is-invalid @enderror"
-                                        id="name_hostel" placeholder="Nama Asrama">
+                                        id="name_hostel" placeholder="Asrama">
+
+                                        @error('name_hostel')
+                                        <span class="invalid-feedback">{{$message}}</span>
+                                        @enderror
+
                                     </div>
-
-                                    @error('name_hostel')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
-
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="name_division" class="col-sm-2 col-form-label">Alamat</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="address_hostel" class="form-control @error('address_hostel') is-invalid @enderror"
-                                        id="address_hostel" placeholder="Alamat Asrama">
+                                        id="address_hostel" placeholder="Asrama">
+
+                                        @error('address_hostel')
+                                        <span class="invalid-feedback">{{$message}}</span>
+                                        @enderror
+
                                     </div>
-
-                                    @error('address_hostel')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                    @enderror
-
                                 </div>
                             </div>
 

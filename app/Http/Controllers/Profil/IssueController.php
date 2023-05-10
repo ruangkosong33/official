@@ -6,6 +6,7 @@ use App\Models\Issue;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class IssueController extends Controller
 {
@@ -34,6 +35,8 @@ class IssueController extends Controller
             'description_issue'=>$request->description_issue,
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
         return redirect()->route('issue.index');
     }
 
@@ -58,6 +61,8 @@ class IssueController extends Controller
             'slug'=>Str::slug($request->title_issue),
             'description_issue'=>$request->description_issue,
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
 
         return redirect()->route('issue.index');
     }

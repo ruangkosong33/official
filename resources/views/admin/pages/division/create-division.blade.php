@@ -32,10 +32,10 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="name_division" class="col-sm-2 col-form-label">Nama Bidang</label>
+                                    <label for="name_division" class="col-sm-2 col-form-label">Bidang</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="name_division" class="form-control @error('name_division') is-invalid @enderror"
-                                        id="name_division" placeholder="Sub Judul">
+                                        id="name_division" placeholder="Nama Bidang">
                                     </div>
                                 </div>
 

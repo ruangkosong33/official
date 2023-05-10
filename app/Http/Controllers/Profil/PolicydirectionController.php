@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\Policydirection;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PolicydirectionController extends Controller
 {
@@ -34,6 +35,8 @@ class PolicydirectionController extends Controller
             'description_policydirection'=>$request->description_policydirection,
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
         return redirect()->route('policydirection.index');
     }
 
@@ -58,6 +61,8 @@ class PolicydirectionController extends Controller
             'slug'=>Str::slug($request->title_policydirection),
             'description_policydirection'=>$request->description_policydirection,
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
 
         return redirect()->route('policydirection.index');
     }

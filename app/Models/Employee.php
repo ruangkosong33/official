@@ -11,7 +11,7 @@ class Employee extends Model
 
     protected $table='employees';
 
-    protected $fillable=['name_employee', 'nip', 'division_id', 'image_employee', 'position', 'status', 'religion', 'education_school', 'education_work'];
+    protected $fillable=['name_employee','slug', 'nip', 'division_id', 'image_employee', 'position', 'status', 'religion', 'education_school', 'education_work'];
 
     protected $hidden=[];
 

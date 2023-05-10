@@ -36,6 +36,8 @@ class GoalobjectiveController extends Controller
 
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
         return redirect()->route('goalobjective.index');
     }
 

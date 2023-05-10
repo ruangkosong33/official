@@ -60,6 +60,8 @@ class VisionController extends Controller
             'description_vision'=>$request->description_vision,
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
+
         return redirect()->route('vision.index');
     }
 

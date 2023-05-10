@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use App\Models\Serviceorder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ServiceorderController extends Controller
 {
@@ -34,6 +35,8 @@ class ServiceorderController extends Controller
             'description_serviceorder'=>$request->description_serviceorder,
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
         return redirect()->route('serviceorder.index');
     }
 
@@ -58,6 +61,8 @@ class ServiceorderController extends Controller
             'slug'=>Str::slug($request->title_serviceorder),
             'description_serviceorder'=>$request->description_serviceorder,
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
 
         return redirect()->route('serviceorder.index');
     }

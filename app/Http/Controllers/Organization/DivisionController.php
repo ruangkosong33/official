@@ -6,6 +6,7 @@ use App\Models\Division;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DivisionController extends Controller
 {
@@ -32,6 +33,8 @@ class DivisionController extends Controller
             'slug'=>Str::slug($request->name_division),
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
         return redirect()->route('division.index');
     }
 
@@ -55,6 +58,8 @@ class DivisionController extends Controller
             'slug'=>Str::slug($request->name_division),
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
+
         return redirect()->route('division.index');
     }
 
@@ -63,6 +68,8 @@ class DivisionController extends Controller
         $division=Division::findOrFail($id);
 
         $division->delete();
+
+        Alert::success('Berhasil' ,'Data Berhasil Di Hapus');
 
         return redirect()->route('division.index');
     }

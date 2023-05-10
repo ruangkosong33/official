@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Organization;
 
 use App\Models\Division;
 use App\Models\Employee;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EmployeeController extends Controller
 {
@@ -31,7 +32,7 @@ class EmployeeController extends Controller
             'name_employee'=>'required',
             'nip'=>'required',
             'division_id'=>'required',
-            'image_employee'=>'required|mimes:jpg,png,jpeg|max:2000',
+            'image_employee'=>'mimes:jpg,png,jpeg|max:3000',
             'position'=>'required',
             'status'=>'required',
             'religion'=>'required',
@@ -49,6 +50,7 @@ class EmployeeController extends Controller
 
         $employee=Employee::create([
             'name_employee'=>$request->name_employee,
+            'slug'=>Str::slug($request->name_employee),
             'nip'=>$request->nip,
             'division_id'=>$request->division_id,
             'image_employee'=>$employees,
@@ -85,7 +87,7 @@ class EmployeeController extends Controller
         $employee=$request->validate([
             'name_employee'=>'required',
             'nip'=>'required',
-            'image_employee'=>'required|mimes:jpg,png,jpeg|max:2000',
+            'image_employee'=>'mimes:jpg,png,jpeg|max:3000',
             'position'=>'required',
             'status'=>'required',
             'religion'=>'required',
@@ -99,7 +101,7 @@ class EmployeeController extends Controller
         {
             $file = $request->file('image_employee');
             $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
+            $employees = time().'.'.$extention;
             $file->move('uploads/image-pegawai/', $employees);
 
         }else{
@@ -109,8 +111,8 @@ class EmployeeController extends Controller
 
         $employee->update([
             'name_employee'=>$request->name_employee,
+            'slug'=>Str::slug($request->name_employee),
             'nip'=>$request->nip,
-            'image_employee'=>$employees,
             'position'=>$request->position,
             'status'=>$request->status,
             'religion'=>$request->religion,
@@ -129,6 +131,8 @@ class EmployeeController extends Controller
 
         $employee->delete();
 
-        return redirect()->route('employee.index');
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
+
+        return redirect()->back();
     }
 }
