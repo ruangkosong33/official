@@ -47,7 +47,7 @@ class HostelController extends Controller
 
     public function update(Request $request, Hostel $hostel)
     {
-        $hostel=$request->validate([
+        $this->validate($request,[
             'name_hostel'=>'required',
             'address_hostel'=>'required',
         ]);

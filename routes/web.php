@@ -222,6 +222,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/infopublik/auction/edit/{auction}', [AuctionController::class, 'edit'])->name('auction.edit');
     Route::put('/infopublik/auction/{auction}', [AuctionController::class, 'update'])->name('auction.update');
     Route::delete('/infopublik/auction/{auction}', [AuctionController::class, 'destroy'])->name('auction.destroy');
+    Route::get('/infopublik/auction/{auction}', [AuctionController::class, 'download'])->name('auction.download');
 
     //Download
     Route::get('/infopublik/download', [DownloadController::class, 'index'])->name('download.index');
@@ -321,6 +322,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/integrasi/lppd/edit/{id}', [LppdController::class, 'edit'])->name('lppd.edit');
     Route::put('/integrasi/lppd/{id}', [LppdController::class, 'update'])->name('lppd.update');
     Route::delete('/integrasi/lppd/{id}', [LppdController::class, 'destroy'])->name('lppd.destroy');
+    Route::get('/integrasi/lppd/{lppd}', [LppdController::class, 'download'])->name('lppd.download');
 
     //SIDATA
     Route::get('/integrasi/sidata', [SidataController::class, 'index'])->name('sidata.index');

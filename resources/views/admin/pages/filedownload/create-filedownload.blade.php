@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('filedownload.store, ['download'=>$download]')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('filedownload.store', ['download'=>$download])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
@@ -61,7 +61,7 @@
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('filelaw.index', ['law'=>$law])}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('filedownload.index', ['download'=>$download])}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->

@@ -53,12 +53,12 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$lppds->title_lppd}}</td>
                                 <td>{{$lppds->year}}</td>
-                                <td>{{$lppsd->file_lppd}}</td>
+                                <td><a href={{route('lppd.download', $lppds->id)}}>{{$lppds->file_lppd}}</a>
                                 <td>
-                                    <a href="{{route('lppd.edit', $lppd->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('lppd.edit', $lppds->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('lppd.destroy', $lppd->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('lppd.destroy', $lppds->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">

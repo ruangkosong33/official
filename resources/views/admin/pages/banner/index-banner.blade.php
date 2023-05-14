@@ -45,7 +45,7 @@
                     @foreach ($banner as $key=>$banners)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td><img src="{{asset('uploads/image-banner/'. $banners->image_banner)}}" width="80px"></td>
+                            <td><img src="{{asset('uploads/image-banner/', $banners->image_banner)}}" width="80px"></td>
                             <td>
                                 <a href="{{route('banner.edit', $banners->id)}}" class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>

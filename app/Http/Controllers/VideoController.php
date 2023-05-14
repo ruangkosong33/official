@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Video;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VideoController extends Controller
 {
@@ -24,26 +25,21 @@ class VideoController extends Controller
     {
         $video=$request->validate([
             'title_video'=>'required',
-            'image_video'=>'mimes:jpg,png|max:2048',
-            'link'=>'required',
-            'status'=>'required',
-
+            'image_video'=>'required|mimes:jpg,jpeg,png|max:1000',
         ]);
 
-        if($request->file('image_video'))
+        if($request->hasFile('image_video'))
         {
-            $file=$request->file('image_video');
+            $file=$request->hasFile('image_video');
             $extension=$file->getClientOriginalName();
-            $vidoes=$extension;
-            $file->move('uploads/image-video', $vidoes);
+            $videos=$extension;
+            $file->move('uploads/image-video', $videos);
         }
 
         $video=Video::create([
             'title_video'=>$request->title_video,
             'slug'=>Str::slug($request->title_video),
             'image_video'=>$videos,
-            'link'=>$request->link,
-            'status'=>$request->status,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
@@ -51,30 +47,30 @@ class VideoController extends Controller
         return redirect()->route('video.index');
     }
 
-    public function edit($id)
+    public function edit(Video $video)
     {
-        $video=Video::findOrFail($id);
-
         return view('admin.pages.video.edit-video', ['video'=>$video]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Video $video)
     {
+        $this->validate($request,[
+            'title_video'=>'required',
+            'image_video'=>'required|mimes:jpg,jpeg,png|max:1000',
+        ]);
 
-        if($request->file('image_video'))
+        if($request->hasFile('image_video'))
         {
-            $file=$request->file('image_video');
+            $file=$request->hasFile('image_video');
             $extension=$file->getClientOriginalName();
-            $vidoes=$extension;
-            $file->move('uploads/image-video', $vidoes);
+            $videos=$extension;
+            $file->move('uploads/image-video', $videos);
         }
 
-        $video->update([
+        $video=Video::wheere('id', $video->id)->update([
             'title_video'=>$request->title_video,
             'slug'=>Str::slug($request->title_video),
             'image_video'=>$videos,
-            'link'=>$request->link,
-            'status'=>$request->status,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Update');
@@ -82,12 +78,15 @@ class VideoController extends Controller
         return redirect()->route('video.index');
     }
 
-    public function destroy($id)
+    public function destroy(Video $video)
     {
-        $video=Video::findOrFail($id);
+        $video=Video::findOrFail($video->id);
 
         $video->delete();
 
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
+
         return redirect()->route('video.index');
+
     }
 }

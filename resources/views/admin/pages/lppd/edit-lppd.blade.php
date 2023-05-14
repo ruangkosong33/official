@@ -48,7 +48,7 @@
                                     <label for="year" class="col-sm-2 col-form-label">Tahun</label>
                                     <div class="col-sm-10">
                                         <input type="integer" name="year" class="form-control @error('year') is-invalid @enderror"
-                                        id="year" placeholder="Tahun" value="{{old('year') ?? $renja->year}}">
+                                        id="year" placeholder="Tahun" value="{{old('year') ?? $lppd->year}}">
 
                                         @error('year')
                                         <span class="invalid-feedback">{{$message}}</span>
@@ -58,10 +58,10 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_lppd" class="col-sm-2 col-form-label">File renja</label>
+                                    <label for="file_lppd" class="col-sm-2 col-form-label">File Lppd</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file_renja" class="form-control @error('file_lppd') is-invalid @enderror"
-                                        id="file_renja" value="{{old('file_lppd') ?? $lppd->file_lppd}}">
+                                        <input type="file" name="file_lppd" class="form-control @error('file_lppd') is-invalid @enderror"
+                                        id="file_lppd" value="{{old('file_lppd') ?? $lppd->file_lppd}}">
 
                                         @error('file_lppd')
                                         <span class="invalid-feedback">{{$message}}</span>

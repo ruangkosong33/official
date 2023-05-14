@@ -104,7 +104,7 @@ class PostController extends Controller
             $request->file('image_post')->move(public_path('image-post', $imageextension));
         }else{
 
-            unset($employee['image_post']);
+            unset($post['image_post']);
         }
 
         $post->update([

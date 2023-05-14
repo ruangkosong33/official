@@ -28,14 +28,16 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('auction.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('auction.update', $auction->id)}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
+                            @method('PUT')
+                            
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="title_auction" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="title_auction" class="form-control @error('title_auction') is-invalid @enderror"
-                                        id="name_city" placeholder="Lelang" value="{{old('title_auction') ?? $auction->title_auction}}">
+                                        id="title_auction" placeholder="Lelang" value="{{old('title_auction') ?? $auction->title_auction}}">
 
                                         @error('title_auction')
                                         <span class="invalid-feedback">{{$message}}</span>

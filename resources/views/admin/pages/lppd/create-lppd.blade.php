@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('lppd.create')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('lppd.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
@@ -60,7 +60,7 @@
                                 <div class="form-group row">
                                     <label for="file_lppd" class="col-sm-2 col-form-label">File LPPD</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file_renja" class="form-control @error('file_lppd') is-invalid @enderror"
+                                        <input type="file" name="file_lppd" class="form-control @error('file_lppd') is-invalid @enderror"
                                         id="file_lppd">
 
                                         @error('file_lppd')

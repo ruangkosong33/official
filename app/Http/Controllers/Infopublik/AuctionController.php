@@ -34,7 +34,7 @@ class AuctionController extends Controller
             $file=$request->file('file_auction');
             $extension=$file->getClientOriginalName();
             $auctions=$extension;
-            $file->move('/uploads/file-auction/', $auctions);
+            $file->move('uploads/file-lelang', $auctions);
         }
 
         $auction=Auction::create([
@@ -55,8 +55,8 @@ class AuctionController extends Controller
 
     public function update(Request $request, Auction $auction)
     {
-        $auction=$request->validate([
-            'title_hostel'=>'required',
+        $this->validate($request,[
+            'title_auction'=>'required',
             'file_auction'=>'mimes:pdf|max:3000',
         ]);
 
@@ -65,7 +65,7 @@ class AuctionController extends Controller
             $file=$request->file('file_auction');
             $extension=$file->getClientOriginalName();
             $auctions=$extension;
-            $file->move('/uploads/file-auction/', $auctions);
+            $file->move('uploads/file-lelang', $auctions);
         }
 
         $auction->update([
@@ -89,5 +89,11 @@ class AuctionController extends Controller
 
         return redirect()->route('auction.index');
     }
+    
+    public function download(Auction $auction)
+    {
+        $filepath=public_path("uploads/file-lelang/{$auction->file_auction}");
 
+        return response()->download($filepath);
+    }
 }

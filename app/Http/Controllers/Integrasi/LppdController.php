@@ -54,7 +54,9 @@ class LppdController extends Controller
     {
         $lppd=Lppd::findOrFail($id);
 
-        return view('admin.pages.lppd.edit-lppd', ['lppd'=>$lppd]);
+        $filepath=public_path("uploads/file-lppd");
+
+        return view('admin.pages.lppd.edit-lppd', compact('lppd', 'filepath'));
     }
 
     public function update(Request $request, $id)
@@ -98,6 +100,10 @@ class LppdController extends Controller
         return redirect()->back();
     }
 
+    public function download(Lppd $lppd)
+    {
+        $filepath=public_path("uploads/file-lppd/{$lppd->file_lppd}");
 
-
+        return response()->download($filepath);
+    }
 }
