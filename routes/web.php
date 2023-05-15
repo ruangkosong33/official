@@ -8,6 +8,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\CitykabController;
 use App\Http\Controllers\FilelawController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
@@ -34,6 +35,7 @@ use App\Http\Controllers\Integrasi\FilesopController;
 use App\Http\Controllers\Integrasi\RenstraController;
 use App\Http\Controllers\Potention\FilepadController;
 use App\Http\Controllers\Infopublik\AuctionController;
+use App\Http\Controllers\Integrasi\FileapbdController;
 use App\Http\Controllers\Infopublik\DownloadController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
@@ -228,17 +230,18 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/infopublik/download', [DownloadController::class, 'index'])->name('download.index');
     Route::get('/infopublik/download/create', [DownloadController::class, 'create'])->name('download.create');
     Route::post('/infopublik/download', [DownloadController::class, 'store'])->name('download.store');
-    Route::get('/infopublik/download/edit/{id}', [DownloadController::class, 'edit'])->name('download.edit');
-    Route::put('/infopublik/dowload/{id}', [DownloadController::class, 'update'])->name('download.update');
-    Route::delete('/infopublik/download/{id}', [DownloadController::class, 'destroy'])->name('download.destroy');
+    Route::get('/infopublik/download/edit/{download}', [DownloadController::class, 'edit'])->name('download.edit');
+    Route::put('/infopublik/dowload/{download}', [DownloadController::class, 'update'])->name('download.update');
+    Route::delete('/infopublik/download/{download}', [DownloadController::class, 'destroy'])->name('download.destroy');
 
-    //FileDownload
+    //File Download
     Route::get('/infopublik/{download}/filedownload', [FiledownloadController::class, 'index'])->name('filedownload.index');
     Route::get('/infopublik/{download}/filedownload/create', [FiledownloadController::class, 'create'])->name('filedownload.create');
     Route::post('/infopublik/{download}/filedownload', [FiledownloadController::class, 'store'])->name('filedownload.store');
-    Route::get('/infopublik/filedownload/edit/{id}', [FiledownloadController::class, 'edit'])->name('filedownload.edit');
-    Route::put('/infopublik/filedowload/{id}', [FiledownloadController::class, 'update'])->name('filedownload.update');
-    Route::delete('/infopublik/filedownload/{id}', [FiledownloadController::class, 'destroy'])->name('filedownload.destroy');
+    Route::get('/infopublik/filedownload/edit/{filedownload}', [FiledownloadController::class, 'edit'])->name('filedownload.edit');
+    Route::put('/infopublik/filedownload/{filedownload}', [FiledownloadController::class, 'update'])->name('filedownload.update');
+    Route::delete('/infopublik/filedownload/{filedownload}', [FiledownloadController::class, 'destroy'])->name('filedownload.destroy');
+    Route::get('/infopublik/filedownload/{filedownload}', [FiledownloadController::class, 'download'])->name('filedownload.download');
 
 
     //INTEGRATION//
@@ -250,13 +253,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/integrasi/apbd/{apbd}', [ApbdController::class, 'update'])->name('apbd.update');
     Route::delete('/integrasi/apbd/{apbd}', [ApbdController::class, 'destroy'])->name('apbd.destroy');
 
-    //City
-    Route::get('/integrasi/apbd/{apbd}/city', [CityController::class, 'index'])->name('city.index');
-    Route::get('/integrasi/apbd/{apbd}/city/create', [CityController::class, 'create'])->name('city.create');
-    Route::post('/integrasi/apbd/{apbd}/city', [CityController::class, 'store'])->name('city.store');
-    Route::get('/integrasi/apbd/city/edit/{city}', [CityController::class, 'edit'])->name('city.edit');
-    Route::put('/integrasi/apbd/city/{city}', [CityController::class, 'update'])->name('city.update');
-    Route::delete('/integrasi/apbd/city/{city}', [CityController::class, 'destroy'])->name('city.destroy');
+    //File APBD
+    Route::get('/integrasi/{apbd}/fileapbd', [FileapbdController::class, 'index'])->name('fileapbd.index');
+    Route::get('/integrasi/{apbd}/fileapbd/create', [FileapbdController::class, 'create'])->name('fileapbd.create');
+    Route::post('/integrasi/fileapbd/{apbd}', [FileapbdController::class, 'store'])->name('fileapbd.store');
+    Route::get('/integrasi/fileapbd/edit/{fileapbd}', [FileapbdController::class, 'edit'])->name('fileapbd.edit');
+    Route::put('/integrasi/fileapbd/{fileapbd}', [FileapbdController::class, 'update'])->name('fileapbd.update');
+    Route::delete('/integrasi/fileapbd/{fileapbd}', [FileapbdController::class, 'destroy'])->name('fileapbd.destroy');
+    Route::get('/integrasi/fileapbd/{fileapbd}', [FileapbdController::class, 'download'])->name('fileapbd.download');
 
     //SOP
     Route::get('/integrasi/sop', [SopController::class, 'index'])->name('sop.index');
@@ -374,6 +378,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
     Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
 
+    //CITYKAB//
+    Route::get('/citykab', [CitykabController::class, 'index'])->name('citykab.index');
+    Route::get('/citykab/create', [CitykabController::class ,'create'])->name('citykab.create');
+    Route::post('/citykab', [CitykabController::class, 'store'])->name('citykab.store');
+    Route::get('/citykab/edit/{citykab}', [CitykabController::class, 'edit'])->name('citykab.edit');
+    Route::put('/citykab/{citykab}', [CitykabController::class, 'update'])->name('citykab.update');
+    Route::delete('/citykab/{citykab}', [CitykabController::class, 'destroy'])->name('citykab.destroy');
+
     //TRANSPARENCY//
     Route::get('/transparency', [FiletransparencyController::class, 'index'])->name('transparency.index');
     Route::get('/transparency/create', [FiletransparencyController::class, 'create'])->name('tranparency.create');
@@ -389,7 +401,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/banner/{id}', [BannerController::class, 'update'])->name('banner.update');
     Route::delete('/banner/{id}', [BannerController::class, 'destroy'])->name('banner.destroy');
 
-    //GALgallery
+    //Gallery
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
     Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
     Route::post('/gallery' , [GalleryController::class, 'store'])->name('gallery.store');

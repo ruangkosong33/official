@@ -24,7 +24,7 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data File Download</h3>
+                            <h3 class="card-title">Tambah Data File Download {{$download->category_download}}</h3>
                         </div>
 
                         <!-- Form -->
@@ -32,12 +32,12 @@
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="title_filelaw" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="title_filedownload" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_filelaw" class="form-control @error('title_law') is-invalid @enderror"
-                                        id="title_filedownload" placeholder="File Produk Hukum">
+                                        <input type="text" name="title_filedownload" class="form-control @error('title_filedownload') is-invalid @enderror"
+                                        id="title_filedownload" placeholder="File Download">
 
-                                        @error('title_filelaw')
+                                        @error('title_filedownload')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -47,10 +47,10 @@
                                 <div class="form-group row">
                                     <label for="file_filelaw" class="col-sm-2 col-form-label">File</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file_filelaw" class="form-control @error('file_filelaw') is-invalid @enderror"
-                                        id="file_filelaw">
+                                        <input type="file" name="file_download" class="form-control @error('file_download') is-invalid @enderror"
+                                        id="file_download">
 
-                                        @error('file_filelaw')
+                                        @error('file_download')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 

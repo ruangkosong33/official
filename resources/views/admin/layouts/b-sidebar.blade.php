@@ -302,6 +302,15 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{route('citykab.index')}}" class="nav-link @yield('citykab.index')">
+              <i class="nav-icon fas fa-atom"></i>
+              <p>
+                Kota/Kabupaten
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="{{route('post.index')}}" class="nav-link @yield('post.index')">
               <i class="nav-icon fas fa-newspaper"></i>
               <p>

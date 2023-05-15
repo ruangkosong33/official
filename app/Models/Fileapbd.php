@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Apbd extends Model
+class Fileapbd extends Model
 {
     use HasFactory;
 
-    protected $table='apbds';
+    protected $table='fileapbds';
 
-    protected $fillable=['periode', 'slug', 'year'];
+    protected $fillable=['citykab_id', 'apbd_id', 'title_fileapbd', 'slug', 'file_apbd'];
 
     protected $hidden=[];
 
 
-    public function fileapbd()
+    public function apbd()
     {
-        return $this->hasMany(Fileapbd::class, 'fileapbd_id', 'id');
+        return $this->belongsTo(Apbd::class, 'apbd_id', 'id');
     }
 
     public function citykab()

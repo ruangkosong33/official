@@ -11,13 +11,13 @@ class Filesp2d extends Model
 
     protected $table='sp2ds';
 
-    protected $fillable=['city_id', 'title_sp2d', 'slug', 'date', 'description', 'total'];
+    protected $fillable=['citykab_id', 'title_sp2d', 'slug', 'date', 'description', 'total'];
 
     protected $hidden=[];
 
 
-    public function city()
+    public function citykab()
     {
-        return $this->belongsTo(User::class, 'city_id', 'id');
+        return $this->belongsTo(Citykab::class, 'citykab_id', 'id');
     }
 }

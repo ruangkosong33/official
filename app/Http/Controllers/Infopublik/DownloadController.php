@@ -45,7 +45,7 @@ class DownloadController extends Controller
 
     public function update(Request $request, Download $download)
     {
-        $download=$request->validate([
+        $this->validate($request,[
             'category_download'=>'required',
         ]);
 

@@ -32,7 +32,8 @@ class PostController extends Controller
         {
             $originName = $request->file('upload')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
-            $extension = $request->file('upload')->getClientOriginalExtension();
+            $extension = $request->file('
+            upload')->getClientOriginalExtension();
             $fileName = $fileName.'_'.time().'.'.$extension;
 
             $request->file('upload')->move(public_path('images-post'), $fileName);

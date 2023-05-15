@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('citys', function (Blueprint $table) {
-            //
-            $table->unsignedBigInteger('apbd_id')->after('slug');
-            $table->foreign('apbd_id')->references('id')->on('apbds');
+        Schema::create('citykabs', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->string('name_citykab');
+            $table->string('slug');
         });
     }
 
@@ -23,8 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('citys', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('citykabs');
     }
 };

@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="mb-0">Kabupaten/Kota</h1>
+                    <h1 class="mb-0">Kota/Kabupaten</h1>
                 </div>
             </div>
         </div>
@@ -24,33 +24,20 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data Kabupaten/Kota</h3>
+                            <h3 class="card-title">Tambah Data Kota/Kabupaten</h3>
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('city.store', ['apbd'=>$apbd])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('citykab.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="name_city" class="col-sm-2 col-form-label">Wilayah</label>
+                                    <label for="name_citykab" class="col-sm-2 col-form-label">Nama</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="name_city" class="form-control @error('name_city') is-invalid @enderror"
-                                        id="name_city" placeholder="Wilayah">
+                                        <input type="text" name="name_citykab" class="form-control @error('name_citykab') is-invalid @enderror"
+                                        id="name_citykab" placeholder="Kota/Kabupaten">
 
-                                        @error('name_city')
-                                        <span class="invalid-feedback">{{$message}}</span>
-                                        @enderror
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="file_apbd" class="col-sm-2 col-form-label">File APBD</label>
-                                    <div class="col-sm-10">
-                                        <input type="file" name="file_apbd" class="form-control @error('file_apbd') is-invalid @enderror"
-                                        id="file_apbd">
-
-                                        @error('file_apbd')
+                                        @error('name_citykab')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -58,9 +45,10 @@
                                 </div>
 
                             </div>
+
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('city.index', ['apbd'=>$apbd])}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('citykab.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Infopublik;
 
 use App\Models\Download;
+use Illuminate\Support\Str;
 use App\Models\Filedownload;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -83,11 +84,20 @@ class FiledownloadController extends Controller
 
     public function destroy(Filedownload $filedownload)
     {
-        $filedownload=Filedownload::where('id',$download->id)->delete();
+        $filedownload=Filedownload::where('id',$filedownload->id);
+
+        $filedownload->delete();
 
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->back();
+    }
+
+    public function download(Filedownload $filedownload)
+    {
+        $filepath=public_path("uploads/file-download/{$filedownload->file_download}");
+
+        return response()->download($filepath);
     }
 
 }

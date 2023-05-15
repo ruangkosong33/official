@@ -63,7 +63,7 @@
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="{{route('city.index', $apbds)}}" class="btn btn-info btn-sm">
+                                    <a href="{{route('fileapbd.index', $apbds)}}" class="btn btn-info btn-sm">
                                       <i class="fas fa-list"></i>
                                     </a>
                                 </td>
