@@ -81,4 +81,11 @@ class FilelawController extends Controller
 
         return redirect()->back();
     }
+
+    public function download(Filelaw $filelaw)
+    {
+        $filepath=public_path("uploads/file-law/{$filelaw->file_law}");
+
+        return response()->download($filepath);
+    }
 }

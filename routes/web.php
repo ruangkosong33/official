@@ -16,6 +16,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Bbh\Filesp2dController;
 use App\Http\Controllers\Profil\EventController;
 use App\Http\Controllers\Profil\IssueController;
+use App\Http\Controllers\TransparencyController;
 use App\Http\Controllers\Integrasi\SopController;
 use App\Http\Controllers\Potention\PadController;
 use App\Http\Controllers\Profil\LeaderController;
@@ -262,6 +263,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/integrasi/fileapbd/{fileapbd}', [FileapbdController::class, 'destroy'])->name('fileapbd.destroy');
     Route::get('/integrasi/fileapbd/{fileapbd}', [FileapbdController::class, 'download'])->name('fileapbd.download');
 
+
     //SOP
     Route::get('/integrasi/sop', [SopController::class, 'index'])->name('sop.index');
     Route::get('/integrasi/sop/create', [SopController::class, 'create'])->name('sop.create');
@@ -318,6 +320,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/integrasi/lkjip/edit/{id}', [LkjipController::class, 'edit'])->name('lkjip.edit');
     Route::put('/integrasi/lkjip/{id}', [LkjipController::class, 'update'])->name('lkjip.update');
     Route::delete('/integrasi/lkjip/{id}', [LkjipController::class, 'destroy'])->name('lkjip.destroy');
+    Route::get('/integrasi/lkjip/{lkjip}', [LkjipController::class, 'download'])->name('lkjip.download');
 
     //LPPD
     Route::get('/integrasi/lppd', [LppdController::class, 'index'])->name('lppd.index');
@@ -352,6 +355,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/potention/filepad/edit/{filepad}', [FilepadController::class, 'edit'])->name('filepad.edit');
     Route::put('/potention/filepad/{filepad}/', [FilepadController::class, 'update'])->name('filepad.update');
     Route::delete('/potention/filepad/{filepad}', [FilepadController::class, 'destroy'])->name('filepad.destroy');
+    Route::get('/potention/filepad/{filepad}', [FilepadController::class, 'download'])->name('filepad.download');
 
     //Asset
     Route::get('/potention/asset', [AssetController::class, 'index'])->name('asset.index');
@@ -386,12 +390,22 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/citykab/{citykab}', [CitykabController::class, 'update'])->name('citykab.update');
     Route::delete('/citykab/{citykab}', [CitykabController::class, 'destroy'])->name('citykab.destroy');
 
-    //TRANSPARENCY//
-    Route::get('/transparency', [FiletransparencyController::class, 'index'])->name('transparency.index');
-    Route::get('/transparency/create', [FiletransparencyController::class, 'create'])->name('tranparency.create');
-    Route::post('/transparency', [FiletransparencyController::class, 'store'])->name('transparency.store');
-    Route::get('/transparency/edit/{id}', [FiletransparencyController::class, 'edit'])->name('transparency.edit');
-    Route::delete('/transparency/{id}', [FiletransparencyController::class, 'destroy'])->name('transparency.destroy');
+    //TRANSPARANSI
+    Route::get('/transparency', [TransparencyController::class ,'index'])->name('transparency.index');
+    Route::get('/transparency/create', [TransparencyController::class, 'create'])->name('transparency.create');
+    Route::post('/transparency', [TransparencyController::class, 'store'])->name('transparency.store');
+    Route::get('/transparency/{transparency}/edit', [TransparencyController::class, 'edit'])->name('transparency.edit');
+    Route::put('/transprency/{transparency}', [TransparencyController::class, 'update'])->name('transparency.update');
+    Route::delete('/transparency/{transparency}', [TransparencyController::class, 'destroy'])->name('transparency.destroy');
+
+    //FILE TRANSPARANSI//
+    Route::get('/transparency/{transparency}/filetransparency', [FiletransparencyController::class, 'index'])->name('filetransparency.index');
+    Route::get('/transparency/{transparency}/filetransparency/create', [FiletransparencyController::class, 'create'])->name('filetransparency.create');
+    Route::post('/transparency/{transparency}/filetransparency', [FiletransparencyController::class, 'store'])->name('filetransparency.store');
+    Route::get('/transparency/filetransparency/{filetransparency}', [FiletransparencyController::class, 'edit'])->name('filetransparency.edit');
+    Route::put('/transparency/filetransparency/edit/{filetransparency}', [FiletransparencyController::class, 'update'])->name('filetransparency.update');
+    Route::delete('/transparency/filetransparency/{filetransparency}', [FiletransparencyController::class, 'destroy'])->name('filetransparency.destroy');
+    Route::get('/transparency/filetransparency/{filetransparency}', [FiletransparencyController::class, 'download'])->name('filetransparency.download');
 
     //BANNER//
     Route::get('/banner', [BannerController::class, 'index'])->name('banner.index');
@@ -433,6 +447,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/law/filelaw/edit/{filelaw}', [FilelawController::class, 'edit'])->name('filelaw.edit');
     Route::put('/law/filelaw/{filelaw}', [FilelawController::class, 'update'])->name('filelaw.update');
     Route::delete('/law/filelaw/{filelaw}', [FilelawController::class, 'destroy'])->name('filelaw.destroy');
+    Route::get('/law/filelaw/{filelaw}', [FilelawController::class, 'download'])->name('filelaw.download');
 
     //Belanja Bagi Hasil( BBH )//
     //File SP2D
@@ -442,6 +457,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/filesp2d/edit/{sp2d}', [Filesp2dController::class, 'edit'])->name('filesp2d.edit');
     Route::put('/filesp2d/{sp2d}', [Filesp2dController::class, 'update'])->name('filesp2d.update');
     Route::delete('/filesp2d/{sp2d}', [Filesp2dController::class, 'destroy'])->name('filesp2d.destroy');
+    Route::get('/filesp2d/{sp2d}', [Filesp2dControllerr::class, 'download'])->name('filesp2d.download');
 
 });
 

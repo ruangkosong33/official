@@ -11,7 +11,7 @@ class Filetransparency extends Model
 
     protected $table='filetransparencys';
 
-    protected $fillable=['name_filetransparency', 'slug', 'file_transparency'];
+    protected $fillable=['title_filetransparency', 'slug', 'file_transparency', 'transparency_id'];
 
     protected $hidden=[];
 

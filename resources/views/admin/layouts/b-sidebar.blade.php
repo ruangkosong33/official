@@ -328,6 +328,16 @@
             </a>
           </li>
 
+
+          <li class="nav-item">
+            <a href="{{route('transparency.index')}}" class="nav-link @yield('law.index')">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Transparansi Anggaran
+              </p>
+            </a>
+          </li>
+
           <li class="nav-item">
             <a href="{{route('filesp2d.index')}}" class="nav-link @yield('filesp2d.index')">
               <i class="nav-icon fas fa-cubes"></i>

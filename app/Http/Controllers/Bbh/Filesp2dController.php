@@ -101,11 +101,18 @@ class Filesp2dController extends Controller
     public function destroy($id)
     {
         $filesp2d=Filesp2d::findOrFail($id);
-        
+
         $filesp2d->delete();
 
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->back();
+    }
+
+    public function download(Filesp2d $filesp2d)
+    {
+        $filepath=public_path("uploads/file-sp2d/{$filesp2d->file_sp2d}");
+
+        return response()->download($filepath);
     }
 }

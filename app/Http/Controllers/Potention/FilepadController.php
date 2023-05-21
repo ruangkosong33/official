@@ -89,4 +89,11 @@ class FilepadController extends Controller
 
         return back();
     }
+
+    public function download(Filepad $filepad)
+    {
+        $filepath=public_path("uploads/file-pad/{$filepad->file_pad}");
+
+        return response()->download($filepath);
+    }
 }

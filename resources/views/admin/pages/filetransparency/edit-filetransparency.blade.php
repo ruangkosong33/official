@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Transparansi Anggaran</h1>
+                    <h1 class="m-0">File Transparansi Anggaran</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Transparansi Anggaran</h3>
+                    <h3 class="card-title">Data File Transparansi Anggaran</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('transparency.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('filetranparency.create', ['transparenyc'=>$transparency])}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -42,28 +42,27 @@
                             <tr>
                                 <th>No</th>
                                 <th>Judul</th>
+                                <th>File</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($transparency as $key=>$transparencys)
+                            @foreach ($filetrancparency as $key=>$filetransparencys)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$transparencys->title_transparency}}</td>
+                                <td>{{$transparency->title_filetransparency}}</td>
+                                <td><a href="{{route('filetransparency.blade.php')}}">{{$filetransparency->file_transparency}}</a></td>
                                 <td>
-                                    <a href="{{route('transparency.edit', $transparencys->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('filetransparency.edit', $filetransparencys->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('transparency.destroy', $transparencys->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('filetransparency.destroy', $filetransparencys->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="{{route('filetransparency.index', $transparencys->id)}}" class="btn btn-info btn-sm">
-                                      <i class="fas fa-list"></i>
-                                    </a>
                                 </td>
                               </tr>
                             @endforeach
