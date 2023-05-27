@@ -53,12 +53,12 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$gallerys->category->title_category}}</td>
                                 <td>{{$gallerys->title_gallery}}</td>
-                                <td>{{$gallerys->image_gallery}}</td>
+                                <td><img src="{{asset('uploads/image-gallery/'. $gallerys->image_gallery)}}" width="80px"></td>
                                 <td>
-                                    <a href="{{route('gallery.edit', $gallery->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('gallery.edit', $gallerys->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('gallery.destroy', $gallery->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('gallery.destroy', $gallerys->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">

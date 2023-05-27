@@ -12,7 +12,7 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $gallery=Gallery::with(['category'])->latest();
+        $gallery=Gallery::with('category')->latest()->paginate(7);
 
         return view('admin.pages.gallery.index-gallery', ['gallery'=>$gallery]);
     }
@@ -66,7 +66,7 @@ class GalleryController extends Controller
             'title_gallery'=>'required',
             'image_gallery'=>'required|mimes:jpg,jpeg,png|max:4000',
         ]);
-        
+
         $gallery=Gallery::findOrFail($id);
 
         if($request->file('image_gallery'))
@@ -92,7 +92,7 @@ class GalleryController extends Controller
     public function destroy($id)
     {
         $gallery=Gallery::findOrFail($id);
-        
+
         $gallery->delete();
 
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');

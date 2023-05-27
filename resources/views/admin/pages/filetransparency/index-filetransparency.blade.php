@@ -50,8 +50,8 @@
                             @foreach ($filetransparency as $key=>$filetransparencys)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$filetransparencys->title_filetransparency}}<td>
-                                {{-- <td><a href="{{route('filetransparency.download')}}">{{$filetransparency->file_transparency}}</a></td> --}}
+                                <td>{{$filetransparencys->title_filetransparency}}</td>
+                                <td><a href="{{route('filetransparency.download', $filetransparencys->id)}}">{{$filetransparencys->file_transparency}}</a></td>
                                 <td>
                                     <a href="{{route('filetransparency.edit', $filetransparencys->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>

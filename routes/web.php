@@ -402,8 +402,8 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/transparency/{transparency}/filetransparency', [FiletransparencyController::class, 'index'])->name('filetransparency.index');
     Route::get('/transparency/{transparency}/filetransparency/create', [FiletransparencyController::class, 'create'])->name('filetransparency.create');
     Route::post('/transparency/{transparency}/filetransparency', [FiletransparencyController::class, 'store'])->name('filetransparency.store');
-    Route::get('/transparency/filetransparency/{filetransparency}', [FiletransparencyController::class, 'edit'])->name('filetransparency.edit');
-    Route::put('/transparency/filetransparency/edit/{filetransparency}', [FiletransparencyController::class, 'update'])->name('filetransparency.update');
+    Route::get('/transparency/filetransparency/{filetransparency}/edit', [FiletransparencyController::class, 'edit'])->name('filetransparency.edit');
+    Route::put('/transparency/filetransparency{filetransparency}', [FiletransparencyController::class, 'update'])->name('filetransparency.update');
     Route::delete('/transparency/filetransparency/{filetransparency}', [FiletransparencyController::class, 'destroy'])->name('filetransparency.destroy');
     Route::get('/transparency/filetransparency/{filetransparency}', [FiletransparencyController::class, 'download'])->name('filetransparency.download');
 

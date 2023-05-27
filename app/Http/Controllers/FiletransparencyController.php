@@ -12,7 +12,7 @@ class FiletransparencyController extends Controller
 {
     public function index(Transparency $transparency)
     {
-        $filetransparency=Filetransparency::where('id', $transparency->id)->get();
+        $filetransparency=Filetransparency::where('transparency_id', $transparency->id)->get();
 
         return view('admin.pages.filetransparency.index-filetransparency', ['transparency'=>$transparency, 'filetransparency'=>$filetransparency]);
     }
