@@ -51,6 +51,10 @@
                                         <input type="file" name="file_asset" class="form-control @error('file_asset') is-invalid @enderror"
                                         id="file_asset">
 
+                                        @if($vision->isEmpty())
+                                        <a class="nav-link btn-info active mr-1" href="{{route('vision.create')}}" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="fas fa-plus"></i></a>
+                                        @endif
+
                                         @error('file_asset')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror

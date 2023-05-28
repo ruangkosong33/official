@@ -51,7 +51,7 @@
                               <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$responsibles->title_responsible}}</td>
-                                <td>{{$responsibles->file_responsible}}</td>
+                                <td><a href="{{route('responsible.download', $responsibles->id)}}">{{$responsible->file_responsible}}</a></td>
                                 <td>
                                     <a href="{{route('responsible.edit', $responsible->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
@@ -63,9 +63,6 @@
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="#" class="btn btn-info btn-sm">
-                                      <i class="fas fa-eye"></i>
-                                    </a>
                                 </td>
                               </tr>
                             @endforeach

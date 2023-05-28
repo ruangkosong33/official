@@ -7,6 +7,7 @@ use App\Models\Filepad;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PadController extends Controller
 {
@@ -33,6 +34,8 @@ class PadController extends Controller
             'slug'=>Str::slug($request->title_pad),
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
+
         return redirect()->route('pad.index');
     }
 
@@ -57,6 +60,8 @@ class PadController extends Controller
             'slug'=>Str::slug($request->title_pad),
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
+
         return redirect()->route('pad.index');
     }
 
@@ -65,6 +70,8 @@ class PadController extends Controller
         $pad=Pad::findOrFail($id);
 
         $pad->delete();
+
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->route('pad.index');
     }

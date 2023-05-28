@@ -6,6 +6,7 @@ use App\Models\Realisation;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RealisationController extends Controller
 {
@@ -33,7 +34,7 @@ class RealisationController extends Controller
             $file=$request->file('file_realisation');
             $extension=$file->getClientOriginalName();
             $realisations=$extension;
-            $file->move('upload/file-Realisasi', $realisations);
+            $file->move('uploads/file-realisasi', $realisations);
         }
 
         $realisation=Realisation::create([
@@ -50,7 +51,7 @@ class RealisationController extends Controller
 
     public function edit($id)
     {
-        $realisation=$realisation::findOrFail($id);
+        $realisation=Realisation::findOrFail($id);
 
         return view('admin.pages.realisation.edit-realisation', ['realisation'=>$realisation]);
     }
@@ -67,7 +68,7 @@ class RealisationController extends Controller
             $file=$request->file('file_realisation');
             $extension=$file->getClientOriginalName();
             $realisations=$extension;
-            $file->move('upload/file-Realisasi', $realisations);
+            $file->move('uploads/file-realisasi', $realisations);
         }
 
         $realisation=Realisation::findOrFail($id);
@@ -92,5 +93,12 @@ class RealisationController extends Controller
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->route('realisation.index');
+    }
+
+    public function download(Realisation $realisation)
+    {
+        $filepath=public_path("uploads/file-realisasi/{$realisation->file_realisastion}");
+
+        return response()->download($filepath);
     }
 }

@@ -13,7 +13,7 @@ class Filesp2dController extends Controller
 {
     public function index()
     {
-        $filesp2d=Filesp2d::with('city')->get();
+        $filesp2d=Filesp2d::with('citykab')->get();
 
         return view('admin.pages.filesp2d.index-sp2d', ['filesp2d'=>$filesp2d]);
     }

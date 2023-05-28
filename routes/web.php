@@ -192,14 +192,16 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/activity/realisation/edit/{id}', [RealisationController::class, 'edit'])->name('realisation.edit');
     Route::put('/activity/realisation/{id}', [RealisationController::class, 'update'])->name('realisation.update');
     Route::delete('/activity/realisation/{id}', [RealisationController::class, 'destroy'])->name('realisation.destroy');
-
+    Route::get('/activity/realisation/{realisation}', [RealisationController::class, 'download'])->name('realisation.download');
+    
     //Responsible
     Route::get('/activity/responsible', [ResponsibleController::class, 'index'])->name('responsible.index');
     Route::get('/activity/responsible/create', [ResponsibleController::class, 'create'])->name('responsible.create');
     Route::post('/activity/responsible', [ResponsibleController::class, 'store'])->name('responsible.store');
-    Route::get('/activity/responsible/edit/{id}', [ResponsibleController::class, 'edit'])->name('realisation.edit');
+    Route::get('/activity/responsible/edit/{id}', [ResponsibleController::class, 'edit'])->name('responsible.edit');
     Route::put('/activity/responsible/{id}', [ResponsibleController::class, 'update'])->name('responsible.update');
     Route::delete('/activity/responsible/{id}', [ResponsibleController::class, 'destroy'])->name('responsible.destroy');
+    Route::get('/activity/responsible/{responsible}', [ResponsibleController::class, 'download'])->name('responsible.download');
 
     //Bansos
     Route::get('/activity/bansos', [BansosController::class, 'index'])->name('bansos.index');
@@ -208,6 +210,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/activity/bansos/edit/id}', [BansosController::class, 'edit'])->name('bansos.edit');
     Route::put('/activity/bansos/{id}', [BansosController::class, 'update'])->name('bansos.update');
     Route::delete('/activity/bansos/{id}', [BansosController::class, 'destroy'])->name('bansos.destroy');
+    Route::get('/activity/bansos/{bansos}', [BansosController::class, 'download'])->name('bansos.download');
 
     //INFO PUBLIK//
     //Hostel
@@ -296,6 +299,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/integrasi/renja/edit/{id}', [RenjaController::class, 'edit'])->name('renja.edit');
     Route::put('/integrasi/renja/{id}', [RenjaController::class, 'update'])->name('renja.update');
     Route::delete('/integrasi/renja/{id}', [RenjaController::class, 'destroy'])->name('renja.destroy');
+    Route::get('/integrasi/renja/{renja}', [RenjaController::class, 'download'])->name('renja.download');
 
     //Rencana Strategi
     Route::get('/integrasi/renstra', [RenstraController::class, 'index'])->name('renstra.index');
@@ -304,6 +308,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/integrasi/renstra/edit/{id}', [RenstraController::class, 'edit'])->name('renstra.edit');
     Route::put('/integrasi/renstra/{id}', [RenstraController::class, 'update'])->name('renstra.update');
     Route::delete('/integrasi/renstra/{id}', [RenstraController::class, 'destroy'])->name('renstra.destroy');
+    Route::get('/integrasi/renstra/{renstra}', [RenstraController::class, 'download'])->name('renstra.download');
 
     //RPJMD
     Route::get('/integrasi/rpjmd', [RpjmdController::class, 'index'])->name('rpjmd.index');
@@ -312,6 +317,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/integrasi/rpjmd/edit/{id}', [RpjmdController::class, 'edit'])->name('rpjmd.edit');
     Route::put('/integrasi/rpjmd/{id}', [RpjmdController::class, 'update'])->name('rpjmd.update');
     Route::delete('/integrasi/rpjmd/{id}', [RpjmdController::class, 'destroy'])->name('rpjmd.destroy');
+    Route::get('/integrasi/rpjmd/{rpjmd}', [RpjmdController::class, 'download'])->name('rpjmd.download');
 
     //LJKIP
     Route::get('/integrasi/lkjip', [LkjipController::class, 'index'])->name('lkjip.index');
@@ -338,6 +344,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/integrasi/sidata/edit/{id}', [SidataController::class, 'edit'])->name('sidata.edit');
     Route::put('/integrasi/sidata/{id}', [SidataController::class, 'update'])->name('sidata.update');
     Route::delete('/integrasi/sidata/{id}', [SidataController::class, 'destroy'])->name('sidata.destroy');
+    Route::get('/integrasi/sidata/{sidata}', [SidataController::class, 'download'])->name('sidata.download');
 
     //POTENTION//
     //PAD
@@ -364,6 +371,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/potention/asset/edit/{id}', [AssetController::class, 'edit'])->name('asset.edit');
     Route::put('/potention/asset/{id}', [AssetController::class, 'update'])->name('asset.update');
     Route::delete('/potention/asset/{id}', [AssetController::class, 'destroy'])->name('asset.destroy');
+    Route::get('/potention/asset/{asset}', [AssetController::class, 'download'])->name('asset.download');
 
     //CATEGORY//
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
@@ -451,13 +459,13 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
 
     //Belanja Bagi Hasil( BBH )//
     //File SP2D
-    Route::get('/filesp2d', [Filesp2dController::class, 'index'])->name('filesp2d.index');
-    Route::get('/filesp2d/create', [Filesp2dController::class, 'create'])->name('filesp2d.create');
-    Route::post('/filesp2d', [Filesp2dController::class, 'store'])->name('filesp2d.store');
-    Route::get('/filesp2d/edit/{sp2d}', [Filesp2dController::class, 'edit'])->name('filesp2d.edit');
-    Route::put('/filesp2d/{sp2d}', [Filesp2dController::class, 'update'])->name('filesp2d.update');
-    Route::delete('/filesp2d/{sp2d}', [Filesp2dController::class, 'destroy'])->name('filesp2d.destroy');
-    Route::get('/filesp2d/{sp2d}', [Filesp2dControllerr::class, 'download'])->name('filesp2d.download');
+    Route::get('/bbh/filesp2d', [Filesp2dController::class, 'index'])->name('filesp2d.index');
+    Route::get('/bbh/filesp2d/create', [Filesp2dController::class, 'create'])->name('filesp2d.create');
+    Route::post('/bbh/filesp2d', [Filesp2dController::class, 'store'])->name('filesp2d.store');
+    Route::get('/bbh/filesp2d/edit/{sp2d}', [Filesp2dController::class, 'edit'])->name('filesp2d.edit');
+    Route::put('/bbh/filesp2d/{sp2d}', [Filesp2dController::class, 'update'])->name('filesp2d.update');
+    Route::delete('/bbh/filesp2d/{sp2d}', [Filesp2dController::class, 'destroy'])->name('filesp2d.destroy');
+    Route::get('/bbh/filesp2d/{sp2d}', [Filesp2dControllerr::class, 'download'])->name('filesp2d.download');
 
 });
 

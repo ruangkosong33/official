@@ -58,7 +58,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_renja" class="col-sm-2 col-form-label">File renja</label>
+                                    <label for="file_renja" class="col-sm-2 col-form-label">File</label>
                                     <div class="col-sm-10">
                                         <input type="file" name="file_renja" class="form-control @error('file_renja') is-invalid @enderror"
                                         id="file_renja" value="{{old('file_renja') ?? $renja->file_renja}}">

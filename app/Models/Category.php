@@ -20,10 +20,15 @@ class Category extends Model
     // public $sortable =['title_category', 'slug'];
 
 
-
+    //Relasi Database//
     public function post()
     {
         return $this->hasMany(Post::class, 'post_id', 'id');
+    }
+
+    public function video()
+    {
+        return $this->hasMany(Video::class, 'video_id', 'id');
     }
 
     public function gallery()

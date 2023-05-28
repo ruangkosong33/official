@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BannerController extends Controller
 {
@@ -29,14 +30,16 @@ class BannerController extends Controller
         if($request->file('image_banner'))
         {
             $file = $request->file('image_banner');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('uploads/image-banner/', $filename);
+            $extention = $file->getClientOriginalName();
+            $imagebanners = time().'.'.$extention;
+            $file->move('uploads/image-banner/', $imagebanners);
         }
 
         $banner=Banner::create([
-            'image_banner'=>$filename,
+            'image_banner'=>$imagebanners,
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
 
         return redirect()->route('banner.index');
     }
@@ -64,14 +67,16 @@ class BannerController extends Controller
                 File::delete($destination);
             }
             $file = $request->file('image_banner');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('uploads/image-banner/', $filename);
+            $extention = $file->getClientOriginalName();
+            $imagebanners = time().'.'.$extention;
+            $file->move('uploads/image-banner/', $imagebanners);
         }
 
         $banner->update([
-            'image_banner'=>$filename,
+            'image_banner'=>$imagebanners,
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
 
         return redirect()->route('banner.index');
     }
@@ -88,6 +93,8 @@ class BannerController extends Controller
         }
 
         $banner->delete();
+
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->route('banner.index');
     }

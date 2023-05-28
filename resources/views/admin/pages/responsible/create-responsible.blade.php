@@ -35,7 +35,7 @@
                                     <label for="title_responsbile" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="title_responsible" class="form-control @error('title_responsible') is-invalid @enderror"
-                                        id="title_responsible" placeholder="Penanggung Jawab Program & Kegiatan" value="{{old('title_responsible') ?? $responsible->title_responsible}}">
+                                        id="title_responsible" placeholder="Penanggung Jawab Program & Kegiatan">
 
                                         @error('title_responsible')
                                         <span class="invalid-feedback">{{$message}}</span>
@@ -45,7 +45,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_responsible" class="col-sm-2 col-form-label">File Program & Kegiatan</label>
+                                    <label for="file_responsible" class="col-sm-2 col-form-label">File</label>
                                     <div class="col-sm-10">
                                         <input type="file" name="file_responsible" class="form-control @error('file_responsible') is-invalid @enderror"
                                         id="file_responsible">

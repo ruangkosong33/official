@@ -9,9 +9,9 @@ class Filesp2d extends Model
 {
     use HasFactory;
 
-    protected $table='sp2ds';
+    protected $table='filesp2ds';
 
-    protected $fillable=['citykab_id', 'title_sp2d', 'slug', 'date', 'description', 'total'];
+    protected $fillable=['citykab_id', 'title_sp2d', 'slug', 'file_sp2d', 'date', 'description', 'total'];
 
     protected $hidden=[];
 

@@ -97,5 +97,12 @@ class RpjmdController extends Controller
 
         return redirect()->back();
     }
+
+    public function download(Rpjmd $rpjmd)
+    {
+        $filepath=public_path("uploads/file-rpjmd/{$rpjmd->file_rpjmd}");
+
+        return response()->download($filepath);
+    }
 }
 

@@ -51,7 +51,7 @@
                               <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$sidatas->title_sidata}}</td>
-                                <td>{{$sidatas->file_sidata}}</td>
+                                <td><a href="{{route('sidata.download', $sidatas->id)}}">{{$sidatas->file_sidata}}</a></td>
                                 <td>
                                     <a href="{{route('sidata.edit', $sidatas->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
@@ -63,9 +63,6 @@
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="#" class="btn btn-info btn-sm">
-                                      <i class="fas fa-eye"></i>
-                                    </a>
                                 </td>
                               </tr>
                             @endforeach

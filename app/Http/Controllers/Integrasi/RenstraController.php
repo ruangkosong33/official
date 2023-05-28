@@ -95,5 +95,12 @@ class RenstraController extends Controller
 
         return redirect()->back();
     }
+
+    public function download(Renstra $renstra)
+    {
+        $filepath=public_path("uploads/file-renstra/{$renstra->file_renstra}");
+
+        return response()->download($filepath);
+    }
 }
 

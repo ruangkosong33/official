@@ -34,7 +34,7 @@ class ResponsibleController extends Controller
             $file=$request->file('file_responsible');
             $extension=$file->getClientOriginalName();
             $responsibles=$extension;
-            $file->move('uploads/file=penanggung-jawab', $responsibles);
+            $file->move('uploads/file-Program-Kegiatan', $responsibles);
         }
 
         $responsible=Resposible::create([
@@ -65,7 +65,7 @@ class ResponsibleController extends Controller
             $file=$request->file('file_responsible');
             $extension=$file->getClientOriginalName();
             $responsibles=$extension;
-            $file->move('uploads/file=penanggung-jawab', $responsibles);
+            $file->move('uploads/file-Program-Kegiatan', $responsibles);
         }
 
         $responsible->update([
@@ -86,6 +86,13 @@ class ResponsibleController extends Controller
         $responsible->delete();
 
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
+    }
+
+    public function download(Responsible $responsible)
+    {
+        $filepath=public_path("/uploads/file-program-kegiatan/{$responsible->file_responsible}");
+
+        return response()->download($filepath);
     }
 }
 

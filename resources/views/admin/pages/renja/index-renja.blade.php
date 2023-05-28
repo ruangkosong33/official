@@ -53,7 +53,7 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$renjas->title_renja}}</td>
                                 <td>{{$renjas->year}}</td>
-                                <td>{{$renjas->file_renja}}</td>
+                                <td><a href="{{route('renja.download', $renjas->id)}}">{{$renjas->file_renja}}</a></td>
                                 <td>
                                     <a href="{{route('renja.edit', $renjas->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>

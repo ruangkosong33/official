@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_responsible" class="col-sm-2 col-form-label">File Program & Kegiatan</label>
+                                    <label for="file_responsible" class="col-sm-2 col-form-label">File</label>
                                     <div class="col-sm-10">
                                         <input type="file" name="file_responsible" class="form-control @error('file_responsible') is-invalid @enderror"
                                         id="file_responsible">

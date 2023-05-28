@@ -14,7 +14,7 @@ class BansosController extends Controller
     {
         $bansos=Bansos::all();
 
-        return view('admin.pages.bansos.index-bansos');
+        return view('admin.pages.bansos.index-bansos', ['bansos'=>$bansos]);
     }
 
     public function create()
@@ -34,7 +34,7 @@ class BansosController extends Controller
             $file=$request->file('file_bansos');
             $extension=$file->getClientOriginalName();
             $bansoss=$extension;
-            $file->move('uploads/File-Bansos', $bansoss);
+            $file->move('uploads/file-bansos', $bansoss);
         }
 
         $bansos=Bansos::create([
@@ -67,7 +67,7 @@ class BansosController extends Controller
             $file=$request->file('file_bansos');
             $extension=$file->getClientOriginalName();
             $bansoss=$extension;
-            $file->move('uploads/File-Bansos', $bansoss);
+            $file->move('uploads/file-bansos', $bansoss);
         }
 
         $bansos=Bansos::findOrFail($id);

@@ -53,7 +53,7 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$rpjmds->title_rpjmd}}</td>
                                 <td>{{$rpjmds->year}}</td>
-                                <td>{{$rpjmds->file_rpjmd}}</td>
+                                <td><a href="{{route('rpjmd.download', $rpjmds->id)}}">{{$rpjmds->file_rpjmd}}</a></td>
                                 <td>
                                     <a href="{{route('rpjmd.edit', $rpjmds->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
@@ -65,9 +65,6 @@
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="#" class="btn btn-info btn-sm">
-                                      <i class="fas fa-eye"></i>
-                                    </a>
                                 </td>
                               </tr>
                             @endforeach

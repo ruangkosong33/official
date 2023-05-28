@@ -97,4 +97,11 @@ class RenjaController extends Controller
 
         return redirect()->back();
     }
+
+    public function download(Renja $renja)
+    {
+        $filepath=public_path("uploads/file-renja/{$renja->file_renja}");
+
+        return response()->download($filepath);
+    }
 }

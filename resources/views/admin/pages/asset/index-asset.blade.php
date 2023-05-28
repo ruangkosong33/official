@@ -51,7 +51,7 @@
                               <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$assets->title_asset}}</td>
-                                <td>{{$assets->file_asset}}</td>
+                                <td><a href="{{route('asset.download', $assets->id)}}">{{$assets->file_asset}}</a></td>
                                 <td>
                                     <a href="{{route('asset.edit', $assets->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>

@@ -70,7 +70,7 @@ class LkjipController extends Controller
             $file=$request->file('file_lkjip');
             $extension=$file->getClientOriginalName();
             $lkjips=$extension;
-            $file->move('uploads/file=-lkjip', $lkjips);
+            $file->move('uploads/file-lkjip', $lkjips);
         }
 
         $lkjip=Lkjip::findOrFail($id);
@@ -96,5 +96,12 @@ class LkjipController extends Controller
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->back();
+    }
+
+    public function download(Lkjip $lkjip)
+    {
+        $filepath=public_path("uploads/file-lkjip/{$lkjip->file_lkjip}");
+
+        return response()->download($filepath);
     }
 }

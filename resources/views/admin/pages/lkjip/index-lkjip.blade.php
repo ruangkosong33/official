@@ -53,7 +53,7 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$lkjips->title_lkjip}}</td>
                                 <td>{{$lkjips->year}}</td>
-                                <td>{{$lkjips->file_lkjips}}</td>
+                                <td><a href="{{route('lkjip.download', $lkjips->id)}}">{{$lkjips->file_lkjip}}</a></td>
                                 <td>
                                     <a href="{{route('lkjip.edit', $lkjips->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
@@ -65,9 +65,6 @@
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="#" class="btn btn-info btn-sm">
-                                      <i class="fas fa-eye"></i>
-                                    </a>
                                 </td>
                               </tr>
                             @endforeach

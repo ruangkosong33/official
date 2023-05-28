@@ -51,7 +51,7 @@
                               <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$realisations->title_realisation}}</td>
-                                <td>{{$realisations->file_realisation}}</td>
+                                <td><a href="{{route('realisation.download', $realisations->id)}}">{{$realisations->file_realisation}}</a></td>
                                 <td>
                                     <a href="{{route('realisation.edit', $realisations->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>

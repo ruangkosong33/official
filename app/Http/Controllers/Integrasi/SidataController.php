@@ -93,6 +93,13 @@ class SidataController extends Controller
 
         return redirect()->back();
     }
+
+    public function download(Sidata $sidata)
+    {
+        $filepath=public_path("/uploads/file-sidata/{$sidata->file_sidata}");
+
+        return response()->download($filepath);
+    }
 }
 
 

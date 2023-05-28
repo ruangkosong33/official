@@ -3,7 +3,7 @@
 @section('content')
 
 @push('css')
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap4.min.css">
 @endpush
 
 <!-- Wrapper -->
@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">File Pendapatan Asli Daerah</h1>
+                    <h1 class="m-0">Bantuan Sosial</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data File Pendapatan Asli Daerah</h3>
+                    <h3 class="card-title">Data Bantuan Sosial</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('filepad.create', ['pad'=>$pad])}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('bansos.create')}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -47,22 +47,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($filepad as $key=>$filepads)
+                            @foreach ($bansos as $key=>$bansoss)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$filepads->title_filepad}}</td>
-                                <td>{{$filepads->file_pad}}</td>
+                                <td>{{$bansoss->title_bansos}}</td>
+                                <td><a href="{{route('bansos.download', $bansoss->id)}}">{{$bansoss->file_bansos}}</a></td>
                                 <td>
-                                    <a href="{{route('filepad.edit', ['pad'=>$pad])}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('bansos.edit', $bansoss->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('filepad.destroy', ['pad'=>$pad])}}" class="d-inline">
+                                    <form method="post" action="{{route('bansos.destroy', $bansoss->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
+                                    <a href="#" class="btn btn-info btn-sm">
+                                      <i class="fas fa-eye"></i>
+                                    </a>
                                 </td>
                               </tr>
                             @endforeach
@@ -85,9 +88,9 @@
         <script src="{{asset('rk88/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
     @endpush
 
-    <script src=" https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src=" https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
     <script src=" https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src=" https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src=" https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap4.min.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function()

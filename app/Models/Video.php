@@ -11,7 +11,13 @@ class Video extends Model
 
     protected $table='videos';
 
-    protected $fillable=['title_video', 'slug', 'image_video', 'link', 'status'];
+    protected $fillable=['category_id', 'title_video', 'slug', 'image_video', 'link', 'status'];
 
     protected $hidden=[];
+
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
 }

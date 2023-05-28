@@ -59,7 +59,7 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_rpjmd" class="col-sm-2 col-form-label">File RPJMD</label>
+                                    <label for="file_rpjmd" class="col-sm-2 col-form-label">File</label>
                                     <div class="col-sm-10">
                                         <input type="file" name="file_rpjmd" class="form-control @error('file_rpjmd') is-invalid @enderror"
                                         id="file_renstra">

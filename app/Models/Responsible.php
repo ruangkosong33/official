@@ -9,7 +9,7 @@ class Responsible extends Model
 {
     use HasFactory;
 
-    protected $table='resposibles';
+    protected $table='responsibles';
 
     protected $fillable=['title_responsible', 'slug', 'file_responsible'];
 

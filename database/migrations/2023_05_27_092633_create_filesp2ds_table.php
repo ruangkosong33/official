@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sp2ds', function (Blueprint $table) {
+        Schema::create('filesp2ds', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('city')->constrained('citys');
+            $table->unsignedBigInteger('citykab_id');
+            $table->foreign('citykab_id')->references('id')->on('citykabs');
             $table->string('title_sp2d');
             $table->string('slug');
             $table->string('file_sp2d');
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sp2ds');
+        Schema::dropIfExists('filesp2ds');
     }
 };

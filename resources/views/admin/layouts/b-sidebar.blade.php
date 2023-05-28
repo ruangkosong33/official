@@ -366,7 +366,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('userlist.index')}}" class="nav-link @yield('userlist.index')">
+            <a href="{{route('video.index')}}" class="nav-link @yield('userlist.index')">
               <i class="nav-icon fas fa-video"></i>
               <p>
                 Video

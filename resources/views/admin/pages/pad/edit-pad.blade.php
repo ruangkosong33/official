@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">PAD</h1>
+                    <h1 class="m-0">Pendapatan Asli Daerah</h1>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="container-fluid">
             <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Edit Data PAD</h3>
+                    <h3 class="card-title">Edit Data Pendapatan Asli Daerah</h3>
                 </div>
 
                 <!-- Form -->

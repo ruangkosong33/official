@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="mb-0">SIDATA</h1>
+                    <h1 class="mb-0">Bantuan Sosial</h1>
                 </div>
             </div>
         </div>
@@ -24,21 +24,21 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Edit Data SIDATA</h3>
+                            <h3 class="card-title">Edit Data Bantuan Sosial</h3>
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('sidata.update', $sidata->id)}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('bansos.update', $bansos->id)}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="title_sidata" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="title_bansos" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_sidata" class="form-control @error('title_sidata') is-invalid @enderror"
-                                        id="title_sidata" placeholder="Judul" value="{{old('title_sidata') ?? $sidata->title_sidata}}">
+                                        <input type="text" name="title_bansos" class="form-control @error('title_bansos') is-invalid @enderror"
+                                        id="title_bansos" placeholder="Bantuan Sosial" value="{{old('title_bansos') ?? $bansos->title_bansos}}">
 
-                                        @error('title_sidata')
+                                        @error('title_bansos')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -46,12 +46,12 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_sidata" class="col-sm-2 col-form-label">File</label>
+                                    <label for="file_bansos" class="col-sm-2 col-form-label">File</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file_sidata" class="form-control @error('file_sidata') is-invalid @enderror"
-                                        id="file_sidata">
+                                        <input type="file" name="file_bansos" class="form-control @error('file_bansos') is-invalid @enderror"
+                                        id="file_bansos">
 
-                                        @error('file_sidata')
+                                        @error('file_bansos')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -61,7 +61,7 @@
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('sidata.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('bansos.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->

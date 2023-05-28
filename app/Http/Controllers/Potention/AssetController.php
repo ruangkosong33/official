@@ -62,8 +62,26 @@ class AssetController extends Controller
             'file_asset'=>'requried|mimes:pdf|max:2048',
         ]);
 
+        $imageName = '';
+        if ($request->hasFile('file')) {
+        $imageName = time() . '.' . $request->file->extension();
+        $request->file->storeAs('public/images', $imageName);
+        if ($post->image) {
+            Storage::delete('public/images/' . $post->image);
+        }
+        } else {
+        $imageName = $post->image;
+        }
+
         if($request->file('file_asset'))
         {
+            $destination = 'uploads/file-asset/'.$asset->file_asset;
+
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+
             $file=$request->file('file_asset');
             $extension=$file->getClientOriginalName();
             $assets=$extension;
@@ -87,10 +105,24 @@ class AssetController extends Controller
     {
         $asset=Asset::findOrFail($id);
 
+        $destination = 'uploads/file-asset/'.$asset->file_asset;
+
+        if(File::exists($destination))
+        {
+            File::delete($destination);
+        }
+
         $asset->delete();
 
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->route('asset.index');
+    }
+
+    public function download(Asset $asset)
+    {
+        $filepath=public_path("uploads/file-asset/{$asset->file_asset}");
+
+        return response()->download($filepath);
     }
 }
