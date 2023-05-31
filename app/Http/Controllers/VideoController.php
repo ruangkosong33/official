@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Video;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -11,14 +12,16 @@ class VideoController extends Controller
 {
     public function index()
     {
-        $video=Video::all();
+        $video=Video::with(['category'])->latest()->paginate(7);
 
         return view('admin.pages.video.index-video', ['video'=>$video]);
     }
 
     public function create()
     {
-        return view('admin.pages.video.create-video');
+        $category=Category::all();
+
+        return view('admin.pages.video.create-video', ['category'=>$category]);
     }
 
     public function store(Request $request)
@@ -64,10 +67,15 @@ class VideoController extends Controller
             $file=$request->hasFile('image_video');
             $extension=$file->getClientOriginalName();
             $videos=$extension;
-            $file->move('uploads/image-video', $videos);
+            $img = Image::make($file);
+            if (Image::make($file)->width() > 720)
+            {
+                $img->resize(720, null, function ($constraint) {$constraint->aspectRatio();});
+            }
+            $img->save(public_path('uploads/image-video'),$videos);
         }
 
-        $video=Video::wheere('id', $video->id)->update([
+        $video=Video::where('id', $video->id)->update([
             'title_video'=>$request->title_video,
             'slug'=>Str::slug($request->title_video),
             'image_video'=>$videos,

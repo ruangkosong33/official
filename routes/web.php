@@ -25,6 +25,7 @@ use App\Http\Controllers\Integrasi\ApbdController;
 use App\Http\Controllers\Integrasi\CityController;
 use App\Http\Controllers\Integrasi\LppdController;
 use App\Http\Controllers\Activity\BansosController;
+use App\Http\Controllers\Beranda\BerandaController;
 use App\Http\Controllers\Integrasi\LkjipController;
 use App\Http\Controllers\Integrasi\RenjaController;
 use App\Http\Controllers\Integrasi\RpjmdController;
@@ -66,6 +67,10 @@ use App\Http\Controllers\Profil\FormationhistoryController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//Beranda//
+Route::get('/beranda', [BerandaController::class, 'index'])->name('dashboard.index');
 
 //Register
 Route::get('/register', [AuthController::class, 'register'])->name('register.index');
@@ -193,7 +198,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/activity/realisation/{id}', [RealisationController::class, 'update'])->name('realisation.update');
     Route::delete('/activity/realisation/{id}', [RealisationController::class, 'destroy'])->name('realisation.destroy');
     Route::get('/activity/realisation/{realisation}', [RealisationController::class, 'download'])->name('realisation.download');
-    
+
     //Responsible
     Route::get('/activity/responsible', [ResponsibleController::class, 'index'])->name('responsible.index');
     Route::get('/activity/responsible/create', [ResponsibleController::class, 'create'])->name('responsible.create');

@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
@@ -59,11 +60,16 @@ class PostController extends Controller
 
         if($request->file('image_post'))
         {
-            $image_posts=$request->file('image_post');
-            $imageextension=$image_posts->getClientOriginalName();
-            $request->file('image_post')->move(public_path('image-post'), $imageextension);
+            $file=$request->file('image_post');
+            $extension=$file->getClientOriginalName();
+            $imageposts=$extension;
+            $img=Image::make($file);
+            if(Image::make($file))
+            {
+                $img->resize(700,200);
+            }
+            $img->save(public_path('uploads/image-post'.$imageposts));
         }
-
 
         $post=Post::create([
             'title_post'=>$request->title_post,

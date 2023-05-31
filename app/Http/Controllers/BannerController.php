@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class BannerController extends Controller
@@ -32,7 +33,12 @@ class BannerController extends Controller
             $file = $request->file('image_banner');
             $extention = $file->getClientOriginalName();
             $imagebanners = time().'.'.$extention;
-            $file->move('uploads/image-banner/', $imagebanners);
+            $img=Image::make($file);
+            if (Image::make($file))
+            {
+                $img->resize(1920, 1080);
+            }
+            $img->save(public_path('uploads/image-banner/'). $imagebanners);
         }
 
         $banner=Banner::create([

@@ -6,6 +6,7 @@ use App\Models\Vision;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VisionController extends Controller
 {
@@ -34,6 +35,8 @@ class VisionController extends Controller
             'slug'=>Str::slug($request->title_vision),
             'description_vision'=>$request->description_vision,
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
 
         return redirect()->route('vision.index');
     }
@@ -70,6 +73,8 @@ class VisionController extends Controller
         $vision=Vision::findOrFail($id);
 
         $vision->delete();
+
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->route('vision.index');
     }

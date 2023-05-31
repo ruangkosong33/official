@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Rencana Kerja</h1>
+                    <h1 class="m-0">Video</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Rencana Kerja</h3>
+                    <h3 class="card-title">Data Video</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('renja.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('video.create')}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -41,24 +41,28 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Kategori</th>
                                 <th>Judul</th>
-                                <th>Tahun</th>
-                                <th>File</th>
+                                <th>Gambar</th>
+                                <th>Link</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($renstra as $key=>$renstras)
+                            @foreach ($video as $key=>$videos)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$renstras->title_renstra}}</td>
-                                <td>{{$renstras->year}}</td>
-                                <td><a href="{{route('renstra.download', $rentras->id)}}">{{$renstras->file_renstra}}</a></td>
+                                <td>{{$videos->category->title_category}}</td>
+                                <td>{{$videos->title_video}}</td>
+                                <td><img src="{{asset('uploads/image-video/'. $videos->image_video)}}"></td>
+                                <td>{{$videos->link}}</td>
+                                <td><span class="badge badge-pill badge-success">{{$videos->status == 0 ? 'Draft':'Publish'}}</span></td>
                                 <td>
-                                    <a href="{{route('renstra.edit', $renstras->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('video.edit', $videos->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('renstra.destroy', $renstras->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('video.destroy', $videos->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
