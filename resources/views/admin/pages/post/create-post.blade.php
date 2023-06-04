@@ -45,11 +45,7 @@
                       <label for="description" class="col-sm-2 col-form-label">Isi</label>
                       <div class="col-sm-10">
                         <textarea class="form-control @error('description_post') is-invalid @enderror" id="editor" placeholder="Isi Berita"
-                        name="description_post" value="{{old('description_post')}}"></textarea>
-
-                        @error('description_post')
-                            <span class="invalid-feedback">{{$message}}</span>
-                        @enderror
+                        name="description_post">{{ old('description_post')}}</textarea>
 
                       </div>
                     </div>
@@ -63,6 +59,7 @@
                         @error('image_post')
                             <span class="invalid-feedback">{{$message}}</span>
                         @enderror
+                        
                       </div>
                       <div class="mt-3"><img src="" id="output" width="500"></div>
 

@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BPKAD | PROV KALTIM</title>
+    <title>BPKAD - PROV KALTIM</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('rk99/assets/images/favicons/apple-touch-icon.png')}}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('rk99/assets/images/favicons/favicon-32x32.png')}}" />
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('rk99/assets/images/favicons/favicon-16x16.png')}}" />
-    <link rel="manifest" href="{{asset('rk99/assets/images/favicons/site.webmanifest')}}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="sinace HTML 5 Template " />
 
     <!-- fonts -->
@@ -20,30 +20,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/bootstrap/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/animate/animate.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/animate/custom-animate.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/fontawesome/css/all.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/jarallax/jarallax.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/nouislider/nouislider.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/nouislider/nouislider.pips.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/odometer/odometer.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/swiper/swiper.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/sinace-icons/style.css')}}">
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/tiny-slider/tiny-slider.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/reey-font/stylesheet.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/owl-carousel/owl.carousel.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/owl-carousel/owl.theme.default.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/bxslider/jquery.bxslider.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/bootstrap-select/css/bootstrap-select.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/vegas/vegas.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/jquery-ui/jquery-ui.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/vendors/timepicker/timePicker.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/bootstrap/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/animate/animate.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/animate/custom-animate.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/fontawesome/css/all.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/jarallax/jarallax.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/nouislider/nouislider.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/nouislider/nouislider.pips.css"')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/odometer/odometer.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/swiper/swiper.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/sinace-icons/style.css')}}">
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/tiny-slider/tiny-slider.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/reey-font/stylesheet.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/owl-carousel/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/owl-carousel/owl.theme.default.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/bxslider/jquery.bxslider.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/bootstrap-select/css/bootstrap-select.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/vegas/vegas.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/jquery-ui/jquery-ui.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/timepicker/timePicker.css')}}" />
 
     <!-- template styles -->
-    <link rel="stylesheet" href="{{asset('rk99/assets/css/sinace.css')}}" />
-    <link rel="stylesheet" href="{{asset('rk99/assets/css/sinace-responsive.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/css/sinace.css')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/css/sinace-responsive.css')}}" />
 </head>
 
 <body class="custom-cursor">
@@ -51,33 +51,36 @@
     <div class="custom-cursor__cursor"></div>
     <div class="custom-cursor__cursor-two"></div>
 
-    <!-- Loader -->
     <div class="preloader">
         <div class="preloader__image"></div>
     </div>
-    <!-- loader -->
+    <!-- /.preloader -->
 
-    <!-- Wrapper -->
+
     <div class="page-wrapper">
 
         <!-- Header -->
         @include('landing.layouts.f-nav')
         <!-- End Header -->
-        
+
         <div class="stricky-header stricked-menu main-menu">
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
 
-        <!-- Content -->
+        <!-- Main Sllider Start -->
+        @include('landing.layouts.f-slider')
+        <!--Main Sllider Start -->
+
         @yield('f-content')
-        <!-- End Content -->
 
-        <!-- Footer -->
+        <!-- End Main Content -->
+
+        <!--Site Footer Start-->
         @include('landing.layouts.f-footer')
-        <!-- End Footer -->
+        <!--Site Footer End-->
 
-    </div>
-    <!-- End Wrapper -->
+
+    </div><!-- /.page-wrapper -->
 
     <div class="mobile-nav__wrapper">
         <div class="mobile-nav__overlay mobile-nav__toggler"></div>
@@ -112,6 +115,8 @@
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
 
+
+
         </div>
         <!-- /.mobile-nav__content -->
     </div>
@@ -135,9 +140,10 @@
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
 
-    <!-- Javascript -->
-    @include('landing.layouts.f-js')
-    <!-- End Javascript -->
-
+   <!-- Java Script -->
+   @include('landing.layouts.f-js')
+   <!-- End Java Script -->
+    
 </body>
+
 </html>
