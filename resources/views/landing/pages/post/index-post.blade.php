@@ -3,7 +3,7 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/page-header-bg.jpg);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
             <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
@@ -40,7 +40,7 @@
                             <div class="news-one__img-box">
                                 <div class="news-one__img">
                                     <img src="{{asset('uploads/image-post/'.$post->image_post)}}" alt="">
-                                    <a href="news-details.html">
+                                    <a href="{{route('berita.detail',['slug'=>$post->slug])}}">
                                         <span class="news-one__plus"></span>
                                     </a>
                                 </div>
@@ -59,16 +59,16 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <h3 class="news-one__title"><a href="news-details.html">{{$post->title_post}}</a></h3>
+                                <h3 class="news-one__title"><a href="{{route('berita.detail',['slug'=>$post->slug])}}">{{$post->title_post}}</a></h3>
                                 <p class="news-one__text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}</p>
                             </div>
                             <div class="news-one__hover">
                                 <div class="news-one__hover-content">
-                                    <h3 class="news-one__hover-title"><a href="news-details.html">{{$post->title_post}}</a></h3>
+                                    <h3 class="news-one__hover-title"><a href="{{route('berita.detail',['slug'=>$post->slug])}}">{{$post->title_post}}</a></h3>
                                     <p class="news-one__hover-text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}</p>
                                 </div>
                                 <div class="news-one__hover-btn-box">
-                                    <a href="news-details.html">Baca Selengkapnya<span class="icon-right-arrow"></span></a>
+                                    <a href="{{route('berita.detail',['slug'=>$post->slug])}}">Baca Selengkapnya<span class="icon-right-arrow"></span></a>
                                 </div>
                             </div>
                         </div>

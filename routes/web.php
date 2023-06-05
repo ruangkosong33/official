@@ -77,7 +77,11 @@ Route::get('/', function () {
 Route::middleware(['landing',])->group(function()
 {
     Route::get('/beranda', [BerandaController::class, 'index'])->name('dashboard.index');
+
     Route::get('/berita',[LandingPostController::class,'index'])->name('berita.index');
+    Route::get('/berita/{slug}',[LandingPostController::class,'detail'])->name('berita.detail');
+
+    
 });
 
 //Register
