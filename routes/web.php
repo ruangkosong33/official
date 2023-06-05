@@ -70,7 +70,11 @@ Route::get('/', function () {
 
 
 //Beranda//
-Route::get('/beranda', [BerandaController::class, 'index'])->name('dashboard.index');
+Route::middleware(['landing',])->group(function()
+{
+    Route::get('/beranda', [BerandaController::class, 'index'])->name('dashboard.index');
+
+});
 
 //Register
 Route::get('/register', [AuthController::class, 'register'])->name('register.index');

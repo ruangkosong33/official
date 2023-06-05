@@ -60,7 +60,7 @@
                                 <td>{{$filesp2ds->description}}</td>
                                 <td>{{$filesp2ds->total}}</td>
                                 <td>
-                                    <a href="{{route('filesp2d.edit', $fiilesp2ds->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('filesp2d.edit', $filesp2ds->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
                                     <form method="post" action="{{route('filesp2d.destroy', $filesp2ds->id)}}" class="d-inline">

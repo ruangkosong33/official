@@ -2,8 +2,9 @@
     <nav class="main-menu main-menu-three">
         <div class="main-menu-three__wrapper">
             <div class="main-menu-three__wrapper-inner">
-                <div class="main-menu-three__logo">
-                    <a href="index.html"><img src="{{asset('fk88/assets/images/resources/logo-1.png')}}" alt=""></a>
+                <div class="main-menu-three__logo" style="left: 10px">
+                    <a href="index.html"><img height="66" src="{{ asset('fk88/assets/images/logo/logo-bpkad.png') }}"
+                            alt=""></a>
                 </div>
                 <div class="main-menu-three__wrapper-inner-content">
                     <div class="main-menu-three__top">
@@ -15,135 +16,139 @@
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                         <div class="text">
-                                            <p><a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                                            <p><a href="mailto:bpkadkaltim@gmail.com">bpkadkaltim@gmail.com</a>
                                             </p>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="icon">
-                                            <i class="fas fa-map-marker"></i>
+                                            <i class="fas fa-phone"></i>
                                         </div>
                                         <div class="text">
-                                            <p>30 Broklyn Golden Street. New York</p>
+                                            <p>(0541) 733333</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fas fa-fax"></i>
+                                        </div>
+                                        <div class="text">
+                                            <p>(0541) 737762</p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                             <div class="main-menu-three__top-right">
-                                <ul class="list-unstyled main-menu-three__top-menu">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="about.html">Help</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
                                 <div class="main-menu-three__social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://twitter.com/bpkadkaltim"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/pages/BPKAD%20Prov.%20Kaltim/1900010416967704/"><i
+                                            class="fab fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/bpkadkaltim/"><i
+                                            class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="main-menu-three__bottom">
                         <div class="main-menu-three__bottom-inner">
-                            <div class="main-menu-three__main-menu-box">
-                                <div class="main-menu-three__main-menu-box-left">
+                            <div class="main-menu-three__main-menu-box" style="padding-left: 25px; padding-right: 25px;">
+                                <div class="main-menu-three__main-menu-box-left" >
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
                                         <li class="dropdown">
-                                            <a href="index.html">Home </a>
+                                            <a href="{{ route('dashboard.index') }}">Beranda</a>
+                                        </li>
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="index.html">Profil </a>
                                             <ul>
-                                                <li><a href="index.html">Home One</a></li>
-                                                <li><a href="index2.html">Home Two</a></li>
-                                                <li><a href="index3.html">Home Three</a></li>
+                                                <li><a href="index.html">Visi & Misi</a></li>
+                                                <li><a href="index2.html">Sejarah Pembentukan</a></li>
+                                                <li><a href="index3.html">Isu Strategis</a></li>
+                                                <li><a href="index3.html">Tujuan & Sasaran</a></li>
+                                                <li><a href="index3.html">Tugas Pokok & Fungsi</a></li>
+                                                <li><a href="index3.html">Arah Kebijakan</a></li>
+                                                <li><a href="index3.html">Tertib Pelayanan</a></li>
+                                                <li><a href="index3.html">Kepala Badan</a></li>
+                                                <li><a href="index3.html">Agenda Kegiatan</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="index.html">Organisasi</a>
+                                            <ul>
+                                                @foreach ($divisions as $division)
+                                                    <li><a href="index3.html">{{ $division->name_division }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="index.html">Info Publik</a>
+                                            <ul>
+                                                <li><a href="index.html">Asrama</a></li>
+                                                <li><a href="index2.html">Lelang</a></li>
+                                                <li><a href="index3.html">Download</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="index.html">Produk Hukum</a>
+                                            <ul>
+                                                @foreach ($laws as $law)
+                                                    <li><a href="index3.html">{{ $law->title_law }}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="index.html">Integrasi Data</a>
+                                            <ul>
+                                                <li><a href="index.html">APBD</a></li>
+                                                <li><a href="index.html">Rencana Kerja</a></li>
+                                                <li><a href="index.html">Rencana Strategi</a></li>
+                                                <li><a href="index.html">SOP</a></li>
+                                                <li><a href="index.html">RPJMD</a></li>
+                                                <li><a href="index.html">LKJIP</a></li>
+                                                <li><a href="index.html">LPPD</a></li>
+                                                <li><a href="index.html">SIDATA</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="{{ route('dashboard.index') }}">Transparansi Anggaran</a>
+                                        </li>
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="index.html">Program Kegiatan </a>
+                                            <ul>
+                                                <li><a href="index.html">Penanggung Jawab Program & Kegiatan</a></li>
+                                                <li><a href="index2.html">Realisasi Fisik & Keuangan</a></li>
+                                                <li><a href="index3.html">Bantuan Sosial</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="index.html">Potensi</a>
+                                            <ul>
+                                                <li><a href="index.html">PAD</a></li>
+                                                <li><a href="index2.html">Aset</a></li>
+                                            </ul>
+                                        </li>
+                                        
+                                        <li class="dropdown" style="margin-left: 15px">
+                                            <a href="#">BBH</a>
+                                            <ul class="sub-menu">
                                                 <li class="dropdown">
-                                                    <a href="#">Header Styles</a>
+                                                    <a href="#">Rekap Per Kota/Kab</a>
                                                     <ul>
-                                                        <li><a href="index.html">Header One</a></li>
-                                                        <li><a href="index2.html">Header Two</a></li>
-                                                        <li><a href="index3.html">Header Three</a></li>
+                                                        @foreach ($cityKabs as $cityKab)
+                                                            <li><a href="index.html">{{$cityKab->name_citykab}}</a></li>
+                                                        @endforeach
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="dropdown">
-                                            <a href="about.html">About</a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Pages</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="team.html">Our Team</a></li>
-                                                <li><a href="team-details.html">Team Details</a></li>
-                                                <li><a href="testimonials.html">Testimonials</a></li>
-                                                <li><a href="careers.html">Careers</a></li>
-                                                <li><a href="faq.html">Faqs</a></li>
+                                        <li class="dropdown " style="margin-left: 15px">
+                                            <a href="index.html">PPID</a>
+                                            <ul class="dropdown-menu-end">
+                                                <li><a href="index.html">PAD</a></li>
+                                                <li><a href="index2.html">Aset</a></li>
                                             </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Services</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="services.html">Services</a></li>
-                                                <li><a href="capital-market.html">Capital Market</a></li>
-                                                <li><a href="insurance.html">Insurance</a></li>
-                                                <li><a href="mutual-funds.html">Mutual Funds</a></li>
-                                                <li><a href="portfolio-mangement.html">Portfolio Mangement</a>
-                                                </li>
-                                                <li><a href="fixed-income.html">Fixed Income</a></li>
-                                                <li><a href="loans.html">Loans</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">Portfolio</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="portfolio.html">Portfolio</a></li>
-                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#">News</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="news.html">News</a></li>
-                                                <li><a href="news-details.html">News Details</a></li>
-                                            </ul>
-                                        </li>
-                                         <li class="dropdown">
-                                        <a href="#">Features</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="sip.html">Sip Calculator</a></li>
-                                            <li><a href="inflation.html">Inflation Calculator</a></li>
-                                            <li><a href="targetamount-calculator.html">Target Calculator</a></li>
-
-                                            
-
-                                        </ul>
-                                    </li>
-
-                                        <li>
-                                            <a href="contact.html">Contact</a>
                                         </li>
                                     </ul>
-                                </div>
-                                <div class="main-menu-three__main-menu-box-right">
-                                    <div class="main-menu-three__search-box">
-                                        <a href="#"
-                                            class="main-menu-three__search search-toggler icon-magnifying-glass"></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-menu-three__right">
-                                <div class="main-menu-three__btn-box">
-                                    <a href="contact.html" class="thm-btn main-menu-three__btn">Free
-                                        Consultation</a>
-                                </div>
-                                <div class="main-menu-three__call">
-                                    <div class="main-menu-three__call-icon">
-                                        <span class="icon-telephone"></span>
-                                    </div>
-                                    <div class="main-menu-three__call-content">
-                                        <p class="main-menu-three__call-sub-title">Call Anytime</p>
-                                        <h5 class="main-menu-three__call-number"><a href="tel:928009850">+92
-                                                (8800)-9850</a></h5>
-                                    </div>
                                 </div>
                             </div>
                         </div>

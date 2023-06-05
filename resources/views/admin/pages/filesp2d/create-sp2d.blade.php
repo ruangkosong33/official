@@ -37,11 +37,11 @@
                                         <select name="city_id" class="form-control @error('city_id') is-invalid @enderror" id="city_id">
                                             <option disabledvalue="">--Pilih--</option>
                                             @foreach ($city as $citys)
-                                            <option value={{$citys->id}}>{{$citys->name_city}}</option>
+                                            <option value={{$citys->id}}>{{$citys->name_citykab}}</option>
                                             @endforeach
                                         </select>
 
-                                        @error('name_city')
+                                        @error('city_id')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
