@@ -41,23 +41,36 @@
             </div>
 
             <div class="form-group row">
-               <label for="description" class="col-sm-2">Deskripsi</label>
-               <div class="col-sm-6">
-                 <input type="text" id="description" name="descMription" placeholder="Deskripsi"
-                 class="form-control @error('description') is-invalid @enderror" value="{{old('description') ?? $post->description}}">
-               </div>
+              <label for="description" class="col-sm-2 col-form-label">Isi</label>
+              <div class="col-sm-10">
+                <textarea class="form-control @error('description_post') is-invalid @enderror" id="editor" placeholder="Isi Berita"
+                name="description_post">{{ old('description_post', $post->description_post ?? '') }}</textarea>
 
-               @error('description')
-               <span class="invalid-feedback">{{$message}}</span>
-               @enderror
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="category_id" class="col-sm-2">Kategori</label>
+              <div class="col-sm-6">
+
+                <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
+                  <option disabledvalue="">--Pilih--</option>
+                  @foreach ($category as $categorys)
+                    @if($categorys->id == $post->category_id)
+                    <option value={{$categorys->id}} selected='selected'>{{$categorys->title_category}}</option>
+                    @endif
+                  @endforeach
+                </select>
+
+              </div>
             </div>
 
             <div class="form-group row">
                 <label for="status" class="col-sm-2">Status</label>
                 <div class="col-sm-6">
-                    <select name="status" id="status">
-                        <option value="1">Publish</option>
-                        <option value="2">Draft</option>
+                    <select name="status" class="form-control" id="status">
+                        <option value="1"{{ old('status') === 'Publish' ? 'selected' : '' }}>Publish</option>
+                        <option value="0"{{ old('status') === 'Draft' ? 'selected' : '' }}>Draft</option>
                     </select>
                 </div>
             </div>
@@ -71,6 +84,7 @@
                   @error('image_post')
                       <span class="invalid-feedback">{{$message}}</span>
                   @enderror
+
                 </div>
                 <div class="mt-3"><img src="{{asset('image-post/'. $post->image_post)}}" id="output" width="500"></div>
 
@@ -89,6 +103,18 @@
     </section>
   </div>
 
+  @section('ck-editor')
+
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace('editor', {
+            filebrowserUploadUrl: "{{route('post.upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
+
+  @endsection
 
 @endsection
 

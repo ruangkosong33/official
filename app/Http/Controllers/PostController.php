@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PostController extends Controller
 {
@@ -68,7 +69,9 @@ class PostController extends Controller
             {
                 $img->resize(700,200);
             }
-            $img->save(public_path('uploads/image-post'.$imageposts));
+            $img->save(public_path('image-post'.$imageposts));
+        }else {
+            $imageposts=null;
         }
 
         $post=Post::create([
@@ -80,6 +83,8 @@ class PostController extends Controller
             'user_id'=>Auth::id(),
             'status'=>$request->status,
         ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Simpan');
 
         return redirect()->route('post.index');
     }
@@ -122,6 +127,8 @@ class PostController extends Controller
 
         ]);
 
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
+
         return redirect()->route('post.index');
     }
 
@@ -130,6 +137,8 @@ class PostController extends Controller
         $post=Post::findOrFail($id);
 
         $post->delete();
+
+        Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->route('post.index');
     }
