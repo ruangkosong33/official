@@ -63,13 +63,13 @@ class PostController extends Controller
         {
             $file=$request->file('image_post');
             $extension=$file->getClientOriginalName();
-            $imageposts=$extension;
+            $imageposts=time().'-'.$extension;
             $img=Image::make($file);
             if(Image::make($file))
             {
                 $img->resize(700,200);
             }
-            $img->save(public_path('image-post'.$imageposts));
+            $img->save(public_path('uploads/image-post/'.$imageposts));
         }else {
             $imageposts=null;
         }
@@ -78,7 +78,7 @@ class PostController extends Controller
             'title_post'=>$request->title_post,
             'slug'=>Str::slug($request->title_post),
             'description_post'=>$request->description_post,
-            'image_post'=>$imageextension,
+            'image_post'=>$imageposts,
             'category_id'=>$request->category_id,
             'user_id'=>Auth::id(),
             'status'=>$request->status,
@@ -112,8 +112,8 @@ class PostController extends Controller
         if($request->file('image_post'))
         {
             $image_posts=$request->file('image_post');
-            $imageextension=$image_posts->getClientOriginalName();
-            $request->file('image_post')->move(public_path('image-post', $imageextension));
+            $imageextension=time().'-'.$image_posts->getClientOriginalName();
+            $request->file('image_post')->move('uploads/image-post/', $imageextension);
         }else{
 
             unset($post['image_post']);

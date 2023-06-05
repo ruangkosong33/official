@@ -51,6 +51,10 @@ use App\Http\Controllers\Profil\PolicydirectionController;
 use App\Http\Controllers\Infopublik\FiledownloadController;
 use App\Http\Controllers\Profil\FormationhistoryController;
 
+// Landing Controller
+use App\Http\Controllers\Landing\PostController as LandingPostController;
+
+
 
 
 /*
@@ -73,7 +77,7 @@ Route::get('/', function () {
 Route::middleware(['landing',])->group(function()
 {
     Route::get('/beranda', [BerandaController::class, 'index'])->name('dashboard.index');
-
+    Route::get('/berita',[LandingPostController::class,'index'])->name('berita.index');
 });
 
 //Register

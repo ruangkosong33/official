@@ -1016,7 +1016,7 @@
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
-                                <img src="assets/images/blog/news-1-1.jpg" alt="">
+                                <img src="{{asset('fk88/assets/images/blog/news-1-1.jpg')}}" alt="">
                                 <a href="news-details.html">
                                     <span class="news-one__plus"></span>
                                 </a>

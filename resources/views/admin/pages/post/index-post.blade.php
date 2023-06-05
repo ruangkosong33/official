@@ -54,7 +54,7 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{Str::limit($posts->title_post, '15', '....')}}</td>
-                                <td><img src="{{asset('image-post/'. $posts->image_post)}}" width="80px"></td>
+                                <td><img src="{{asset('uploads/image-post/'. $posts->image_post)}}" width="80px"></td>
                                 <td>{{$posts->category->title_category}}</td>
                                 <td><span class="badge badge-pill badge-success">{{$posts->status == 0 ? 'Draft':'Publish'}}</span></td>
                                 <td>{{$posts->user->username}}</td>

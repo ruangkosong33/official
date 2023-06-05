@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_post');
             $table->string('slug');
-            $table->string('description_post')->nullable();
+            $table->longText('description_post')->nullable();
             $table->string('image_post')->nullable();
             $table->boolean('status');
             $table->timestamps();
