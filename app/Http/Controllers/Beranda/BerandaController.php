@@ -10,8 +10,8 @@ class BerandaController extends Controller
 {
     public function index()
     {
-        $banner=Banner::latest()->get();
+        $banners=Banner::latest()->get();
         
-        return view('landing.pages.beranda.index-beranda', ['banner'=>$banner]);
+        return view('landing.pages.beranda.index-beranda', ['banners'=>$banners]);
     }
 }

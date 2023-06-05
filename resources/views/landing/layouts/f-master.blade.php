@@ -67,9 +67,7 @@
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
 
-        <!-- Main Sllider Start -->
-        @include('landing.layouts.f-slider')
-        <!--Main Sllider Start -->
+        
 
         @yield('f-content')
 
