@@ -41,8 +41,8 @@
                                 <div class="form-group row">
                                     <label for="description_serviceorder" class="col-sm-2 col-form-label">Deskripsi</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control @error('description_serviceorder') is-invalid @enderror" id="description_serviceorder"
-                                        placeholder="Deskripsi" name="description_serviceorder"></textarea>
+                                        <textarea class="form-control @error('description_serviceorder') is-invalid @enderror" id="editor" placeholder="Deskripsi"
+                                                name="description_serviceorder">{{ old('description_serviceorder') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -64,4 +64,12 @@
 <!-- End Wrapper -->
 
 @endsection
-
+@section('ck-editor')
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('editor', {
+            filebrowserUploadUrl: "{{ route('post.upload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
+@endsection

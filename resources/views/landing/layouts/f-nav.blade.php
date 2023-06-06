@@ -67,7 +67,7 @@
                                                 <li><a href="{{route('profil.goalobjective')}}">Tujuan & Sasaran</a></li>
                                                 <li><a href="{{route('profil.taskfunction')}}">Tugas Pokok & Fungsi</a></li>
                                                 <li><a href="{{route('profil.policydirection')}}">Arah Kebijakan</a></li>
-                                                <li><a href="index3.html">Tertib Pelayanan</a></li>
+                                                <li><a href="{{route('profil.serviceorder')}}">Tertib Pelayanan</a></li>
                                                 <li><a href="index3.html">Kepala Badan</a></li>
                                                 <li><a href="index3.html">Agenda Kegiatan</a></li>
                                             </ul>

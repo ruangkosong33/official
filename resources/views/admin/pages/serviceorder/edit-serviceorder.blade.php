@@ -32,23 +32,26 @@
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="title_serviceorder" class="form-label col-sm-2">Sub Judul</label>
+                            <div class="col-sm-10">
                                 <input type="text" class="form-control @error('title_serviceorder') is-invalid @enderror" name="title_serviceorder" placeholder="Sub Judul"
                                 id="title_serviceorder" value="{{old('title_serviceorder') ?? $serviceorder->title_serviceorder}}">
 
                                 @error('title_serviceorder')
                                 <span class="invalid-feedback">{{$message}}</span>
                                 @enderror
+                            </div>
 
                         </div>
 
                         <div class="form-group row">
                             <label for="description_serviceorder" class="form-label col-sm-2">Deskripsi</label>
-                                <textarea class="form-control @error('description_serviceorder') is-invalid @enderror" name="description_serviceorder"
-                                id="description_serviceorder">{{old('description_serviceorder') ?? $serviceorder->description_serviceorder}}</textarea>
-
+                            <div class="col-sm-10">
+                                <textarea class="form-control @error('description_serviceorder') is-invalid @enderror" id="editor"
+                                name="description_serviceorder">{{ old('description_serviceorder', $serviceorder->description_serviceorder ?? '') }}</textarea>
                                 @error ('description_serviceorder')
                                     <span class="invalid-feedback">{{$message}}</span>
                                 @enderror
+                            </div>
 
                         </div>
                     </div>
@@ -70,3 +73,16 @@
 <!-- End Wrapper -->
 
 @endsection
+@section('ck-editor')
+
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace('editor', {
+            filebrowserUploadUrl: "{{route('post.upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
+
+  @endsection
+

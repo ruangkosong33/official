@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td width="30%">Deskripsi</td>
-                                <td>{{$serviceorders->description_serviceorder}}</td>
+                                <td>{!!$serviceorders->description_serviceorder!!}</td>
                             </tr>
                             @endforeach
                         </tbody>

@@ -10,6 +10,7 @@ use App\Models\Issue;
 use App\Models\Goalobjective;
 use App\Models\Taskfunction;
 use App\Models\Policydirection;
+use App\Models\Serviceorder;
 
 class ProfilController extends Controller
 {
@@ -43,6 +44,11 @@ class ProfilController extends Controller
     {
         $policydirection = Policydirection::firstOrFail();
         return view('landing.pages.profil.policydirection-profil',['policydirection'=>$policydirection]);
+    }
+    public function serviceorder()
+    {
+        $serviceorder = Serviceorder::firstOrFail();
+        return view('landing.pages.profil.serviceorder-profil',['serviceorder'=>$serviceorder]);
     }
 
 }
