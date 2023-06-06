@@ -92,7 +92,7 @@
                                             <a href="index.html">Produk Hukum</a>
                                             <ul>
                                                 @foreach ($laws as $law)
-                                                    <li><a href="index3.html">{{ $law->title_law }}</a></li>
+                                                    <li><a href="{{route('landing.law.index',['slug'=>$law->slug])}}">{{ $law->title_law }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>

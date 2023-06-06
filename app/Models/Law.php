@@ -17,6 +17,6 @@ class Law extends Model
 
     public function filelaw()
     {
-        return $this->hasMany(Filelaw::class, 'filelaw_id', 'id');
+        return $this->hasMany(Filelaw::class);
     }
 }

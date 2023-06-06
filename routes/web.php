@@ -54,6 +54,7 @@ use App\Http\Controllers\Profil\FormationhistoryController;
 // Landing Controller
 use App\Http\Controllers\Landing\PostController as LandingPostController;
 use App\Http\Controllers\Landing\ProfilController as LandingProfilController;
+use App\Http\Controllers\Landing\LawController as LandingLawController;
 
 
 
@@ -91,6 +92,8 @@ Route::middleware(['landing',])->group(function()
     Route::get('/profil/tertib-pelayanan',[LandingProfilController::class,'serviceorder'])->name('profil.serviceorder');
     Route::get('/profil/kepala-badan',[LandingProfilController::class,'leaders'])->name('profil.leader');
 
+    Route::get('/produk-hukum/{slug}', [LandingLawController::class,'index'])->name('landing.law.index');
+    Route::get('/produk-hukum/unduh/{slug}', [LandingLawController::class,'downloadFile'])->name('landing.law.downloadFile');
 });
 
 //Register

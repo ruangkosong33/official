@@ -31,3 +31,4 @@
 <script src="{{asset('fk88/assets/js/tab.js')}}"></script>
 <script src="{{asset('fk88/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{asset('fk88/assets/js/sinace.js')}}"></script>
+@stack('js')

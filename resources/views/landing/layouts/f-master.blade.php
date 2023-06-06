@@ -44,7 +44,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{asset('fk88/assets/css/sinace.css')}}" />
     <link rel="stylesheet" href="{{asset('fk88/assets/css/sinace-responsive.css')}}" />
-
+    @stack('css')
     <style>
         .main-menu .main-menu__list>li>a,.main-menu .main-menu__list>li>ul>li>a{
             font-size: 14px
