@@ -18,7 +18,7 @@
                 <h2>Detail Berita</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Home</a></li>
+                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Detail Berita</li>
                     </ul>
