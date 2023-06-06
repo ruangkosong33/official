@@ -11,12 +11,12 @@ class ProfilController extends Controller
 {
     public function vision()
     {
-        $vision = Vision::first();
+        $vision = Vision::firstOrFail();
         return view('landing.pages.profil.vision-profil',['vision'=>$vision]);
     }
     public function formationhistory()
     {
-        $formationhistory = Formationhistory::first();
+        $formationhistory = Formationhistory::firstOrFail();
         return view('landing.pages.profil.formationhistory-profil',['formationhistory'=>$formationhistory]);
     }
 }
