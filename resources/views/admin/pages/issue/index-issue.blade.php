@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td width="30%">Deskripsi</td>
-                                <td>{{$issues->description_issue}}</td>
+                                <td>{!!$issues->description_issue!!}</td>
                             </tr>
                             @endforeach
                         </tbody>

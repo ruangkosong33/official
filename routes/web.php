@@ -83,8 +83,9 @@ Route::middleware(['landing',])->group(function()
     Route::get('/berita/{slug}',[LandingPostController::class,'detail'])->name('berita.detail');
 
     Route::get('/profil/visi&misi',[LandingProfilController::class,'vision'])->name('profil.vision');
-    Route::get('/profil/sejarahpembentukan',[LandingProfilController::class,'formationhistory'])->name('profil.formationhistory');
-    
+    Route::get('/profil/sejarah-pembentukan',[LandingProfilController::class,'formationhistory'])->name('profil.formationhistory');
+    Route::get('/profil/isu-strategis',[LandingProfilController::class,'issue'])->name('profil.issue');
+
 });
 
 //Register

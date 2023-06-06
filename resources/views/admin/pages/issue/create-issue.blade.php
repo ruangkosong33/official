@@ -41,8 +41,8 @@
                                 <div class="form-group row">
                                     <label for="description_issue" class="col-sm-2 col-form-label">Deskripsi</label>
                                     <div class="col-sm-10">
-                                        <textarea class="form-control @error('description_issue') is-invalid @enderror" id="description_issue"
-                                        placeholder="Deskripsi" name="description_issue"></textarea>
+                                        <textarea class="form-control @error('description_issue') is-invalid @enderror" id="editor" placeholder="Deskripsi"
+                                                name="description_issue">{{ old('description_issue') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -63,5 +63,15 @@
 </div>
 <!-- End Wrapper -->
 
+@endsection
+@section('ck-editor')
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace('editor', {
+            filebrowserUploadUrl: "{{ route('post.upload', ['_token' => csrf_token()]) }}",
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
 @endsection
 

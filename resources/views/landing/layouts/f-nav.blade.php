@@ -63,7 +63,7 @@
                                             <ul>
                                                 <li><a href="{{route('profil.vision')}}">Visi & Misi</a></li>
                                                 <li><a href="{{route('profil.formationhistory')}}">Sejarah Pembentukan</a></li>
-                                                <li><a href="index3.html">Isu Strategis</a></li>
+                                                <li><a href="{{route('profil.issue')}}">Isu Strategis</a></li>
                                                 <li><a href="index3.html">Tujuan & Sasaran</a></li>
                                                 <li><a href="index3.html">Tugas Pokok & Fungsi</a></li>
                                                 <li><a href="index3.html">Arah Kebijakan</a></li>
@@ -127,7 +127,7 @@
                                                 <li><a href="index2.html">Aset</a></li>
                                             </ul>
                                         </li>
-                                        
+
                                         <li class="dropdown" style="margin-left: 15px">
                                             <a href="#">BBH</a>
                                             <ul class="sub-menu">
