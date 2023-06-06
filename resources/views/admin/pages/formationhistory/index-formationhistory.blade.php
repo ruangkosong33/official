@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td width="30%">Deskripsi</td>
-                                <td>{{$datas->description_formationhistory}}</td>
+                                <td>{!!$datas->description_formationhistory!!}</td>
                             </tr>
                             @endforeach
                         </tbody>

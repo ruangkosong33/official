@@ -59,10 +59,10 @@
                                             <a href="{{ route('dashboard.index') }}">Beranda</a>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="index.html">Profil </a>
+                                            <a href="#">Profil </a>
                                             <ul>
-                                                <li><a href="index.html">Visi & Misi</a></li>
-                                                <li><a href="index2.html">Sejarah Pembentukan</a></li>
+                                                <li><a href="{{route('profil.vision')}}">Visi & Misi</a></li>
+                                                <li><a href="{{route('profil.formationhistory')}}">Sejarah Pembentukan</a></li>
                                                 <li><a href="index3.html">Isu Strategis</a></li>
                                                 <li><a href="index3.html">Tujuan & Sasaran</a></li>
                                                 <li><a href="index3.html">Tugas Pokok & Fungsi</a></li>

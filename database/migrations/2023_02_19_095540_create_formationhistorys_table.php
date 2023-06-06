@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_formationhistory');
             $table->string('slug');
-            $table->string('description_formationhistory');
+            $table->longText('description_formationhistory');
             $table->timestamps();
         });
     }
