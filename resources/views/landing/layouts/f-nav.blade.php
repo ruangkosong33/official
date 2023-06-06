@@ -64,7 +64,7 @@
                                                 <li><a href="{{route('profil.vision')}}">Visi & Misi</a></li>
                                                 <li><a href="{{route('profil.formationhistory')}}">Sejarah Pembentukan</a></li>
                                                 <li><a href="{{route('profil.issue')}}">Isu Strategis</a></li>
-                                                <li><a href="index3.html">Tujuan & Sasaran</a></li>
+                                                <li><a href="{{route('profil.goalobjective')}}">Tujuan & Sasaran</a></li>
                                                 <li><a href="index3.html">Tugas Pokok & Fungsi</a></li>
                                                 <li><a href="index3.html">Arah Kebijakan</a></li>
                                                 <li><a href="index3.html">Tertib Pelayanan</a></li>

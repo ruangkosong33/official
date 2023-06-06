@@ -59,9 +59,9 @@ class GoalobjectiveController extends Controller
         $goalobjective=Goalobjective::findOrFail($id);
 
         $goalobjective->update([
-            'title_goalobjetive'=>$request->title_goalobjective,
+            'title_goalobjective'=>$request->title_goalobjective,
             'slug'=>Str::slug($request->title_goalobjective),
-            'descrtiption_goalobjetive'=>$request->descrtiption_goalobjetive,
+            'description_goalobjective'=>$request->description_goalobjective,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Update');

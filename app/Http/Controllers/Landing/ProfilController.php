@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Vision;
 use App\Models\Formationhistory;
 use App\Models\Issue;
+use App\Models\Goalobjective;
 
 class ProfilController extends Controller
 {
@@ -24,6 +25,11 @@ class ProfilController extends Controller
     {
         $issue = Issue::firstOrFail();
         return view('landing.pages.profil.issue-profil',['issue'=>$issue]);
+    }
+    public function goalobjective()
+    {
+        $goalobjective = Goalobjective::firstOrFail();
+        return view('landing.pages.profil.goalobjective-profil',['goalobjective'=>$goalobjective]);
     }
 
 }

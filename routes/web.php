@@ -85,6 +85,7 @@ Route::middleware(['landing',])->group(function()
     Route::get('/profil/visi&misi',[LandingProfilController::class,'vision'])->name('profil.vision');
     Route::get('/profil/sejarah-pembentukan',[LandingProfilController::class,'formationhistory'])->name('profil.formationhistory');
     Route::get('/profil/isu-strategis',[LandingProfilController::class,'issue'])->name('profil.issue');
+    Route::get('/profil/tujuan-dan-saran',[LandingProfilController::class,'goalobjective'])->name('profil.goalobjective');
 
 });
 

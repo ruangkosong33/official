@@ -26,7 +26,9 @@
                     <div class="card-tools">
                         <ul class="nav nav-pills ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link btn-info active mr-1" href="{{route('goalobjective.create')}}" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="fas fa-plus"></i></a>
+                                @if($goalobjective->isEmpty())
+                                    <a class="nav-link btn-info active mr-1" href="{{route('goalobjective.create')}}" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="fas fa-plus"></i></a>
+                                @endif
                             </li>
                             <li class="nav-item">
                                 @foreach ($goalobjective as $goalobjectives)
@@ -47,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td width="30%">Deskripsi</td>
-                                <td>{{$goalobjectives->description_goalobjective}}</td>
+                                <td>{!!$goalobjectives->description_goalobjective!!}</td>
                             </tr>
                             @endforeach
                         </tbody>

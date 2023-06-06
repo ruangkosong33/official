@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_goalobjective');
             $table->string('slug');
-            $table->string('description_goalobjective');
+            $table->longText('description_goalobjective');
             $table->timestamps();
         });
     }
