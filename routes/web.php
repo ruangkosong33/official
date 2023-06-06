@@ -89,6 +89,7 @@ Route::middleware(['landing',])->group(function()
     Route::get('/profil/tugas-dan-fungsi',[LandingProfilController::class,'taskfunction'])->name('profil.taskfunction');
     Route::get('/profil/arah-kebijakan',[LandingProfilController::class,'policydirection'])->name('profil.policydirection');
     Route::get('/profil/tertib-pelayanan',[LandingProfilController::class,'serviceorder'])->name('profil.serviceorder');
+    Route::get('/profil/kepala-badan',[LandingProfilController::class,'leaders'])->name('profil.leader');
 
 });
 

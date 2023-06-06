@@ -42,7 +42,7 @@
                                     <label for="periode" class="col-sm-2 col-form-label">Periode</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control @error('periode') is-invalid @enderror" id="periode"
-                                        placeholder="Tahun" name="description_issue"></textarea>
+                                        placeholder="Tahun" name="periode"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">

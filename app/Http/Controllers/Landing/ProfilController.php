@@ -11,6 +11,7 @@ use App\Models\Goalobjective;
 use App\Models\Taskfunction;
 use App\Models\Policydirection;
 use App\Models\Serviceorder;
+use App\Models\Leader;
 
 class ProfilController extends Controller
 {
@@ -49,6 +50,11 @@ class ProfilController extends Controller
     {
         $serviceorder = Serviceorder::firstOrFail();
         return view('landing.pages.profil.serviceorder-profil',['serviceorder'=>$serviceorder]);
+    }
+    public function leaders()
+    {
+        $leaders = Leader::orderBy('periode','DESC')->get();
+        return view('landing.pages.profil.leader-profil',['leaders'=>$leaders]);
     }
 
 }

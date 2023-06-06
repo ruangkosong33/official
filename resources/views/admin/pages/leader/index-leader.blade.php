@@ -50,9 +50,9 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$leaders->name_leader}}</td>
                                 <td>{{$leaders->periode}}</td>
-                                <td><img src="{{asset('image-post/'. $leaders->image_leader)}}" width="8px"></td>
+                                <td><img src="{{asset('/uploads/foto-pimpinan/'. $leaders->image_leader)}}" width="8px"></td>
                                 <td>
-                                    <a href="{{route('leaders.edit', $leaders->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('leader.edit', $leaders->id)}}" class="btn btn-warning btn-sm">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Form-->
