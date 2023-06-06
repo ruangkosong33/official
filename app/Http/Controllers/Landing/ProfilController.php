@@ -8,6 +8,7 @@ use App\Models\Vision;
 use App\Models\Formationhistory;
 use App\Models\Issue;
 use App\Models\Goalobjective;
+use App\Models\Taskfunction;
 
 class ProfilController extends Controller
 {
@@ -30,6 +31,12 @@ class ProfilController extends Controller
     {
         $goalobjective = Goalobjective::firstOrFail();
         return view('landing.pages.profil.goalobjective-profil',['goalobjective'=>$goalobjective]);
+    }
+
+    public function taskfunction()
+    {
+        $taskfunction = Taskfunction::firstOrFail();
+        return view('landing.pages.profil.taskfunction-profil',['taskfunction'=>$taskfunction]);
     }
 
 }

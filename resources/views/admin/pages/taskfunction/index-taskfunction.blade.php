@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td width="30%">Deskripsi</td>
-                                <td>{{$taskfunctions->description_taskfunction}}</td>
+                                <td>{!!$taskfunctions->description_taskfunction!!}</td>
                             </tr>
                             @endforeach
                         </tbody>

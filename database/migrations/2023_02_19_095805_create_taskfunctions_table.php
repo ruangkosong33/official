@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_taskfunction');
             $table->string('slug');
-            $table->string('description_taskfunction');
+            $table->longText('description_taskfunction');
             $table->timestamps();
         });
     }
