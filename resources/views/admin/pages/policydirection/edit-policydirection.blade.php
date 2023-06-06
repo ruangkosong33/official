@@ -32,23 +32,27 @@
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="title_vision" class="form-label col-sm-2">Sub Judul</label>
+                            <div class="col-sm-10">
                                 <input type="text" class="form-control @error('title_policydirection') is-invalid @enderror" name="title_policydirection" placeholder="Sub Judul"
                                 id="title_policydirection" value="{{old('title_polidcydirection') ?? $policydirection->title_policydirection}}">
 
                                 @error('title_policydirection')
                                 <span class="invalid-feedback">{{$message}}</span>
                                 @enderror
+                            </div>
 
                         </div>
 
                         <div class="form-group row">
                             <label for="description_policydirection" class="form-label col-sm-2">Deskripsi</label>
-                                <textarea class="form-control @error('description_policydirection') is-invalid @enderror" name="description_policydirection"
-                                id="description_policydirection">{{old('description_policydirection') ?? $policydirection->description_policydirection}}</textarea>
+                            <div class="col-sm-10">
+                                <textarea class="form-control @error('description_policydirection') is-invalid @enderror" id="editor"
+                                name="description_policydirection">{{ old('description_policydirection', $policydirection->description_policydirection ?? '') }}</textarea>
 
                                 @error ('description_policydirection')
                                     <span class="invalid-feedback">{{$message}}</span>
                                 @enderror
+                            </div>
 
                         </div>
                     </div>
@@ -70,6 +74,19 @@
 <!-- End Wrapper -->
 
 @endsection
+@section('ck-editor')
+
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+
+    <script>
+        CKEDITOR.replace('editor', {
+            filebrowserUploadUrl: "{{route('post.upload', ['_token' => csrf_token() ])}}",
+            filebrowserUploadMethod: 'form'
+        });
+    </script>
+
+  @endsection
+
 
 
 

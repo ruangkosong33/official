@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_policydirection');
             $table->string('slug');
-            $table->string('description_policydirection');
+            $table->longText('description_policydirection');
             $table->timestamps();
         });
     }

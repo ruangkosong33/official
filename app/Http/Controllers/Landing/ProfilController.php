@@ -9,6 +9,7 @@ use App\Models\Formationhistory;
 use App\Models\Issue;
 use App\Models\Goalobjective;
 use App\Models\Taskfunction;
+use App\Models\Policydirection;
 
 class ProfilController extends Controller
 {
@@ -37,6 +38,11 @@ class ProfilController extends Controller
     {
         $taskfunction = Taskfunction::firstOrFail();
         return view('landing.pages.profil.taskfunction-profil',['taskfunction'=>$taskfunction]);
+    }
+    public function policydirection()
+    {
+        $policydirection = Policydirection::firstOrFail();
+        return view('landing.pages.profil.policydirection-profil',['policydirection'=>$policydirection]);
     }
 
 }

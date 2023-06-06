@@ -49,7 +49,7 @@
                             </tr>
                             <tr>
                                 <td width="30%">Deskripsi</td>
-                                <td>{{$policydirections->description_policydirection}}</td>
+                                <td>{!!$policydirections->description_policydirection!!}</td>
                             </tr>
                             @endforeach
                         </tbody>
