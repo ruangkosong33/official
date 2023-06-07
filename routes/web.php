@@ -58,6 +58,7 @@ use App\Http\Controllers\Landing\LawController as LandingLawController;
 use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyController;
 use App\Http\Controllers\Landing\ProgramController as LandingProgramController;
 use App\Http\Controllers\Landing\PotentionController as LandingPotentionController;
+use App\Http\Controllers\Landing\PublicinfoController as LandingPublicinfoController;
 
 
 
@@ -111,7 +112,7 @@ Route::middleware(['landing',])->group(function()
     Route::get('/potensi/aset', [LandingPotentionController::class,'asset'])->name('landing.potention.asset');
     Route::get('/potensi/aset/unduh/{slug}', [LandingPotentionController::class,'downloadFileAsset'])->name('landing.potention.downloadFileAsset');
 
-    // Route::get('/info-publik/download/{slug}',)
+    Route::get('/info-publik/download/{slug}',[LandingPublicinfoController::class,'download'])->name('landing.publicinfo.download');
 });
 
 //Register

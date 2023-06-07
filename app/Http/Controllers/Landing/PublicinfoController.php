@@ -10,7 +10,8 @@ class PublicinfoController extends Controller
 {
     public function download($slug)
     {
-        $download = Download::where('slug',$slug);
+        $download = Download::where('slug',$slug)->first();
+        // dd($download->filedownload);
         return view('landing.pages.publicinfo.download-publicinfo',['download'=>$download]);
     }
 }

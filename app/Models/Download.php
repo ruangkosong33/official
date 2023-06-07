@@ -18,6 +18,6 @@ class Download extends Model
 
     public function filedownload()
     {
-        return $this->hasMany(Filedownload::class, 'file_download_id', 'id');
+        return $this->hasMany(Filedownload::class, 'download_id', 'id');
     }
 }

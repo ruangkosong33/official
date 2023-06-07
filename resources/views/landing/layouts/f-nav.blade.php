@@ -88,7 +88,7 @@
                                                 <li><a href="index3.html">Download</a>
                                                     <ul class="sub-menu">
                                                         @foreach ($downloads as $download)
-                                                        <li><a href="company-overview.html">{{$download->category_download}}</a></li>
+                                                        <li><a href="{{route('landing.publicinfo.download',['slug'=>$download->slug])}}">{{$download->category_download}}</a></li>
                                                         @endforeach
                                                     </ul>
                                                 </li>
