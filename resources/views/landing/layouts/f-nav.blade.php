@@ -85,7 +85,13 @@
                                             <ul>
                                                 <li><a href="index.html">Asrama</a></li>
                                                 <li><a href="index2.html">Lelang</a></li>
-                                                <li><a href="index3.html">Download</a></li>
+                                                <li><a href="index3.html">Download</a>
+                                                    <ul class="sub-menu">
+                                                        @foreach ($downloads as $download)
+                                                        <li><a href="company-overview.html">{{$download->category_download}}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
@@ -124,7 +130,9 @@
                                             <a href="index.html">Potensi</a>
                                             <ul>
                                                 <li><a href="index.html">PAD</a></li>
-                                                <li><a href="{{route('landing.potention.asset')}}">Aset</a></li>
+                                                <li><a href="{{route('landing.potention.asset')}}">Aset</a>
+
+                                                </li>
                                             </ul>
                                         </li>
 

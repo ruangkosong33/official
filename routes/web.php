@@ -110,6 +110,8 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/potensi/aset', [LandingPotentionController::class,'asset'])->name('landing.potention.asset');
     Route::get('/potensi/aset/unduh/{slug}', [LandingPotentionController::class,'downloadFileAsset'])->name('landing.potention.downloadFileAsset');
+
+    // Route::get('/info-publik/download/{slug}',)
 });
 
 //Register
