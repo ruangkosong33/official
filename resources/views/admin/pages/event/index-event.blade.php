@@ -57,10 +57,10 @@
                                 <td>{{$events->description_event}}</td>
                                 <td>{{$events->date_event}}</td>
                                 <td>
-                                    <a href="{{route('event.edit', $event->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('event.edit', $events->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('event.destroy', $event->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('event.destroy', $events->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">

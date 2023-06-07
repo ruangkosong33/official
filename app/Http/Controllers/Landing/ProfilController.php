@@ -12,6 +12,9 @@ use App\Models\Taskfunction;
 use App\Models\Policydirection;
 use App\Models\Serviceorder;
 use App\Models\Leader;
+use App\Models\Event;
+use Carbon\Carbon;
+use Illuminate\Support\Arr;
 
 class ProfilController extends Controller
 {
@@ -55,6 +58,20 @@ class ProfilController extends Controller
     {
         $leaders = Leader::orderBy('periode','DESC')->get();
         return view('landing.pages.profil.leader-profil',['leaders'=>$leaders]);
+    }
+
+    public function event()
+    {
+        $today = Carbon::today();
+        $upcommingEvents = Event::whereDate('date_event','>',$today)->get();
+        $todayEvents = Event::whereDate('date_event','=',$today)->get();
+        $pastEvents = Event::where('date_event','<',$today)->get();
+        $events = Arr::collapse([
+            $todayEvents,
+            $upcommingEvents,
+            $pastEvents,
+        ]);
+        return view('landing.pages.profil.event-profil',['events'=>$events,'today'=>$today]);
     }
 
 }

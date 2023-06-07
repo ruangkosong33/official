@@ -30,13 +30,13 @@ class EventController extends Controller
             'place'=>'required',
             'date_event'=>'required',
         ]);
-
+        // dd($request->all());
         $event=Event::create([
             'title_event'=>$request->title_event,
             'slug'=>Str::slug($request->title_event),
             'description_event'=>$request->description_event,
             'place'=>$request->place,
-            'date_event'=>$request,
+            'date_event'=>$request->date_event,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
