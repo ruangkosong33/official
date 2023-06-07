@@ -67,7 +67,7 @@ class PostController extends Controller
             $img=Image::make($file);
             if(Image::make($file))
             {
-                $img->resize(700,200);
+                $img->resize(770,413);
             }
             $img->save(public_path('uploads/image-post/'.$imageposts));
         }else {
