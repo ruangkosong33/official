@@ -36,7 +36,7 @@ class BannerController extends Controller
             $img=Image::make($file);
             if (Image::make($file))
             {
-                $img->resize(1894,731);
+                $img->resize(1920,790);
             }
             $img->save(public_path('uploads/image-banner/'). $imagebanners);
         }

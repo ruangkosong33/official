@@ -10,6 +10,22 @@
             <div class="main-slider-three__shape-1 img-bounce">
                 <img src="{{asset('fk88/assets/images/shapes/main-slider-three-shape-1.png')}}" alt="">
             </div>
+            <div class="container">
+                <div class="main-slider-three__content">
+                    <div class="main-slider-three__shape-2 float-bob-x">
+                        <img src=" assets/images/shapes/main-slider-three-shape-2.png" alt="">
+                    </div>
+                    <div class="main-slider-three__title-box">
+                        <h2 class="main-slider-three__title" style="visibility: hidden;">Consulting <br>
+                            at a <span>Higher</span> <br> Level</h2>
+                        <p class="main-slider-three__text" style="visibility: hidden;">There are many variations of <br> passages of lorem
+                            ipsum.</p>
+                    </div>
+                    <div class="main-slider-three__btn-box" style="visibility: hidden;">
+                        <a href="about.html" class="main-slider-three__btn thm-btn">Discover More</a>
+                    </div>
+                </div>
+            </div>
         </div>
         @endforeach
 
