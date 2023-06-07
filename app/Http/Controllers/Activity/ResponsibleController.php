@@ -37,7 +37,7 @@ class ResponsibleController extends Controller
             $file->move('uploads/file-Program-Kegiatan', $responsibles);
         }
 
-        $responsible=Resposible::create([
+        $responsible=Responsible::create([
             'title_responsible'=>$request->title_responsible,
             'slug'=>Str::slug($request->title_responsible),
             'file_responsible'=>$responsibles,

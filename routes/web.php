@@ -102,6 +102,10 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/program-kegiatan/realisasi-fisik-&-keuangan', [LandingProgramController::class,'realisation'])->name('landing.program.realisation');
     Route::get('/program-kegiatan/realisasi-fisik-&-keuangan/unduh/{slug}', [LandingProgramController::class,'downloadFileRealisation'])->name('landing.program.downloadFileRealisation');
+    Route::get('/program-kegiatan/bantuan-sosial', [LandingProgramController::class,'bansos'])->name('landing.program.bansos');
+    Route::get('/program-kegiatan/bantuan-sosial/unduh/{slug}', [LandingProgramController::class,'downloadFileBansos'])->name('landing.program.downloadFileBansos');
+    Route::get('/program-kegiatan/penanggungjawab-program-dan-kegiatan', [LandingProgramController::class,'responsible'])->name('landing.program.responsible');
+    Route::get('/program-kegiatan/penanggungjawab-program-dan-kegiatan/unduh/{slug}', [LandingProgramController::class,'downloadFileResponsible'])->name('landing.program.downloadFileResponsible');
 });
 
 //Register

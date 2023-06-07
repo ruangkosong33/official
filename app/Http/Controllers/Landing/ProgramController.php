@@ -25,4 +25,34 @@ class ProgramController extends Controller
         return response()->download($file, $fileName, $headers);
     }
 
+    public function bansos()
+    {
+        $allbansos = Bansos::latest()->get();
+        return view('landing.pages.program.bansos-program',['allbansos'=>$allbansos]);
+    }
+
+    public function downloadFileBansos($slug)
+    {
+        $bansos = Bansos::where('slug',$slug)->first();
+        $file = public_path('uploads/file-bansos/').$bansos->file_bansos;
+        $headers = ['Content-Type: application/pdf'];
+    	$fileName = $bansos->slug.'-'.time().'.pdf';
+        return response()->download($file, $fileName, $headers);
+    }
+
+    public function responsible()
+    {
+        $responsibles = Responsible::latest()->get();
+        return view('landing.pages.program.responsible-program',['responsibles'=>$responsibles]);
+    }
+
+    public function downloadFileResponsible($slug)
+    {
+        $responsible = Responsible::where('slug',$slug)->first();
+        $file = public_path('uploads/file-Program-Kegiatan/').$responsible->file_responsible;
+        $headers = ['Content-Type: application/pdf'];
+    	$fileName = $responsible->slug.'-'.time().'.pdf';
+        return response()->download($file, $fileName, $headers);
+    }
+
 }
