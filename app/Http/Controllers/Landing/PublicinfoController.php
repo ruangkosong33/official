@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Download;
 use App\Models\Auction;
 use App\Models\Filedownload;
+use App\Models\Hostel;
 
 class PublicinfoController extends Controller
 {
@@ -31,7 +32,7 @@ class PublicinfoController extends Controller
         $auctions = Auction::latest()->get();
         return view('landing.pages.publicinfo.auction-publicinfo',['auctions'=>$auctions]);
     }
-
+    
     public function downloadFileAuction($slug)
     {
         $auction = Auction::where('slug',$slug)->first();
@@ -39,5 +40,11 @@ class PublicinfoController extends Controller
         $headers = ['Content-Type: application/pdf'];
     	$fileName = $auction->slug.'-'.time().'.pdf';
         return response()->download($file, $fileName, $headers);
+    }
+
+    public function hostel()
+    {
+        $hostels = Hostel::latest()->get();
+        return view('landing.pages.publicinfo.hostel-publicinfo',['hostels'=>$hostels]);
     }
 }

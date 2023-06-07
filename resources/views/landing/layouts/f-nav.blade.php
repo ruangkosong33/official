@@ -83,7 +83,7 @@
                                         <li class="dropdown" style="margin-left: 15px">
                                             <a href="index.html">Info Publik</a>
                                             <ul>
-                                                <li><a href="index.html">Asrama</a></li>
+                                                <li><a href="{{route('landing.publicinfo.hostel')}}">Asrama</a></li>
                                                 <li><a href="{{route('landing.publicinfo.auction')}}">Lelang</a></li>
                                                 <li><a href="#">Download</a>
                                                     <ul class="sub-menu">

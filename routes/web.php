@@ -116,6 +116,7 @@ Route::middleware(['landing',])->group(function()
     Route::get('/info-publik/download/{slug}',[LandingPublicinfoController::class,'download'])->name('landing.publicinfo.download');
     Route::get('/info-publik/lelang',[LandingPublicinfoController::class,'auction'])->name('landing.publicinfo.auction');
     Route::get('/info-publik/lelang/unduh/{slug}',[LandingPublicinfoController::class,'downloadFileAuction'])->name('landing.publicinfo.downloadFileAuction');
+    Route::get('/info-publik/asrama',[LandingPublicinfoController::class,'hostel'])->name('landing.publicinfo.hostel');
 });
 
 //Register
