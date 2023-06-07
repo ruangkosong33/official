@@ -55,6 +55,7 @@ use App\Http\Controllers\Profil\FormationhistoryController;
 use App\Http\Controllers\Landing\PostController as LandingPostController;
 use App\Http\Controllers\Landing\ProfilController as LandingProfilController;
 use App\Http\Controllers\Landing\LawController as LandingLawController;
+use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyController;
 
 
 
@@ -94,6 +95,9 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/produk-hukum/{slug}', [LandingLawController::class,'index'])->name('landing.law.index');
     Route::get('/produk-hukum/unduh/{slug}', [LandingLawController::class,'downloadFile'])->name('landing.law.downloadFile');
+
+    Route::get('/transparansi-pengelolaan-anggaran', [LandingTransparencyController::class,'index'])->name('landing.transparency.index');
+    Route::get('/transparansi-pengelolaan-anggaran/unduh/{slug}', [LandingTransparencyController::class,'downloadFile'])->name('landing.transparency.downloadFile');
 });
 
 //Register

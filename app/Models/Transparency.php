@@ -18,6 +18,6 @@ class Transparency extends Model
 
     public function filetransparency()
     {
-        return $this->hasMany(Filetransparency::class, 'filetransparency_id', 'id');
+        return $this->hasMany(Filetransparency::class);
     }
 }

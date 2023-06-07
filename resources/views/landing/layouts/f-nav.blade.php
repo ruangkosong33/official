@@ -110,7 +110,7 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="{{ route('dashboard.index') }}">Transparansi Anggaran</a>
+                                            <a href="{{ route('landing.transparency.index') }}">Transparansi Anggaran</a>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
                                             <a href="index.html">Program Kegiatan </a>
