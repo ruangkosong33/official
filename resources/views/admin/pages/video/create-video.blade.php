@@ -51,7 +51,7 @@
                                 <div class="form-group row">
                                     <label fo="title_video" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_sop" class="form-control @error('title_video') is-invalid @enderror"
+                                        <input type="text" name="title_video" class="form-control @error('title_video') is-invalid @enderror"
                                         id="title_video" placeholder="Video">
 
                                         @error('title_video')

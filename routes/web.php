@@ -53,6 +53,7 @@ use App\Http\Controllers\Profil\FormationhistoryController;
 
 // Landing Controller
 use App\Http\Controllers\Landing\PostController as LandingPostController;
+use App\Http\Controllers\Landing\VideoController as LandingVideoController;
 use App\Http\Controllers\Landing\ProfilController as LandingProfilController;
 use App\Http\Controllers\Landing\LawController as LandingLawController;
 use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyController;
@@ -86,6 +87,9 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/berita',[LandingPostController::class,'index'])->name('berita.index');
     Route::get('/berita/{slug}',[LandingPostController::class,'detail'])->name('berita.detail');
+
+    Route::get('/vidio',[LandingVideoController::class,'index'])->name('landing.video.index');
+    Route::get('/vidio/{slug}',[LandingVideoController::class,'detail'])->name('landing.video.detail');
 
     Route::get('/profil/visi&misi',[LandingProfilController::class,'vision'])->name('profil.vision');
     Route::get('/profil/sejarah-pembentukan',[LandingProfilController::class,'formationhistory'])->name('profil.formationhistory');

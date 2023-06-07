@@ -15,12 +15,12 @@
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>Detail Berita</h2>
+                <h2>Detail Vidio</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
                         <li><span>/</span></li>
-                        <li>Detail Berita</li>
+                        <li>Detail Vidio</li>
                     </ul>
                 </div>
             </div>
@@ -35,9 +35,9 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="news-details__left">
                         <div class="news-details__img">
-                            <img src="{{asset('uploads/image-post/'.$post->image_post)}}" alt="">
+                            <img src="{{asset('uploads/image-video/'.$video->image_video)}}" alt="">
                             <div class="news-details__date">
-                                <p>{{ $post->created_at->format('d').' '.$post->created_at->monthName.', '.$post->created_at->year }}</p>
+                                <p>{{ $video->created_at->format('d').' '.$video->created_at->monthName.', '.$video->created_at->year }}</p>
                             </div>
                         </div>
                         <div class="news-details__content">
@@ -47,17 +47,19 @@
                                         <span class="fas fa-tags"></span>
                                     </div>
                                     <div class="text">
-                                        <p>{{$post->category->title_category}}</p>
+                                        <p>{{$video->category->title_category}}</p>
                                     </div>
                                 </li>
                             </ul>
-                            <h3 class="news-details__title-1">{{$post->title_post}}</h3>
-                            <p class="news-details__text-1">{!! $post->description_post !!}</p>
+                            <h3 class="news-details__title-1">{{$video->title_video}}</h3>
+                            <div class="team-details__btn-box">
+                                <a href="{{$video->link}}" target="__BLANK" class="team-details__btn thm-btn">Putar Vidio</a>
+                            </div>
                         </div>
                         <div class="news-details__bottom">
                             <p class="news-details__tags">
                                 <span>Kategori</span>
-                                <a href="#">{{ $post->category->title_category }}</a>
+                                <a href="#">{{ $video->category->title_category }}</a>
                             </p>
                             <div class="news-details__social-list">
                                 <a href="#"><i class="fab fa-twitter"></i></a>

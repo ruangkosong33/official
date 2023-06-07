@@ -13,7 +13,7 @@ class VideoController extends Controller
     public function index()
     {
         $video=Video::with(['category'])->latest()->paginate(7);
-
+        // dd($video[0]);
         return view('admin.pages.video.index-video', ['video'=>$video]);
     }
 
@@ -33,16 +33,23 @@ class VideoController extends Controller
 
         if($request->hasFile('image_video'))
         {
-            $file=$request->hasFile('image_video');
+            $file=$request->file('image_video');
             $extension=$file->getClientOriginalName();
             $videos=$extension;
-            $file->move('uploads/image-video', $videos);
+            $img=Image::make($file);
+            if(Image::make($file))
+            {
+                $img->resize(770,413);
+            }
+            $img->save(public_path('uploads/image-video/'.$videos));
         }
 
         $video=Video::create([
             'title_video'=>$request->title_video,
+            'link'=>$request->link,
             'slug'=>Str::slug($request->title_video),
             'image_video'=>$videos,
+            'status'=>$request->status,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
@@ -64,7 +71,7 @@ class VideoController extends Controller
 
         if($request->hasFile('image_video'))
         {
-            $file=$request->hasFile('image_video');
+            $file=$request->file('image_video');
             $extension=$file->getClientOriginalName();
             $videos=$extension;
             $img = Image::make($file);
