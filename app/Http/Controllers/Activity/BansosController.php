@@ -40,7 +40,7 @@ class BansosController extends Controller
         $bansos=Bansos::create([
             'title_bansos'=>$request->title_bansos,
             'slug'=>Str::slug($request->title_bansos),
-            'file_bansos'=>$filebansoss,
+            'file_bansos'=>$bansoss,
         ]);
 
         Alert::success('Berhasil', 'Data Telah Di Simpan');

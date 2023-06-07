@@ -85,7 +85,13 @@
                                             <ul>
                                                 <li><a href="index.html">Asrama</a></li>
                                                 <li><a href="index2.html">Lelang</a></li>
-                                                <li><a href="index3.html">Download</a></li>
+                                                <li><a href="index3.html">Download</a>
+                                                    <ul class="sub-menu">
+                                                        @foreach ($downloads as $download)
+                                                        <li><a href="company-overview.html">{{$download->category_download}}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
@@ -110,21 +116,23 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="{{ route('dashboard.index') }}">Transparansi Anggaran</a>
+                                            <a href="{{ route('landing.transparency.index') }}">Transparansi Anggaran</a>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
                                             <a href="index.html">Program Kegiatan </a>
                                             <ul>
-                                                <li><a href="index.html">Penanggung Jawab Program & Kegiatan</a></li>
-                                                <li><a href="index2.html">Realisasi Fisik & Keuangan</a></li>
-                                                <li><a href="index3.html">Bantuan Sosial</a></li>
+                                                <li><a href="{{route('landing.program.responsible')}}">Penanggung Jawab Program & Kegiatan</a></li>
+                                                <li><a href="{{route('landing.program.realisation')}}">Realisasi Fisik & Keuangan</a></li>
+                                                <li><a href="{{route('landing.program.bansos')}}">Bantuan Sosial</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
                                             <a href="index.html">Potensi</a>
                                             <ul>
                                                 <li><a href="index.html">PAD</a></li>
-                                                <li><a href="index2.html">Aset</a></li>
+                                                <li><a href="{{route('landing.potention.asset')}}">Aset</a>
+
+                                                </li>
                                             </ul>
                                         </li>
 

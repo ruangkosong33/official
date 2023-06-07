@@ -51,12 +51,12 @@
                               <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$responsibles->title_responsible}}</td>
-                                <td><a href="{{route('responsible.download', $responsibles->id)}}">{{$responsible->file_responsible}}</a></td>
+                                <td><a href="{{route('responsible.download', $responsibles->id)}}">{{$responsibles->file_responsible}}</a></td>
                                 <td>
-                                    <a href="{{route('responsible.edit', $responsible->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('responsible.edit', $responsibles->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('responsible.destroy', $responsible->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('responsible.destroy', $responsibles->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">

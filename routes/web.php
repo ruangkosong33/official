@@ -55,6 +55,9 @@ use App\Http\Controllers\Profil\FormationhistoryController;
 use App\Http\Controllers\Landing\PostController as LandingPostController;
 use App\Http\Controllers\Landing\ProfilController as LandingProfilController;
 use App\Http\Controllers\Landing\LawController as LandingLawController;
+use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyController;
+use App\Http\Controllers\Landing\ProgramController as LandingProgramController;
+use App\Http\Controllers\Landing\PotentionController as LandingPotentionController;
 
 
 
@@ -94,6 +97,21 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/produk-hukum/{slug}', [LandingLawController::class,'index'])->name('landing.law.index');
     Route::get('/produk-hukum/unduh/{slug}', [LandingLawController::class,'downloadFile'])->name('landing.law.downloadFile');
+
+    Route::get('/transparansi-pengelolaan-anggaran', [LandingTransparencyController::class,'index'])->name('landing.transparency.index');
+    Route::get('/transparansi-pengelolaan-anggaran/unduh/{slug}', [LandingTransparencyController::class,'downloadFile'])->name('landing.transparency.downloadFile');
+
+    Route::get('/program-kegiatan/realisasi-fisik-&-keuangan', [LandingProgramController::class,'realisation'])->name('landing.program.realisation');
+    Route::get('/program-kegiatan/realisasi-fisik-&-keuangan/unduh/{slug}', [LandingProgramController::class,'downloadFileRealisation'])->name('landing.program.downloadFileRealisation');
+    Route::get('/program-kegiatan/bantuan-sosial', [LandingProgramController::class,'bansos'])->name('landing.program.bansos');
+    Route::get('/program-kegiatan/bantuan-sosial/unduh/{slug}', [LandingProgramController::class,'downloadFileBansos'])->name('landing.program.downloadFileBansos');
+    Route::get('/program-kegiatan/penanggungjawab-program-dan-kegiatan', [LandingProgramController::class,'responsible'])->name('landing.program.responsible');
+    Route::get('/program-kegiatan/penanggungjawab-program-dan-kegiatan/unduh/{slug}', [LandingProgramController::class,'downloadFileResponsible'])->name('landing.program.downloadFileResponsible');
+
+    Route::get('/potensi/aset', [LandingPotentionController::class,'asset'])->name('landing.potention.asset');
+    Route::get('/potensi/aset/unduh/{slug}', [LandingPotentionController::class,'downloadFileAsset'])->name('landing.potention.downloadFileAsset');
+
+    // Route::get('/info-publik/download/{slug}',)
 });
 
 //Register

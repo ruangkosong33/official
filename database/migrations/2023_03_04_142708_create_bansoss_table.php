@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_bansos');
             $table->string('slug');
-            $table->string('filename_bansos');
+            $table->string('file_bansos');
             $table->timestamps();
         });
     }
