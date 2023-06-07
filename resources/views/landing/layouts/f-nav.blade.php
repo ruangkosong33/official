@@ -124,7 +124,7 @@
                                             <a href="index.html">Potensi</a>
                                             <ul>
                                                 <li><a href="index.html">PAD</a></li>
-                                                <li><a href="index2.html">Aset</a></li>
+                                                <li><a href="{{route('landing.potention.asset')}}">Aset</a></li>
                                             </ul>
                                         </li>
 

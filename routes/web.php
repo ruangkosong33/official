@@ -57,6 +57,7 @@ use App\Http\Controllers\Landing\ProfilController as LandingProfilController;
 use App\Http\Controllers\Landing\LawController as LandingLawController;
 use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyController;
 use App\Http\Controllers\Landing\ProgramController as LandingProgramController;
+use App\Http\Controllers\Landing\PotentionController as LandingPotentionController;
 
 
 
@@ -106,6 +107,9 @@ Route::middleware(['landing',])->group(function()
     Route::get('/program-kegiatan/bantuan-sosial/unduh/{slug}', [LandingProgramController::class,'downloadFileBansos'])->name('landing.program.downloadFileBansos');
     Route::get('/program-kegiatan/penanggungjawab-program-dan-kegiatan', [LandingProgramController::class,'responsible'])->name('landing.program.responsible');
     Route::get('/program-kegiatan/penanggungjawab-program-dan-kegiatan/unduh/{slug}', [LandingProgramController::class,'downloadFileResponsible'])->name('landing.program.downloadFileResponsible');
+
+    Route::get('/potensi/aset', [LandingPotentionController::class,'asset'])->name('landing.potention.asset');
+    Route::get('/potensi/aset/unduh/{slug}', [LandingPotentionController::class,'downloadFileAsset'])->name('landing.potention.downloadFileAsset');
 });
 
 //Register
