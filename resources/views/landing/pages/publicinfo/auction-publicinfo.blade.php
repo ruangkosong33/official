@@ -25,7 +25,7 @@
                         <li><span>/</span></li>
                         <li>Info Publik</li>
                         <li><span>/</span></li>
-                        <li>Download {{ $download->category_download }}</li>
+                        <li>Lelang</li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="section-title__tagline-box">
                     <span class="section-title__tagline">BPKAD KALTIM</span>
                 </div>
-                <h2 class="section-title__title">Download {{ $download->category_download }}</span></h2>
+                <h2 class="section-title__title">Lelang</span></h2>
             </div>
         </div>
     </section>
@@ -51,18 +51,16 @@
                     <thead>
                         <tr>
                             <th>Judul</th>
-                            <th>Kategori</th>
                             <th>Dibuat</th>
                             <th>Unduh</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($download->filedownload as $filedownload)
+                        @foreach ($auctions as $auction)
                         <tr>
-                            <td>{{$filedownload->title_filedownload}}</td>
-                            <td>{{$download->category_download}}</td>
-                            <td>{{ $filedownload->created_at->format('d').' '.$filedownload->created_at->monthName.', '.$filedownload->created_at->year }}</td>
-                            <td><a href="{{route('landing.publicinfo.downloadFile',['slug'=>$filedownload->slug])}}" class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
+                            <td>{{$auction->title_auction}}</td>
+                            <td>{{ $auction->created_at->format('d').' '.$auction->created_at->monthName.', '.$auction->created_at->year }}</td>
+                            <td><a href="{{route('landing.publicinfo.downloadFileAuction',['slug'=>$auction->slug])}}" class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
                         </tr>
                         @endforeach
                     </tbody>

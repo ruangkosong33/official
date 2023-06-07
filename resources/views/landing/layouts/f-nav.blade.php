@@ -84,8 +84,8 @@
                                             <a href="index.html">Info Publik</a>
                                             <ul>
                                                 <li><a href="index.html">Asrama</a></li>
-                                                <li><a href="index2.html">Lelang</a></li>
-                                                <li><a href="index3.html">Download</a>
+                                                <li><a href="{{route('landing.publicinfo.auction')}}">Lelang</a></li>
+                                                <li><a href="#">Download</a>
                                                     <ul class="sub-menu">
                                                         @foreach ($downloads as $download)
                                                         <li><a href="{{route('landing.publicinfo.download',['slug'=>$download->slug])}}">{{$download->category_download}}</a></li>

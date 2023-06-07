@@ -112,7 +112,10 @@ Route::middleware(['landing',])->group(function()
     Route::get('/potensi/aset', [LandingPotentionController::class,'asset'])->name('landing.potention.asset');
     Route::get('/potensi/aset/unduh/{slug}', [LandingPotentionController::class,'downloadFileAsset'])->name('landing.potention.downloadFileAsset');
 
+    Route::get('/info-publik/download/file/{slug}',[LandingPublicinfoController::class,'downloadFile'])->name('landing.publicinfo.downloadFile');
     Route::get('/info-publik/download/{slug}',[LandingPublicinfoController::class,'download'])->name('landing.publicinfo.download');
+    Route::get('/info-publik/lelang',[LandingPublicinfoController::class,'auction'])->name('landing.publicinfo.auction');
+    Route::get('/info-publik/lelang/unduh/{slug}',[LandingPublicinfoController::class,'downloadFileAuction'])->name('landing.publicinfo.downloadFileAuction');
 });
 
 //Register
