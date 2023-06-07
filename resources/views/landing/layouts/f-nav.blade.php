@@ -116,7 +116,7 @@
                                             <a href="index.html">Program Kegiatan </a>
                                             <ul>
                                                 <li><a href="index.html">Penanggung Jawab Program & Kegiatan</a></li>
-                                                <li><a href="index2.html">Realisasi Fisik & Keuangan</a></li>
+                                                <li><a href="{{route('landing.program.realisation')}}">Realisasi Fisik & Keuangan</a></li>
                                                 <li><a href="index3.html">Bantuan Sosial</a></li>
                                             </ul>
                                         </li>

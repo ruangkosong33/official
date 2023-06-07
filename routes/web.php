@@ -56,6 +56,7 @@ use App\Http\Controllers\Landing\PostController as LandingPostController;
 use App\Http\Controllers\Landing\ProfilController as LandingProfilController;
 use App\Http\Controllers\Landing\LawController as LandingLawController;
 use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyController;
+use App\Http\Controllers\Landing\ProgramController as LandingProgramController;
 
 
 
@@ -98,6 +99,9 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/transparansi-pengelolaan-anggaran', [LandingTransparencyController::class,'index'])->name('landing.transparency.index');
     Route::get('/transparansi-pengelolaan-anggaran/unduh/{slug}', [LandingTransparencyController::class,'downloadFile'])->name('landing.transparency.downloadFile');
+
+    Route::get('/program-kegiatan/realisasi-fisik-&-keuangan', [LandingProgramController::class,'realisation'])->name('landing.program.realisation');
+    Route::get('/program-kegiatan/realisasi-fisik-&-keuangan/unduh/{slug}', [LandingProgramController::class,'downloadFileRealisation'])->name('landing.program.downloadFileRealisation');
 });
 
 //Register
