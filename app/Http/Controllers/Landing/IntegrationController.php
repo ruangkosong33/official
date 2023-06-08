@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Renja;
 use App\Models\Renstra;
+use App\Models\Rpjmd;
 
 class IntegrationController extends Controller
 {
@@ -36,5 +37,18 @@ class IntegrationController extends Controller
         return response()->download($file, $renstra->file_renstra);
     }
 
-    
+    public function rpjmd()
+    {
+        $rpjmds = Rpjmd::latest()->get();
+        return view('landing.pages.integration.rpjmd-integration',['rpjmds'=>$rpjmds]);
+    }
+
+    public function downloadFileRpjmd($slug)
+    {
+        $rpjmd = Rpjmd::where('slug',$slug)->first();
+        $file = public_path('uploads/file-rpjmd/').$rpjmd->file_rpjmd;
+        return response()->download($file, $rpjmd->file_rpjmd);
+    }
+
+
 }
