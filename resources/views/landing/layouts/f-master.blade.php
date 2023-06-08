@@ -6,11 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BPKAD - PROV KALTIM</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
-    <meta name="description" content="sinace HTML 5 Template " />
+    <link rel="icon" type="image/x-icon" href="{{asset('fk88/assets/images/logo/logo.ico')}}">
+    <meta name="description" content="BPKAD PROVINSI KALIMANTAN TIMUR" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,7 +77,7 @@
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
 
-        
+
 
         @yield('f-content')
 
@@ -154,7 +151,7 @@
    <!-- Java Script -->
    @include('landing.layouts.f-js')
    <!-- End Java Script -->
-    
+
 </body>
 
 </html>

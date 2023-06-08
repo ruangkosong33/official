@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="{{asset('fk88/assets/images/logo/logo.ico')}}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Admin-BPKAD Kaltim</title>
-  
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -26,7 +27,7 @@
   <link rel="stylesheet" href="{{asset('rk88/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('rk88/plugins/summernote/summernote-bs4.min.css')}}">
-  
+
   @stack('css')
 
 </head>

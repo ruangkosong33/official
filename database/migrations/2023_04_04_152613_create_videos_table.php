@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('image_video');
             $table->text('link');
             $table->integer('status');
-            $table->unsignedBigInteger('category_id')->after('slug')->nullable();
-            $table->foreign('category_id')->references('id')->on('categorys');
+            $table->foreignId('category_id')->constrained('categorys')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

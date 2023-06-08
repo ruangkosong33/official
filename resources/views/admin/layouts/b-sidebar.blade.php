@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{route('dashboard')}}" class="brand-link">
-      <img src="{{asset('rk88/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('fk88/assets/images/logo/logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Admin BPKAD</span>
     </a>
 
@@ -10,10 +10,14 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('rk88/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
+            @php
+                $splitName = explode(' ',Auth::user()->username);
+            @endphp
+          <img src="https://ui-avatars.com/api/?name={{$splitName[0]}}&background=random" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{Auth::user()->username}}</a>
+
+          <a href="javascript:;" class="d-block">{{Auth::user()->username}}</a>
         </div>
       </div>
 
