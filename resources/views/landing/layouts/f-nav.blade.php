@@ -121,8 +121,17 @@
                                                 <li><a href="{{ route('landing.integration.renja') }}">Rencana
                                                         Kerja</a></li>
                                                 <li><a href="{{ route('landing.integration.renstra') }}">Rencana
-                                                        Strategi</a></li>
-                                                <li><a href="">SOP</a></li>
+                                                        Strategi</a>
+                                                    </li>
+                                                <li><a href="">SOP</a>
+                                                    <ul>
+                                                        @foreach ($sops as $sop)
+                                                            <li><a
+                                                                    href="{{ route('landing.integration.sop',['slug'=>$sop->slug]) }}">{{ $sop->title_sop }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                                 <li><a href="{{ route('landing.integration.rpjmd') }}">RPJMD</a></li>
                                                 <li><a href="{{ route('landing.integration.lkjip') }}">LKJIP</a></li>
                                                 <li><a href="{{ route('landing.integration.lppd') }}">LPPD</a></li>

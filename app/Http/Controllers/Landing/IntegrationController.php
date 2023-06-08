@@ -10,6 +10,8 @@ use App\Models\Rpjmd;
 use App\Models\Lkjip;
 use App\Models\Lppd;
 use App\Models\Sidata;
+use App\Models\Sop;
+use App\Models\Filesop;
 
 class IntegrationController extends Controller
 {
@@ -90,5 +92,18 @@ class IntegrationController extends Controller
         $sidata = Sidata::where('slug',$slug)->first();
         $file = public_path('uploads/file-sidata/').$sidata->file_sidata;
         return response()->download($file, $sidata->file_sidata);
+    }
+
+    public function sop($slug)
+    {
+        $sop = Sop::with('filesop')->where('slug',$slug)->first();
+        return view('landing.pages.integration.sop-integration',['sop'=>$sop]);
+    }
+
+    public function downloadFileSop($slug)
+    {
+        $filesop = Filesop::where('slug',$slug)->first();
+        $file = public_path('uploads/file-sop/').$filesop->file_sop;
+        return response()->download($file, $filesop->file_sop);
     }
 }

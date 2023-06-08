@@ -149,6 +149,8 @@ Route::middleware(['landing',])->group(function()
     Route::get('/integrasi-data/laporan-penyelenggaraan-pemerintah-daerah/unduh/{slug}', [LandingIntegrationController::class,'downloadFileLppd'])->name('landing.integration.downloadFileLppd');
     Route::get('/integrasi-data/sistem-informasi-data', [LandingIntegrationController::class,'sidata'])->name('landing.integration.sidata');
     Route::get('/integrasi-data/sistem-informasi-data/unduh/{slug}', [LandingIntegrationController::class,'downloadFileSidata'])->name('landing.integration.downloadFileSidata');
+    Route::get('/integrasi-data/sop/{slug}', [LandingIntegrationController::class,'sop'])->name('landing.integration.sop');
+    Route::get('/integrasi-data/sop/unduh/{slug}', [LandingIntegrationController::class,'downloadFileSop'])->name('landing.integration.downloadFileSop');
 
 });
 

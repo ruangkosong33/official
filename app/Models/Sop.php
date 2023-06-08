@@ -18,6 +18,6 @@ class Sop extends Model
 
     public function filesop()
     {
-        return $this->hasMany(Filesop::class, 'filesop_id', 'id');
+        return $this->hasMany(Filesop::class, 'sop_id', 'id');
     }
 }

@@ -11,6 +11,7 @@ use App\Models\Law;
 use App\Models\Citykab;
 use App\Models\Download;
 use App\Models\Pad;
+use App\Models\Sop;
 
 
 class LandingMiddleware
@@ -27,12 +28,14 @@ class LandingMiddleware
         $cityKabs = Citykab::all();
         $downloads = Download::all();
         $pads = Pad::all();
+        $sops = Sop::all();
         View::share([
             'divisions' => $divisions,
             'laws'=>$laws,
             'cityKabs'=>$cityKabs,
             'downloads'=>$downloads,
             'pads'=>$pads,
+            'sops'=>$sops,
         ]);
         return $next($request);
     }
