@@ -26,7 +26,7 @@ class FilelawController extends Controller
     {
         $filelaw=$request->validate([
             'title_filelaw'=>'required',
-            'file_filelaw'=>'required|mimes:pdf|max:3000',
+            'file_filelaw'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_filelaw'))
@@ -57,8 +57,8 @@ class FilelawController extends Controller
     public function update(Request $request, Filelaw $filelaw)
     {
         $this->validate($request,[
-            'title_filelaw'=>$request->title_filelaw,
-            'filelaw'=>$filename,
+            'title_filelaw'=>'required',
+            'file_filelaw'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         $filelaw=Filelaw::where('id', $filelaw->id)->update([

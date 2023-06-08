@@ -26,7 +26,7 @@ class AuctionController extends Controller
     {
         $auction=$request->validate([
             'title_auction'=>'required',
-            'file_auction'=>'mimes:pdf|max:3000',
+            'file_auction'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_auction'))
@@ -57,7 +57,7 @@ class AuctionController extends Controller
     {
         $this->validate($request,[
             'title_auction'=>'required',
-            'file_auction'=>'mimes:pdf|max:3000',
+            'file_auction'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_auction'))
@@ -89,7 +89,7 @@ class AuctionController extends Controller
 
         return redirect()->route('auction.index');
     }
-    
+
     public function download(Auction $auction)
     {
         $filepath=public_path("uploads/file-lelang/{$auction->file_auction}");

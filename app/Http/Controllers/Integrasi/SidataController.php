@@ -26,7 +26,7 @@ class SidataController extends Controller
     {
         $sidata=$request->validate([
             'title_sidata'=>'required',
-            'file_sidata'=>'required|mimes:pdf|max:2048',
+            'file_sidata'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_sidata'))
@@ -59,7 +59,7 @@ class SidataController extends Controller
     {
         $sidata=$request->validate([
             'title_sidata'=>'required',
-            'file_sidata'=>'required|mimes:pdf|max:2048',
+            'file_sidata'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_sidata'))

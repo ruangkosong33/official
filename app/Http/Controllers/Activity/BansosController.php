@@ -26,7 +26,7 @@ class BansosController extends Controller
     {
         $bansos=$request->validate([
             'title_bansos'=>'required',
-            'file_bansos'=>'required|mimes:pdf|max:3000',
+            'file_bansos'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_bansos'))
@@ -59,7 +59,7 @@ class BansosController extends Controller
     {
         $bansos=$request->validate([
             'title_bansos'=>'required',
-            'file_bansos'=>'required|mimes:pdf|max:3000',
+            'file_bansos'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_bansos'))

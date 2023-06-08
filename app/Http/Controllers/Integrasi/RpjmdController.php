@@ -27,7 +27,7 @@ class RpjmdController extends Controller
         $rpjmd=$request->validate([
             'title_rpjmd'=>'required',
             'year'=>'required',
-            'file_rpjmd'=>'required|mimes:pdf|max:2048',
+            'file_rpjmd'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_rpjmd'))
@@ -62,7 +62,7 @@ class RpjmdController extends Controller
         $rpjmd=$request->validate([
             'title_rpjmd'=>'required',
             'year'=>'required',
-            'file_rpjmd'=>'required|mimes:pdf|max:2048',
+            'file_rpjmd'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_rpjmd'))

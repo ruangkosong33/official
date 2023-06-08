@@ -29,7 +29,7 @@ class Filesp2dController extends Controller
         $filesp2d=$request->validate([
             'city_id'=>'required',
             'title_sp2d'=>'required',
-            'file_sp2d'=>'required|mimes:pdf|max:3000',
+            'file_sp2d'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
             'date'=>'required',
             // 'description'=>'required',
             // 'total'=>'required',
@@ -72,7 +72,7 @@ class Filesp2dController extends Controller
     {
         $filesp2d=$request->validate([
             'title_sp2d'=>'required',
-            'file_sp2d'=>'required|mimes:pdf|max:3000',
+            'file_sp2d'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
             'date'=>'required',
             'description'=>'required',
             'total'=>'required',

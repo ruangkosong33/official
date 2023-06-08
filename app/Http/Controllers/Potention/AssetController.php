@@ -26,7 +26,7 @@ class AssetController extends Controller
     {
         $asset=$request->validate([
             'title_asset'=>'required',
-            'file_asset'=>'required|mimes:pdf|max:3000',
+            'file_asset'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_asset'))
@@ -59,7 +59,7 @@ class AssetController extends Controller
     {
         $asset=$request->validate([
             'title_asset'=>'required',
-            'file_asset'=>'requried|mimes:pdf|max:2048',
+            'file_asset'=>'requried|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         $imageName = '';

@@ -27,7 +27,7 @@ class LkjipController extends Controller
         $lkjip=$request->validate([
             'title_lkjip'=>'required',
             'year'=>'required',
-            'file_lkjip'=>'required|mimes:pdf|max:2048',
+            'file_lkjip'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_lkjip'))
@@ -62,7 +62,7 @@ class LkjipController extends Controller
         $lkjip=$request->validate([
             'title_lkjip'=>'required',
             'year'=>'required',
-            'file_lkjip'=>'required|mimes:pdf|max:2048',
+            'file_lkjip'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_lkjip'))

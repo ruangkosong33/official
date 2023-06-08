@@ -27,7 +27,7 @@ class FilesopController extends Controller
     {
         $filesop=$request->validate([
             'name_filesop'=>'required',
-            'file_sop'=>'required|mimes:pdf|max:3000',
+            'file_sop'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_sop'))
@@ -59,7 +59,7 @@ class FilesopController extends Controller
     {
         $filesop=$request->validate([
             'name_filesop'=>'required',
-            'file_sop'=>'required|mimes:pdf|max:3000',
+            'file_sop'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_sop'))

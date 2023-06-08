@@ -27,7 +27,7 @@ class RenjaController extends Controller
         $renja=$request->validate([
             'title_renja'=>'required',
             'year'=>'required',
-            'file_renja'=>'required|mimes:pdf|max:2048',
+            'file_renja'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_renja'))
@@ -62,7 +62,7 @@ class RenjaController extends Controller
         $renja=$request->validate([
             'title_renja'=>'required',
             'year'=>'required',
-            'file_renja'=>'required|mimes:pdf|max:2048',
+            'file_renja'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_renja'))

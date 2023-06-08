@@ -26,7 +26,7 @@ class ResponsibleController extends Controller
     {
         $responsible=$request->validate([
             'title_responsible'=>'required',
-            'file_responsible'=>'required|mimes:pdf|max:2048',
+            'file_responsible'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_responsible'))
@@ -57,7 +57,7 @@ class ResponsibleController extends Controller
     {
         $responsible=$request->validate([
             'title_responsible'=>'required',
-            'file_responsible'=>'required|mimes:pdf|max:2048',
+            'file_responsible'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_responsible'))

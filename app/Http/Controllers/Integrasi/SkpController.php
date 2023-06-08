@@ -26,7 +26,7 @@ class SkpController extends Controller
     {
         $skp=$request->validate([
             'title_skp'=>'required',
-            'file_skp'=>'required|mimes:pdf|max:2048',
+            'file_skp'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_skp'))
@@ -59,7 +59,7 @@ class SkpController extends Controller
     {
         $skp=$request->validate([
             'title_skp'=>'required',
-            'file_skp'=>'required|mimes:pdf|max:2048',
+            'file_skp'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_skp'))

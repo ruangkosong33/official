@@ -27,7 +27,7 @@ class CityController extends Controller
     {
         $city=$request->validate([
             'name_city'=>'required',
-            'file_apbd'=>'required|mimes:pdf|max:2048',
+            'file_apbd'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_apbd'))
@@ -60,7 +60,7 @@ class CityController extends Controller
     {
         $city=$request->validate([
             'name_city'=>'required',
-            'file_apbd'=>'required|mimes:pdf|max:2048',
+            'file_apbd'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_apbd'))

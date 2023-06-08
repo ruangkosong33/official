@@ -28,7 +28,7 @@ class FiledownloadController extends Controller
     {
         $filedownload=$request->validate([
             'title_filedownload'=>'required',
-            'file_download'=>'required|mimes:pdf|max:2048',
+            'file_download'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_download'))
@@ -38,7 +38,7 @@ class FiledownloadController extends Controller
             $filedownloads=$extension;
             $file->move('uploads/file-download', $filedownloads);
         }
-        
+
         $filedownload=Filedownload::create([
             'title_filedownload'=>$request->title_filedownload,
             'slug'=>Str::slug($request->title_filedownload),
@@ -60,7 +60,7 @@ class FiledownloadController extends Controller
     {
         $filedownload=$request->validate([
             'title_filedownload'=>'required',
-            'file_download'=>'required|mimes:pdf|max:2048',
+            'file_download'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_download'))
@@ -70,7 +70,7 @@ class FiledownloadController extends Controller
             $filedownloads=$extension;
             $file->move('uploads/file-download', $filedownloads);
         }
-        
+
         $filedownload->where('id', $filedownload->id)->update([
             'title_filedownload'=>$request->title_filedownload,
             'slug'=>Str::slug($request->title_filedowwnload),
