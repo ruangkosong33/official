@@ -26,7 +26,7 @@ class FiletransparencyController extends Controller
     {
         $filetranparency=$request->validate([
             'title_filetransparency'=>'required',
-            'file_transparency'=>'mimes:pdf,doc,docx|max:2048',
+            'file_transparency'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:60000',
         ]);
 
         if($request->file('file_transparency'))
@@ -58,7 +58,7 @@ class FiletransparencyController extends Controller
     {
         $filetransparency=$request->validate([
             'title_filetransparency'=>'requried',
-            'file_transparency'=>'mimes:pdf,doc,docx|max:2048',
+            'file_transparency'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:60000',
         ]);
 
         if($request->file('file_transparency'))

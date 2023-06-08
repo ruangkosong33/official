@@ -28,7 +28,7 @@ class FiledownloadController extends Controller
     {
         $filedownload=$request->validate([
             'title_filedownload'=>'required',
-            'file_download'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
+            'file_download'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:60000',
         ]);
 
         if($request->file('file_download'))
@@ -60,7 +60,7 @@ class FiledownloadController extends Controller
     {
         $filedownload=$request->validate([
             'title_filedownload'=>'required',
-            'file_download'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
+            'file_download'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:60000',
         ]);
 
         if($request->file('file_download'))
