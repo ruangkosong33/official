@@ -57,7 +57,7 @@
                                 <td>{{$fileapbds->apbd->periode}}</td>
                                 <td>{{$fileapbds->apbd->year}}</td>
                                 <td>{{$fileapbds->title_fileapbd}}</td>
-                                <td><a href="{{route('fileapbd.download')}}">{{$filepads->file_apbd}}</a></td>
+                                <td><a href="{{route('fileapbd.download',$fileapbds->file_apbd)}}">{{$fileapbds->file_apbd}}</a></td>
                                 <td>
                                     <a href="" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
