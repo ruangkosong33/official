@@ -23,9 +23,9 @@
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
                         <li><span>/</span></li>
-                        <li>{{$pad->title_pad}}</li>
+                        <li>PAD</li>
                         <li><span>/</span></li>
-                        <li>Aset</li>
+                        <li>{{$pad->title_pad}}</li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="section-title__tagline-box">
                     <span class="section-title__tagline">BPKAD KALTIM</span>
                 </div>
-                <h2 class="section-title__title">Aset</span></h2>
+                <h2 class="section-title__title">{{$pad->title_pad}}</span></h2>
             </div>
         </div>
     </section>
