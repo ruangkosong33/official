@@ -49,6 +49,13 @@
         .main-menu .main-menu__list>li>a,.main-menu .main-menu__list>li>ul>li>a{
             font-size: 14px
         }
+        .main-menu .main-menu__list>li.current>a, .main-menu .main-menu__list>li:hover>a, .stricky-header .main-menu__list>li.current>a, .stricky-header .main-menu__list>li:hover>a{
+            color: rgb(15, 33, 60);
+            text-shadow: 0.05px 0 0 rgb(15 33 60 / 80%)
+        }
+        .main-menu-three__main-menu-box{
+            width: 100%;
+        }
     </style>
 </head>
 

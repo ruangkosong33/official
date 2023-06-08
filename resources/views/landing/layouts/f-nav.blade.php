@@ -1,3 +1,4 @@
+
 <header class="main-header-three">
     <nav class="main-menu main-menu-three">
         <div class="main-menu-three__wrapper">
@@ -147,13 +148,6 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown " style="margin-left: 15px">
-                                            <a href="index.html">PPID</a>
-                                            <ul class="dropdown-menu-end">
-                                                <li><a href="index.html">PAD</a></li>
-                                                <li><a href="index2.html">Aset</a></li>
                                             </ul>
                                         </li>
                                     </ul>
