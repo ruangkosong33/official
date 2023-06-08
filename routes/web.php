@@ -62,6 +62,7 @@ use App\Http\Controllers\Landing\ProgramController as LandingProgramController;
 use App\Http\Controllers\Landing\PotentionController as LandingPotentionController;
 use App\Http\Controllers\Landing\PublicinfoController as LandingPublicinfoController;
 use App\Http\Controllers\Landing\OrganizationController as LandingOrganizationController;
+use App\Http\Controllers\Landing\IntegrationController as LandingIntegrationController;
 
 
 
@@ -129,6 +130,9 @@ Route::middleware(['landing',])->group(function()
     Route::get('/info-publik/asrama',[LandingPublicinfoController::class,'hostel'])->name('landing.publicinfo.hostel');
 
     Route::get('/organisasi/{slug}', [LandingOrganizationController::class,'index'])->name('landing.organization.index');
+
+    Route::get('/integrasi-data/rencana-kerja', [LandingIntegrationController::class,'renja'])->name('landing.integration.renja');
+    Route::get('/integrasi-data/rencana-kerja/unduh/{slug}', [LandingIntegrationController::class,'downloadFileRenja'])->name('landing.integration.downloadFileRenja');
 
 });
 
