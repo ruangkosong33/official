@@ -107,7 +107,7 @@
                                             <ul>
                                                 <li><a href="index.html">APBD</a></li>
                                                 <li><a href="{{route('landing.integration.renja')}}">Rencana Kerja</a></li>
-                                                <li><a href="index.html">Rencana Strategi</a></li>
+                                                <li><a href="{{route('landing.integration.renstra')}}">Rencana Strategi</a></li>
                                                 <li><a href="index.html">SOP</a></li>
                                                 <li><a href="index.html">RPJMD</a></li>
                                                 <li><a href="index.html">LKJIP</a></li>

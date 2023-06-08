@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Rencana Kerja</h1>
+                    <h1 class="m-0">Rencana Strategi</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Rencana Kerja</h3>
+                    <h3 class="card-title">Data Rencana Strategi</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('renja.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('renstra.create')}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -53,7 +53,7 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$renstras->title_renstra}}</td>
                                 <td>{{$renstras->year}}</td>
-                                <td><a href="{{route('renstra.download', $rentras->id)}}">{{$renstras->file_renstra}}</a></td>
+                                <td><a href="{{route('renstra.download', $renstras->id)}}">{{$renstras->file_renstra}}</a></td>
                                 <td>
                                     <a href="{{route('renstra.edit', $renstras->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>

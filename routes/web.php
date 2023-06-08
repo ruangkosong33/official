@@ -133,6 +133,8 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/integrasi-data/rencana-kerja', [LandingIntegrationController::class,'renja'])->name('landing.integration.renja');
     Route::get('/integrasi-data/rencana-kerja/unduh/{slug}', [LandingIntegrationController::class,'downloadFileRenja'])->name('landing.integration.downloadFileRenja');
+    Route::get('/integrasi-data/rencana-strategi', [LandingIntegrationController::class,'renstra'])->name('landing.integration.renstra');
+    Route::get('/integrasi-data/rencana-strategi/unduh/{slug}', [LandingIntegrationController::class,'downloadFileRenstra'])->name('landing.integration.downloadFileRenstra');
 
 });
 
