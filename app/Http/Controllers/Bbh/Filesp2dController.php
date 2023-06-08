@@ -31,8 +31,8 @@ class Filesp2dController extends Controller
             'title_sp2d'=>'required',
             'file_sp2d'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
             'date'=>'required',
-            // 'description'=>'required',
-            // 'total'=>'required',
+            'description'=>'required',
+            'total'=>'required',
         ]);
 
         if($request->file('file_sp2d'))
@@ -49,8 +49,8 @@ class Filesp2dController extends Controller
             'slug'=>Str::slug($request->title_sp2d),
             'file_sp2d'=>$filesp2ds,
             'date'=>$request->date,
-            // 'description'=>$request->description,
-            // 'total'=>$request->total,
+            'description'=>$request->description,
+            'total'=>$request->total,
             'description'=>'', //TODO: change later
             'total'=>0,
         ]);

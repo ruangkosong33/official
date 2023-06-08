@@ -63,6 +63,7 @@ use App\Http\Controllers\Landing\PotentionController as LandingPotentionControll
 use App\Http\Controllers\Landing\PublicinfoController as LandingPublicinfoController;
 use App\Http\Controllers\Landing\OrganizationController as LandingOrganizationController;
 use App\Http\Controllers\Landing\IntegrationController as LandingIntegrationController;
+use App\Http\Controllers\Landing\BbhController as LandingBbhController;
 
 
 
@@ -109,6 +110,9 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/produk-hukum/{slug}', [LandingLawController::class,'index'])->name('landing.law.index');
     Route::get('/produk-hukum/unduh/{slug}', [LandingLawController::class,'downloadFile'])->name('landing.law.downloadFile');
+
+    Route::get('/belanja-bagi-hasil/sp2d', [LandingBbhController::class,'index'])->name('landing.bbh.index');
+    Route::get('/belanja-bagi-hasil/sp2d/unduh/{slug}', [LandingBbhController::class,'downloadFile'])->name('landing.bbh.downloadFile');
 
     Route::get('/transparansi-pengelolaan-anggaran', [LandingTransparencyController::class,'index'])->name('landing.transparency.index');
     Route::get('/transparansi-pengelolaan-anggaran/unduh/{slug}', [LandingTransparencyController::class,'downloadFile'])->name('landing.transparency.downloadFile');

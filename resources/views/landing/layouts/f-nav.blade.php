@@ -160,16 +160,8 @@
                                                 </li>
                                             </ul>
                                         </li>
-
-
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="#">BBH</a>
-                                            <ul class="sub-menu">
-                                                @foreach ($cityKabs as $cityKab)
-                                                    <li><a href="index.html">{{ $cityKab->name_citykab }}</a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
+                                            <a href="{{ route('landing.bbh.index') }}">BBH</a>
                                         </li>
                                     </ul>
                                 </div>

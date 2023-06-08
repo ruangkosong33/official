@@ -46,7 +46,7 @@
                                 <th>File</th>
                                 <th>Tanggal</th>
                                 <th>Deskripsi</th>
-                                <th>Total</th>
+                                <th>Jumlah</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -54,8 +54,9 @@
                             @foreach ($filesp2d as $key=>$filesp2ds)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$filesp2ds->title_filedownload}}</td>
-                                <td>{{$filesp2ds->filedownload}}</td>
+                                <td>{{$filesp2ds->citykab->name_citykab}}</td>
+                                <td>{{$filesp2ds->title_sp2d}}</td>
+                                <td>{{$filesp2ds->file_sp2d}}</td>
                                 <td>{{$filesp2ds->date}}</td>
                                 <td>{{$filesp2ds->description}}</td>
                                 <td>{{$filesp2ds->total}}</td>
