@@ -122,6 +122,8 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/potensi/aset', [LandingPotentionController::class,'asset'])->name('landing.potention.asset');
     Route::get('/potensi/aset/unduh/{slug}', [LandingPotentionController::class,'downloadFileAsset'])->name('landing.potention.downloadFileAsset');
+    Route::get('/potensi/pendapatan-asli-daerah/{slug}', [LandingPotentionController::class,'pad'])->name('landing.potention.pad');
+    Route::get('/potensi/pendapatan-asli-daerah/unduh/{slug}', [LandingPotentionController::class,'downloadFileFilepad'])->name('landing.potention.downloadFileFilepad');
 
     Route::get('/info-publik/download/file/{slug}',[LandingPublicinfoController::class,'downloadFile'])->name('landing.publicinfo.downloadFile');
     Route::get('/info-publik/download/{slug}',[LandingPublicinfoController::class,'download'])->name('landing.publicinfo.download');

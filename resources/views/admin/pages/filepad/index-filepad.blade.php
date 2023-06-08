@@ -51,12 +51,12 @@
                               <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$filepads->title_filepad}}</td>
-                                <td>{{$filepads->file_pad}}</td>
+                                <td>{{$filepads->file_filepad}}</td>
                                 <td>
-                                    <a href="{{route('filepad.edit', ['pad'=>$pad])}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('filepad.edit', ['filepad'=>$filepads])}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('filepad.destroy', ['pad'=>$pad])}}" class="d-inline">
+                                    <form method="post" action="{{route('filepad.destroy', ['filepad'=>$filepads])}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">

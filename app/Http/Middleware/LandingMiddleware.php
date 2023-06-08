@@ -10,6 +10,7 @@ use App\Models\Division;
 use App\Models\Law;
 use App\Models\Citykab;
 use App\Models\Download;
+use App\Models\Pad;
 
 
 class LandingMiddleware
@@ -25,11 +26,13 @@ class LandingMiddleware
         $laws = Law::all();
         $cityKabs = Citykab::all();
         $downloads = Download::all();
+        $pads = Pad::all();
         View::share([
             'divisions' => $divisions,
             'laws'=>$laws,
             'cityKabs'=>$cityKabs,
             'downloads'=>$downloads,
+            'pads'=>$pads,
         ]);
         return $next($request);
     }

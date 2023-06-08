@@ -18,6 +18,6 @@ class Pad extends Model
 
     public function filepad()
     {
-        return $this->hasMany(Filepad::class, 'filepad_id', 'id');
+        return $this->hasMany(Filepad::class, 'pad_id', 'id');
     }
 }

@@ -29,7 +29,6 @@ class FilepadController extends Controller
             'title_filepad'=>'required',
             'file_filepad'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
-
         if($request->file('file_filepad'))
         {
             $file=$request->file('file_filepad');
