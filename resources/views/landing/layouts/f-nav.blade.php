@@ -76,7 +76,7 @@
                                             <a href="index.html">Organisasi</a>
                                             <ul>
                                                 @foreach ($divisions as $division)
-                                                    <li><a href="index3.html">{{ $division->name_division }}</a></li>
+                                                    <li><a href="{{route('landing.organization.index',['slug'=>$division->slug])}}">{{ $division->name_division }}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>

@@ -18,6 +18,6 @@ class Division extends Model
 
     public function employee()
     {
-        return $this->hasMany(Employee::class, 'employee_id', 'id');
+        return $this->hasMany(Employee::class, 'division_id', 'id');
     }
 }

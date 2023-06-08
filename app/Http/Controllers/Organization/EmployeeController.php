@@ -7,6 +7,8 @@ use App\Models\Employee;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class EmployeeController extends Controller
@@ -45,7 +47,12 @@ class EmployeeController extends Controller
             $file = $request->file('image_employee');
             $extention = $file->getClientOriginalExtension();
             $employees = time().'.'.$extention;
-            $file->move('uploads/image-pegawai/', $employees);
+            $img=Image::make($file);
+            if (Image::make($file))
+            {
+                $img->resize(370,416);
+            }
+            $img->save(public_path('uploads/image-pegawai/'). $employees);
         }
 
         $employee=Employee::create([

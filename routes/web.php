@@ -61,6 +61,7 @@ use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyCo
 use App\Http\Controllers\Landing\ProgramController as LandingProgramController;
 use App\Http\Controllers\Landing\PotentionController as LandingPotentionController;
 use App\Http\Controllers\Landing\PublicinfoController as LandingPublicinfoController;
+use App\Http\Controllers\Landing\OrganizationController as LandingOrganizationController;
 
 
 
@@ -126,6 +127,9 @@ Route::middleware(['landing',])->group(function()
     Route::get('/info-publik/lelang',[LandingPublicinfoController::class,'auction'])->name('landing.publicinfo.auction');
     Route::get('/info-publik/lelang/unduh/{slug}',[LandingPublicinfoController::class,'downloadFileAuction'])->name('landing.publicinfo.downloadFileAuction');
     Route::get('/info-publik/asrama',[LandingPublicinfoController::class,'hostel'])->name('landing.publicinfo.hostel');
+
+    Route::get('/organisasi/{slug}', [LandingOrganizationController::class,'index'])->name('landing.organization.index');
+
 });
 
 //Register
