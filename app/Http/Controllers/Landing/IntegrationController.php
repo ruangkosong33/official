@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Renja;
 use App\Models\Renstra;
 use App\Models\Rpjmd;
+use App\Models\Lkjip;
 
 class IntegrationController extends Controller
 {
@@ -50,5 +51,16 @@ class IntegrationController extends Controller
         return response()->download($file, $rpjmd->file_rpjmd);
     }
 
+    public function lkjip()
+    {
+        $lkjips = Lkjip::latest()->get();
+        return view('landing.pages.integration.lkjip-integration',['lkjips'=>$lkjips]);
+    }
 
+    public function downloadFileLkjip($slug)
+    {
+        $lkjip = Lkjip::where('slug',$slug)->first();
+        $file = public_path('uploads/file-lkjip/').$lkjip->file_lkjip;
+        return response()->download($file, $lkjip->file_lkjip);
+    }
 }

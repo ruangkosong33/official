@@ -137,6 +137,8 @@ Route::middleware(['landing',])->group(function()
     Route::get('/integrasi-data/rencana-strategi/unduh/{slug}', [LandingIntegrationController::class,'downloadFileRenstra'])->name('landing.integration.downloadFileRenstra');
     Route::get('/integrasi-data/rencana-pembangunan-jangka-menengah-daerah', [LandingIntegrationController::class,'rpjmd'])->name('landing.integration.rpjmd');
     Route::get('/integrasi-data/rencana-pembangunan-jangka-menengah-daerah/unduh/{slug}', [LandingIntegrationController::class,'downloadFileRpjmd'])->name('landing.integration.downloadFileRpjmd');
+    Route::get('/integrasi-data/laporan-kinerja-instansi-pemerintah', [LandingIntegrationController::class,'lkjip'])->name('landing.integration.lkjip');
+    Route::get('/integrasi-data/laporan-kinerja-instansi-pemerintah/unduh/{slug}', [LandingIntegrationController::class,'downloadFileLkjip'])->name('landing.integration.downloadFileLkjip');
 
 });
 
