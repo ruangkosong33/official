@@ -9,6 +9,7 @@ use App\Models\Renstra;
 use App\Models\Rpjmd;
 use App\Models\Lkjip;
 use App\Models\Lppd;
+use App\Models\Sidata;
 
 class IntegrationController extends Controller
 {
@@ -76,5 +77,18 @@ class IntegrationController extends Controller
         $lppd = Lppd::where('slug',$slug)->first();
         $file = public_path('uploads/file-lppd/').$lppd->file_lppd;
         return response()->download($file, $lppd->file_lppd);
+    }
+
+    public function sidata()
+    {
+        $sidatas = Sidata::latest()->get();
+        return view('landing.pages.integration.sidata-integration',['sidatas'=>$sidatas]);
+    }
+
+    public function downloadFileSidata($slug)
+    {
+        $sidata = Sidata::where('slug',$slug)->first();
+        $file = public_path('uploads/file-sidata/').$sidata->file_sidata;
+        return response()->download($file, $sidata->file_sidata);
     }
 }
