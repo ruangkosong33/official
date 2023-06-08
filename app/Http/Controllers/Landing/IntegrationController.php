@@ -8,6 +8,7 @@ use App\Models\Renja;
 use App\Models\Renstra;
 use App\Models\Rpjmd;
 use App\Models\Lkjip;
+use App\Models\Lppd;
 
 class IntegrationController extends Controller
 {
@@ -62,5 +63,18 @@ class IntegrationController extends Controller
         $lkjip = Lkjip::where('slug',$slug)->first();
         $file = public_path('uploads/file-lkjip/').$lkjip->file_lkjip;
         return response()->download($file, $lkjip->file_lkjip);
+    }
+
+    public function lppd()
+    {
+        $lppds = Lppd::latest()->get();
+        return view('landing.pages.integration.lppd-integration',['lppds'=>$lppds]);
+    }
+
+    public function downloadFileLppd($slug)
+    {
+        $lppd = Lppd::where('slug',$slug)->first();
+        $file = public_path('uploads/file-lppd/').$lppd->file_lppd;
+        return response()->download($file, $lppd->file_lppd);
     }
 }

@@ -111,7 +111,7 @@
                                                 <li><a href="">SOP</a></li>
                                                 <li><a href="{{route('landing.integration.rpjmd')}}">RPJMD</a></li>
                                                 <li><a href="{{route('landing.integration.lkjip')}}">LKJIP</a></li>
-                                                <li><a href="index.html">LPPD</a></li>
+                                                <li><a href="{{route('landing.integration.lppd')}}">LPPD</a></li>
                                                 <li><a href="index.html">SIDATA</a></li>
                                             </ul>
                                         </li>
