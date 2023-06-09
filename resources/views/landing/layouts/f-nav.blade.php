@@ -3,7 +3,7 @@
         <div class="main-menu-three__wrapper">
             <div class="main-menu-three__wrapper-inner">
                 <div class="main-menu-three__logo" style="left: 10px">
-                    <a href="index.html"><img height="66" src="{{ asset('fk88/assets/images/logo/logo-bpkad.png') }}"
+                    <a href="{{route('dashboard.index')}}"><img height="66" src="{{ asset('fk88/assets/images/logo/logo-bpkad.png') }}"
                             alt=""></a>
                 </div>
                 <div class="main-menu-three__wrapper-inner-content">
@@ -79,7 +79,7 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="index.html">Organisasi</a>
+                                            <a href="#">Organisasi</a>
                                             <ul>
                                                 @foreach ($divisions as $division)
                                                     <li><a
@@ -89,7 +89,7 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="index.html">Info Publik</a>
+                                            <a href="#">Info Publik</a>
                                             <ul>
                                                 <li><a href="{{ route('landing.publicinfo.hostel') }}">Asrama</a></li>
                                                 <li><a href="{{ route('landing.publicinfo.auction') }}">Lelang</a></li>
@@ -105,7 +105,7 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="index.html">Produk Hukum</a>
+                                            <a href="#">Produk Hukum</a>
                                             <ul>
                                                 @foreach ($laws as $law)
                                                     <li><a
@@ -115,9 +115,9 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="index.html">Integrasi Data</a>
+                                            <a href="#">Integrasi Data</a>
                                             <ul>
-                                                <li><a href="index.html">APBD</a></li>
+                                                <li><a href="#">APBD</a></li>
                                                 <li><a href="{{ route('landing.integration.renja') }}">Rencana
                                                         Kerja</a></li>
                                                 <li><a href="{{ route('landing.integration.renstra') }}">Rencana
@@ -139,9 +139,9 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="index.html">Potensi</a>
+                                            <a href="#">Potensi</a>
                                             <ul>
-                                                <li><a href="index.html">PAD</a>
+                                                <li><a href="#">PAD</a>
                                                     <ul>
                                                         @foreach ($pads as $pad)
                                                             <li><a
@@ -159,7 +159,7 @@
                                                 Anggaran</a>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="index.html">Program Kegiatan </a>
+                                            <a href="#">Program Kegiatan </a>
                                             <ul>
                                                 <li><a href="{{ route('landing.program.responsible') }}">Penanggung
                                                         Jawab Program & Kegiatan</a></li>
