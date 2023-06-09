@@ -1,28 +1,29 @@
 @extends('landing.layouts.f-master')
 
 @section('f-content')
-<!-- Main Sllider Start -->
-@include('landing.pages.beranda.slider')
-<!--Main Sllider Start -->
-     <!--About One Start-->
-     <section class="about-one">
+    <!-- Main Sllider Start -->
+    @include('landing.pages.beranda.slider')
+    <!--Main Sllider Start -->
+    <!--About One Start-->
+    <section class="about-one">
         <div class="container">
             <div class="row">
                 <div class="col-xl-6">
                     <div class="about-one__left">
-                        <div class="about-one__img-box wow slideInLeft" data-wow-delay="100ms"
-                            data-wow-duration="2500ms">
+                        <div class="about-one__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div class="about-one__img">
-                                <img src="{{asset('fk88/assets/images/resources/about-one-img-1.jpg')}}" alt="">
+                                <img src="{{ asset('fk88/assets/images/resources/about-one-img-1.jpg') }}" alt="">
                                 <div class="about-one__shape-1 float-bob-x">
-                                    <img src="{{asset('fk88/assets/images/shapes/about-one-shape-1.png')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/shapes/about-one-shape-1.png') }}"
+                                        alt="">
                                 </div>
                                 <div class="about-one__shape-2 img-bounce">
-                                    <img src="{{asset('fk88/assets/images/shapes/about-one-shape-2.png')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/shapes/about-one-shape-2.png') }}"
+                                        alt="">
                                 </div>
                             </div>
                             <div class="about-one__img-2">
-                                <img src="{{asset('fk88/assets/images/resources/about-one-img-2.jpg')}}" alt="">
+                                <img src="{{ asset('fk88/assets/images/resources/about-one-img-2.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -89,7 +90,7 @@
                         </div>
                         <div class="about-one__btn-box">
                             <div class="about-one__shape-3 float-bob-x">
-                                <img src="assets/images/shapes/about-one-shape-3.png" alt="">
+                                <img src="{{asset('fk88/assets/images/shapes/about-one-shape-3.png')}}" alt="">
                             </div>
                             <a href="about.html" class="about-one__btn thm-btn">Discover More</a>
                         </div>
@@ -103,7 +104,7 @@
     <!-- Main Content -->
     <!--Services One Start-->
     <section class="services-one">
-        <div class="services-one__bg" style="background-image: url(assets/images/backgrounds/services-one-bg.png);">
+        <div class="services-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-one-bg.png);">
         </div>
         <div class="container">
             <div class="services-one__top">
@@ -115,7 +116,8 @@
                                     <span class="section-title__tagline">what we’re doing</span>
                                 </div>
                                 <h2 class="section-title__title">Offering the Best Consulting
-                                    <br> & Finance <span>Services</span></h2>
+                                    <br> & Finance <span>Services</span>
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -124,7 +126,8 @@
                             <p class="services-one__text">Lorem ipsum dolor sit amet, consectetur notted adipisicing
                                 <br> elit sed do eiusmod tempor incididunt ut labore et simply free text dolore
                                 magna
-                                aliqua lonm andhn.</p>
+                                aliqua lonm andhn.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -140,7 +143,7 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="assets/images/services/services-1-1.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/services/services-1-1.jpg')}}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-pie-chart"></span>
@@ -160,7 +163,7 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="assets/images/services/services-1-2.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/services/services-1-2.jpg')}}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-insurance"></span>
@@ -181,7 +184,7 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="assets/images/services/services-1-3.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/services/services-1-3.jpg')}}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-money-bag"></span>
@@ -202,15 +205,14 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="assets/images/services/services-1-4.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/services/services-1-4.jpg')}}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-profile"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="portfolio-mangement.html">Read More<span
-                                        class="icon-right-arrow"></span></a>
+                                <a href="portfolio-mangement.html">Read More<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -226,7 +228,7 @@
         <div class="container">
             <div class="grow-business__inner">
                 <div class="grow-business__bg"
-                    style="background-image: url(assets/images/backgrounds/grow-business-bg.jpg);"></div>
+                    style="background-image: url(../fk88/assets/images/backgrounds/grow-business-bg.jpg);"></div>
                 <div class="row">
                     <div class="col-xl-6">
                         <div class="grow-business__left">
@@ -278,7 +280,7 @@
                     <div class="col-xl-6">
                         <div class="grow-business__right">
                             <div class="grow-business__shape-1 float-bob-x">
-                                <img src="assets/images/shapes/grow-business-shape-1.png" alt="">
+                                <img src="{{asset('fk88/assets/images/shapes/grow-business-shape-1.png')}}" alt="">
                             </div>
                             <ul class="grow-business__right-points list-unstyled">
                                 <li>
@@ -286,20 +288,24 @@
                                         <span class="icon-experience"></span>
                                     </div>
                                     <h3 class="grow-business__right-points-title">Benefits by Investing
-                                        <br> your Money</h3>
+                                        <br> your Money
+                                    </h3>
                                     <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
                                         tincidunt.
-                                        <br> Donec fermentum, elit sit amet</p>
+                                        <br> Donec fermentum, elit sit amet
+                                    </p>
                                 </li>
                                 <li>
                                     <div class="grow-business__right-points-icon">
                                         <span class="icon-consumer-behavior"></span>
                                     </div>
                                     <h3 class="grow-business__right-points-title">The most Time-Consuming
-                                        <br> Components</h3>
+                                        <br> Components
+                                    </h3>
                                     <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
                                         tincidunt.
-                                        <br> Donec fermentum, elit sit amet</p>
+                                        <br> Donec fermentum, elit sit amet
+                                    </p>
                                 </li>
                             </ul>
                         </div>
@@ -312,19 +318,20 @@
 
     <!--Video One Start-->
     <section class="video-one">
-        <div class="video-one__bg" style="background-image: url(assets/images/backgrounds/video-one-bg.jpg);"></div>
+        <div class="video-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/video-one-bg.jpg);"></div>
         <div class="container">
             <div class="video-one__inner">
                 <div class="video-one__video-link">
                     <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
                         <div class="video-one__video-icon">
-                            <img src="assets/images/icon/video-one-icon.png" alt="">
+                            <img src="{{asset('fk88/assets/images/icon/video-one-icon.png')}}" alt="">
                             <i class="ripple"></i>
                         </div>
                     </a>
                 </div>
                 <h3 class="video-one__title">Sinace Envision & Transofrm
-                    <br> Your Business</h3>
+                    <br> Your Business
+                </h3>
                 <div class="video-one__btn-box">
                     <a href="about.html" class="video-one__btn thm-btn">Discover More</a>
                 </div>
@@ -335,8 +342,8 @@
 
     <!--Testimonial One Start-->
     <section class="testimonial-one">
-        <div class="testimonial-one__bg"
-            style="background-image: url(assets/images/backgrounds/testimonial-one-bg.jpg);"></div>
+        <div class="testimonial-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/testimonial-one-bg.jpg);">
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-lg-4">
@@ -346,7 +353,8 @@
                                 <span class="section-title__tagline">our feedbacks</span>
                             </div>
                             <h2 class="section-title__title">Clients are
-                                <span>Talking</span></h2>
+                                <span>Talking</span>
+                            </h2>
                         </div>
                         <p class="testimonial-one__left-text">Lorem Ipsum. Proin gravida nibh vel velit auctor
                             aliquet. Aenean solldin, lorem is simply.</p>
@@ -358,7 +366,7 @@
                                     </span>
                                 </div><!-- /.curved-circle -->
                                 <div class="testimonial-one__icon">
-                                    <img src="assets/images/icon/main-slider-two-rounded-icon.png" alt="">
+                                    <img src="{{asset('fk88/assets/images/icon/main-slider-two-rounded-icon.png')}}" alt="">
                                 </div>
                             </a>
                         </div>
@@ -398,7 +406,7 @@
                                         <div class="testimonial-one__shape-1"></div>
                                         <div class="testimonial-one__shape-2"></div>
                                         <div class="testimonial-one__img">
-                                            <img src="assets/images/testimonial/testimonial-1-1.jpg" alt="">
+                                            <img src="{{asset('fk88/assets/images/testimonial/testimonial-1-1.jpg')}}" alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <span class="fa fa-star"></span>
@@ -426,7 +434,7 @@
                                         <div class="testimonial-one__shape-1"></div>
                                         <div class="testimonial-one__shape-2"></div>
                                         <div class="testimonial-one__img">
-                                            <img src="assets/images/testimonial/testimonial-1-2.jpg" alt="">
+                                            <img src="{{asset('fk88/assets/images/testimonial/testimonial-1-2.jpg')}}" alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <span class="fa fa-star"></span>
@@ -454,7 +462,7 @@
                                         <div class="testimonial-one__shape-1"></div>
                                         <div class="testimonial-one__shape-2"></div>
                                         <div class="testimonial-one__img">
-                                            <img src="assets/images/testimonial/testimonial-1-3.jpg" alt="">
+                                            <img src="{{asset('fk88/assets/images/testimonial/testimonial-1-3.jpg')}}" alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <span class="fa fa-star"></span>
@@ -488,13 +496,14 @@
         <div class="container">
             <div class="section-title text-center">
                 <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">Recent work lists</span>
+                    <span class="section-title__tagline">Galeri Kegiatan BPKAD</span>
                 </div>
-                <h2 class="section-title__title">Recently Completed Our
-                    <br> Clients <span>Projects</span></h2>
+                <h2 class="section-title__title">Galeri</span>
+                </h2>
             </div>
             <div class="project-one__bottom">
-                <div class="project-one__carousel owl-carousel owl-theme thm-owl__carousel" data-owl-options='{
+                <div class="project-one__carousel owl-carousel owl-theme thm-owl__carousel"
+                    data-owl-options='{
                     "loop": true,
                     "autoplay": false,
                     "margin": 30,
@@ -523,7 +532,7 @@
                         <div class="project-one__single">
                             <div class="project-one__img-box">
                                 <div class="project-one__img">
-                                    <img src="assets/images/project/project-1-1.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/project-1-1.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="project-one__content">
@@ -542,7 +551,7 @@
                         <div class="project-one__single">
                             <div class="project-one__img-box">
                                 <div class="project-one__img">
-                                    <img src="assets/images/project/project-1-2.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/project-1-2.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="project-one__content">
@@ -561,7 +570,7 @@
                         <div class="project-one__single">
                             <div class="project-one__img-box">
                                 <div class="project-one__img">
-                                    <img src="assets/images/project/project-1-3.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/project-1-3.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="project-one__content">
@@ -580,7 +589,7 @@
                         <div class="project-one__single">
                             <div class="project-one__img-box">
                                 <div class="project-one__img">
-                                    <img src="assets/images/project/project-1-1.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/project-1-1.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="project-one__content">
@@ -599,7 +608,7 @@
                         <div class="project-one__single">
                             <div class="project-one__img-box">
                                 <div class="project-one__img">
-                                    <img src="assets/images/project/project-1-2.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/project-1-2.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="project-one__content">
@@ -618,7 +627,7 @@
                         <div class="project-one__single">
                             <div class="project-one__img-box">
                                 <div class="project-one__img">
-                                    <img src="assets/images/project/project-1-3.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/project-1-3.jpg')}}" alt="">
                                 </div>
                             </div>
                             <div class="project-one__content">
@@ -633,6 +642,9 @@
                     </div>
                     <!--Project One Single End-->
                 </div>
+            </div>
+            <div class="about-one__btn-box text-center" style="display: block;margin-top: 25px;">
+                <a href="{{route('landing.gallery.index')}}" class="about-one__btn thm-btn">Lihat Lainnya</a>
             </div>
         </div>
     </section>
@@ -650,7 +662,8 @@
                                     <span class="section-title__tagline">meet our team</span>
                                 </div>
                                 <h2 class="section-title__title">Meet the People Behind
-                                    <br> the High <span>Success</span></h2>
+                                    <br> the High <span>Success</span>
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -670,7 +683,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="assets/images/team/team-1-1.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/team/team-1-1.jpg')}}" alt="">
                                 </div>
                                 <div class="team-one__hover-content">
                                     <div class="team-one__hover-arrow-box">
@@ -706,7 +719,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="assets/images/team/team-1-2.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/team/team-1-2.jpg')}}" alt="">
                                 </div>
                                 <div class="team-one__hover-content">
                                     <div class="team-one__hover-arrow-box">
@@ -742,7 +755,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="assets/images/team/team-1-3.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/team/team-1-3.jpg')}}" alt="">
                                 </div>
                                 <div class="team-one__hover-content">
                                     <div class="team-one__hover-arrow-box">
@@ -783,8 +796,8 @@
     <section class="counter-one">
         <div class="counter-one__inner">
             <div class="counter-one__shadow"></div>
-            <div class="counter-one__bg"
-                style="background-image: url(assets/images/backgrounds/counter-one-bg.jpg);"></div>
+            <div class="counter-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/counter-one-bg.jpg);">
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-5">
@@ -794,7 +807,8 @@
                                     <span class="section-title__tagline">fun facts</span>
                                 </div>
                                 <h2 class="section-title__title">Consultancy Funfacts
-                                    <br> in Great <span>Numbers</span></h2>
+                                    <br> in Great <span>Numbers</span>
+                                </h2>
                             </div>
                             <p class="counter-one__text">Leverage agile frameworks to provide a robust synopsis for
                                 high level overviews. Iterative approaches to corporate strategy data foster to
@@ -858,7 +872,8 @@
     <section class="brand-one">
         <div class="brand-one__title"></div>
         <div class="container">
-            <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+            <div class="brand-one__carousel thm-owl__carousel owl-theme owl-carousel"
+                data-owl-options='{
                 "items": 3,
                 "margin": 30,
                 "smartSpeed": 700,
@@ -881,33 +896,107 @@
             }'>
                 <!--Brand One Single-->
                 <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div>
+                    <a href="http://bpk.go.id" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/bpk-1.png') }}" alt="">
+                        </div>
+                    </a>
                 </div>
                 <!--Brand One Single-->
                 <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="assets/images/brand/brand-1-2.png" alt="">
-                    </div>
+                    <a href="http://kemenkeu.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/kemenkeu.png') }}" alt="">
+                        </div>
+                    </a>
                 </div>
                 <!--Brand One Single-->
                 <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="assets/images/brand/brand-1-3.png" alt="">
-                    </div>
+                    <a href="http://www.lkpp.go.id/v3/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/lkpp.png') }}" alt="">
+                        </div>
+                    </a>
                 </div>
                 <!--Brand One Single-->
                 <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="assets/images/brand/brand-1-4.png" alt="">
-                    </div>
+                    <a href="https://www.kaltimprov.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/link-1.png') }}" alt="">
+                        </div>
+                    </a>
                 </div>
                 <!--Brand One Single-->
                 <div class="brand-one__single">
-                    <div class="brand-one__img">
-                        <img src="assets/images/brand/brand-1-5.png" alt="">
-                    </div>
+                    <a href="https://lpse.kaltimprov.go.id/eproc4" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/lpse-300.png') }}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!--Brand One Single-->
+                <div class="brand-one__single">
+                    <a href="https://tepra.kaltimprov.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/tepra.png') }}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!--Brand One Single-->
+                <div class="brand-one__single">
+                    <a href="https://pion.kaltimprov.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/pionn.png') }}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!--Brand One Single-->
+                <div class="brand-one__single">
+                    <a href="https://sipd.kemendagri.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/sipd.png') }}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!--Brand One Single-->
+                <div class="brand-one__single">
+                    <a href="https://aspirasi.kaltimprov.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/Aspirasi.png') }}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!--Brand One Single-->
+                <div class="brand-one__single">
+                    <a href="https://ppid.kaltimprov.go.id/data-sidik" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/Sidik.png') }}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!--Brand One Single-->
+                <div class="brand-one__single">
+                    <a href="https://pemantik.kaltimprov.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/pemantik-1.png') }}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!--Brand One Single-->
+                <div class="brand-one__single">
+                    <a href="https://sikap.kaltimprov.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/sikap.png') }}" alt="">
+                        </div>
+                    </a>
+                </div>
+                <!--Brand One Single-->
+                <div class="brand-one__single">
+                    <a href="https://simdaren.kaltimprov.go.id/" target="__BLANK">
+                        <div class="brand-one__img">
+                            <img src="{{ asset('fk88/assets/images/brand/Simdaren.png') }}" alt="">
+                        </div>
+                    </a>
                 </div>
             </div>
             <!-- If we need navigation buttons -->
@@ -917,10 +1006,10 @@
 
     <!--Contact One Start-->
     <section class="contact-one">
-        <div class="contact-one__bg" style="background-image: url(assets/images/backgrounds/contact-one-bg.jpg);">
+        <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/contact-one-bg.jpg);">
         </div>
         <div class="contact-one__shape-1 float-bob-x">
-            <img src="assets/images/shapes/contact-one-shape-1.png" alt="">
+            <img src="{{asset('fk88/assets/images/shapes/contact-one-shape-1.png')}}" alt="">
         </div>
         <div class="container">
             <div class="row">
@@ -962,7 +1051,8 @@
                                 <span class="section-title__tagline">contact us</span>
                             </div>
                             <h2 class="section-title__title">Have Questions? Contact
-                                <br> with us <span>Anytime</span></h2>
+                                <br> with us <span>Anytime</span>
+                            </h2>
                         </div>
                         <ul class="contact-one__points list-unstyled">
                             <li>
@@ -1005,10 +1095,9 @@
         <div class="container">
             <div class="section-title text-center">
                 <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">Our News Updates</span>
+                    <span class="section-title__tagline">Aritkel Terbaru BPKAD</span>
                 </div>
-                <h2 class="section-title__title">Latest Articles &
-                    <br> News from the <span>Blogs</span></h2>
+                <h2 class="section-title__title">Berita Terbaru</h2>
             </div>
             <div class="row">
                 <!--News One Single Start-->
@@ -1016,7 +1105,7 @@
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
-                                <img src="{{asset('fk88/assets/images/blog/news-1-1.jpg')}}" alt="">
+                                <img src="{{ asset('fk88/assets/images/blog/news-1-1.jpg') }}" alt="">
                                 <a href="news-details.html">
                                     <span class="news-one__plus"></span>
                                 </a>
@@ -1072,7 +1161,7 @@
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
-                                <img src="assets/images/blog/news-1-2.jpg" alt="">
+                                <img src="{{ asset('fk88/assets/images/blog/news-1-1.jpg') }}" alt="">
                                 <a href="news-details.html">
                                     <span class="news-one__plus"></span>
                                 </a>
@@ -1127,7 +1216,7 @@
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
-                                <img src="assets/images/blog/news-1-3.jpg" alt="">
+                                <img src="{{ asset('fk88/assets/images/blog/news-1-1.jpg') }}" alt="">
                                 <a href="news-details.html">
                                     <span class="news-one__plus"></span>
                                 </a>
@@ -1177,6 +1266,9 @@
                     </div>
                 </div>
                 <!--News One Single End-->
+            </div>
+            <div class="about-one__btn-box text-center" style="display: block;">
+                <a href="{{route('berita.index')}}" class="about-one__btn thm-btn">Berita  Terbaru Lainnya</a>
             </div>
         </div>
     </section>

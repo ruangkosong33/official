@@ -1,8 +1,8 @@
 <footer class="site-footer">
     <div class="site-footer__shape-1 float-bob-x">
-        <img src="assets/images/shapes/site-footer-shape-1.png" alt="">
+        <img src="{{asset('fk88/assets/images/shapes/site-footer-shape-1.png')}}" alt="">
     </div>
-    <div class="site-footer__bg" style="background-image: url(assets/images/backgrounds/site-footer-bg.png);">
+    <div class="site-footer__bg" style="background-image: url(../fk88/assets/images/backgrounds/site-footer-bg.png);">
     </div>
     <div class="site-footer__top">
         <div class="container">
@@ -10,7 +10,7 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="index.html"><img src="assets/images/resources/footer-logo.png" alt=""></a>
+                            <a href="index.html"><img src="{{asset('fk88/assets/images/resources/footer-logo.png')}}" alt=""></a>
                         </div>
                         <p class="footer-widget__about-text">Lorem ipsum dolor sit amet, consect etur adi
                             pisicing
@@ -79,37 +79,37 @@
                         <ul class="footer-widget__portfolio-list list-unstyled clearfix">
                             <li>
                                 <div class="footer-widget__portfolio-img">
-                                    <img src="assets/images/project/footer-widget-portfolio-img-1.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-1.jpg')}}" alt="">
                                     <a href="#"><span class="fab fa-instagram"></span></a>
                                 </div>
                             </li>
                             <li>
                                 <div class="footer-widget__portfolio-img">
-                                    <img src="assets/images/project/footer-widget-portfolio-img-2.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-2.jpg')}}" alt="">
                                     <a href="#"><span class="fab fa-instagram"></span></a>
                                 </div>
                             </li>
                             <li>
                                 <div class="footer-widget__portfolio-img">
-                                    <img src="assets/images/project/footer-widget-portfolio-img-3.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-3.jpg')}}" alt="">
                                     <a href="#"><span class="fab fa-instagram"></span></a>
                                 </div>
                             </li>
                             <li>
                                 <div class="footer-widget__portfolio-img">
-                                    <img src="assets/images/project/footer-widget-portfolio-img-4.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-4.jpg')}}" alt="">
                                     <a href="#"><span class="fab fa-instagram"></span></a>
                                 </div>
                             </li>
                             <li>
                                 <div class="footer-widget__portfolio-img">
-                                    <img src="assets/images/project/footer-widget-portfolio-img-5.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-5.jpg')}}" alt="">
                                     <a href="#"><span class="fab fa-instagram"></span></a>
                                 </div>
                             </li>
                             <li>
                                 <div class="footer-widget__portfolio-img">
-                                    <img src="assets/images/project/footer-widget-portfolio-img-6.jpg" alt="">
+                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-6.jpg')}}" alt="">
                                     <a href="#"><span class="fab fa-instagram"></span></a>
                                 </div>
                             </li>

@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('fk88/assets/vendors/jarallax/jarallax.css')}}" />
     <link rel="stylesheet" href="{{asset('fk88/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css')}}" />
     <link rel="stylesheet" href="{{asset('fk88/assets/vendors/nouislider/nouislider.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/nouislider/nouislider.pips.css"')}}" />
+    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/nouislider/nouislider.pips.css')}}" />
     <link rel="stylesheet" href="{{asset('fk88/assets/vendors/odometer/odometer.min.css')}}" />
     <link rel="stylesheet" href="{{asset('fk88/assets/vendors/swiper/swiper.min.css')}}" />
     <link rel="stylesheet" href="{{asset('fk88/assets/vendors/sinace-icons/style.css')}}">
@@ -97,7 +97,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png" width="135"
+                <a href="index.html" aria-label="logo image"><img src="{{asset('fk88/assets/images/logo/logo-bpkad.png')}}" width="135"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->
