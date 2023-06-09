@@ -54,13 +54,13 @@
                             <div class="main-menu-three__main-menu-box"
                                 style="padding-left: 25px; padding-right: 25px;">
                                 <div class="main-menu-three__main-menu-box-left">
-                                    <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                    <a href="javascript:;" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
                                         <li class="dropdown">
                                             <a href="{{ route('dashboard.index') }}">Beranda</a>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="#">Profil </a>
+                                            <a href="javascript:;">Profil </a>
                                             <ul>
                                                 <li><a href="{{ route('profil.vision') }}">Visi & Misi</a></li>
                                                 <li><a href="{{ route('profil.formationhistory') }}">Sejarah
@@ -79,7 +79,7 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="#">Organisasi</a>
+                                            <a href="javascript:;">Organisasi</a>
                                             <ul>
                                                 @foreach ($divisions as $division)
                                                     <li><a
@@ -89,11 +89,11 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="#">Info Publik</a>
+                                            <a href="javascript:;">Info Publik</a>
                                             <ul>
                                                 <li><a href="{{ route('landing.publicinfo.hostel') }}">Asrama</a></li>
                                                 <li><a href="{{ route('landing.publicinfo.auction') }}">Lelang</a></li>
-                                                <li><a href="#">Download</a>
+                                                <li><a href="javascript:;">Download</a>
                                                     <ul class="sub-menu">
                                                         @foreach ($downloads as $download)
                                                             <li><a
@@ -105,7 +105,7 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="#">Produk Hukum</a>
+                                            <a href="javascript:;">Produk Hukum</a>
                                             <ul>
                                                 @foreach ($laws as $law)
                                                     <li><a
@@ -115,9 +115,9 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="#">Integrasi Data</a>
+                                            <a href="javascript:;">Integrasi Data</a>
                                             <ul>
-                                                <li><a href="#">APBD</a>
+                                                <li><a href="javascript:;">APBD</a>
                                                     <ul>
                                                         @foreach ($apbdsNav as $key=> $apbdNav)
                                                             <li><a
@@ -131,7 +131,7 @@
                                                 <li><a href="{{ route('landing.integration.renstra') }}">Rencana
                                                         Strategi</a>
                                                     </li>
-                                                <li><a href="">SOP</a>
+                                                <li><a href="javascript:;">SOP</a>
                                                     <ul>
                                                         @foreach ($sops as $sop)
                                                             <li><a
@@ -147,9 +147,9 @@
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="#">Potensi</a>
+                                            <a href="javascript:;">Potensi</a>
                                             <ul>
-                                                <li><a href="#">PAD</a>
+                                                <li><a href="javascript:;">PAD</a>
                                                     <ul>
                                                         @foreach ($pads as $pad)
                                                             <li><a
@@ -167,7 +167,7 @@
                                                 Anggaran</a>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">
-                                            <a href="#">Program Kegiatan </a>
+                                            <a href="javascript:;">Program Kegiatan </a>
                                             <ul>
                                                 <li><a href="{{ route('landing.program.responsible') }}">Penanggung
                                                         Jawab Program & Kegiatan</a></li>

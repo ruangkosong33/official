@@ -29,7 +29,7 @@ class FileapbdController extends Controller
     {
         $fileapbd=$request->validate([
             'title_fileapbd'=>'required',
-            'file_apbd'=>'mimes:pdf|max:2048',
+            'file_apbd'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_apbd'))
@@ -64,7 +64,7 @@ class FileapbdController extends Controller
     {
         $this->validate($request, [
             'title_fileapbd'=>'required',
-            'file_apbd'=>'mimes:pdf|max:2048',
+            'file_apbd'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
         ]);
 
         if($request->file('file_apbd'))
@@ -90,7 +90,7 @@ class FileapbdController extends Controller
     public function destroy(Fileapbd $fileapbd)
     {
         $fileapbd=Fileapbd::where('id', $fileapbd->id);
-        
+
         $fileapbd->delete();
 
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
