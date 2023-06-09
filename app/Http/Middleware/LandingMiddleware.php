@@ -12,7 +12,7 @@ use App\Models\Citykab;
 use App\Models\Download;
 use App\Models\Pad;
 use App\Models\Sop;
-
+use App\Models\Apbd;
 
 class LandingMiddleware
 {
@@ -29,6 +29,7 @@ class LandingMiddleware
         $downloads = Download::all();
         $pads = Pad::all();
         $sops = Sop::all();
+        $apbdsNav = Apbd::all()->groupBy('year');
         View::share([
             'divisions' => $divisions,
             'laws'=>$laws,
@@ -36,6 +37,7 @@ class LandingMiddleware
             'downloads'=>$downloads,
             'pads'=>$pads,
             'sops'=>$sops,
+            'apbdsNav'=>$apbdsNav,
         ]);
         return $next($request);
     }

@@ -18,7 +18,7 @@ class Apbd extends Model
 
     public function fileapbd()
     {
-        return $this->hasMany(Fileapbd::class, 'fileapbd_id', 'id');
+        return $this->hasMany(Fileapbd::class, 'apbd_id', 'id');
     }
 
     public function citykab()

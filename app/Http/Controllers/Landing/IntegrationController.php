@@ -12,6 +12,7 @@ use App\Models\Lppd;
 use App\Models\Sidata;
 use App\Models\Sop;
 use App\Models\Filesop;
+use App\Models\Apbd;
 
 class IntegrationController extends Controller
 {
@@ -105,5 +106,12 @@ class IntegrationController extends Controller
         $filesop = Filesop::where('slug',$slug)->first();
         $file = public_path('uploads/file-sop/').$filesop->file_sop;
         return response()->download($file, $filesop->file_sop);
+    }
+
+    public function apbd($slug)
+    {
+        $apbd = Apbd::where('slug',$slug)->first();
+        $apbds = Apbd::where('year',$apbd->year)->get();
+        return view('landing.pages.integration.apbd-integration',['apbd'=>$apbd,'apbds'=>$apbds]);
     }
 }

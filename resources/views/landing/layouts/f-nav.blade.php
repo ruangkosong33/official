@@ -117,7 +117,15 @@
                                         <li class="dropdown" style="margin-left: 15px">
                                             <a href="#">Integrasi Data</a>
                                             <ul>
-                                                <li><a href="#">APBD</a></li>
+                                                <li><a href="#">APBD</a>
+                                                    <ul>
+                                                        @foreach ($apbdsNav as $key=> $apbdNav)
+                                                            <li><a
+                                                                    href="{{ route('landing.integration.apbd',['slug'=>$apbdNav[0]->slug]) }}">{{ $key }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                                 <li><a href="{{ route('landing.integration.renja') }}">Rencana
                                                         Kerja</a></li>
                                                 <li><a href="{{ route('landing.integration.renstra') }}">Rencana

@@ -137,6 +137,8 @@ Route::middleware(['landing',])->group(function()
 
     Route::get('/organisasi/{slug}', [LandingOrganizationController::class,'index'])->name('landing.organization.index');
 
+
+    Route::get('/anggaran-pendapatan-dan-belanja-daerah/periode/{slug}', [LandingIntegrationController::class,'apbd'])->name('landing.integration.apbd');
     Route::get('/integrasi-data/rencana-kerja', [LandingIntegrationController::class,'renja'])->name('landing.integration.renja');
     Route::get('/integrasi-data/rencana-kerja/unduh/{slug}', [LandingIntegrationController::class,'downloadFileRenja'])->name('landing.integration.downloadFileRenja');
     Route::get('/integrasi-data/rencana-strategi', [LandingIntegrationController::class,'renstra'])->name('landing.integration.renstra');
