@@ -10,16 +10,15 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="index.html"><img src="{{asset('fk88/assets/images/resources/footer-logo.png')}}" alt=""></a>
+                            <a href="index.html"><img src="{{asset('fk88/assets/images/logo/logo-bpkad.png')}}" alt="" width="260"></a>
                         </div>
                         <p class="footer-widget__about-text">Lorem ipsum dolor sit amet, consect etur adi
                             pisicing
                             elit sed do eiusmod tempor incididunt ut labore.</p>
                         <div class="site-footer__social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/bpkadkaltim"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/pages/BPKAD%20Prov.%20Kaltim/1900010416967704/"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/bpkadkaltim/"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>

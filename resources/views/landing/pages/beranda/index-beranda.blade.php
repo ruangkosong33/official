@@ -1013,45 +1013,16 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 col-lg-6">
-                    <div class="contact-one__left">
-                        <form action="assets/inc/sendemail.php" class="contact-one__form contact-form-validated"
-                            novalidate="novalidate">
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="contact-one__input-box">
-                                        <input type="text" placeholder="Your name" name="name">
-                                    </div>
-                                </div>
-                                <div class="col-xl-12">
-                                    <div class="contact-one__input-box">
-                                        <input type="email" placeholder="Email address" name="email">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-12">
-                                    <div class="contact-one__input-box text-message-box">
-                                        <textarea name="message" placeholder="Write message"></textarea>
-                                    </div>
-                                    <div class="contact-one__btn-box">
-                                        <button type="submit" class="thm-btn contact-one__btn">Send a
-                                            Message</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="result"></div>
-                    </div>
+                <div class="col-xl-6 col-lg-6 mx-auto">
+                        <iframe width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.66298776662!2d117.139331!3d-0.501074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67fa0cf3b5609%3A0x9efc250dd531e8b4!2sKantor%20Gubernur%20Kalimantan%20Timur!5e0!3m2!1sen!2sus!4v1686381485332!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="contact-one__right">
                         <div class="section-title text-left">
                             <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">contact us</span>
+                                <span class="section-title__tagline">BPKAD KALTIM</span>
                             </div>
-                            <h2 class="section-title__title">Have Questions? Contact
-                                <br> with us <span>Anytime</span>
+                            <h2 class="section-title__title">Kontak Kami</span>
                             </h2>
                         </div>
                         <ul class="contact-one__points list-unstyled">
@@ -1060,8 +1031,8 @@
                                     <span class="icon-telephone-1"></span>
                                 </div>
                                 <div class="text">
-                                    <p>Have any question?</p>
-                                    <h3>Free <a href="tel:230009850">+23 (000)-9850</a></h3>
+                                    <p>Nomor Telepon</p>
+                                    <h3><a href="tel:054173333">(0541) 73333</a></h3>
                                 </div>
                             </li>
                             <li>
@@ -1069,8 +1040,8 @@
                                     <span class="icon-email"></span>
                                 </div>
                                 <div class="text">
-                                    <p>Send Email</p>
-                                    <h3><a href="mailto:needhelp@company.com">needhelp@company.com</a></h3>
+                                    <p>Email</p>
+                                    <h3><a href="mailto:bpkadkaltim@gmail.com">bpkadkaltim@gmail.com</a></h3>
                                 </div>
                             </li>
                             <li>
@@ -1078,8 +1049,8 @@
                                     <span class="icon-pin"></span>
                                 </div>
                                 <div class="text">
-                                    <p>Visit anytime</p>
-                                    <h3>30 broklyn golden street. New York</h3>
+                                    <p>Alamat</p>
+                                    <h3>Jl. Gajah Mada No.2, Jawa, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur 75242</h3>
                                 </div>
                             </li>
                         </ul>
