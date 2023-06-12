@@ -30,9 +30,7 @@ class DashboardController extends Controller
         $countDivision = Division::count();
         $countUser = User::count();
 
-        $latestPost = Post::latest()->limit(3)->get();
-        
-
+        $latestPost = Post::latest()->take(4)->get();
 
         return view('admin.pages.dashboard.index-dashboard',[
             'countVisitor'=>$countVisitor,
