@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BPKAD - PROV KALTIM</title>
     <!-- favicons Icons -->
-    <link rel="icon" type="image/x-icon" href="{{asset('fk88/assets/images/logo/logo.ico')}}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('fk88/assets/images/logo/logo.ico') }}">
     <meta name="description" content="BPKAD PROVINSI KALIMANTAN TIMUR" />
+    <meta name="url_getvisitor" content="{{ route('getVisitor') }}">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,41 +18,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/bootstrap/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/animate/animate.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/animate/custom-animate.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/fontawesome/css/all.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/jarallax/jarallax.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/nouislider/nouislider.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/nouislider/nouislider.pips.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/odometer/odometer.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/swiper/swiper.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/sinace-icons/style.css')}}">
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/tiny-slider/tiny-slider.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/reey-font/stylesheet.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/owl-carousel/owl.carousel.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/owl-carousel/owl.theme.default.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/bxslider/jquery.bxslider.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/bootstrap-select/css/bootstrap-select.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/vegas/vegas.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/jquery-ui/jquery-ui.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/vendors/timepicker/timePicker.css')}}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/animate/animate.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/animate/custom-animate.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/fontawesome/css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/jarallax/jarallax.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/nouislider/nouislider.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/nouislider/nouislider.pips.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/odometer/odometer.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/swiper/swiper.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/sinace-icons/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/tiny-slider/tiny-slider.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/reey-font/stylesheet.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/owl-carousel/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/owl-carousel/owl.theme.default.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/bxslider/jquery.bxslider.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/bootstrap-select/css/bootstrap-select.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/vegas/vegas.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/jquery-ui/jquery-ui.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/vendors/timepicker/timePicker.css') }}" />
 
     <!-- template styles -->
-    <link rel="stylesheet" href="{{asset('fk88/assets/css/sinace.css')}}" />
-    <link rel="stylesheet" href="{{asset('fk88/assets/css/sinace-responsive.css')}}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/css/sinace.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/css/sinace-responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('fk88/assets/css/flip.min.css') }}" rel="stylesheet" />
     @stack('css')
     <style>
-        .main-menu .main-menu__list>li>a,.main-menu .main-menu__list>li>ul>li>a{
+        .main-menu .main-menu__list>li>a,
+        .main-menu .main-menu__list>li>ul>li>a {
             font-size: 14px
         }
-        .main-menu .main-menu__list>li.current>a, .main-menu .main-menu__list>li:hover>a, .stricky-header .main-menu__list>li.current>a, .stricky-header .main-menu__list>li:hover>a{
+
+        .main-menu .main-menu__list>li.current>a,
+        .main-menu .main-menu__list>li:hover>a,
+        .stricky-header .main-menu__list>li.current>a,
+        .stricky-header .main-menu__list>li:hover>a {
             color: rgb(15, 33, 60);
             text-shadow: 0.05px 0 0 rgb(15 33 60 / 80%)
         }
-        .main-menu-three__main-menu-box{
+
+        .main-menu-three__main-menu-box {
             width: 100%;
+        }
+
+        .tick {
+            font-size: 1.6em;
+        }
+
+        /* rounder corners */
+        #my-flip {
+            /* increase border radius */
+            border-radius: .3125em;
+
+            /* increase spacing between letters */
+            letter-spacing: .5em;
+            text-indent: .5em;
+        }
+
+        /* black on white colors */
+        #my-flip .tick-flip-panel {
+            color: #555;
+            background-color: #fafafa;
         }
     </style>
 </head>
@@ -97,7 +125,8 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="{{asset('fk88/assets/images/logo/logo-bpkad.png')}}" width="135"
+                <a href="index.html" aria-label="logo image"><img
+                        src="{{ asset('fk88/assets/images/logo/logo-bpkad.png') }}" width="135"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->
@@ -148,9 +177,9 @@
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
 
-   <!-- Java Script -->
-   @include('landing.layouts.f-js')
-   <!-- End Java Script -->
+    <!-- Java Script -->
+    @include('landing.layouts.f-js')
+    <!-- End Java Script -->
 
 </body>
 

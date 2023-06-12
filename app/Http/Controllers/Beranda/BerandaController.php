@@ -11,7 +11,9 @@ class BerandaController extends Controller
     public function index()
     {
         $banners=Banner::latest()->get();
-        
-        return view('landing.pages.beranda.index-beranda', ['banners'=>$banners]);
+
+        return view('landing.pages.beranda.index-beranda', [
+            'banners'=>$banners,
+        ]);
     }
 }

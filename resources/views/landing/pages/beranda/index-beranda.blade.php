@@ -88,12 +88,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="about-one__btn-box">
-                            <div class="about-one__shape-3 float-bob-x">
-                                <img src="{{asset('fk88/assets/images/shapes/about-one-shape-3.png')}}" alt="">
-                            </div>
-                            <a href="about.html" class="about-one__btn thm-btn">Discover More</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1004,63 +998,6 @@
     </section>
     <!--Brand One End-->
 
-    <!--Contact One Start-->
-    <section class="contact-one">
-        <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/contact-one-bg.jpg);">
-        </div>
-        <div class="contact-one__shape-1 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/contact-one-shape-1.png')}}" alt="">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 mx-auto">
-                        <iframe width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.66298776662!2d117.139331!3d-0.501074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67fa0cf3b5609%3A0x9efc250dd531e8b4!2sKantor%20Gubernur%20Kalimantan%20Timur!5e0!3m2!1sen!2sus!4v1686381485332!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
-                </div>
-                <div class="col-xl-6 col-lg-6">
-                    <div class="contact-one__right">
-                        <div class="section-title text-left">
-                            <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">BPKAD KALTIM</span>
-                            </div>
-                            <h2 class="section-title__title">Kontak Kami</span>
-                            </h2>
-                        </div>
-                        <ul class="contact-one__points list-unstyled">
-                            <li>
-                                <div class="icon">
-                                    <span class="icon-telephone-1"></span>
-                                </div>
-                                <div class="text">
-                                    <p>Nomor Telepon</p>
-                                    <h3><a href="tel:054173333">(0541) 73333</a></h3>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <span class="icon-email"></span>
-                                </div>
-                                <div class="text">
-                                    <p>Email</p>
-                                    <h3><a href="mailto:bpkadkaltim@gmail.com">bpkadkaltim@gmail.com</a></h3>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="icon">
-                                    <span class="icon-pin"></span>
-                                </div>
-                                <div class="text">
-                                    <p>Alamat</p>
-                                    <h3>Jl. Gajah Mada No.2, Jawa, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur 75242</h3>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Contact One End-->
-
     <!--News One Start-->
     <section class="news-one">
         <div class="container">
@@ -1244,4 +1181,61 @@
         </div>
     </section>
     <!--News One End-->
+
+    <!--Contact One Start-->
+    <section class="contact-one">
+        <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/contact-one-bg.jpg);">
+        </div>
+        <div class="contact-one__shape-1 float-bob-x">
+            <img src="{{asset('fk88/assets/images/shapes/contact-one-shape-1.png')}}" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 mx-auto">
+                        <iframe width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.66298776662!2d117.139331!3d-0.501074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67fa0cf3b5609%3A0x9efc250dd531e8b4!2sKantor%20Gubernur%20Kalimantan%20Timur!5e0!3m2!1sen!2sus!4v1686381485332!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="contact-one__right">
+                        <div class="section-title text-left">
+                            <div class="section-title__tagline-box">
+                                <span class="section-title__tagline">BPKAD KALTIM</span>
+                            </div>
+                            <h2 class="section-title__title">Kontak Kami</span>
+                            </h2>
+                        </div>
+                        <ul class="contact-one__points list-unstyled">
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-telephone-1"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Nomor Telepon</p>
+                                    <h3><a href="tel:054173333">(0541) 73333</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-email"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Email</p>
+                                    <h3><a href="mailto:bpkadkaltim@gmail.com">bpkadkaltim@gmail.com</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="icon-pin"></span>
+                                </div>
+                                <div class="text">
+                                    <p>Alamat</p>
+                                    <h3>Jl. Gajah Mada No.2, Jawa, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur 75242</h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Contact One End-->
 @endsection

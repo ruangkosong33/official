@@ -64,6 +64,7 @@ use App\Http\Controllers\Landing\PublicinfoController as LandingPublicinfoContro
 use App\Http\Controllers\Landing\OrganizationController as LandingOrganizationController;
 use App\Http\Controllers\Landing\IntegrationController as LandingIntegrationController;
 use App\Http\Controllers\Landing\BbhController as LandingBbhController;
+use App\Http\Controllers\Landing\VisitorController as LandingVisitorController;
 
 
 
@@ -154,6 +155,7 @@ Route::middleware(['landing',])->group(function()
     Route::get('/integrasi-data/sop/{slug}', [LandingIntegrationController::class,'sop'])->name('landing.integration.sop');
     Route::get('/integrasi-data/sop/unduh/{slug}', [LandingIntegrationController::class,'downloadFileSop'])->name('landing.integration.downloadFileSop');
 
+    Route::get('/getvisitors', [LandingVisitorController::class,'getVisitor'])->name('getVisitor');;
 });
 
 //Register

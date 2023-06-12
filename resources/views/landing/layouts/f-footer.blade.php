@@ -1,3 +1,9 @@
+@php
+use App\Models\Visitor;
+use Carbon\Carbon;
+$dateNow = Carbon::now();
+$totalVisitor = Visitor::count();
+@endphp
 <footer class="site-footer">
     <div class="site-footer__shape-1 float-bob-x">
         <img src="{{asset('fk88/assets/images/shapes/site-footer-shape-1.png')}}" alt="">
@@ -7,7 +13,7 @@
     <div class="site-footer__top">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
                             <a href="index.html"><img src="{{asset('fk88/assets/images/logo/logo-bpkad.png')}}" alt="" width="260"></a>
@@ -20,20 +26,6 @@
                             <a href="https://www.facebook.com/pages/BPKAD%20Prov.%20Kaltim/1900010416967704/"><i class="fab fa-facebook"></i></a>
                             <a href="https://www.instagram.com/bpkadkaltim/"><i class="fab fa-instagram"></i></a>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="footer-widget__column footer-widget__link">
-                        <div class="footer-widget__title-box">
-                            <h3 class="footer-widget__title">Explore</h3>
-                        </div>
-                        <ul class="footer-widget__link-list list-unstyled">
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="portfolio.html">Latest Projects</a></li>
-                            <li><a href="team.html">Our Team</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
@@ -70,49 +62,43 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
+                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="500ms">
                     <div class="footer-widget__column footer-widget__portfolio">
                         <div class="footer-widget__title-box">
-                            <h3 class="footer-widget__title">Gallery</h3>
+                            <h3 class="footer-widget__title">Statistik</h3>
                         </div>
-                        <ul class="footer-widget__portfolio-list list-unstyled clearfix">
-                            <li>
-                                <div class="footer-widget__portfolio-img">
-                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-1.jpg')}}" alt="">
-                                    <a href="#"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__portfolio-img">
-                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-2.jpg')}}" alt="">
-                                    <a href="#"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__portfolio-img">
-                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-3.jpg')}}" alt="">
-                                    <a href="#"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__portfolio-img">
-                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-4.jpg')}}" alt="">
-                                    <a href="#"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__portfolio-img">
-                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-5.jpg')}}" alt="">
-                                    <a href="#"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="footer-widget__portfolio-img">
-                                    <img src="{{asset('fk88/assets/images/project/footer-widget-portfolio-img-6.jpg')}}" alt="">
-                                    <a href="#"><span class="fab fa-instagram"></span></a>
-                                </div>
-                            </li>
-                        </ul>
+                        <div class="footer-widget__column footer-widget__about">
+                            <div class="tick" data-value="{{sprintf("%08d", $totalVisitor);}}" id="visitor">
+                                <span id="my-flip" data-view="flip"></span>
+                            </div>
+                            <table width="100%" class="mt-2">
+                                <tr>
+                                    <td width="55%">Pengunjung Hari ini</td>
+                                    <td width="5%">:</td>
+                                    <td class="text-end"><span class="badge bg-primary  mt-2" id="today-visitor"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Pengunjung Bulan ini</td>
+                                    <td>:</td>
+                                    <td class="text-end"><span class="badge bg-secondary  mt-2" id="month-visitor"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Pengunjung Tahun ini</td>
+                                    <td>:</td>
+                                    <td class="text-end"><span class="badge bg-danger  mt-2" id="year-visitor"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Total Pengunjung</td>
+                                    <td>:</td>
+                                    <td class="text-end"><span class="badge bg-warning  mt-2" id="total-visitor"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Pengunjung Online</td>
+                                    <td>:</td>
+                                    <td class="text-end"><span class="badge bg-success  mt-2" id="online-visitor"></span></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

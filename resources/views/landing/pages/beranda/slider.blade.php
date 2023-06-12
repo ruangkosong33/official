@@ -12,7 +12,7 @@
             </div>
             <div class="container">
                 <div class="main-slider-three__content">
-                    <div class="main-slider-three__shape-2 float-bob-x">
+                    <div class="main-slider-three__shape-2 float-bob-x" style="visibility: hidden;">
                         <img src="{{asset('fk88/assets/images/shapes/main-slider-three-shape-2.png')}}" alt="">
                     </div>
                     <div class="main-slider-three__title-box">

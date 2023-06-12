@@ -31,6 +31,7 @@
 <script src="{{ asset('fk88/assets/js/tab.js') }}"></script>
 <script src="{{ asset('fk88/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('fk88/assets/js/sinace.js') }}"></script>
+<script src="{{ asset('fk88/assets/js/flip.min.js') }}"></script>
 {{-- <script src="https://code.responsivevoice.org/responsivevoice.js?key=vdMIvAC9"></script>
 <script>
     $(document).ready(function() {
@@ -60,4 +61,19 @@
         return text;
     }
 </script> --}}
+<script>
+
+    $(document).ready(function(){
+    // $(".preloader").fadeOut('slow');
+
+    let url = $('meta[name="url_getvisitor"]').attr('content');
+    $.getJSON(`${url}`, function(dt) {
+        $("#today-visitor").html(dt.amountVisitorToday)
+        $("#total-visitor").html(dt.totalVisitor)
+        $("#online-visitor").html(dt.onlineVisitor)
+        $("#month-visitor").html(dt.amountVisitorThisMonth)
+        $("#year-visitor").html(dt.amountVisitorThisYear)
+    });
+})
+</script>
 @stack('js')
