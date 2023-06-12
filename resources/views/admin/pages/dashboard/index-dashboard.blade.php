@@ -1,5 +1,10 @@
 @extends('admin.layouts.b-main')
 
+@push('css')
+    <meta name="url_data_chart_visitor" content="{{ route('data.chart.visitor') }}">
+    <meta name="url_data_chart_category" content="{{ route('data.chart.category') }}">
+@endpush
+
 @section('content')
 @section('dashboard', 'active')
 
@@ -25,15 +30,13 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>150</h3>
+                            <h3>{{ $countVisitor }}</h3>
 
                             <p>Total Pengunjung</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -41,15 +44,13 @@
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+                            <h3>{{ $countPost }}</h3>
 
                             <p>Berita</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -57,15 +58,13 @@
                     <!-- small box -->
                     <div class="small-box bg-secondary">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>{{ $countGallery }}</h3>
 
                             <p>Galeri</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -73,15 +72,13 @@
                     <!-- small box -->
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>{{ $countFilePublicInfo }}</h3>
 
                             <p>File Info Publik</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -92,17 +89,8 @@
                         <div class="card-header border-0">
                             <h3 class="card-title">
                                 <i class="fas fa-th mr-1"></i>
-                                Sales Graph
+                                Grafik Pengunjung
                             </h3>
-
-                            <div class="card-tools">
-                                <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
                         </div>
                         <div class="card-body">
                             <canvas class="chart" id="line-chart"
@@ -118,7 +106,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Video</span>
-                            <span class="info-box-number">5,200</span>
+                            <span class="info-box-number">{{ $countVideo }}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -128,7 +116,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Operator</span>
-                            <span class="info-box-number">92,050</span>
+                            <span class="info-box-number">{{ $countUser }}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -138,7 +126,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Bidang</span>
-                            <span class="info-box-number">114,381</span>
+                            <span class="info-box-number">{{ $countDivision }}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -148,7 +136,7 @@
 
                         <div class="info-box-content">
                             <span class="info-box-text">Pegawai</span>
-                            <span class="info-box-number">163,921</span>
+                            <span class="info-box-number">{{ $countEmployee }}e</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -202,35 +190,15 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Kategori Artikel</h3>
-
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <div class="chart-responsive">
                                         <canvas id="pieChart" height="150"></canvas>
                                     </div>
                                     <!-- ./chart-responsive -->
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-md-4">
-                                    <ul class="chart-legend clearfix">
-                                        <li><i class="far fa-circle text-danger"></i> Chrome</li>
-                                        <li><i class="far fa-circle text-success"></i> IE</li>
-                                        <li><i class="far fa-circle text-warning"></i> FireFox</li>
-                                        <li><i class="far fa-circle text-info"></i> Safari</li>
-                                        <li><i class="far fa-circle text-primary"></i> Opera</li>
-                                        <li><i class="far fa-circle text-secondary"></i> Navigator</li>
-                                    </ul>
                                 </div>
                                 <!-- /.col -->
                             </div>
@@ -243,16 +211,7 @@
                     <!-- PRODUCT LIST -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Recently Added Products</h3>
-
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
+                            <h3 class="card-title">Artikel Berita Terbaru</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
@@ -345,64 +304,66 @@
 
         var salesGraphChartCanvas = $('#line-chart').get(0).getContext('2d')
         // $('#revenue-chart').get(0).getContext('2d');
+        let urlVisitor = $('meta[name="url_data_chart_visitor"]').attr('content');
 
-        var salesGraphChartData = {
-            labels: ['2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2', '2012 Q3', '2012 Q4',
-                '2013 Q1', '2013 Q2'
-            ],
-            datasets: [{
-                label: 'Digital Goods',
-                fill: false,
-                borderWidth: 2,
-                lineTension: 0,
-                spanGaps: true,
-                borderColor: '#efefef',
-                pointRadius: 3,
-                pointHoverRadius: 7,
-                pointColor: '#efefef',
-                pointBackgroundColor: '#efefef',
-                data: [2666, 2778, 4912, 3767, 6810, 5670, 4820, 15073, 10687, 8432]
-            }]
-        }
-
-        var salesGraphChartOptions = {
-            maintainAspectRatio: false,
-            responsive: true,
-            legend: {
-                display: false
-            },
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        fontColor: '#efefef'
-                    },
-                    gridLines: {
-                        display: false,
-                        color: '#efefef',
-                        drawBorder: false
-                    }
-                }],
-                yAxes: [{
-                    ticks: {
-                        stepSize: 5000,
-                        fontColor: '#efefef'
-                    },
-                    gridLines: {
-                        display: true,
-                        color: '#efefef',
-                        drawBorder: false
-                    }
+        $.get(urlVisitor, function(data) {
+            var salesGraphChartData = {
+                labels: data.months,
+                datasets: [{
+                    label: 'Pengunjung',
+                    fill: false,
+                    borderWidth: 2,
+                    lineTension: 0,
+                    spanGaps: true,
+                    borderColor: '#efefef',
+                    pointRadius: 3,
+                    pointHoverRadius: 7,
+                    pointColor: '#efefef',
+                    pointBackgroundColor: '#efefef',
+                    data: data.visitor
                 }]
             }
-        }
 
-        // This will get the first returned node in the jQuery collection.
-        // eslint-disable-next-line no-unused-vars
-        var salesGraphChart = new Chart(salesGraphChartCanvas, { // lgtm[js/unused-local-variable]
-            type: 'line',
-            data: salesGraphChartData,
-            options: salesGraphChartOptions
+            var salesGraphChartOptions = {
+                maintainAspectRatio: false,
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            fontColor: '#efefef'
+                        },
+                        gridLines: {
+                            display: false,
+                            color: '#efefef',
+                            drawBorder: false
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            stepSize: 1,
+                            fontColor: '#efefef'
+                        },
+                        gridLines: {
+                            display: true,
+                            color: '#efefef',
+                            drawBorder: false
+                        }
+                    }]
+                }
+            }
+
+            // This will get the first returned node in the jQuery collection.
+            // eslint-disable-next-line no-unused-vars
+            var salesGraphChart = new Chart(salesGraphChartCanvas, { // lgtm[js/unused-local-variable]
+                type: 'line',
+                data: salesGraphChartData,
+                options: salesGraphChartOptions
+            })
         })
+
 
         var ticksStyle = {
             fontColor: '#495057',
@@ -481,38 +442,39 @@
         // - PIE CHART -
         //-------------
         // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-        var pieData = {
-            labels: [
-                'Chrome',
-                'IE',
-                'FireFox',
-                'Safari',
-                'Opera',
-                'Navigator'
-            ],
-            datasets: [{
-                data: [700, 500, 400, 600, 300, 100],
-                backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de']
-            }]
+        let url = $('meta[name="url_data_chart_category"]').attr('content');
+        const setBg = () => {
+            const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+            return "#" + randomColor;
         }
-        var pieOptions = {
-            legend: {
-                display: false
+        $.get(url, function(data) {
+            let bgColor = data.data.map((data) => setBg())
+            var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+            var pieData = {
+                labels: data.labels,
+                datasets: [{
+                    data: data.data,
+                    backgroundColor: bgColor
+                }]
             }
-        }
-        // Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        // eslint-disable-next-line no-unused-vars
-        var pieChart = new Chart(pieChartCanvas, {
-            type: 'doughnut',
-            data: pieData,
-            options: pieOptions
-        })
+            var pieOptions = {
+                legend: {
+                    display: true
+                }
+            }
+            // Create pie or douhnut chart
+            // You can switch between pie and douhnut using the method below.
+            // eslint-disable-next-line no-unused-vars
+            var pieChart = new Chart(pieChartCanvas, {
+                type: 'doughnut',
+                data: pieData,
+                options: pieOptions
+            })
 
-        //-----------------
-        // - END PIE CHART -
-        //-----------------
+            //-----------------
+            // - END PIE CHART -
+            //-----------------
+        })
     })
 </script>
 @endpush

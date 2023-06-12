@@ -23,7 +23,7 @@ class Category extends Model
     //Relasi Database//
     public function post()
     {
-        return $this->hasMany(Post::class, 'post_id', 'id');
+        return $this->hasMany(Post::class, 'category_id', 'id');
     }
 
     public function video()
