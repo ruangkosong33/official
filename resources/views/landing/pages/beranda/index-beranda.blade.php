@@ -1182,6 +1182,41 @@
     </section>
     <!--News One End-->
 
+    <!--SOSMED Start-->
+    <section class="news-one" style="padding-top: 20px">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="section-title__tagline-box">
+                    <h2 class="section-title__title">Update Terkini</h2>
+                </div>
+            </div>
+            <div class="row">
+                <!--SOSMED Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="news-one__single" >
+                        <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div>
+                    </div>
+                </div>
+                <!--SOSMED Single End-->
+                <!--SOSMED Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="news-one__single" >
+                        <div class="fb-page" data-href="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179">BAPENDA Kaltim</a></blockquote></div>
+                    </div>
+                </div>
+                <!--SOSMED Single End-->
+                <!--SOSMED Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="news-one__single">
+                        <div id="gpr-kominfo-widget-container"></div>
+                    </div>
+                </div>
+                <!--SOSMED Single End-->
+            </div>
+        </div>
+    </section>
+    <!--SOSMED End-->
+
     <!--Contact One Start-->
     <section class="contact-one">
         <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/contact-one-bg.jpg);">
@@ -1239,3 +1274,10 @@
     </section>
     <!--Contact One End-->
 @endsection
+
+@push('js')
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v10.0" nonce="2koYxy6w"></script>
+<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+{{-- <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div> --}}
+@endpush
