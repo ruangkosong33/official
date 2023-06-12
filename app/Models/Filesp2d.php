@@ -15,6 +15,8 @@ class Filesp2d extends Model
 
     protected $hidden=[];
 
+    protected $cast =['date'=>'date'];
+
 
     public function citykab()
     {

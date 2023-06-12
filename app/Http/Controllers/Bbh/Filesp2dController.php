@@ -65,19 +65,22 @@ class Filesp2dController extends Controller
         $city=Citykab::all();
         $filesp2d=Filesp2d::findOrFail($id);
 
-        return view('admin.pages.filesp2d.edit-filesp2d', ['filesp2d'=>$filesp2d, 'city'=>$city]);
+        return view('admin.pages.filesp2d.edit-sp2d', ['filesp2d'=>$filesp2d, 'city'=>$city]);
     }
 
     public function update(Request $request, $id)
     {
-        $filesp2d=$request->validate([
+        $request->validate([
+            'city_id'=>'required',
             'title_sp2d'=>'required',
-            'file_sp2d'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
+            'file_sp2d'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
             'date'=>'required',
             'description'=>'required',
             'total'=>'required',
         ]);
 
+        $filesp2d=Filesp2d::findOrFail($id);
+        $filesp2ds = $filesp2d->filesp2d;
         if($request->file('file_sp2d'))
         {
             $file=$request->file('file_sp2d');
@@ -87,9 +90,9 @@ class Filesp2dController extends Controller
         }
 
         $filesp2d->update([
-            'city_id'=>$city->id,
+            'city_id'=>$request->city_id,
             'title_sp2d'=>$request->title_sp2d,
-            'filesp2d'=>$filesp2ds,
+            'file_sp2d'=>$filesp2ds,
             'date'=>$request->date,
             'description'=>$request->description,
             'total'=>$request->total,
@@ -97,7 +100,7 @@ class Filesp2dController extends Controller
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
 
-        return redirect()->route('fileublisp2d.index', ['city'=>$city]);
+        return redirect()->route('filesp2d.index');
     }
 
     public function destroy($id)
