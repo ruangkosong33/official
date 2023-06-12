@@ -86,7 +86,7 @@
                   @enderror
 
                 </div>
-                <div class="mt-3"><img src="{{asset('image-post/'. $post->image_post)}}" id="output" width="500"></div>
+                <div class="mt-3"><img src="{{asset('uploads/image-post/'. $post->image_post)}}" id="output" width="500"></div>
 
             </div>
 

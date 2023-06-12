@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('file_sp2d');
             $table->date('date');
             $table->text('description');
-            $table->integer('total');
+            $table->bigInteger('total');
             $table->timestamps();
         });
     }
