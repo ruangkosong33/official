@@ -257,7 +257,29 @@
                             <div class="grow-business__shape-1 float-bob-x">
                                 <img src="{{asset('fk88/assets/images/shapes/grow-business-shape-1.png')}}" alt="">
                             </div>
-                            <img src="{{asset('fk88/assets/images/team/kepala.png')}}" alt="">
+                            {{-- <img src="{{asset('fk88/assets/images/team/kepala.png')}}" alt=""> --}}
+                            <ul class="grow-business__right-points list-unstyled">
+                                <li>
+                                    <div class="grow-business__right-points-icon">
+                                        <span class="icon-experience"></span>
+                                    </div>
+                                    <h3 class="grow-business__right-points-title">Benefits by Investing
+                                        <br> your Money</h3>
+                                    <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
+                                        tincidunt.
+                                        <br> Donec fermentum, elit sit amet</p>
+                                </li>
+                                <li>
+                                    <div class="grow-business__right-points-icon">
+                                        <span class="icon-consumer-behavior"></span>
+                                    </div>
+                                    <h3 class="grow-business__right-points-title">The most Time-Consuming
+                                        <br> Components</h3>
+                                    <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
+                                        tincidunt.
+                                        <br> Donec fermentum, elit sit amet</p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -477,120 +499,27 @@
                         }
                     }
                 }'>
+                    @foreach ($latestGallery as $gallery)
+                        
                     <!--Project One Single Start-->
                     <div class="item">
                         <div class="project-one__single">
                             <div class="project-one__img-box">
                                 <div class="project-one__img">
-                                    <img src="{{asset('fk88/assets/images/project/project-1-1.jpg')}}" alt="">
+                                    <img src="{{asset('uploads/image-gallery/'.$gallery->image_gallery)}}" alt="">
                                 </div>
                             </div>
                             <div class="project-one__content">
-                                <p>Finance</p>
-                                <h3><a href="portfolio-details.html">International business
-                                        <br> development</a></h3>
+                                <p>{{$gallery->category->title_category}}</p>
+                                <h3><a href="{{route('landing.gallery.detail',['slug'=>$gallery->slug])}}">{{ substr(strip_tags($gallery->title_gallery), 0, 45) . '...' }}</h3>
                                 <div class="project-one__arrow">
-                                    <a href="portfolio-details.html"><span class="icon-right-arrow"></span></a>
+                                    <a href="{{route('landing.gallery.detail',['slug'=>$gallery->slug])}}"><span class="icon-right-arrow"></span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!--Project One Single End-->
-                    <!--Project One Single Start-->
-                    <div class="item">
-                        <div class="project-one__single">
-                            <div class="project-one__img-box">
-                                <div class="project-one__img">
-                                    <img src="{{asset('fk88/assets/images/project/project-1-2.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="project-one__content">
-                                <p>Finance</p>
-                                <h3><a href="portfolio-details.html">International business
-                                        <br> development</a></h3>
-                                <div class="project-one__arrow">
-                                    <a href="portfolio-details.html"><span class="icon-right-arrow"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Project One Single End-->
-                    <!--Project One Single Start-->
-                    <div class="item">
-                        <div class="project-one__single">
-                            <div class="project-one__img-box">
-                                <div class="project-one__img">
-                                    <img src="{{asset('fk88/assets/images/project/project-1-3.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="project-one__content">
-                                <p>Finance</p>
-                                <h3><a href="portfolio-details.html">International business
-                                        <br> development</a></h3>
-                                <div class="project-one__arrow">
-                                    <a href="portfolio-details.html"><span class="icon-right-arrow"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Project One Single End-->
-                    <!--Project One Single Start-->
-                    <div class="item">
-                        <div class="project-one__single">
-                            <div class="project-one__img-box">
-                                <div class="project-one__img">
-                                    <img src="{{asset('fk88/assets/images/project/project-1-1.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="project-one__content">
-                                <p>Finance</p>
-                                <h3><a href="portfolio-details.html">International business
-                                        <br> development</a></h3>
-                                <div class="project-one__arrow">
-                                    <a href="portfolio-details.html"><span class="icon-right-arrow"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Project One Single End-->
-                    <!--Project One Single Start-->
-                    <div class="item">
-                        <div class="project-one__single">
-                            <div class="project-one__img-box">
-                                <div class="project-one__img">
-                                    <img src="{{asset('fk88/assets/images/project/project-1-2.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="project-one__content">
-                                <p>Finance</p>
-                                <h3><a href="portfolio-details.html">International business
-                                        <br> development</a></h3>
-                                <div class="project-one__arrow">
-                                    <a href="portfolio-details.html"><span class="icon-right-arrow"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Project One Single End-->
-                    <!--Project One Single Start-->
-                    <div class="item">
-                        <div class="project-one__single">
-                            <div class="project-one__img-box">
-                                <div class="project-one__img">
-                                    <img src="{{asset('fk88/assets/images/project/project-1-3.jpg')}}" alt="">
-                                </div>
-                            </div>
-                            <div class="project-one__content">
-                                <p>Finance</p>
-                                <h3><a href="portfolio-details.html">International business
-                                        <br> development</a></h3>
-                                <div class="project-one__arrow">
-                                    <a href="portfolio-details.html"><span class="icon-right-arrow"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Project One Single End-->
+                    @endforeach
                 </div>
             </div>
             <div class="about-one__btn-box text-center" style="display: block;margin-top: 25px;">
@@ -964,18 +893,19 @@
                 <h2 class="section-title__title">Berita Terbaru</h2>
             </div>
             <div class="row">
+                @foreach ($latestPost as $post)
                 <!--News One Single Start-->
                 <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                     <div class="news-one__single">
                         <div class="news-one__img-box">
                             <div class="news-one__img">
-                                <img src="{{ asset('fk88/assets/images/blog/news-1-1.jpg') }}" alt="">
-                                <a href="news-details.html">
+                                <img src="{{asset('uploads/image-post/'.$post->image_post)}}" alt="">
+                                <a href="{{route('berita.detail',['slug'=>$post->slug])}}">
                                     <span class="news-one__plus"></span>
                                 </a>
                             </div>
                             <div class="news-one__date">
-                                <p>30 Mar, 2023</p>
+                                <p>{{ $post->created_at->format('d').' '.$post->created_at->monthName.', '.$post->created_at->year }}</p>
                             </div>
                         </div>
                         <div class="news-one__content">
@@ -985,151 +915,28 @@
                                         <span class="fas fa-tags"></span>
                                     </div>
                                     <div class="text">
-                                        <p>Business</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span>/</span>
-                                    <div class="icon">
-                                        <span class="fas fa-comments"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>2 Comments</p>
+                                        <p>{{$post->category->title_category}}</p>
                                     </div>
                                 </li>
                             </ul>
-                            <h3 class="news-one__title"><a href="news-details.html">Discover 10 ways to solve
-                                    your business problems</a></h3>
-                            <p class="news-one__text">Lorem ipsum dolor sit amet, consect etur adi pisicing elit.
+                            <h3 class="news-one__title"><a href="{{route('berita.detail',['slug'=>$post->slug])}}">{{$post->title_post}}</a></h3>
+                            <p class="news-one__text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
                             </p>
                         </div>
                         <div class="news-one__hover">
                             <div class="news-one__hover-content">
-                                <h3 class="news-one__hover-title"><a href="news-details.html">Discover 10 ways to
-                                        solve
-                                        your business problems</a></h3>
-                                <p class="news-one__hover-text">Lorem ipsum dolor sit amet, consect etur adi
-                                    pisicing
-                                    elit.
+                                <h3 class="news-one__hover-title"><a href="{{route('berita.detail',['slug'=>$post->slug])}}">{{$post->title_post}}</a></h3>
+                                <p class="news-one__hover-text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
                                 </p>
                             </div>
                             <div class="news-one__hover-btn-box">
-                                <a href="news-details.html">Read More<span class="icon-right-arrow"></span></a>
+                                <a href="{{route('berita.detail',['slug'=>$post->slug])}}">Baca Selengkapnya<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!--News One Single End-->
-                <!--News One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="news-one__single">
-                        <div class="news-one__img-box">
-                            <div class="news-one__img">
-                                <img src="{{ asset('fk88/assets/images/blog/news-1-1.jpg') }}" alt="">
-                                <a href="news-details.html">
-                                    <span class="news-one__plus"></span>
-                                </a>
-                            </div>
-                            <div class="news-one__date">
-                                <p>30 Mar, 2023</p>
-                            </div>
-                        </div>
-                        <div class="news-one__content">
-                            <ul class="news-one__meta list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <span class="fas fa-tags"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Business</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span>/</span>
-                                    <div class="icon">
-                                        <span class="fas fa-comments"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>2 Comments</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3 class="news-one__title"><a href="news-details.html">Iterative approaches to
-                                    corporate strategy data</a></h3>
-                            <p class="news-one__text">Lorem ipsum dolor sit amet, consect etur adi pisicing elit.
-                            </p>
-                        </div>
-                        <div class="news-one__hover">
-                            <div class="news-one__hover-content">
-                                <h3 class="news-one__hover-title"><a href="news-details.html">Iterative approaches
-                                        to corporate strategy data</a></h3>
-                                <p class="news-one__hover-text">Lorem ipsum dolor sit amet, consect etur adi
-                                    pisicing
-                                    elit.
-                                </p>
-                            </div>
-                            <div class="news-one__hover-btn-box">
-                                <a href="news-details.html">Read More<span class="icon-right-arrow"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--News One Single End-->
-                <!--News One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="news-one__single">
-                        <div class="news-one__img-box">
-                            <div class="news-one__img">
-                                <img src="{{ asset('fk88/assets/images/blog/news-1-1.jpg') }}" alt="">
-                                <a href="news-details.html">
-                                    <span class="news-one__plus"></span>
-                                </a>
-                            </div>
-                            <div class="news-one__date">
-                                <p>30 Mar, 2023</p>
-                            </div>
-                        </div>
-                        <div class="news-one__content">
-                            <ul class="news-one__meta list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <span class="fas fa-tags"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Business</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <span>/</span>
-                                    <div class="icon">
-                                        <span class="fas fa-comments"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>2 Comments</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3 class="news-one__title"><a href="news-details.html">corporate strategy data foster
-                                    to collabo</a></h3>
-                            <p class="news-one__text">Lorem ipsum dolor sit amet, consect etur adi pisicing elit.
-                            </p>
-                        </div>
-                        <div class="news-one__hover">
-                            <div class="news-one__hover-content">
-                                <h3 class="news-one__hover-title"><a href="news-details.html">corporate strategy
-                                        data foster to collabo</a></h3>
-                                <p class="news-one__hover-text">Lorem ipsum dolor sit amet, consect etur adi
-                                    pisicing
-                                    elit.
-                                </p>
-                            </div>
-                            <div class="news-one__hover-btn-box">
-                                <a href="news-details.html">Read More<span class="icon-right-arrow"></span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--News One Single End-->
+                @endforeach
             </div>
             <div class="about-one__btn-box text-center" style="display: block;">
                 <a href="{{route('berita.index')}}" class="about-one__btn thm-btn">Berita  Terbaru Lainnya</a>
@@ -1146,23 +953,23 @@
                     <h2 class="section-title__title">Update Terkini</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <!--SOSMED Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-xl-5 col-lg-5 wow fadeInUp" data-wow-delay="100ms">
                     <div class="news-one__single" >
                         <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div>
                     </div>
                 </div>
                 <!--SOSMED Single End-->
                 <!--SOSMED Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                {{-- <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                     <div class="news-one__single" >
                         <div class="fb-page" data-href="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179">BAPENDA Kaltim</a></blockquote></div>
                     </div>
-                </div>
+                </div> --}}
                 <!--SOSMED Single End-->
                 <!--SOSMED Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                <div class="col-xl-5 col-lg-5 wow fadeInUp" data-wow-delay="200ms">
                     <div class="news-one__single">
                         <div id="gpr-kominfo-widget-container"></div>
                     </div>
@@ -1232,7 +1039,7 @@
 @endsection
 
 @push('js')
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v10.0" nonce="2koYxy6w"></script>
+{{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v10.0" nonce="2koYxy6w"></script> --}}
 <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 {{-- <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div> --}}

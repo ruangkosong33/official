@@ -44,7 +44,7 @@ $totalVisitor = Visitor::count();
                             </li>
                             <li>
                                 <div class="icon">
-                                    <span class="fas fa-phone-square"></span>
+                                    <span class="fas fa-clock"></span>
                                 </div>
                                 <div class="text">
                                     <a href="javascript:;">Jumat :  07.30 – 11.30</a>
@@ -52,7 +52,7 @@ $totalVisitor = Visitor::count();
                             </li>
                             <li>
                                 <div class="icon">
-                                    <span class="fas fa-phone-square"></span>
+                                    <span class="fas fa-clock"></span>
                                 </div>
                                 <div class="text">
                                     <a href="javascript:;">Sabtu – Minggu : Tutup</a>
