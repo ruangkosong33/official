@@ -6,13 +6,15 @@ use App\Models\Video;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Intervention\Image\Facades\Image;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class VideoController extends Controller
 {
     public function index()
     {
-        $video=Video::with(['category'])->latest()->paginate(7);
+        $video=Video::with(['category'])->latest()->get();
         // dd($video[0]);
         return view('admin.pages.video.index-video', ['video'=>$video]);
     }

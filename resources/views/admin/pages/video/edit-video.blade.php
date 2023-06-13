@@ -31,22 +31,6 @@
                         <form action="{{route('video.store')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
-                                <div class="form-group row">
-                                    <label for="category_id" class="col-sm-2">Kategori</label>
-                                    <div class="col-sm-6">
-                                        <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" id="category_id">
-                                            <option disabledvalue="">--Pilih--</option>
-                                            @foreach ($category as $categorys)
-                                                <option value={{$categorys->id}}>{{$categorys->title_category}}</option>
-                                            @endforeach
-                                      </select>
-
-                                      @error('category_id')
-                                      <span class="invalid-feedback">{{$message}}</span>
-                                      @enderror
-
-                                    </div>
-                                </div>
 
                                 <div class="form-group row">
                                     <label fo="title_video" class="col-sm-2 col-form-label">Judul</label>

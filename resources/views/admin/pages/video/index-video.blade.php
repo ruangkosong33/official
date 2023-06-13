@@ -41,7 +41,6 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Kategori</th>
                                 <th>Judul</th>
                                 <th>Gambar</th>
                                 <th>Link</th>
@@ -53,9 +52,8 @@
                             @foreach ($video as $key=>$videos)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$videos->category->title_category}}</td>
                                 <td>{{$videos->title_video}}</td>
-                                <td><img src="{{asset('uploads/image-video/'. $videos->image_video)}}"></td>
+                                <td><img height="55px" src="{{asset('uploads/image-video/'. $videos->image_video)}}"></td>
                                 <td>{{$videos->link}}</td>
                                 <td><span class="badge badge-pill badge-success">{{$videos->status == 0 ? 'Draft':'Publish'}}</span></td>
                                 <td>
