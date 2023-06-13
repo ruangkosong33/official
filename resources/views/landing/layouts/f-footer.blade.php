@@ -31,24 +31,15 @@ $totalVisitor = Visitor::count();
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                     <div class="footer-widget__column footer-widget__newsletter">
                         <div class="footer-widget__title-box">
-                            <h3 class="footer-widget__title">Newsletter</h3>
+                            <h3 class="footer-widget__title">JAM PELAYANAN</h3>
                         </div>
-                        <form class="footer-widget__newsletter-form mc-form" data-url="MC_FORM_URL"
-                            novalidate="novalidate">
-                            <div class="footer-widget__newsletter-form-input-box">
-                                <input type="email" placeholder="Your email" name="EMAIL">
-                                <button type="submit" class="footer-widget__newsletter-btn"><span
-                                        class="fas fa-paper-plane"></span></button>
-                            </div>
-                        </form>
-                        <div class="mc-form__response"></div>
                         <ul class="footer-widget__Contact-list list-unstyled">
                             <li>
                                 <div class="icon">
-                                    <span class="fas fa-envelope"></span>
+                                    <span class="fas fa-clock"></span>
                                 </div>
                                 <div class="text">
-                                    <a href="mailto:needhelp@company.com">needhelp@company.com</a>
+                                    <a href="javascript:;">Senin – Kamis :  07.30 – 16.00</a>
                                 </div>
                             </li>
                             <li>
@@ -56,7 +47,15 @@ $totalVisitor = Visitor::count();
                                     <span class="fas fa-phone-square"></span>
                                 </div>
                                 <div class="text">
-                                    <a href="tel:+926668880000">+92 (666) 888 0000</a>
+                                    <a href="javascript:;">Jumat :  07.30 – 11.30</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <span class="fas fa-phone-square"></span>
+                                </div>
+                                <div class="text">
+                                    <a href="javascript:;">Sabtu – Minggu : Tutup</a>
                                 </div>
                             </li>
                         </ul>

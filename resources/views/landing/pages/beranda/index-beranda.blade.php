@@ -12,7 +12,7 @@
                     <div class="about-one__left">
                         <div class="about-one__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div class="about-one__img">
-                                <img src="{{ asset('fk88/assets/images/resources/about-one-img-1.jpg') }}" alt="">
+                                <img src="{{ asset('fk88/assets/images/bpkad/400x504.png') }}" alt="">
                                 <div class="about-one__shape-1 float-bob-x">
                                     <img src="{{ asset('fk88/assets/images/shapes/about-one-shape-1.png') }}"
                                         alt="">
@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="about-one__img-2">
-                                <img src="{{ asset('fk88/assets/images/resources/about-one-img-2.jpg') }}" alt="">
+                                <img src="{{ asset('fk88/assets/images/bpkad/404x440.png') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -268,7 +268,7 @@
 
     <!--Video One Start-->
     <section class="video-one">
-        <div class="video-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/video-one-bg.jpg);"></div>
+        <div class="video-one__bg" style="background-image: url(../fk88/assets/images/bpkad/1894x907.png);"></div>
         <div class="container">
             <div class="video-one__inner">
                 <div class="video-one__video-link">
