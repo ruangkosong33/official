@@ -32,10 +32,9 @@
                     <div class="about-one__right">
                         <div class="section-title text-left">
                             <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">Welcome to agency</span>
+                                <span class="section-title__tagline">Selamat Datang</span>
                             </div>
-                            <h2 class="section-title__title">Delivering the Best
-                                Consulting <span>Experience</span></h2>
+                            <h2 class="section-title__title">Badan Pengelolaan Keuangan & Aset Daerah</h2>
                         </div>
                         <p class="about-one__text">Lorem ipsum dolor sit amet, consectetur notted adipisicing elit
                             sed do eiusmod tempor incididunt ut labore et simply free text dolore magna aliqua lonm
@@ -78,14 +77,6 @@
                                         </div>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="about-one__experience-box">
-                                <div class="about-one__experience-icon">
-                                    <span class="icon-certificate"></span>
-                                </div>
-                                <div class="about-one__experience-text">
-                                    <p>10 Years of Consulting Experience</p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -132,19 +123,19 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="capital-market.html">Capital Market</a>
+                                <h3 class="services-one__title"><a href="https://www.kaltimprov.go.id/">Pemprov Kaltim</a>
                                 </h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{asset('fk88/assets/images/services/services-1-1.jpg')}}" alt="">
+                                    <img src="{{asset('fk88/assets/images/logo/link-1.png')}}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-pie-chart"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="capital-market.html">Read More<span class="icon-right-arrow"></span></a>
+                                <a href="https://www.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -153,18 +144,18 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="insurance.html">Insurance</a></h3>
+                                <h3 class="services-one__title"><a href="https://sikap.kaltimprov.go.id/">SIKAP</a></h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{asset('fk88/assets/images/services/services-1-2.jpg')}}" alt="">
+                                    <img src="{{asset('fk88/assets/images/logo/sikap.png')}}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-insurance"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="insurance.html">Read More<span class="icon-right-arrow"></span></a>
+                                <a href="https://sikap.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -173,19 +164,19 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="mutual-funds.html">Mutual Funds</a>
+                                <h3 class="services-one__title"><a href="http://sidirga.kaltimprov.go.id/">SIDIRGA</a>
                                 </h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{asset('fk88/assets/images/services/services-1-3.jpg')}}" alt="">
+                                    <img src="{{asset('fk88/assets/images/logo/sidirga.png')}}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-money-bag"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="mutual-funds.html">Read More<span class="icon-right-arrow"></span></a>
+                                <a href="http://sidirga.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -194,19 +185,18 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="portfolio-mangement.html">Portfolio
-                                        Management</a></h3>
+                                <h3 class="services-one__title"><a href="https://bpkad.kaltimprov.go.id/ppid/">PPID</a></h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{asset('fk88/assets/images/services/services-1-4.jpg')}}" alt="">
+                                    <img src="{{asset('fk88/assets/images/logo/ppid.png')}}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-profile"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="portfolio-mangement.html">Read More<span class="icon-right-arrow"></span></a>
+                                <a href="https://bpkad.kaltimprov.go.id/ppid/">Lihat<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -228,10 +218,9 @@
                         <div class="grow-business__left">
                             <div class="section-title text-left">
                                 <div class="section-title__tagline-box">
-                                    <span class="section-title__tagline">Human resources</span>
+                                    <span class="section-title__tagline">Kepala BPKAD Porvinsi Kaltim</span>
                                 </div>
-                                <h2 class="section-title__title">Let’s Grow Business
-                                    with a New <span>Strategies</span></h2>
+                                <h2 class="section-title__title">H.Fahmi Prima Laksana,SE.,MM</h2>
                             </div>
                             <p class="grow-business__text">Duis aute irure dolor in reprehenderit in voluptate velit
                                 esse cillum dolore eu convenient scheduling, account nulla pariatur.</p>
@@ -261,14 +250,6 @@
                                     </div>
                                 </li>
                             </ul>
-                            <div class="grow-business__progress">
-                                <h4 class="grow-business__progress-title">Consulting</h4>
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="86%">
-                                        <div class="count-text">86%</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
@@ -276,32 +257,7 @@
                             <div class="grow-business__shape-1 float-bob-x">
                                 <img src="{{asset('fk88/assets/images/shapes/grow-business-shape-1.png')}}" alt="">
                             </div>
-                            <ul class="grow-business__right-points list-unstyled">
-                                <li>
-                                    <div class="grow-business__right-points-icon">
-                                        <span class="icon-experience"></span>
-                                    </div>
-                                    <h3 class="grow-business__right-points-title">Benefits by Investing
-                                        <br> your Money
-                                    </h3>
-                                    <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
-                                        tincidunt.
-                                        <br> Donec fermentum, elit sit amet
-                                    </p>
-                                </li>
-                                <li>
-                                    <div class="grow-business__right-points-icon">
-                                        <span class="icon-consumer-behavior"></span>
-                                    </div>
-                                    <h3 class="grow-business__right-points-title">The most Time-Consuming
-                                        <br> Components
-                                    </h3>
-                                    <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
-                                        tincidunt.
-                                        <br> Donec fermentum, elit sit amet
-                                    </p>
-                                </li>
-                            </ul>
+                            <img src="{{asset('fk88/assets/images/team/kepala.png')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -316,18 +272,18 @@
         <div class="container">
             <div class="video-one__inner">
                 <div class="video-one__video-link">
-                    <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
+                    <a href="https://www.youtube.com/watch?v=3dpGlMsgk3w" class="video-popup">
                         <div class="video-one__video-icon">
-                            <img src="{{asset('fk88/assets/images/icon/video-one-icon.png')}}" alt="">
                             <i class="ripple"></i>
+                            <img src="{{asset('fk88/assets/images/icon/play.png')}}" alt="">
                         </div>
                     </a>
                 </div>
-                <h3 class="video-one__title">Sinace Envision & Transofrm
-                    <br> Your Business
+                <h3 class="video-one__title">Badan Pengelolaan Keuangan & Aset Daerah
+                    <br> Provinsi KALTIM
                 </h3>
-                <div class="video-one__btn-box">
-                    <a href="about.html" class="video-one__btn thm-btn">Discover More</a>
+                <div class="video-one__btn-box" style="visibility: hidden;">
+                    <a href="#" class="video-one__btn thm-btn">Discover More</a>
                 </div>
             </div>
         </div>
