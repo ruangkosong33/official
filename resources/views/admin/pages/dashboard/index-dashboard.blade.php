@@ -3,6 +3,7 @@
 @push('css')
     <meta name="url_data_chart_visitor" content="{{ route('data.chart.visitor') }}">
     <meta name="url_data_chart_category" content="{{ route('data.chart.category') }}">
+    <meta name="url_data_chart_articles" content="{{ route('data.chart.articles') }}">
 @endpush
 
 @section('content')
@@ -158,11 +159,14 @@
 
                             <div class="d-flex flex-row justify-content-end">
                                 <span class="mr-2">
-                                    <i class="fas fa-square text-primary"></i> This year
+                                    <i class="fas fa-square text-primary"></i> Berita
                                 </span>
 
+                                <span class="mr-2">
+                                    <i class="fas fa-square text-gray"></i> Video
+                                </span>
                                 <span>
-                                    <i class="fas fa-square text-gray"></i> Last year
+                                    <i class="fas fa-square text-info"></i> Galery
                                 </span>
                             </div>
                         </div>
@@ -236,7 +240,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer text-center">
-                            <a href="{{route('post.index')}}" class="uppercase">Lihat Semua Berita</a>
+                            <a href="{{ route('post.index') }}" class="uppercase">Lihat Semua Berita</a>
                         </div>
                         <!-- /.card-footer -->
                     </div>
@@ -321,78 +325,76 @@
             })
         })
 
-
-        var ticksStyle = {
-            fontColor: '#495057',
-            fontStyle: 'bold'
-        }
-
-        var mode = 'index'
-        var intersect = true
-
-        var $salesChart = $('#sales-chart')
-        // eslint-disable-next-line no-unused-vars
-        var salesChart = new Chart($salesChart, {
-            type: 'bar',
-            data: {
-                labels: ['JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-                datasets: [{
-                        backgroundColor: '#007bff',
-                        borderColor: '#007bff',
-                        data: [1000, 2000, 3000, 2500, 2700, 2500, 3000]
-                    },
-                    {
-                        backgroundColor: '#ced4da',
-                        borderColor: '#ced4da',
-                        data: [700, 1700, 2700, 2000, 1800, 1500, 2000]
-                    }
-                ]
-            },
-            options: {
-                maintainAspectRatio: false,
-                tooltips: {
-                    mode: mode,
-                    intersect: intersect
-                },
-                hover: {
-                    mode: mode,
-                    intersect: intersect
-                },
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        // display: false,
-                        gridLines: {
-                            display: true,
-                            lineWidth: '4px',
-                            color: 'rgba(0, 0, 0, .2)',
-                            zeroLineColor: 'transparent'
-                        },
-                        ticks: $.extend({
-                            beginAtZero: true,
-
-                            // Include a dollar sign in the ticks
-                            callback: function(value) {
-                                if (value >= 1000) {
-                                    value /= 1000
-                                    value += 'k'
-                                }
-
-                                return '$' + value
-                            }
-                        }, ticksStyle)
-                    }],
-                    xAxes: [{
-                        display: true,
-                        gridLines: {
-                            display: false
-                        },
-                        ticks: ticksStyle
-                    }]
-                }
+        let urlArticles = $('meta[name="url_data_chart_articles"]').attr('content');
+        $.get(urlArticles, function(data) {
+            console.log(data);
+            var ticksStyle = {
+                fontColor: '#495057',
+                fontStyle: 'bold'
             }
+
+            var mode = 'index'
+            var intersect = true
+
+            var $salesChart = $('#sales-chart')
+            // eslint-disable-next-line no-unused-vars
+            var salesChart = new Chart($salesChart, {
+                type: 'bar',
+                data: {
+                    labels: data.months,
+                    datasets: [{
+                            backgroundColor: '#007bff',
+                            borderColor: '#007bff',
+                            data: data.data.post
+                        },
+                        {
+                            backgroundColor: '#ced4da',
+                            borderColor: '#ced4da',
+                            data: data.data.video
+                        },
+                        {
+                            backgroundColor: '#07ECB0',
+                            borderColor: '#07ECB0',
+                            data: data.data.gallery
+                        }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    tooltips: {
+                        mode: mode,
+                        intersect: intersect
+                    },
+                    hover: {
+                        mode: mode,
+                        intersect: intersect
+                    },
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            // display: false,
+                            gridLines: {
+                                display: true,
+                                lineWidth: '4px',
+                                color: 'rgba(0, 0, 0, .2)',
+                                zeroLineColor: 'transparent'
+                            },
+                            ticks: $.extend({
+                                beginAtZero: true,
+                            }, ticksStyle)
+                        }],
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: ticksStyle
+                        }]
+                    }
+                }
+            })
         })
 
         //-------------

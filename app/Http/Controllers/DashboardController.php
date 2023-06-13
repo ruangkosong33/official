@@ -59,6 +59,23 @@ class DashboardController extends Controller
         ], 200);
     }
 
+    public function getDataChartArticles(){
+        $now = Carbon::now();
+        $months = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Oct','Nov','Des'];
+        $data['post'] = [0,0,0,0,0,0,0,0,0,0,0,0];
+        $data['video'] = [0,0,0,0,0,0,0,0,0,0,0,0];
+        $data['gallery'] = [0,0,0,0,0,0,0,0,0,0,0,0];
+        for ($i=0; $i < count($months); $i++) {
+            $data['post'][$i] = Post::whereMonth('created_at',$i+1)->whereYear('created_at',$now->year)->count();
+            $data['video'][$i] = Video::whereMonth('created_at',$i+1)->whereYear('created_at',$now->year)->count();
+            $data['gallery'][$i] = Gallery::whereMonth('created_at',$i+1)->whereYear('created_at',$now->year)->count();
+        }
+        return response()->json([
+            'months'=>$months,
+            'data'=>$data,
+        ], 200);
+    }
+
     public function getDataChartCategory()
     {
         $categories = Category::all();

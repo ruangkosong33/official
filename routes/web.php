@@ -172,10 +172,11 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
 {
     //Dashboard
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-        // Data for chart
-        Route::get('get-datachart-visitor', [DashboardController::class,'getDataChartVisitor'])->name('data.chart.visitor');
-        Route::get('get-datachart-category', [DashboardController::class,'getDataChartCategory'])->name('data.chart.category');
-    
+    // Data for chart
+    Route::get('get-datachart-visitor', [DashboardController::class,'getDataChartVisitor'])->name('data.chart.visitor');
+    Route::get('get-datachart-category', [DashboardController::class,'getDataChartCategory'])->name('data.chart.category');
+    Route::get('get-datachart-articles', [DashboardController::class,'getDataChartArticles'])->name('data.chart.articles');
+
 
     Route::get('/test', [TestController::class, 'index'])->name('test.index');
     Route::post('/test', [TestController::class, 'store'])->name('test.store');
