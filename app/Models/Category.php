@@ -33,6 +33,6 @@ class Category extends Model
 
     public function gallery()
     {
-        return $this->hasMany(Gallery::class, 'gallery_id', 'id');
+        return $this->hasMany(Gallery::class, 'category_id', 'id');
     }
 }

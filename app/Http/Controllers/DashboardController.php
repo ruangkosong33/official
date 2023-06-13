@@ -65,7 +65,8 @@ class DashboardController extends Controller
         $dataChartKategori = [];
         foreach ($categories as $key => $category) {
             $dataChartKategori['labels'][] = $category->title_category;
-			$dataChartKategori['data'][] = $category->post()->count();
+            $count = $category->post()->count() + $category->gallery()->count();
+			$dataChartKategori['data'][] = $count;
         }
         return response()->json($dataChartKategori, 200);
     }
