@@ -260,7 +260,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::post('/profil/event', [EventController::class, 'store'])->name('event.store');
     Route::get('/profil/event/edit/{id}', [EventController::class, 'edit'])->name('event.edit');
     Route::put('/profil/event/{id}', [EventController::class, 'update'])->name('event.update');
-    Route::get('/profil/event/{id}', [EventController::class, 'destroy'])->name('event.destroy');
+    Route::delete('/profil/event/{id}', [EventController::class, 'destroy'])->name('event.destroy');
 
     //ORGANIZATION//
     //Division

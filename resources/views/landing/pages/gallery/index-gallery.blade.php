@@ -73,6 +73,7 @@
                     </div>
                     <!--News One Single End-->
                 @endforeach
+                {!! $galleries->withQueryString()->links('pagination::bootstrap-5') !!}
             </div>
         </div>
     </section>

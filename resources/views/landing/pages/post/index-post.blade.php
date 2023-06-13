@@ -75,6 +75,7 @@
                     </div>
                     <!--News One Single End-->
                 @endforeach
+                {!! $posts->withQueryString()->links('pagination::bootstrap-5') !!}
             </div>
         </div>
     </section>

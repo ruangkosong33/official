@@ -128,7 +128,7 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{asset('fk88/assets/images/logo/link-1.png')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/logo/link-1.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-pie-chart"></span>
@@ -148,7 +148,7 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{asset('fk88/assets/images/logo/sikap.png')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/logo/sikap.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-insurance"></span>
@@ -169,7 +169,7 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{asset('fk88/assets/images/logo/sidirga.png')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/logo/sidirga.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-money-bag"></span>
@@ -185,18 +185,20 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="https://bpkad.kaltimprov.go.id/ppid/">PPID</a></h3>
+                                <h3 class="services-one__title"><a href="https://bpkad.kaltimprov.go.id/ppid/">PPID</a>
+                                </h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{asset('fk88/assets/images/logo/ppid.png')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/logo/ppid.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-profile"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="https://bpkad.kaltimprov.go.id/ppid/">Lihat<span class="icon-right-arrow"></span></a>
+                                <a href="https://bpkad.kaltimprov.go.id/ppid/">Lihat<span
+                                        class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -255,7 +257,8 @@
                     <div class="col-xl-6">
                         <div class="grow-business__right">
                             <div class="grow-business__shape-1 float-bob-x">
-                                <img src="{{asset('fk88/assets/images/shapes/grow-business-shape-1.png')}}" alt="">
+                                <img src="{{ asset('fk88/assets/images/shapes/grow-business-shape-1.png') }}"
+                                    alt="">
                             </div>
                             {{-- <img src="{{asset('fk88/assets/images/team/kepala.png')}}" alt=""> --}}
                             <ul class="grow-business__right-points list-unstyled">
@@ -264,20 +267,24 @@
                                         <span class="icon-experience"></span>
                                     </div>
                                     <h3 class="grow-business__right-points-title">Benefits by Investing
-                                        <br> your Money</h3>
+                                        <br> your Money
+                                    </h3>
                                     <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
                                         tincidunt.
-                                        <br> Donec fermentum, elit sit amet</p>
+                                        <br> Donec fermentum, elit sit amet
+                                    </p>
                                 </li>
                                 <li>
                                     <div class="grow-business__right-points-icon">
                                         <span class="icon-consumer-behavior"></span>
                                     </div>
                                     <h3 class="grow-business__right-points-title">The most Time-Consuming
-                                        <br> Components</h3>
+                                        <br> Components
+                                    </h3>
                                     <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
                                         tincidunt.
-                                        <br> Donec fermentum, elit sit amet</p>
+                                        <br> Donec fermentum, elit sit amet
+                                    </p>
                                 </li>
                             </ul>
                         </div>
@@ -297,7 +304,7 @@
                     <a href="https://www.youtube.com/watch?v=3dpGlMsgk3w" class="video-popup">
                         <div class="video-one__video-icon">
                             <i class="ripple"></i>
-                            <img src="{{asset('fk88/assets/images/icon/play.png')}}" alt="">
+                            <img src="{{ asset('fk88/assets/images/icon/play.png') }}" alt="">
                         </div>
                     </a>
                 </div>
@@ -314,7 +321,8 @@
 
     <!--Testimonial One Start-->
     <section class="testimonial-one">
-        <div class="testimonial-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/testimonial-one-bg.jpg);">
+        <div class="testimonial-one__bg"
+            style="background-image: url(../fk88/assets/images/backgrounds/testimonial-one-bg.jpg);">
         </div>
         <div class="container">
             <div class="row">
@@ -338,7 +346,8 @@
                                     </span>
                                 </div><!-- /.curved-circle -->
                                 <div class="testimonial-one__icon">
-                                    <img src="{{asset('fk88/assets/images/icon/main-slider-two-rounded-icon.png')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/icon/main-slider-two-rounded-icon.png') }}"
+                                        alt="">
                                 </div>
                             </a>
                         </div>
@@ -378,7 +387,8 @@
                                         <div class="testimonial-one__shape-1"></div>
                                         <div class="testimonial-one__shape-2"></div>
                                         <div class="testimonial-one__img">
-                                            <img src="{{asset('fk88/assets/images/testimonial/testimonial-1-1.jpg')}}" alt="">
+                                            <img src="{{ asset('fk88/assets/images/testimonial/testimonial-1-1.jpg') }}"
+                                                alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <span class="fa fa-star"></span>
@@ -406,7 +416,8 @@
                                         <div class="testimonial-one__shape-1"></div>
                                         <div class="testimonial-one__shape-2"></div>
                                         <div class="testimonial-one__img">
-                                            <img src="{{asset('fk88/assets/images/testimonial/testimonial-1-2.jpg')}}" alt="">
+                                            <img src="{{ asset('fk88/assets/images/testimonial/testimonial-1-2.jpg') }}"
+                                                alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <span class="fa fa-star"></span>
@@ -434,7 +445,8 @@
                                         <div class="testimonial-one__shape-1"></div>
                                         <div class="testimonial-one__shape-2"></div>
                                         <div class="testimonial-one__img">
-                                            <img src="{{asset('fk88/assets/images/testimonial/testimonial-1-3.jpg')}}" alt="">
+                                            <img src="{{ asset('fk88/assets/images/testimonial/testimonial-1-3.jpg') }}"
+                                                alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <span class="fa fa-star"></span>
@@ -500,30 +512,32 @@
                     }
                 }'>
                     @foreach ($latestGallery as $gallery)
-                        
-                    <!--Project One Single Start-->
-                    <div class="item">
-                        <div class="project-one__single">
-                            <div class="project-one__img-box">
-                                <div class="project-one__img">
-                                    <img src="{{asset('uploads/image-gallery/'.$gallery->image_gallery)}}" alt="">
+                        <!--Project One Single Start-->
+                        <div class="item">
+                            <div class="project-one__single">
+                                <div class="project-one__img-box">
+                                    <div class="project-one__img">
+                                        <img src="{{ asset('uploads/image-gallery/' . $gallery->image_gallery) }}"
+                                            alt="">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="project-one__content">
-                                <p>{{$gallery->category->title_category}}</p>
-                                <h3><a href="{{route('landing.gallery.detail',['slug'=>$gallery->slug])}}">{{ substr(strip_tags($gallery->title_gallery), 0, 45) . '...' }}</h3>
-                                <div class="project-one__arrow">
-                                    <a href="{{route('landing.gallery.detail',['slug'=>$gallery->slug])}}"><span class="icon-right-arrow"></span></a>
+                                <div class="project-one__content">
+                                    <p>{{ $gallery->category->title_category }}</p>
+                                    <h3><a href="{{ route('landing.gallery.detail', ['slug' => $gallery->slug]) }}">{{ substr(strip_tags($gallery->title_gallery), 0, 45) . '...' }}
+                                    </h3>
+                                    <div class="project-one__arrow">
+                                        <a href="{{ route('landing.gallery.detail', ['slug' => $gallery->slug]) }}"><span
+                                                class="icon-right-arrow"></span></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!--Project One Single End-->
+                        <!--Project One Single End-->
                     @endforeach
                 </div>
             </div>
             <div class="about-one__btn-box text-center" style="display: block;margin-top: 25px;">
-                <a href="{{route('landing.gallery.index')}}" class="about-one__btn thm-btn">Lihat Lainnya</a>
+                <a href="{{ route('landing.gallery.index') }}" class="about-one__btn thm-btn">Lihat Lainnya</a>
             </div>
         </div>
     </section>
@@ -562,7 +576,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="{{asset('fk88/assets/images/team/team-1-1.jpg')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/team/team-1-1.jpg') }}" alt="">
                                 </div>
                                 <div class="team-one__hover-content">
                                     <div class="team-one__hover-arrow-box">
@@ -598,7 +612,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="{{asset('fk88/assets/images/team/team-1-2.jpg')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/team/team-1-2.jpg') }}" alt="">
                                 </div>
                                 <div class="team-one__hover-content">
                                     <div class="team-one__hover-arrow-box">
@@ -634,7 +648,7 @@
                         <div class="team-one__single">
                             <div class="team-one__img-box">
                                 <div class="team-one__img">
-                                    <img src="{{asset('fk88/assets/images/team/team-1-3.jpg')}}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/team/team-1-3.jpg') }}" alt="">
                                 </div>
                                 <div class="team-one__hover-content">
                                     <div class="team-one__hover-arrow-box">
@@ -675,7 +689,8 @@
     <section class="counter-one">
         <div class="counter-one__inner">
             <div class="counter-one__shadow"></div>
-            <div class="counter-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/counter-one-bg.jpg);">
+            <div class="counter-one__bg"
+                style="background-image: url(../fk88/assets/images/backgrounds/counter-one-bg.jpg);">
             </div>
             <div class="container">
                 <div class="row">
@@ -894,52 +909,60 @@
             </div>
             <div class="row">
                 @foreach ($latestPost as $post)
-                <!--News One Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="news-one__single">
-                        <div class="news-one__img-box">
-                            <div class="news-one__img">
-                                <img src="{{asset('uploads/image-post/'.$post->image_post)}}" alt="">
-                                <a href="{{route('berita.detail',['slug'=>$post->slug])}}">
-                                    <span class="news-one__plus"></span>
-                                </a>
+                    <!--News One Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="news-one__single">
+                            <div class="news-one__img-box">
+                                <div class="news-one__img">
+                                    <img src="{{ asset('uploads/image-post/' . $post->image_post) }}" alt="">
+                                    <a href="{{ route('berita.detail', ['slug' => $post->slug]) }}">
+                                        <span class="news-one__plus"></span>
+                                    </a>
+                                </div>
+                                <div class="news-one__date">
+                                    <p>{{ $post->created_at->format('d') . ' ' . $post->created_at->monthName . ', ' . $post->created_at->year }}
+                                    </p>
+                                </div>
                             </div>
-                            <div class="news-one__date">
-                                <p>{{ $post->created_at->format('d').' '.$post->created_at->monthName.', '.$post->created_at->year }}</p>
-                            </div>
-                        </div>
-                        <div class="news-one__content">
-                            <ul class="news-one__meta list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <span class="fas fa-tags"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>{{$post->category->title_category}}</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3 class="news-one__title"><a href="{{route('berita.detail',['slug'=>$post->slug])}}">{{$post->title_post}}</a></h3>
-                            <p class="news-one__text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
-                            </p>
-                        </div>
-                        <div class="news-one__hover">
-                            <div class="news-one__hover-content">
-                                <h3 class="news-one__hover-title"><a href="{{route('berita.detail',['slug'=>$post->slug])}}">{{$post->title_post}}</a></h3>
-                                <p class="news-one__hover-text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
+                            <div class="news-one__content">
+                                <ul class="news-one__meta list-unstyled">
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fas fa-tags"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>{{ $post->category->title_category }}</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <h3 class="news-one__title"><a
+                                        href="{{ route('berita.detail', ['slug' => $post->slug]) }}">{{ $post->title_post }}</a>
+                                </h3>
+                                <p class="news-one__text">
+                                    {{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
                                 </p>
                             </div>
-                            <div class="news-one__hover-btn-box">
-                                <a href="{{route('berita.detail',['slug'=>$post->slug])}}">Baca Selengkapnya<span class="icon-right-arrow"></span></a>
+                            <div class="news-one__hover">
+                                <div class="news-one__hover-content">
+                                    <h3 class="news-one__hover-title"><a
+                                            href="{{ route('berita.detail', ['slug' => $post->slug]) }}">{{ $post->title_post }}</a>
+                                    </h3>
+                                    <p class="news-one__hover-text">
+                                        {{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
+                                    </p>
+                                </div>
+                                <div class="news-one__hover-btn-box">
+                                    <a href="{{ route('berita.detail', ['slug' => $post->slug]) }}">Baca Selengkapnya<span
+                                            class="icon-right-arrow"></span></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--News One Single End-->
+                    <!--News One Single End-->
                 @endforeach
             </div>
             <div class="about-one__btn-box text-center" style="display: block;">
-                <a href="{{route('berita.index')}}" class="about-one__btn thm-btn">Berita  Terbaru Lainnya</a>
+                <a href="{{ route('berita.index') }}" class="about-one__btn thm-btn">Berita Terbaru Lainnya</a>
             </div>
         </div>
     </section>
@@ -955,23 +978,52 @@
             </div>
             <div class="row justify-content-center">
                 <!--SOSMED Single Start-->
-                <div class="col-xl-5 col-lg-5 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="news-one__single" >
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="news-one__single">
                         <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div>
                     </div>
                 </div>
                 <!--SOSMED Single End-->
+
                 <!--SOSMED Single Start-->
-                {{-- <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="news-one__single" >
-                        <div class="fb-page" data-href="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179" class="fb-xfbml-parse-ignore"><a href="https://web.facebook.com/pages/Bpkad-Prov-Kaltim/2249799115046179">BAPENDA Kaltim</a></blockquote></div>
-                    </div>
-                </div> --}}
-                <!--SOSMED Single End-->
-                <!--SOSMED Single Start-->
-                <div class="col-xl-5 col-lg-5 wow fadeInUp" data-wow-delay="200ms">
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                     <div class="news-one__single">
                         <div id="gpr-kominfo-widget-container"></div>
+                    </div>
+                </div>
+                <!--SOSMED Single End-->
+                <!--SOSMED Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="news-one__single">
+                        <div class="sidebar__single sidebar__post">
+                            <h3 class="sidebar__title">Jadwal Kegiatan</h3>
+                            <ul class="sidebar__post-list list-unstyled">
+                                @forelse ($latestEvent as $event)
+                                    
+                                <li>
+                                    <div class="sidebar__post-content">
+                                        <h3>
+                                            @php
+                                                $date_event = \Carbon\Carbon::parse($event->date_event);
+                                            @endphp
+                                            <span class="sidebar__post-content-meta"><i
+                                                    class="fas fa-clock"></i>{{ $date_event->format('d').' '.$date_event->monthName.', '.$date_event->year }}</span>
+                                            <a
+                                                href="{{ route('profil.event') }}">{{ substr($event->title_event, 0, 35) . '...' }}</a>
+                                        </h3>
+                                    </div>
+                                </li>
+                                @empty
+                                    <div style="height: 400px;" class="text-center">
+                                        <p style="vertical-align: middle;">Belum ada jadwal kegiatan</p>
+                                    </div>
+                                @endforelse 
+                            </ul>
+                            <div class="about-one__btn-box text-center mt-5" style="display: block;">
+                                <a href="{{ route('profil.event') }}" class="about-one__btn thm-btn">Jadwal Kegiatan
+                                    Lainnya</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!--SOSMED Single End-->
@@ -985,12 +1037,15 @@
         <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/contact-one-bg.jpg);">
         </div>
         <div class="contact-one__shape-1 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/contact-one-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/contact-one-shape-1.png') }}" alt="">
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 mx-auto">
-                        <iframe width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.66298776662!2d117.139331!3d-0.501074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67fa0cf3b5609%3A0x9efc250dd531e8b4!2sKantor%20Gubernur%20Kalimantan%20Timur!5e0!3m2!1sen!2sus!4v1686381485332!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe width="100%" height="100%"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.66298776662!2d117.139331!3d-0.501074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67fa0cf3b5609%3A0x9efc250dd531e8b4!2sKantor%20Gubernur%20Kalimantan%20Timur!5e0!3m2!1sen!2sus!4v1686381485332!5m2!1sen!2sus"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="contact-one__right">
@@ -1026,7 +1081,8 @@
                                 </div>
                                 <div class="text">
                                     <p>Alamat</p>
-                                    <h3>Jl. Gajah Mada No.2, Jawa, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur 75242</h3>
+                                    <h3>Jl. Gajah Mada No.2, Jawa, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur
+                                        75242</h3>
                                 </div>
                             </li>
                         </ul>
@@ -1039,8 +1095,8 @@
 @endsection
 
 @push('js')
-{{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v10.0" nonce="2koYxy6w"></script> --}}
-<script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-{{-- <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div> --}}
+    {{-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v10.0" nonce="2koYxy6w"></script> --}}
+    <script type="text/javascript" src="https://widget.kominfo.go.id/gpr-widget-kominfo.min.js"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    {{-- <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div> --}}
 @endpush

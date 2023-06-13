@@ -55,7 +55,7 @@
                                             <span class="fas fa-tags"></span>
                                         </div>
                                         <div class="text">
-                                            <p>{{$video->category->title_category}}</p>
+                                            <p>Vidio</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -73,6 +73,7 @@
                     </div>
                     <!--News One Single End-->
                 @endforeach
+                {!! $videos->withQueryString()->links('pagination::bootstrap-5') !!}
             </div>
         </div>
     </section>
