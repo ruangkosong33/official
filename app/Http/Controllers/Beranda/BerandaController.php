@@ -16,7 +16,7 @@ class BerandaController extends Controller
         $banners=Banner::latest()->get();
         $latestEvent=Event::latest()->take(4)->get();
         $latestGallery=Gallery::latest()->take(15)->get();
-        $latestPost=Post::latest()->take(3)->get();
+        $latestPost=Post::latest()->take(6)->get();
 
 
         return view('landing.pages.beranda.index-beranda', [

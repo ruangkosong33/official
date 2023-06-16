@@ -1,5 +1,13 @@
 @extends('landing.layouts.f-master')
 
+@push('css')
+    <style>
+        .brand-one__img>img{
+            opacity: 1;
+        }
+    </style>
+@endpush
+
 @section('f-content')
     <!-- Main Sllider Start -->
     @include('landing.pages.beranda.slider')
@@ -119,7 +127,7 @@
             <div class="services-one__bottom">
                 <div class="row">
                     <!--Services One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'sekretariat'])}}">Bidang Sekretariat</a>
@@ -127,7 +135,7 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/bpkad/sekre.png') }}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/bpkad/sekretariat.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-pie-chart"></span>
@@ -140,7 +148,7 @@
                     </div>
                     <!--Services One Single End-->
                     <!--Services One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-anggaran'])}}">Bidang Anggaran</a></h3>
@@ -160,7 +168,7 @@
                     </div>
                     <!--Services One Single End-->
                     <!--Services One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-perbendaharaan'])}}">Bidang Perbendaharaan</a>
@@ -168,7 +176,7 @@
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/bpkad/perben.png') }}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/bpkad/bendaharaan.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-money-bag"></span>
@@ -181,7 +189,7 @@
                     </div>
                     <!--Services One Single End-->
                     <!--Services One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-akuntansi'])}}">Bidang Akuntansi</a>
@@ -197,6 +205,50 @@
                             </div>
                             <div class="services-one__read-more">
                                 <a href="{{route('landing.organization.index',['slug'=>'bidang-akuntansi'])}}">Lihat<span
+                                        class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Services One Single End-->
+                    <!--Services One Single Start-->
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="services-one__single">
+                            <div class="services-one__title-box">
+                                <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-pengelolaan-bmd'])}}">Bidang Pengelolaan BMD</a>
+                                </h3>
+                            </div>
+                            <div class="services-one__img-box">
+                                <div class="services-one__img">
+                                    <img src="{{ asset('fk88/assets/images/bpkad/bmd.png') }}" alt="">
+                                </div>
+                                <div class="services-one__icon">
+                                    <span class="icon-profile"></span>
+                                </div>
+                            </div>
+                            <div class="services-one__read-more">
+                                <a href="{{route('landing.organization.index',['slug'=>'bidang-pengelolaan-bmd'])}}">Lihat<span
+                                        class="icon-right-arrow"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Services One Single End-->
+                    <!--Services One Single Start-->
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="services-one__single">
+                            <div class="services-one__title-box">
+                                <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'jabatan-fungsional-tertentu'])}}">Jabatan Fungsional Tertentu</a>
+                                </h3>
+                            </div>
+                            <div class="services-one__img-box">
+                                <div class="services-one__img">
+                                    <img src="{{ asset('fk88/assets/images/bpkad/jft.png') }}" alt="">
+                                </div>
+                                <div class="services-one__icon">
+                                    <span class="icon-profile"></span>
+                                </div>
+                            </div>
+                            <div class="services-one__read-more">
+                                <a href="{{route('landing.organization.index',['slug'=>'jabatan-fungsional-tertentu'])}}">Lihat<span
                                         class="icon-right-arrow"></span></a>
                             </div>
                         </div>
@@ -307,8 +359,7 @@
                         </div>
                     </a>
                 </div>
-                <h3 class="video-one__title">Badan Pengelolaan Keuangan & Aset Daerah
-                    <br> Provinsi KALTIM
+                <h3 class="video-one__title">Youtube
                 </h3>
                 <div class="video-one__btn-box" style="visibility: hidden;">
                     <a href="#" class="video-one__btn thm-btn">Discover More</a>
@@ -983,14 +1034,6 @@
                     </div>
                 </div>
                 <!--SOSMED Single End-->
-
-                <!--SOSMED Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="news-one__single">
-                        <div id="gpr-kominfo-widget-container"></div>
-                    </div>
-                </div>
-                <!--SOSMED Single End-->
                 <!--SOSMED Single Start-->
                 <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                     <div class="news-one__single">
@@ -1026,6 +1069,14 @@
                     </div>
                 </div>
                 <!--SOSMED Single End-->
+                <!--SOSMED Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="news-one__single">
+                        <div id="gpr-kominfo-widget-container"></div>
+                    </div>
+                </div>
+                <!--SOSMED Single End-->
+
             </div>
         </div>
     </section>
@@ -1033,7 +1084,7 @@
 
     <!--Contact One Start-->
     <section class="contact-one">
-        <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/contact-one-bg.jpg);">
+        <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/bpkad/gdbpkad.png);">
         </div>
         <div class="contact-one__shape-1 float-bob-x">
             <img src="{{ asset('fk88/assets/images/shapes/contact-one-shape-1.png') }}" alt="">

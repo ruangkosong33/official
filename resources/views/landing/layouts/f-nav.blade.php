@@ -2,8 +2,8 @@
     <nav class="main-menu main-menu-three">
         <div class="main-menu-three__wrapper">
             <div class="main-menu-three__wrapper-inner">
-                <div class="main-menu-three__logo" style="left: 10px">
-                    <a href="{{route('dashboard.index')}}"><img height="66" src="{{ asset('fk88/assets/images/logo/logo-bpkad.png') }}"
+                <div class="main-menu-three__logo">
+                    <a href="{{route('dashboard.index')}}"><img  src="{{ asset('fk88/assets/images/bpkad/146x45.png') }}"
                             alt=""></a>
                 </div>
                 <div class="main-menu-three__wrapper-inner-content">
