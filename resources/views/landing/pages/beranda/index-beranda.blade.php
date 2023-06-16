@@ -98,15 +98,14 @@
                         <div class="services-one__left">
                             <div class="section-title text-left">
                                 <div class="section-title__tagline-box">
-                                    <span class="section-title__tagline">what we’re doing</span>
+                                    <span class="section-title__tagline">Pelayanan Kami</span>
                                 </div>
-                                <h2 class="section-title__title">Offering the Best Consulting
-                                    <br> & Finance <span>Services</span>
+                                <h2 class="section-title__title">Unit Layanan Kerja</span>
                                 </h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-6">
+                    {{-- <div class="col-xl-5 col-lg-6">
                         <div class="services-one__right">
                             <p class="services-one__text">Lorem ipsum dolor sit amet, consectetur notted adipisicing
                                 <br> elit sed do eiusmod tempor incididunt ut labore et simply free text dolore
@@ -114,7 +113,7 @@
                                 aliqua lonm andhn.
                             </p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="services-one__bottom">
@@ -123,19 +122,19 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="https://www.kaltimprov.go.id/">Pemprov Kaltim</a>
+                                <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'sekretariat'])}}">Bidang Sekretariat</a>
                                 </h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/logo/link-1.png') }}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/bpkad/sekre.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-pie-chart"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="https://www.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
+                                <a href="{{route('landing.organization.index',['slug'=>'sekretariat'])}}">Lihat<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -144,18 +143,18 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="https://sikap.kaltimprov.go.id/">SIKAP</a></h3>
+                                <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-anggaran'])}}">Bidang Anggaran</a></h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/logo/sikap.png') }}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/bpkad/anggaran.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-insurance"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="https://sikap.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
+                                <a href="{{route('landing.organization.index',['slug'=>'bidang-anggaran'])}}">Lihat<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -164,19 +163,19 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="http://sidirga.kaltimprov.go.id/">SIDIRGA</a>
+                                <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-perbendaharaan'])}}">Bidang Perbendaharaan</a>
                                 </h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/logo/sidirga.png') }}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/bpkad/perben.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-money-bag"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="http://sidirga.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
+                                <a href="{{route('landing.organization.index',['slug'=>'bidang-perbendaharaan'])}}">Lihat<span class="icon-right-arrow"></span></a>
                             </div>
                         </div>
                     </div>
@@ -185,19 +184,19 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="https://bpkad.kaltimprov.go.id/ppid/">PPID</a>
+                                <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-akuntansi'])}}">Bidang Akuntansi</a>
                                 </h3>
                             </div>
                             <div class="services-one__img-box">
                                 <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/logo/ppid.png') }}" alt="">
+                                    <img src="{{ asset('fk88/assets/images/bpkad/akuntansi.png') }}" alt="">
                                 </div>
                                 <div class="services-one__icon">
                                     <span class="icon-profile"></span>
                                 </div>
                             </div>
                             <div class="services-one__read-more">
-                                <a href="https://bpkad.kaltimprov.go.id/ppid/">Lihat<span
+                                <a href="{{route('landing.organization.index',['slug'=>'bidang-akuntansi'])}}">Lihat<span
                                         class="icon-right-arrow"></span></a>
                             </div>
                         </div>
@@ -814,7 +813,7 @@
                 </div>
                 <!--Brand One Single-->
                 <div class="brand-one__single">
-                    <a href="https://www.kaltimprov.go.id/" target="__BLANK">
+                    <a href="{{route('landing.organization.index',['slug'=>'sekretariat'])}}" target="__BLANK">
                         <div class="brand-one__img">
                             <img src="{{ asset('fk88/assets/images/brand/link-1.png') }}" alt="">
                         </div>
