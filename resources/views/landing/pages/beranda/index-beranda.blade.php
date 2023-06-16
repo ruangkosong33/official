@@ -127,7 +127,7 @@
             <div class="services-one__bottom">
                 <div class="row">
                     <!--Services One Single Start-->
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'sekretariat'])}}">Bidang Sekretariat</a>
@@ -148,7 +148,7 @@
                     </div>
                     <!--Services One Single End-->
                     <!--Services One Single Start-->
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-anggaran'])}}">Bidang Anggaran</a></h3>
@@ -168,7 +168,7 @@
                     </div>
                     <!--Services One Single End-->
                     <!--Services One Single Start-->
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-perbendaharaan'])}}">Bidang Perbendaharaan</a>
@@ -189,7 +189,7 @@
                     </div>
                     <!--Services One Single End-->
                     <!--Services One Single Start-->
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-akuntansi'])}}">Bidang Akuntansi</a>
@@ -211,7 +211,7 @@
                     </div>
                     <!--Services One Single End-->
                     <!--Services One Single Start-->
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'bidang-pengelolaan-bmd'])}}">Bidang Pengelolaan BMD</a>
@@ -233,7 +233,7 @@
                     </div>
                     <!--Services One Single End-->
                     <!--Services One Single Start-->
-                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                         <div class="services-one__single">
                             <div class="services-one__title-box">
                                 <h3 class="services-one__title"><a href="{{route('landing.organization.index',['slug'=>'jabatan-fungsional-tertentu'])}}">Jabatan Fungsional Tertentu</a>
