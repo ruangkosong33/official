@@ -16,7 +16,7 @@
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                         <div class="text">
-                                            <p><a href="mailto:bpkadkaltim@gmail.com">bpkadkaltim@gmail.com</a>
+                                            <p><a href="mailto:bpkadkaltim@gmail.com">bpkad@kaltimprov.go.id</a>
                                             </p>
                                         </div>
                                     </li>
@@ -25,7 +25,7 @@
                                             <i class="fas fa-phone"></i>
                                         </div>
                                         <div class="text">
-                                            <p>(0541) 733333</p>
+                                            <p>(0541) 580 7777</p>
                                         </div>
                                     </li>
                                     <li>
@@ -33,7 +33,7 @@
                                             <i class="fas fa-fax"></i>
                                         </div>
                                         <div class="text">
-                                            <p>(0541) 737762</p>
+                                            <p>Jl. Kesuma Bangsa No.3 Samarinda 75117</p>
                                         </div>
                                     </li>
                                 </ul>

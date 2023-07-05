@@ -16,7 +16,7 @@ $totalVisitor = Visitor::count();
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="index.html"><img src="{{asset('fk88/assets/images/bpkad/146x45.png')}}" alt="" width="260"></a>
+                            <a href="index.html"><img src="{{asset('fk88/assets/images/bpkad/logo_bpkad.png')}}" alt="" width="260"></a>
                         </div>
                         <p class="footer-widget__about-text">Lorem ipsum dolor sit amet, consect etur adi
                             pisicing
@@ -108,7 +108,7 @@ $totalVisitor = Visitor::count();
             <div class="row">
                 <div class="col-xl-12">
                     <div class="site-footer__bottom-inner">
-                        <p class="site-footer__bottom-text">© Copyright 2023 by <a href="#">Company.com</a></p>
+                        <p class="site-footer__bottom-text">© Copyright 2023. <a href="#">Badan Pengelolaan Keuangan & Aset Daerah Provinsi Kalimantan Timur</a></p>
                     </div>
                 </div>
             </div>
