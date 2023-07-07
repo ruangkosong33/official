@@ -9,10 +9,12 @@
 @endpush
 
 @section('f-content')
-    <!-- Main Sllider Start -->
+
+    <!-- Slider Banner -->
     @include('landing.pages.beranda.slider')
     <!--Main Sllider Start -->
-    <!--About One Start-->
+
+    <!-- Selayang Pandang -->
     <section class="about-one">
         <div class="container">
             <div class="row">
@@ -108,10 +110,10 @@
             </div>
         </div>
     </section>
-    <!--About One End-->
+    <!-- Selayang Pandang -->
 
     <!-- Main Content -->
-    <!--Services One Start-->
+    <!-- Unit Layanan Kerja -->
     <section class="services-one">
         <div class="services-one__bg" style="background-image: url(assets/images/backgrounds/services-one-bg.png);">
         </div>
@@ -130,10 +132,7 @@
                     </div>
                     <div class="col-xl-5 col-lg-6">
                         <div class="services-one__right">
-                            <p class="services-one__text">Lorem ipsum dolor sit amet, consectetur notted adipisicing
-                                <br> elit sed do eiusmod tempor incididunt ut labore et simply free text dolore
-                                magna
-                                aliqua lonm andhn.</p>
+                            <p class="services-one__text">Layanan dan dukungan yang spesifik terhadap fungsi-fungsi kerja yang ada dalam organisasi.</p>
                         </div>
                     </div>
                 </div>
@@ -228,9 +227,9 @@
             </div>
         </div>
     </section>
-    <!--Services One End-->
+    <!-- Unit Layanan Kerja -->
 
-    <!--Grow Business Start-->
+    <!-- Sistem Informasi -->
     <section class="grow-business">
         <div class="container">
             <div class="grow-business__inner">
@@ -287,24 +286,20 @@
                                     <div class="grow-business__right-points-icon">
                                         <span class="icon-experience"></span>
                                     </div>
-                                    <h3 class="grow-business__right-points-title">Benefits by Investing
-                                        <br> your Money
+                                    <h3 class="grow-business__right-points-title">Sistem Informasi Persediaan Aset
                                     </h3>
-                                    <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
-                                        tincidunt.
-                                        <br> Donec fermentum, elit sit amet
+                                    <p class="grow-business__right-points-text">Sistem Informasi yang bertujuan mengelola, memelihara, dan 
+                                        pengawasan terhadap aset-aset penting yang diperlukan untuk menunjang pengambilan keputusan tentang rencana anggaran dan akusisi investasi baru.
                                     </p>
                                 </li>
                                 <li>
                                     <div class="grow-business__right-points-icon">
                                         <span class="icon-consumer-behavior"></span>
                                     </div>
-                                    <h3 class="grow-business__right-points-title">The most Time-Consuming
-                                        <br> Components
+                                    <h3 class="grow-business__right-points-title">Sistem Informasi Standar Harga
                                     </h3>
-                                    <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
-                                        tincidunt.
-                                        <br> Donec fermentum, elit sit amet
+                                    <p class="grow-business__right-points-text">SIDIRGA - KALTIM merupakan sistem berbasis web digunakan untuk menampung 
+                                        data Standar Harga sebagai acuan awal perencanaan dan penganggaran.
                                     </p>
                                 </li>
                             </ul>
@@ -314,9 +309,9 @@
             </div>
         </div>
     </section>
-    <!--Grow Business End-->
+    <!-- Sistem Informasi-->
 
-    <!--Video One Start-->
+    <!--Youtube -->
     <section class="video-one">
         <div class="video-one__bg" style="background-image: url(../fk88/assets/images/bpkad/1894x907.png);"></div>
         <div class="container">
@@ -337,9 +332,9 @@
             </div>
         </div>
     </section>
-    <!--Video One End-->
+    <!-- Youtube -->
 
-    <!--News One Start-->
+    <!-- Berita -->
     <section class="news-one">
             <div class="container">
                 <div class="section-title text-center">
@@ -407,9 +402,9 @@
                 </div>
             </div>
     </section>
-    <!--News One End-->
+    <!-- Berita -->
     
-    <!--CTA One Start-->
+    <!-- Span Lapor -->
     <section class="cta-one">
         <div class="container">
             <div class="cta-one__inner">
@@ -428,9 +423,9 @@
             </div>
         </div>
     </section>
-    <!--CTA One Start-->
+    <!-- Span Lapor -->
 
-    <!--Project One Start-->
+    <!-- Galeri -->
     <section class="project-one">
         <div class="container">
             <div class="section-title text-center">
@@ -496,9 +491,9 @@
             </div>
         </div>
     </section>
-    <!--Project One End-->
+    <!-- Galeri -->
 
-    <!--FAQ One Start-->
+    <!-- List -->
     <section class="faq-one">
         <div class="container">
             <div class="row">
@@ -626,9 +621,36 @@
             </div>
         </div>
     </section>
-    <!--FAQ One End-->
+    <!-- List -->
 
-    <!--SOSMED Start-->
+    {{-- <div class="services-details__points">
+        <div class="row">
+            <div class="col-xl-6 col-md-6">
+                <div class="services-details__points-single">
+                    <div class="icon">
+                        <span class="icon-writer"></span>
+                    </div>
+                    <div class="content">
+                        <h3>Business Solution</h3>
+                        <p>There are many of lorem Ipsum the majori have suffered.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="services-details__points-single">
+                    <div class="icon">
+                        <span class="icon-data-analysis"></span>
+                    </div>
+                    <div class="content">
+                        <h3>Market Rules</h3>
+                        <p>There are many of lorem Ipsum the majori have suffered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <!-- Sosial Media -->
     <section class="news-one" style="padding-top: 20px">
         <div class="container">
             <div class="section-title text-center">
@@ -690,9 +712,9 @@
             </div>
         </div>
     </section>
-    <!--SOSMED End-->
+    <!--Sosial Media -->
 
-    <!--Brand One Start-->
+    <!-- Link Eksternal -->
     <section class="brand-one">
         <div class="brand-one__title"></div>
         <div class="container">
@@ -826,9 +848,9 @@
             <!-- If we need navigation buttons -->
         </div>
     </section>
-    <!--Brand One End-->
+    <!-- Link Eksternal -->
 
-    <!--Contact One Start-->
+    <!-- Kontak -->
     <section class="contact-one">
         <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/bpkad/gdbpkad.png);">
         </div>
@@ -886,7 +908,8 @@
             </div>
         </div>
     </section>
-    <!--Contact One End-->
+    <!-- Kontak -->
+    
 @endsection
 
 @push('js')

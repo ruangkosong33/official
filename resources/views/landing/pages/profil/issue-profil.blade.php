@@ -2,7 +2,7 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/page-header-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
             <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
@@ -22,7 +22,7 @@
                         <li><span>/</span></li>
                         <li>Profil</li>
                         <li><span>/</span></li>
-                        <li>Isu Strartegis</li>
+                        <li>Isu Strategis</li>
                     </ul>
                 </div>
             </div>
@@ -47,11 +47,11 @@
                     <div class="about-four__left">
                         <div class="about-four__img-box">
                             <div class="about-four__img">
-                                <img src="{{asset('fk88/assets/images/resources/about-four-img-1.jpg')}}" alt="">
+                                <img src="{{asset('fk88/assets/images/bpkad/isu.png')}}" alt="">
                             </div>
-                            <div class="about-four__img-two">
+                            {{-- <div class="about-four__img-two">
                                 <img src="{{asset('fk88/assets/images/resources/about-four-img-2.jpg')}}" alt="">
-                            </div>
+                            </div> --}}
                             <div class="about-four__shape-1 img-bounce"></div>
                         </div>
                     </div>
