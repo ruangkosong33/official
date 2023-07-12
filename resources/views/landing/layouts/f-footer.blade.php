@@ -18,9 +18,8 @@ $totalVisitor = Visitor::count();
                         <div class="footer-widget__logo">
                             <a href="index.html"><img src="{{asset('fk88/assets/images/bpkad/logo_bpkad.png')}}" alt="" width="260"></a>
                         </div>
-                        <p class="footer-widget__about-text">Lorem ipsum dolor sit amet, consect etur adi
-                            pisicing
-                            elit sed do eiusmod tempor incididunt ut labore.</p>
+                        <p class="footer-widget__about-text">Sebuah Lembaga Pemerintah Provinsi Kalimantan Timur 
+                            Yang Bertanggung Jawab Dalam Pengelolaan Keeuangan Dan Aset Daerah.</p> 
                         <div class="site-footer__social">
                             <a href="https://twitter.com/bpkadkaltim"><i class="fab fa-twitter"></i></a>
                             <a href="https://www.facebook.com/pages/BPKAD%20Prov.%20Kaltim/1900010416967704/"><i class="fab fa-facebook"></i></a>
@@ -39,7 +38,7 @@ $totalVisitor = Visitor::count();
                                     <span class="fas fa-clock"></span>
                                 </div>
                                 <div class="text">
-                                    <a href="javascript:;">Senin – Kamis :  07.30 – 16.00</a>
+                                    <a href="javascript:;">Senin – Kamis :  08.00 – 16.30</a>
                                 </div>
                             </li>
                             <li>
@@ -47,7 +46,7 @@ $totalVisitor = Visitor::count();
                                     <span class="fas fa-clock"></span>
                                 </div>
                                 <div class="text">
-                                    <a href="javascript:;">Jumat :  07.30 – 11.30</a>
+                                    <a href="javascript:;">Jumat :  08.00 – 12.00</a>
                                 </div>
                             </li>
                             <li>

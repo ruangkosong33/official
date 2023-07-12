@@ -81,12 +81,8 @@ use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyCo
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
+//Portal//
 Route::get('/', [PortalController::class, 'index'])->name('portal.index');
-
 
 //Beranda//
 Route::middleware(['landing',])->group(function()
