@@ -2,7 +2,7 @@
 @section('f-content')
 <!--Page Header Start-->
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/page-header-bg.jpg);">
+    <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
     </div>
     <div class="page-header__shape-2 float-bob-x">
         <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
@@ -54,7 +54,7 @@
                             <img src="{{asset('uploads/image-pegawai/'.$employee->image_employee)}}" alt="">
                         </div>
                         <div class="team-one__hover-content">
-                            <h3 class="team-one__hover-title"><a href="team-details.html">{{$employee->name_employee}}</a>
+                            <h3 class="team-one__hover-title"><a href="javascript:;">{{$employee->name_employee}}</a>
                             </h3>
                             <p class="team-one__hover-sub-title">{{ $employee->position }}</p>
                             <p class="team-one__hover-text">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="team-one__content">
-                        <h3 class="team-one__title"><a href="team-details.html">{{$employee->name_employee}}</a></h3>
+                        <h3 class="team-one__title"><a href="javascript:;">{{$employee->name_employee}}</a></h3>
                         <p class="team-one__sub-title">{{ $employee->position }}</p>
                     </div>
                 </div>

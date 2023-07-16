@@ -1,10 +1,20 @@
 @extends('landing.layouts.f-master')
 
+@push('css')
+    <style>
+        .brand-one__img>img{
+            opacity: 1;
+        }
+    </style>
+@endpush
+
 @section('f-content')
-    <!-- Main Sllider Start -->
+
+    <!-- Slider Banner -->
     @include('landing.pages.beranda.slider')
     <!--Main Sllider Start -->
-    <!--About One Start-->
+
+    <!-- Selayang Pandang -->
     <section class="about-one">
         <div class="container">
             <div class="row">
@@ -32,13 +42,12 @@
                     <div class="about-one__right">
                         <div class="section-title text-left">
                             <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">Selamat Datang</span>
+                                <span class="section-title__tagline">Selayang Pandang</span>
                             </div>
                             <h2 class="section-title__title">Badan Pengelolaan Keuangan & Aset Daerah</h2>
                         </div>
-                        <p class="about-one__text">Lorem ipsum dolor sit amet, consectetur notted adipisicing elit
-                            sed do eiusmod tempor incididunt ut labore et simply free text dolore magna aliqua lonm
-                            andhn.</p>
+                        <p class="about-one__text">Selamat datang di Website Resmi BPKAD Provinsi Kalimantan Timur.
+                            Website ini sebagai sarana publikasi untuk memberikan Informasi dan gambaran tentang BPKAD Provinsi Kalimantan Timur dalam melaksanakan pelayanan tugas informasi.</p>
                         <div class="about-one__points-and-experience">
                             <div class="about-one__points-box">
                                 <ul class="about-one__points-list list-unstyled">
@@ -47,7 +56,7 @@
                                             <span class="fa fa-check"></span>
                                         </div>
                                         <div class="text">
-                                            <p>Strategy & Consulting</p>
+                                            <p>Bidang Sekretariat</p>
                                         </div>
                                     </li>
                                     <li>
@@ -55,7 +64,15 @@
                                             <span class="fa fa-check"></span>
                                         </div>
                                         <div class="text">
-                                            <p>Business Process</p>
+                                            <p>Bidang Akuntansi</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fa fa-check"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Bidang Anggaran</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -65,7 +82,7 @@
                                             <span class="fa fa-check"></span>
                                         </div>
                                         <div class="text">
-                                            <p>Marketing Rules</p>
+                                            <p>Bidang Perbendeharaan</p>
                                         </div>
                                     </li>
                                     <li>
@@ -73,23 +90,32 @@
                                             <span class="fa fa-check"></span>
                                         </div>
                                         <div class="text">
-                                            <p>Partnerships</p>
+                                            <p>Bidang Pengelolaan BMD</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="fa fa-check"></span>
+                                        </div>
+                                        <div class="text">
+                                            <p>Jabatan Fungsional</p>
                                         </div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </section>
-    <!--About One End-->
+    <!-- Selayang Pandang -->
 
     <!-- Main Content -->
-    <!--Services One Start-->
+    <!-- Unit Layanan Kerja -->
     <section class="services-one">
-        <div class="services-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-one-bg.png);">
+        <div class="services-one__bg" style="background-image: url(assets/images/backgrounds/services-one-bg.png);">
         </div>
         <div class="container">
             <div class="services-one__top">
@@ -100,19 +126,13 @@
                                 <div class="section-title__tagline-box">
                                     <span class="section-title__tagline">what we’re doing</span>
                                 </div>
-                                <h2 class="section-title__title">Offering the Best Consulting
-                                    <br> & Finance <span>Services</span>
-                                </h2>
+                                <h2 class="section-title__title">Unit Layanan Kerja</h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-6">
                         <div class="services-one__right">
-                            <p class="services-one__text">Lorem ipsum dolor sit amet, consectetur notted adipisicing
-                                <br> elit sed do eiusmod tempor incididunt ut labore et simply free text dolore
-                                magna
-                                aliqua lonm andhn.
-                            </p>
+                            <p class="services-one__text">Layanan dan dukungan yang spesifik terhadap fungsi-fungsi kerja yang ada dalam organisasi.</p>
                         </div>
                     </div>
                 </div>
@@ -120,96 +140,96 @@
             <div class="services-one__bottom">
                 <div class="row">
                     <!--Services One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="services-one__single">
-                            <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="https://www.kaltimprov.go.id/">Pemprov Kaltim</a>
-                                </h3>
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__icon">
+                                <span class="icon-increment"></span>
                             </div>
-                            <div class="services-one__img-box">
-                                <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/logo/link-1.png') }}" alt="">
-                                </div>
-                                <div class="services-one__icon">
-                                    <span class="icon-pie-chart"></span>
-                                </div>
-                            </div>
-                            <div class="services-one__read-more">
-                                <a href="https://www.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
+                            <div class="feature-two__content">
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'sekretariat'])}}">Bidang
+                                        <br>Sekretariat</a></h3>
+                                {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
                         </div>
                     </div>
-                    <!--Services One Single End-->
+                    <!--Feature Two Single End-->
+                    <!--Feature Two Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__icon">
+                                <span class="icon-seo"></span>
+                            </div>
+                            <div class="feature-two__content">
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'bidang-anggaran'])}}">Bidang
+                                        <br>Anggaran</a></h3>
+                                {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
+                            </div>
+                        </div>
+                    </div>
+                    <!--Feature Two Single End-->
+                    <!--Feature Two Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__icon">
+                                <span class="icon-growth"></span>
+                            </div>
+                            <div class="feature-two__content">
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'bidang-akuntansi'])}}">Bidang
+                                        <br>Akuntansi</a></h3>
+                                {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
+                            </div>
+                        </div>
+                    </div>
+                    <!--Feature Two Single End-->  
                     <!--Services One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="services-one__single">
-                            <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="https://sikap.kaltimprov.go.id/">SIKAP</a></h3>
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__icon">
+                                <span class="icon-planning"></span>
                             </div>
-                            <div class="services-one__img-box">
-                                <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/logo/sikap.png') }}" alt="">
-                                </div>
-                                <div class="services-one__icon">
-                                    <span class="icon-insurance"></span>
-                                </div>
-                            </div>
-                            <div class="services-one__read-more">
-                                <a href="https://sikap.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
+                            <div class="feature-two__content">
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'bidang-perbendaharaan'])}}">Bidang
+                                        <br>Perbendaharaan</a></h3>
+                                {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
                         </div>
                     </div>
-                    <!--Services One Single End-->
-                    <!--Services One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="services-one__single">
-                            <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="http://sidirga.kaltimprov.go.id/">SIDIRGA</a>
-                                </h3>
+                    <!--Feature Two Single End-->
+                    <!--Feature Two Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__icon">
+                                <span class="icon-checking"></span>
                             </div>
-                            <div class="services-one__img-box">
-                                <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/logo/sidirga.png') }}" alt="">
-                                </div>
-                                <div class="services-one__icon">
-                                    <span class="icon-money-bag"></span>
-                                </div>
-                            </div>
-                            <div class="services-one__read-more">
-                                <a href="http://sidirga.kaltimprov.go.id/">Lihat<span class="icon-right-arrow"></span></a>
+                            <div class="feature-two__content">
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'bidang-pengelolaan-bmd'])}}">Bidang
+                                        <br>Pengelolaan BMD</a></h3>
+                                {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
                         </div>
                     </div>
-                    <!--Services One Single End-->
-                    <!--Services One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="services-one__single">
-                            <div class="services-one__title-box">
-                                <h3 class="services-one__title"><a href="https://bpkad.kaltimprov.go.id/ppid/">PPID</a>
-                                </h3>
+                    <!--Feature Two Single End-->
+                    <!--Feature Two Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__icon">
+                                <span class="icon-consultant"></span>
                             </div>
-                            <div class="services-one__img-box">
-                                <div class="services-one__img">
-                                    <img src="{{ asset('fk88/assets/images/logo/ppid.png') }}" alt="">
-                                </div>
-                                <div class="services-one__icon">
-                                    <span class="icon-profile"></span>
-                                </div>
-                            </div>
-                            <div class="services-one__read-more">
-                                <a href="https://bpkad.kaltimprov.go.id/ppid/">Lihat<span
-                                        class="icon-right-arrow"></span></a>
+                            <div class="feature-two__content">
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'jabatan-fungsional-tertentu'])}}">Jabatan
+                                        <br>Fungsional Tertentu</a></h3>
+                                {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
                         </div>
                     </div>
-                    <!--Services One Single End-->
+                    <!--Feature Two Single End-->  
                 </div>
             </div>
         </div>
     </section>
-    <!--Services One End-->
+    <!-- Unit Layanan Kerja -->
 
-    <!--Grow Business Start-->
+    <!-- Sistem Informasi -->
     <section class="grow-business">
         <div class="container">
             <div class="grow-business__inner">
@@ -266,24 +286,20 @@
                                     <div class="grow-business__right-points-icon">
                                         <span class="icon-experience"></span>
                                     </div>
-                                    <h3 class="grow-business__right-points-title">Benefits by Investing
-                                        <br> your Money
+                                    <h3 class="grow-business__right-points-title">Sistem Informasi Persediaan Aset
                                     </h3>
-                                    <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
-                                        tincidunt.
-                                        <br> Donec fermentum, elit sit amet
+                                    <p class="grow-business__right-points-text">Sistem Informasi yang bertujuan mengelola, memelihara, dan 
+                                        pengawasan terhadap aset-aset penting yang diperlukan untuk menunjang pengambilan keputusan tentang rencana anggaran dan akusisi investasi baru.
                                     </p>
                                 </li>
                                 <li>
                                     <div class="grow-business__right-points-icon">
                                         <span class="icon-consumer-behavior"></span>
                                     </div>
-                                    <h3 class="grow-business__right-points-title">The most Time-Consuming
-                                        <br> Components
+                                    <h3 class="grow-business__right-points-title">Sistem Informasi Standar Harga
                                     </h3>
-                                    <p class="grow-business__right-points-text">Sed non odio non elit porttit sit
-                                        tincidunt.
-                                        <br> Donec fermentum, elit sit amet
+                                    <p class="grow-business__right-points-text">SIDIRGA - KALTIM merupakan sistem berbasis web digunakan untuk menampung 
+                                        data Standar Harga sebagai acuan awal perencanaan dan penganggaran.
                                     </p>
                                 </li>
                             </ul>
@@ -293,9 +309,9 @@
             </div>
         </div>
     </section>
-    <!--Grow Business End-->
+    <!-- Sistem Informasi-->
 
-    <!--Video One Start-->
+    <!--Youtube -->
     <section class="video-one">
         <div class="video-one__bg" style="background-image: url(../fk88/assets/images/bpkad/1894x907.png);"></div>
         <div class="container">
@@ -308,8 +324,7 @@
                         </div>
                     </a>
                 </div>
-                <h3 class="video-one__title">Badan Pengelolaan Keuangan & Aset Daerah
-                    <br> Provinsi KALTIM
+                <h3 class="video-one__title">Youtube
                 </h3>
                 <div class="video-one__btn-box" style="visibility: hidden;">
                     <a href="#" class="video-one__btn thm-btn">Discover More</a>
@@ -317,165 +332,100 @@
             </div>
         </div>
     </section>
-    <!--Video One End-->
+    <!-- Youtube -->
 
-    <!--Testimonial One Start-->
-    <section class="testimonial-one">
-        <div class="testimonial-one__bg"
-            style="background-image: url(../fk88/assets/images/backgrounds/testimonial-one-bg.jpg);">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-lg-4">
-                    <div class="testimonial-one__left">
-                        <div class="section-title text-left">
-                            <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">our feedbacks</span>
-                            </div>
-                            <h2 class="section-title__title">Clients are
-                                <span>Talking</span>
-                            </h2>
-                        </div>
-                        <p class="testimonial-one__left-text">Lorem Ipsum. Proin gravida nibh vel velit auctor
-                            aliquet. Aenean solldin, lorem is simply.</p>
-                        <div class="testimonial-one__rounded-text">
-                            <a href="testimonials.html" class="testimonial-one__curved-circle-box">
-                                <div class="curved-circle">
-                                    <span class="curved-circle--item">
-                                        380 satisfied clients
-                                    </span>
-                                </div><!-- /.curved-circle -->
-                                <div class="testimonial-one__icon">
-                                    <img src="{{ asset('fk88/assets/images/icon/main-slider-two-rounded-icon.png') }}"
-                                        alt="">
-                                </div>
-                            </a>
-                        </div>
+    <!-- Berita -->
+    <section class="news-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__tagline-box">
+                        <span class="section-title__tagline">Artikel Terbaru BPKAD</span>
                     </div>
+                    <h2 class="section-title__title">Berita Terbaru</h2>
                 </div>
-                <div class="col-xl-9 col-lg-8">
-                    <div class="testimonial-one__right">
-                        <div class="testimonial-one__carousel owl-carousel owl-theme thm-owl__carousel"
-                            data-owl-options='{
-                            "loop": true,
-                            "autoplay": true,
-                            "margin": 30,
-                            "nav": false,
-                            "dots": false,
-                            "smartSpeed": 500,
-                            "autoplayTimeout": 10000,
-                            "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
-                            "responsive": {
-                                "0": {
-                                    "items": 1
-                                },
-                                "768": {
-                                    "items": 2
-                                },
-                                "992": {
-                                    "items": 2
-                                },
-                                "1200": {
-                                    "items": 3
-                                }
-                            }
-                        }'>
-                            <!--Testimonial One Single Start-->
-                            <div class="item">
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__content">
-                                        <div class="testimonial-one__shape-1"></div>
-                                        <div class="testimonial-one__shape-2"></div>
-                                        <div class="testimonial-one__img">
-                                            <img src="{{ asset('fk88/assets/images/testimonial/testimonial-1-1.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="testimonial-one__ratting">
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                        </div>
-                                        <p class="testimonial-one__text">Lorem ipsum is simply free text dolor
-                                            not sit amet,
-                                            notted adipisicing elit sed do eiusmod incididunt labore et dolore
-                                            text.</p>
+                <div class="row">
+                    @foreach ($latestPost as $post)
+                        <!--News One Single Start-->
+                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="news-one__single">
+                                <div class="news-one__img-box">
+                                    <div class="news-one__img">
+                                        <img src="{{ asset('uploads/image-post/' . $post->image_post) }}" alt="">
+                                        <a href="{{ route('berita.detail', ['slug' => $post->slug]) }}">
+                                            <span class="news-one__plus"></span>
+                                        </a>
                                     </div>
-                                    <div class="testimonial-one__client-info">
-                                        <h3><a href="testimonials.html">Aleesha Brown</a></h3>
-                                        <p>Happy Client</p>
+                                    <div class="news-one__date">
+                                        <p>{{ $post->created_at->format('d') . ' ' . $post->created_at->monthName . ', ' . $post->created_at->year }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="news-one__content">
+                                    <ul class="news-one__meta list-unstyled">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fas fa-tags"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>{{ $post->category->title_category }}</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <h3 class="news-one__title"><a
+                                            href="{{ route('berita.detail', ['slug' => $post->slug]) }}">{{ $post->title_post }}</a>
+                                    </h3>
+                                    <p class="news-one__text">
+                                        {{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
+                                    </p>
+                                </div>
+                                <div class="news-one__hover">
+                                    <div class="news-one__hover-content">
+                                        <h3 class="news-one__hover-title"><a
+                                                href="{{ route('berita.detail', ['slug' => $post->slug]) }}">{{ $post->title_post }}</a>
+                                        </h3>
+                                        <p class="news-one__hover-text">
+                                            {{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
+                                        </p>
+                                    </div>
+                                    <div class="news-one__hover-btn-box">
+                                        <a href="{{ route('berita.detail', ['slug' => $post->slug]) }}">Baca Selengkapnya<span
+                                                class="icon-right-arrow"></span></a>
                                     </div>
                                 </div>
                             </div>
-                            <!--Testimonial One Single End-->
-                            <!--Testimonial One Single Start-->
-                            <div class="item">
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__content">
-                                        <div class="testimonial-one__shape-1"></div>
-                                        <div class="testimonial-one__shape-2"></div>
-                                        <div class="testimonial-one__img">
-                                            <img src="{{ asset('fk88/assets/images/testimonial/testimonial-1-2.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="testimonial-one__ratting">
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                        </div>
-                                        <p class="testimonial-one__text">Lorem ipsum is simply free text dolor
-                                            not sit amet,
-                                            notted adipisicing elit sed do eiusmod incididunt labore et dolore
-                                            text.</p>
-                                    </div>
-                                    <div class="testimonial-one__client-info">
-                                        <h3><a href="testimonials.html">Mike Hardson</a></h3>
-                                        <p>Happy Client</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Testimonial One Single End-->
-                            <!--Testimonial One Single Start-->
-                            <div class="item">
-                                <div class="testimonial-one__single">
-                                    <div class="testimonial-one__content">
-                                        <div class="testimonial-one__shape-1"></div>
-                                        <div class="testimonial-one__shape-2"></div>
-                                        <div class="testimonial-one__img">
-                                            <img src="{{ asset('fk88/assets/images/testimonial/testimonial-1-3.jpg') }}"
-                                                alt="">
-                                        </div>
-                                        <div class="testimonial-one__ratting">
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                        </div>
-                                        <p class="testimonial-one__text">Lorem ipsum is simply free text dolor
-                                            not sit amet,
-                                            notted adipisicing elit sed do eiusmod incididunt labore et dolore
-                                            text.</p>
-                                    </div>
-                                    <div class="testimonial-one__client-info">
-                                        <h3><a href="testimonials.html">Sarah Albert</a></h3>
-                                        <p>Happy Client</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--Testimonial One Single End-->
                         </div>
-                    </div>
+                        <!--News One Single End-->
+                    @endforeach
+                </div>
+                <div class="about-one__btn-box text-center" style="display: block;">
+                    <a href="{{ route('berita.index') }}" class="about-one__btn thm-btn">Berita Terbaru Lainnya</a>
+                </div>
+            </div>
+    </section>
+    <!-- Berita -->
+    
+    <!-- Span Lapor -->
+    <section class="cta-one">
+        <div class="container">
+            <div class="cta-one__inner">
+                <div class="cta-one__img">
+                    <img src="{{asset('fk88/assets/images/resources/lapor.png')}}" alt="">
+                </div>
+                <div class="cta-one__title">
+                    <h3>“Berani LAPOR!",
+                        <br>
+                    Untuk Pelayanan Publik Baik
+                    </h3>
+                </div>
+                <div class="cta-one__btn-box">
+                    <a href="https://www.lapor.go.id" class="cta-one__btn thm-btn">Lanjut</a>
                 </div>
             </div>
         </div>
     </section>
-    <!--Testimonial One End-->
+    <!-- Span Lapor -->
 
-    <!--Project One Start-->
+    <!-- Galeri -->
     <section class="project-one">
         <div class="container">
             <div class="section-title text-center">
@@ -541,228 +491,230 @@
             </div>
         </div>
     </section>
-    <!--Project One End-->
+    <!-- Galeri -->
 
-    <!--Team One Start-->
-    <section class="team-one">
+    <!-- List -->
+    <section class="faq-one">
         <div class="container">
-            <div class="team-one__top">
-                <div class="row">
-                    <div class="col-xl-7 col-lg-6">
-                        <div class="team-one__left">
-                            <div class="section-title text-left">
-                                <div class="section-title__tagline-box">
-                                    <span class="section-title__tagline">meet our team</span>
-                                </div>
-                                <h2 class="section-title__title">Meet the People Behind
-                                    <br> the High <span>Success</span>
-                                </h2>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="faq-one__left">
+                        <div class="section-title text-left">
+                            <div class="section-title__tagline-box">
+                                <span class="section-title__tagline">frequently asked questions</span>
                             </div>
+                            <h2 class="section-title__title">Building a Competitive
+                                Business <span>Sectors</span></h2>
                         </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="team-one__right">
-                            <p class="team-one__text">Lorem ipsum dolor sit amet, consectetur notted adipisicing
-                                elit sed do eiusmod tempor incididunt ut labore et simply free text dolore magna
-                                aliqua lonm andhn.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="team-one__bottom">
-                <div class="row">
-                    <!--Team One Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="team-one__single">
-                            <div class="team-one__img-box">
-                                <div class="team-one__img">
-                                    <img src="{{ asset('fk88/assets/images/team/team-1-1.jpg') }}" alt="">
-                                </div>
-                                <div class="team-one__hover-content">
-                                    <div class="team-one__hover-arrow-box">
-                                        <a href="team-details.html" class="team-one__hover-arrow"><span
-                                                class="fas fa-share-alt"></span></a>
-                                        <ul class="list-unstyled team-one__social">
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        </ul>
+                        <div class="faq-one__experience-and-points-box">
+                            {{-- <div class="faq-one__experience">
+                                <div class="faq-one__experience-title-box">
+                                    <div class="faq-one__experience-title-box-bg">
                                     </div>
-                                    <h3 class="team-one__hover-title"><a href="team-details.html">Kevin Martin</a>
-                                    </h3>
-                                    <p class="team-one__hover-sub-title">Consultant</p>
-                                    <p class="team-one__hover-text">There are many vartion of passages of available.
-                                    </p>
+                                    <h2 style="background-image: url(assets/images/backgrounds/experience-bg-1-1.jpg);"
+                                        class="faq-one__experience-title">30</h2>
                                 </div>
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__arrow-box">
-                                    <a href="team-details.html" class="team-one__arrow"><span
-                                            class="fas fa-share-alt"></span></a>
-                                </div>
-                                <h3 class="team-one__title"><a href="team-details.html">Kevin Martin</a></h3>
-                                <p class="team-one__sub-title">Consultant</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Team One Single End-->
-                    <!--Team One Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="team-one__single">
-                            <div class="team-one__img-box">
-                                <div class="team-one__img">
-                                    <img src="{{ asset('fk88/assets/images/team/team-1-2.jpg') }}" alt="">
-                                </div>
-                                <div class="team-one__hover-content">
-                                    <div class="team-one__hover-arrow-box">
-                                        <a href="team-details.html" class="team-one__hover-arrow"><span
-                                                class="fas fa-share-alt"></span></a>
-                                        <ul class="list-unstyled team-one__social">
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <h3 class="team-one__hover-title"><a href="team-details.html">Jeesica Brown</a>
-                                    </h3>
-                                    <p class="team-one__hover-sub-title">Consultant</p>
-                                    <p class="team-one__hover-text">There are many vartion of passages of available.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__arrow-box">
-                                    <a href="team-details.html" class="team-one__arrow"><span
-                                            class="fas fa-share-alt"></span></a>
-                                </div>
-                                <h3 class="team-one__title"><a href="team-details.html">Jeesica Brown</a></h3>
-                                <p class="team-one__sub-title">Consultant</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Team One Single End-->
-                    <!--Team One Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="team-one__single">
-                            <div class="team-one__img-box">
-                                <div class="team-one__img">
-                                    <img src="{{ asset('fk88/assets/images/team/team-1-3.jpg') }}" alt="">
-                                </div>
-                                <div class="team-one__hover-content">
-                                    <div class="team-one__hover-arrow-box">
-                                        <a href="team-details.html" class="team-one__hover-arrow"><span
-                                                class="fas fa-share-alt"></span></a>
-                                        <ul class="list-unstyled team-one__social">
-                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <h3 class="team-one__hover-title"><a href="team-details.html">Mike Hardson</a>
-                                    </h3>
-                                    <p class="team-one__hover-sub-title">Consultant</p>
-                                    <p class="team-one__hover-text">There are many vartion of passages of available.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="team-one__content">
-                                <div class="team-one__arrow-box">
-                                    <a href="team-details.html" class="team-one__arrow"><span
-                                            class="fas fa-share-alt"></span></a>
-                                </div>
-                                <h3 class="team-one__title"><a href="team-details.html">Mike Hardson</a></h3>
-                                <p class="team-one__sub-title">Consultant</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Team One Single End-->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Team One End-->
-
-    <!--Counter One Start-->
-    <section class="counter-one">
-        <div class="counter-one__inner">
-            <div class="counter-one__shadow"></div>
-            <div class="counter-one__bg"
-                style="background-image: url(../fk88/assets/images/backgrounds/counter-one-bg.jpg);">
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-5 col-lg-5">
-                        <div class="counter-one__left">
-                            <div class="section-title text-left">
-                                <div class="section-title__tagline-box">
-                                    <span class="section-title__tagline">fun facts</span>
-                                </div>
-                                <h2 class="section-title__title">Consultancy Funfacts
-                                    <br> in Great <span>Numbers</span>
-                                </h2>
-                            </div>
-                            <p class="counter-one__text">Leverage agile frameworks to provide a robust synopsis for
-                                high level overviews. Iterative approaches to corporate strategy data foster to
-                                collaborative thinking.</p>
-                        </div>
-                    </div>
-                    <div class="col-xl-7 col-lg-7">
-                        <div class="counter-one__right">
-                            <ul class="counter-one__count-box list-unstyled">
+                                <p>Years
+                                    <br> Experience</p>
+                            </div> --}}
+                            <ul class="faq-one__points list-unstyled">
                                 <li>
-                                    <div class="counter-one__icon">
-                                        <span class="icon-checking"></span>
+                                    <div class="icon">
+                                        <span class="icon-right-arrow"></span>
                                     </div>
-                                    <div class="counter-one__count count-box">
-                                        <h3 class="count-text" data-stop="886" data-speed="1500">00</h3>
+                                    <div class="content">
+                                        <h3>Donec Quis felis Commodo</h3>
+                                        <p>Lorem ipsum is simply free text dol sit amet, passage of consectetur
+                                            notted.</p>
                                     </div>
-                                    <p class="counter-one__text">Projects Completed</p>
                                 </li>
                                 <li>
-                                    <div class="counter-one__icon">
-                                        <span class="icon-recommend"></span>
+                                    <div class="icon">
+                                        <span class="icon-right-arrow"></span>
                                     </div>
-                                    <div class="counter-one__count count-box">
-                                        <h3 class="count-text" data-stop="600" data-speed="1500">00</h3>
+                                    <div class="content">
+                                        <h3>Passage of consectetur notted.</h3>
+                                        <p>Lorem ipsum is simply free text dol sit amet, passage of consectetur
+                                            notted.</p>
                                     </div>
-                                    <p class="counter-one__text">Satisfied Customers</p>
+                                </li>
+                            </ul>
+                            <ul class="faq-one__points list-unstyled">
+                                <li>
+                                    <div class="icon">
+                                        <span class="icon-right-arrow"></span>
+                                    </div>
+                                    <div class="content">
+                                        <h3>Donec Quis felis Commodo</h3>
+                                        <p>Lorem ipsum is simply free text dol sit amet, passage of consectetur
+                                            notted.</p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <div class="counter-one__icon">
-                                        <span class="icon-consulting"></span>
+                                    <div class="icon">
+                                        <span class="icon-right-arrow"></span>
                                     </div>
-                                    <div class="counter-one__count count-box">
-                                        <h3 class="count-text" data-stop="960" data-speed="1500">00</h3>
+                                    <div class="content">
+                                        <h3>Passage of consectetur notted.</h3>
+                                        <p>Lorem ipsum is simply free text dol sit amet, passage of consectetur
+                                            notted.</p>
                                     </div>
-                                    <p class="counter-one__text">Expert Consultants</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="counter-one__bottom">
-            <div class="container">
-                <div class="counter-one__bottom-inner">
-                    <p class="counter-one__bottom-text">Need best business consultation solutions & services? <a
-                            href="#">Send a Request</a></p>
-                    <div class="counter-one__call-box">
-                        <p>Call Free <a href="tel:9200009850">+92 (0000)-9850</a></p>
-                        <div class="counter-one__call-icon">
-                            <span class="icon-telephone-1"></span>
+                <div class="col-xl-6">
+                    <div class="faq-one__right">
+                        <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>What does your process look like?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>There are many variations of passages the majority have suffered
+                                            alteration in some fo injected humour, or randomised words believable.
+                                        </p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion  active">
+                                <div class="accrodion-title">
+                                    <h4>Learn how we create unmatched solutions</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>There are many variations of passages the majority have suffered
+                                            alteration in some fo injected humour, or randomised words believable.
+                                        </p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>How long do services take to complete?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>There are many variations of passages the majority have suffered
+                                            alteration in some fo injected humour, or randomised words believable.
+                                        </p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion">
+                                <div class="accrodion-title">
+                                    <h4>How can i find my financial record?</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>There are many variations of passages the majority have suffered
+                                            alteration in some fo injected humour, or randomised words believable.
+                                        </p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--Counter One End-->
+    <!-- List -->
 
-    <!--Brand One Start-->
+    {{-- <div class="services-details__points">
+        <div class="row">
+            <div class="col-xl-6 col-md-6">
+                <div class="services-details__points-single">
+                    <div class="icon">
+                        <span class="icon-writer"></span>
+                    </div>
+                    <div class="content">
+                        <h3>Business Solution</h3>
+                        <p>There are many of lorem Ipsum the majori have suffered.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="services-details__points-single">
+                    <div class="icon">
+                        <span class="icon-data-analysis"></span>
+                    </div>
+                    <div class="content">
+                        <h3>Market Rules</h3>
+                        <p>There are many of lorem Ipsum the majori have suffered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <!-- Sosial Media -->
+    <section class="news-one" style="padding-top: 20px">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="section-title__tagline-box">
+                    <h2 class="section-title__title">Update Terkini</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <!--SOSMED Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="news-one__single">
+                        <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div>
+                    </div>
+                </div>
+                <!--SOSMED Single End-->
+                <!--SOSMED Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="news-one__single">
+                        <div class="sidebar__single sidebar__post">
+                            <h3 class="sidebar__title">Jadwal Kegiatan</h3>
+                            <ul class="sidebar__post-list list-unstyled">
+                                @forelse ($latestEvent as $event)
+                                    
+                                <li>
+                                    <div class="sidebar__post-content">
+                                        <h3>
+                                            @php
+                                                $date_event = \Carbon\Carbon::parse($event->date_event);
+                                            @endphp
+                                            <span class="sidebar__post-content-meta"><i
+                                                    class="fas fa-clock"></i>{{ $date_event->format('d').' '.$date_event->monthName.', '.$date_event->year }}</span>
+                                            <a
+                                                href="{{ route('profil.event') }}">{{ substr($event->title_event, 0, 35) . '...' }}</a>
+                                        </h3>
+                                    </div>
+                                </li>
+                                @empty
+                                    <div style="height: 400px;" class="text-center">
+                                        <p style="vertical-align: middle;">Belum ada jadwal kegiatan</p>
+                                    </div>
+                                @endforelse 
+                            </ul>
+                            <div class="about-one__btn-box text-center mt-5" style="display: block;">
+                                <a href="{{ route('profil.event') }}" class="about-one__btn thm-btn">Jadwal Kegiatan
+                                    Lainnya</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--SOSMED Single End-->
+                <!--SOSMED Single Start-->
+                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="news-one__single">
+                        <div id="gpr-kominfo-widget-container"></div>
+                    </div>
+                </div>
+                <!--SOSMED Single End-->
+
+            </div>
+        </div>
+    </section>
+    <!--Sosial Media -->
+
+    <!-- Link Eksternal -->
     <section class="brand-one">
         <div class="brand-one__title"></div>
         <div class="container">
@@ -814,7 +766,7 @@
                 </div>
                 <!--Brand One Single-->
                 <div class="brand-one__single">
-                    <a href="https://www.kaltimprov.go.id/" target="__BLANK">
+                    <a href="{{route('landing.organization.index',['slug'=>'sekretariat'])}}" target="__BLANK">
                         <div class="brand-one__img">
                             <img src="{{ asset('fk88/assets/images/brand/link-1.png') }}" alt="">
                         </div>
@@ -896,145 +848,11 @@
             <!-- If we need navigation buttons -->
         </div>
     </section>
-    <!--Brand One End-->
+    <!-- Link Eksternal -->
 
-    <!--News One Start-->
-    <section class="news-one">
-        <div class="container">
-            <div class="section-title text-center">
-                <div class="section-title__tagline-box">
-                    <span class="section-title__tagline">Aritkel Terbaru BPKAD</span>
-                </div>
-                <h2 class="section-title__title">Berita Terbaru</h2>
-            </div>
-            <div class="row">
-                @foreach ($latestPost as $post)
-                    <!--News One Single Start-->
-                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="news-one__single">
-                            <div class="news-one__img-box">
-                                <div class="news-one__img">
-                                    <img src="{{ asset('uploads/image-post/' . $post->image_post) }}" alt="">
-                                    <a href="{{ route('berita.detail', ['slug' => $post->slug]) }}">
-                                        <span class="news-one__plus"></span>
-                                    </a>
-                                </div>
-                                <div class="news-one__date">
-                                    <p>{{ $post->created_at->format('d') . ' ' . $post->created_at->monthName . ', ' . $post->created_at->year }}
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="news-one__content">
-                                <ul class="news-one__meta list-unstyled">
-                                    <li>
-                                        <div class="icon">
-                                            <span class="fas fa-tags"></span>
-                                        </div>
-                                        <div class="text">
-                                            <p>{{ $post->category->title_category }}</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <h3 class="news-one__title"><a
-                                        href="{{ route('berita.detail', ['slug' => $post->slug]) }}">{{ $post->title_post }}</a>
-                                </h3>
-                                <p class="news-one__text">
-                                    {{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
-                                </p>
-                            </div>
-                            <div class="news-one__hover">
-                                <div class="news-one__hover-content">
-                                    <h3 class="news-one__hover-title"><a
-                                            href="{{ route('berita.detail', ['slug' => $post->slug]) }}">{{ $post->title_post }}</a>
-                                    </h3>
-                                    <p class="news-one__hover-text">
-                                        {{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
-                                    </p>
-                                </div>
-                                <div class="news-one__hover-btn-box">
-                                    <a href="{{ route('berita.detail', ['slug' => $post->slug]) }}">Baca Selengkapnya<span
-                                            class="icon-right-arrow"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--News One Single End-->
-                @endforeach
-            </div>
-            <div class="about-one__btn-box text-center" style="display: block;">
-                <a href="{{ route('berita.index') }}" class="about-one__btn thm-btn">Berita Terbaru Lainnya</a>
-            </div>
-        </div>
-    </section>
-    <!--News One End-->
-
-    <!--SOSMED Start-->
-    <section class="news-one" style="padding-top: 20px">
-        <div class="container">
-            <div class="section-title text-center">
-                <div class="section-title__tagline-box">
-                    <h2 class="section-title__title">Update Terkini</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <!--SOSMED Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="news-one__single">
-                        <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div>
-                    </div>
-                </div>
-                <!--SOSMED Single End-->
-
-                <!--SOSMED Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
-                    <div class="news-one__single">
-                        <div id="gpr-kominfo-widget-container"></div>
-                    </div>
-                </div>
-                <!--SOSMED Single End-->
-                <!--SOSMED Single Start-->
-                <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
-                    <div class="news-one__single">
-                        <div class="sidebar__single sidebar__post">
-                            <h3 class="sidebar__title">Jadwal Kegiatan</h3>
-                            <ul class="sidebar__post-list list-unstyled">
-                                @forelse ($latestEvent as $event)
-                                    
-                                <li>
-                                    <div class="sidebar__post-content">
-                                        <h3>
-                                            @php
-                                                $date_event = \Carbon\Carbon::parse($event->date_event);
-                                            @endphp
-                                            <span class="sidebar__post-content-meta"><i
-                                                    class="fas fa-clock"></i>{{ $date_event->format('d').' '.$date_event->monthName.', '.$date_event->year }}</span>
-                                            <a
-                                                href="{{ route('profil.event') }}">{{ substr($event->title_event, 0, 35) . '...' }}</a>
-                                        </h3>
-                                    </div>
-                                </li>
-                                @empty
-                                    <div style="height: 400px;" class="text-center">
-                                        <p style="vertical-align: middle;">Belum ada jadwal kegiatan</p>
-                                    </div>
-                                @endforelse 
-                            </ul>
-                            <div class="about-one__btn-box text-center mt-5" style="display: block;">
-                                <a href="{{ route('profil.event') }}" class="about-one__btn thm-btn">Jadwal Kegiatan
-                                    Lainnya</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--SOSMED Single End-->
-            </div>
-        </div>
-    </section>
-    <!--SOSMED End-->
-
-    <!--Contact One Start-->
+    <!-- Kontak -->
     <section class="contact-one">
-        <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/backgrounds/contact-one-bg.jpg);">
+        <div class="contact-one__bg" style="background-image: url(../fk88/assets/images/bpkad/gdbpkad.png);">
         </div>
         <div class="contact-one__shape-1 float-bob-x">
             <img src="{{ asset('fk88/assets/images/shapes/contact-one-shape-1.png') }}" alt="">
@@ -1063,7 +881,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Nomor Telepon</p>
-                                    <h3><a href="tel:054173333">(0541) 73333</a></h3>
+                                    <h3><a href="tel:054173333">(0541) 580 7777</a></h3>
                                 </div>
                             </li>
                             <li>
@@ -1072,7 +890,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Email</p>
-                                    <h3><a href="mailto:bpkadkaltim@gmail.com">bpkadkaltim@gmail.com</a></h3>
+                                    <h3><a href="mailto:bpkadkaltim@gmail.com">bpkad@kaltimprov.go.id</a></h3>
                                 </div>
                             </li>
                             <li>
@@ -1081,8 +899,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Alamat</p>
-                                    <h3>Jl. Gajah Mada No.2, Jawa, Kec. Samarinda Ulu, Kota Samarinda, Kalimantan Timur
-                                        75242</h3>
+                                    <h3>Jl. Kesuma Bangsa No.3 Samarinda 75117</h3>
                                 </div>
                             </li>
                         </ul>
@@ -1091,7 +908,8 @@
             </div>
         </div>
     </section>
-    <!--Contact One End-->
+    <!-- Kontak -->
+    
 @endsection
 
 @push('js')

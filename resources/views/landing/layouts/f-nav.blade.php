@@ -2,8 +2,8 @@
     <nav class="main-menu main-menu-three">
         <div class="main-menu-three__wrapper">
             <div class="main-menu-three__wrapper-inner">
-                <div class="main-menu-three__logo" style="left: 10px">
-                    <a href="{{route('dashboard.index')}}"><img height="66" src="{{ asset('fk88/assets/images/logo/logo-bpkad.png') }}"
+                <div class="main-menu-three__logo">
+                    <a href="{{route('dashboard.index')}}"><img  src="{{ asset('fk88/assets/images/bpkad/146x45.png') }}"
                             alt=""></a>
                 </div>
                 <div class="main-menu-three__wrapper-inner-content">
@@ -16,7 +16,7 @@
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                         <div class="text">
-                                            <p><a href="mailto:bpkadkaltim@gmail.com">bpkadkaltim@gmail.com</a>
+                                            <p><a href="mailto:bpkadkaltim@gmail.com">bpkad@kaltimprov.go.id</a>
                                             </p>
                                         </div>
                                     </li>
@@ -25,7 +25,7 @@
                                             <i class="fas fa-phone"></i>
                                         </div>
                                         <div class="text">
-                                            <p>(0541) 733333</p>
+                                            <p>(0541) 580 7777</p>
                                         </div>
                                     </li>
                                     <li>
@@ -33,7 +33,7 @@
                                             <i class="fas fa-fax"></i>
                                         </div>
                                         <div class="text">
-                                            <p>(0541) 737762</p>
+                                            <p>Jl. Kesuma Bangsa No.3 Samarinda 75117</p>
                                         </div>
                                     </li>
                                 </ul>

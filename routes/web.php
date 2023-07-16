@@ -8,6 +8,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\PortalController;
 use App\Http\Controllers\CitykabController;
 use App\Http\Controllers\FilelawController;
 use App\Http\Controllers\GalleryController;
@@ -49,22 +50,22 @@ use App\Http\Controllers\Organization\DivisionController;
 use App\Http\Controllers\Organization\EmployeeController;
 use App\Http\Controllers\Profil\PolicydirectionController;
 use App\Http\Controllers\Infopublik\FiledownloadController;
-use App\Http\Controllers\Profil\FormationhistoryController;
 
 // Landing Controller
+use App\Http\Controllers\Profil\FormationhistoryController;
+use App\Http\Controllers\Landing\BbhController as LandingBbhController;
+use App\Http\Controllers\Landing\LawController as LandingLawController;
 use App\Http\Controllers\Landing\PostController as LandingPostController;
 use App\Http\Controllers\Landing\VideoController as LandingVideoController;
-use App\Http\Controllers\Landing\GalleryController as LandingGalleryController;
 use App\Http\Controllers\Landing\ProfilController as LandingProfilController;
-use App\Http\Controllers\Landing\LawController as LandingLawController;
-use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyController;
+use App\Http\Controllers\Landing\GalleryController as LandingGalleryController;
 use App\Http\Controllers\Landing\ProgramController as LandingProgramController;
+use App\Http\Controllers\Landing\VisitorController as LandingVisitorController;
 use App\Http\Controllers\Landing\PotentionController as LandingPotentionController;
 use App\Http\Controllers\Landing\PublicinfoController as LandingPublicinfoController;
-use App\Http\Controllers\Landing\OrganizationController as LandingOrganizationController;
 use App\Http\Controllers\Landing\IntegrationController as LandingIntegrationController;
-use App\Http\Controllers\Landing\BbhController as LandingBbhController;
-use App\Http\Controllers\Landing\VisitorController as LandingVisitorController;
+use App\Http\Controllers\Landing\OrganizationController as LandingOrganizationController;
+use App\Http\Controllers\Landing\TransparencyController as LandingTransparencyController;
 
 
 
@@ -80,10 +81,8 @@ use App\Http\Controllers\Landing\VisitorController as LandingVisitorController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+//Portal//
+Route::get('/', [PortalController::class, 'index'])->name('portal.index');
 
 //Beranda//
 Route::middleware(['landing',])->group(function()
