@@ -30,9 +30,9 @@
 </section>
 <!--Page Header End-->
 <!--Faq Search Start-->
-<section class="faq-search">
+<section class="faq-search" style="padding-bottom: 10px">
     <div class="container">
-        <div class="section-title text-center">
+        <div class="section-title text-center" >
             <div class="section-title__tagline-box">
                 <span class="section-title__tagline">Organisasi</span>
             </div>
@@ -45,6 +45,16 @@
 <section class="team-page" style="padding-top: 0px">
     <div class="container">
         <div class="row">
+            <div class="col-xl-12">
+                {!! $division->deskripsi_so !!}
+                <h3 class="project-details__title-2">Struktur Organisasi</h3>
+                <div class="project-details__img mt-3">
+                    <img src="{{ asset('uploads/image-so/' . $division->image_so) }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <hr>
             @foreach ($division->employee as $employee)
             <!--Team One Single Start-->
             <div class="col-xl-4 col-lg-4 col-md-6">
