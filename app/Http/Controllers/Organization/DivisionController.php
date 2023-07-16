@@ -28,9 +28,19 @@ class DivisionController extends Controller
             'name_division'=>'required',
         ]);
 
+        if($request->file('image_so'))
+        {
+            $file=$request->file('image_so');
+            $imageSo=$file->getClientOriginalName();
+            $extension=$imageSo;
+            $file->move('uploads/image-so', $imageSo);
+        }
+
         $division=Division::create([
             'name_division'=>$request->name_division,
             'slug'=>Str::slug($request->name_division),
+            'image_so'=>$imageSo,
+            'deskripsi_so'=>$request->deskripsi_so,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
@@ -52,10 +62,21 @@ class DivisionController extends Controller
         ]);
 
         $division=Division::findOrFail($id);
+        $imageSo = $division->image_so;
+        if($request->file('image_so'))
+        {
+            $file=$request->file('image_so');
+            $imageSo=$file->getClientOriginalName();
+            $extension=$imageSo;
+            $file->move('uploads/image-so', $imageSo);
+
+        }
 
         $division->update([
             'name_division'=>$request->name_division,
             'slug'=>Str::slug($request->name_division),
+            'image_so'=>$imageSo,
+            'deskripsi_so'=>$request->deskripsi_so
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Update');

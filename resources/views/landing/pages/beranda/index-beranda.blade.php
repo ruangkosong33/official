@@ -146,7 +146,7 @@
                                 <span class="icon-increment"></span>
                             </div>
                             <div class="feature-two__content">
-                                <h3><a href="services.html">Bidang
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'sekretariat'])}}">Bidang
                                         <br>Sekretariat</a></h3>
                                 {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
@@ -160,7 +160,7 @@
                                 <span class="icon-seo"></span>
                             </div>
                             <div class="feature-two__content">
-                                <h3><a href="services.html">Bidang
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'bidang-anggaran'])}}">Bidang
                                         <br>Anggaran</a></h3>
                                 {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
@@ -174,7 +174,7 @@
                                 <span class="icon-growth"></span>
                             </div>
                             <div class="feature-two__content">
-                                <h3><a href="services.html">Bidang
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'bidang-akuntansi'])}}">Bidang
                                         <br>Akuntansi</a></h3>
                                 {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
@@ -188,7 +188,7 @@
                                 <span class="icon-planning"></span>
                             </div>
                             <div class="feature-two__content">
-                                <h3><a href="services.html">Bidang
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'bidang-perbendaharaan'])}}">Bidang
                                         <br>Perbendaharaan</a></h3>
                                 {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
@@ -202,7 +202,7 @@
                                 <span class="icon-checking"></span>
                             </div>
                             <div class="feature-two__content">
-                                <h3><a href="services.html">Bidang
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'bidang-pengelolaan-bmd'])}}">Bidang
                                         <br>Pengelolaan BMD</a></h3>
                                 {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>
@@ -216,7 +216,7 @@
                                 <span class="icon-consultant"></span>
                             </div>
                             <div class="feature-two__content">
-                                <h3><a href="services.html">Jabatan
+                                <h3><a href="{{route("landing.organization.index",['slug'=>'jabatan-fungsional-tertentu'])}}">Jabatan
                                         <br>Fungsional Tertentu</a></h3>
                                 {{-- <p>Lorem ipsum is simply <br> free dolo sit amet, ctetur.</p> --}}
                             </div>

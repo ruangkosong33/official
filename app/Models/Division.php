@@ -11,7 +11,7 @@ class Division extends Model
 
     protected $table='divisions';
 
-    protected $fillable=['name_division', 'slug'];
+    protected $fillable=['name_division', 'slug','deskripsi_so','image_so'];
 
     protected $hidden=[];
 

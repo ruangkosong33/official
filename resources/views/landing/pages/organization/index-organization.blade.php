@@ -54,7 +54,7 @@
                             <img src="{{asset('uploads/image-pegawai/'.$employee->image_employee)}}" alt="">
                         </div>
                         <div class="team-one__hover-content">
-                            <h3 class="team-one__hover-title"><a href="team-details.html">{{$employee->name_employee}}</a>
+                            <h3 class="team-one__hover-title"><a href="javascript:;">{{$employee->name_employee}}</a>
                             </h3>
                             <p class="team-one__hover-sub-title">{{ $employee->position }}</p>
                             <p class="team-one__hover-text">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="team-one__content">
-                        <h3 class="team-one__title"><a href="team-details.html">{{$employee->name_employee}}</a></h3>
+                        <h3 class="team-one__title"><a href="javascript:;">{{$employee->name_employee}}</a></h3>
                         <p class="team-one__sub-title">{{ $employee->position }}</p>
                     </div>
                 </div>
