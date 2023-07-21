@@ -79,7 +79,7 @@
                                         <td>{{ $fileapbd->citykab->name_citykab }}</td>
                                         <td>{{ $fileapbd->title_fileapbd }}</td>
                                         <td>{{ $apbd->periode }}</td>
-                                        <td><a href="" class="thm-btn calculator-menu__btn" target="_blank"
+                                        <td><a href="{{route('landing.integration.downloadFiledApbd',['slug'=>$fileapbd->slug])}}" class="thm-btn calculator-menu__btn" target="_blank"
                                                 rel="nofollow">Unduh</a></td>
                                     </tr>
                                 @endforeach
