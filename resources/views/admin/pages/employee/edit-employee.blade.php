@@ -24,7 +24,7 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data Pegawai</h3>
+                            <h3 class="card-title">Ubah Data Pegawai</h3>
                         </div>
 
                         <!-- Form -->
@@ -89,7 +89,22 @@
                                     <!--ImageDisplay -->
                                     <div class="mt-3"><img src="{{asset('uploads/image-pegawai/'. $employee->image_employee)}}" id="output" width="10%"></div>
                                     <!-- End -->
-
+                                    <div class="form-group row">
+                                        <label for="position" class="col-sm-2 col-form-label">Level Jabatan</label>
+                                        <div class="col-sm-10">
+                                            <select name="level" class="form-control @error('level') is-invalid @enderror" id="level">
+                                                <option value="">--Pilih--</option>
+                                                <option value="1" {{$employee->level == 1 ? 'selected':''}}>Level 1 (Kepala Bidang)</option>
+                                                <option value="2" {{$employee->level == 2 ? 'selected':''}}>Level 2 (Kepala Seksi)</option>
+                                                <option value="3" {{$employee->level == 3 ? 'selected':''}}>Level 3 (Staff)</option>
+                                                <option value="4"{{$employee->level == 4 ? 'selected':''}}>Level 4 (Tenaga Alih Daya)</option>
+                                              </select>
+        
+                                              @error('level')
+                                                <span class="invalid-feedback">{{$message}}</span>
+                                              @enderror
+                                        </div>
+                                    </div>
                                 <div class="form-group row">
                                     <label for="position" class="col-sm-2 col-form-label">Jabatan</label>
                                     <div class="col-sm-10">

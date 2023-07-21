@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('divisions', function (Blueprint $table) {
-            $table->longText("deskripsi_so")->nullable();
-            $table->string("image_so")->nullable();
+        Schema::table('employees', function (Blueprint $table) {
+            $table->tinyInteger('level')->default(3)->nullable();
         });
     }
 
@@ -22,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('divisions', function (Blueprint $table) {
-            $table->dropColumn(['deskripsi_so', 'image_so',]);
+        Schema::table('employees', function (Blueprint $table) {
+            $table->dropColumn('level');
         });
     }
 };

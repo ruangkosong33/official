@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="row mt-5">
-            <hr>
+            <h3 class="project-details__title-2">Jabatan Struktural</h3>
             @foreach ($division->employee as $employee)
             <!--Team One Single Start-->
             <div class="col-xl-4 col-lg-4 col-md-6">

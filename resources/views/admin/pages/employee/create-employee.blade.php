@@ -90,6 +90,22 @@
                                     <!-- End -->
 
                                 <div class="form-group row">
+                                    <label for="position" class="col-sm-2 col-form-label">Level Jabatan</label>
+                                    <div class="col-sm-10">
+                                        <select name="level" class="form-control @error('level') is-invalid @enderror" id="level">
+                                            <option value="">--Pilih--</option>
+                                            <option value="1">Level 1 (Kepala Bidang)</option>
+                                            <option value="2">Level 2 (Kepala Seksi)</option>
+                                            <option value="3">Level 3 (Staff)</option>
+                                            <option value="4">Level 4 (Tenaga Alih Daya)</option>
+                                          </select>
+    
+                                          @error('level')
+                                            <span class="invalid-feedback">{{$message}}</span>
+                                          @enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="position" class="col-sm-2 col-form-label">Jabatan</label>
                                     <div class="col-sm-10">
                                         <input type="text" name="position" class="form-control @error('position') is-invalid @enderror" id="nip" placeholder="Posisi">

@@ -40,6 +40,7 @@ class EmployeeController extends Controller
             'religion'=>'required',
             'education_school'=>'required',
             'education_work'=>'required',
+            'level'=>'required',
         ]);
 
         if($request->file('image_employee'))
@@ -66,6 +67,7 @@ class EmployeeController extends Controller
             'religion'=>$request->religion,
             'education_school'=>$request->education_school,
             'education_work'=>$request->education_work,
+            'level'=>$request->level,
 
         ]);
 
@@ -85,7 +87,6 @@ class EmployeeController extends Controller
     {
         $employee=Employee::findOrFail($id);
         $division=Division::all();
-
         return view('admin.pages.employee.edit-employee', ['employee'=>$employee, 'division'=>$division]);
     }
 
@@ -100,6 +101,7 @@ class EmployeeController extends Controller
             'religion'=>'required',
             'education_school'=>'required',
             'education_work'=>'required',
+            'level'=>'required'
         ]);
 
         $employee=Employee::findOrFail($id);
@@ -125,6 +127,7 @@ class EmployeeController extends Controller
             'religion'=>$request->religion,
             'education_school'=>$request->education_school,
             'education_work'=>$request->education_work,
+            'level'=>$request->level,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Update');
