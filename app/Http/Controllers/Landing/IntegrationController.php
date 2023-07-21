@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Landing;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Renja;
-use App\Models\Renstra;
-use App\Models\Rpjmd;
-use App\Models\Lkjip;
-use App\Models\Lppd;
-use App\Models\Sidata;
 use App\Models\Sop;
-use App\Models\Filesop;
 use App\Models\Apbd;
+use App\Models\Lppd;
+use App\Models\Lkjip;
+use App\Models\Renja;
+use App\Models\Rpjmd;
+use App\Models\Sidata;
+use App\Models\Filesop;
+use App\Models\Renstra;
+use App\Models\Fileapbd;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class IntegrationController extends Controller
 {
@@ -114,4 +115,12 @@ class IntegrationController extends Controller
         $apbds = Apbd::where('year',$apbd->year)->get();
         return view('landing.pages.integration.apbd-integration',['apbd'=>$apbd,'apbds'=>$apbds]);
     }
+
+    public function downloadFileApbd($slug)
+    {
+        $fileapbd = Fileapbd::where('slug',$slug)->first();
+        $file = public_path('uploads/file-apbd/').$fileapbd->file_apbd;
+        return response()->download($file, $fileapbd->file_apbd);
+    }
+
 }
