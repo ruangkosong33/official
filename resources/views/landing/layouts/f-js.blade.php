@@ -32,7 +32,7 @@
 <script src="{{ asset('fk88/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
 <script src="{{ asset('fk88/assets/js/sinace.js') }}"></script>
 <script src="{{ asset('fk88/assets/js/flip.min.js') }}"></script>
-{{-- <script src="https://code.responsivevoice.org/responsivevoice.js?key=vdMIvAC9"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=vdMIvAC9"></script>
 <script>
     $(document).ready(function() {
         responsiveVoice.setDefaultVoice("Indonesian Male");
@@ -60,7 +60,7 @@
         }
         return text;
     }
-</script> --}}
+</script>
 <script>
 
     $(document).ready(function(){
