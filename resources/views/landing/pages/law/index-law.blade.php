@@ -7,7 +7,7 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
             <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
@@ -59,12 +59,13 @@
                     </thead>
                     <tbody>
                         @foreach ($law->filelaw as $filelaw)
-                            
-                        <tr>
-                            <td>{{$filelaw->title_filelaw}}</td>
-                            <td>{{ $filelaw->created_at->format('d').' '.$filelaw->created_at->monthName.', '.$filelaw->created_at->year }}</td>
-                            <td><a href="{{route('landing.law.downloadFile',['slug'=>$filelaw->slug])}}" class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
-                        </tr>
+                            <tr>
+                                <td>{{ $filelaw->title_filelaw }}</td>
+                                <td>{{ $filelaw->created_at->format('d') . ' ' . $filelaw->created_at->monthName . ', ' . $filelaw->created_at->year }}
+                                </td>
+                                <td><a href="{{ route('landing.law.downloadFile', ['slug' => $filelaw->slug]) }}"
+                                        class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

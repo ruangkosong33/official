@@ -5,23 +5,23 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
         </div>
         <div class="page-header__shape-1 float-bob-y">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-1.png') }}" alt="">
         </div>
         <div class="page-header__shape-3 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-3.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-3.png') }}" alt="">
         </div>
         <div class="container">
             <div class="page-header__inner">
                 <h2>Belanja Bagi Hasil</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Belanja Bagi Hasil</li>
                     </ul>
@@ -57,16 +57,18 @@
                     </thead>
                     <tbody>
                         @foreach ($filesp2ds as $filesp2d)
-                        <tr>
-                            <td>{{$filesp2d->citykab->name_citykab}}</td>
-                            <td><a class="team-one__hover-sub-title" href="{{route('landing.bbh.downloadFile',['slug'=>$filesp2d->slug])}}">{{$filesp2d->title_sp2d}}</a></td>
-                            <td>{{$filesp2d->description}}</td>
-                            @php
-                                $date = \Carbon\Carbon::parse($filesp2d->date);
-                            @endphp
-                            <td>{{ $date->format('d').' '.$date->monthName.', '.$date->year }}</td>
-                            <td>Rp. {{ number_format($filesp2d->total, '0', ',', '.') }}</td>
-                        </tr>
+                            <tr>
+                                <td>{{ $filesp2d->citykab->name_citykab }}</td>
+                                <td><a class="team-one__hover-sub-title"
+                                        href="{{ route('landing.bbh.downloadFile', ['slug' => $filesp2d->slug]) }}">{{ $filesp2d->title_sp2d }}</a>
+                                </td>
+                                <td>{{ $filesp2d->description }}</td>
+                                @php
+                                    $date = \Carbon\Carbon::parse($filesp2d->date);
+                                @endphp
+                                <td>{{ $date->format('d') . ' ' . $date->monthName . ', ' . $date->year }}</td>
+                                <td>Rp. {{ number_format($filesp2d->total, '0', ',', '.') }}</td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

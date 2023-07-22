@@ -5,23 +5,23 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
         </div>
         <div class="page-header__shape-1 float-bob-y">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-1.png') }}" alt="">
         </div>
         <div class="page-header__shape-3 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-3.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-3.png') }}" alt="">
         </div>
         <div class="container">
             <div class="page-header__inner">
                 <h2>Laporan Kinerja Instansi Pemerintah</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Integrasi Data</li>
                         <li><span>/</span></li>
@@ -58,12 +58,14 @@
                     </thead>
                     <tbody>
                         @foreach ($lkjips as $lkjip)
-                        <tr>
-                            <td>{{$lkjip->title_lkjip}}</td>
-                            <td>{{$lkjip->year}}</td>
-                            <td>{{ $lkjip->created_at->format('d').' '.$lkjip->created_at->monthName.', '.$lkjip->created_at->year }}</td>
-                            <td><a href="{{route('landing.integration.downloadFileLkjip',['slug'=>$lkjip->slug])}}" class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
-                        </tr>
+                            <tr>
+                                <td>{{ $lkjip->title_lkjip }}</td>
+                                <td>{{ $lkjip->year }}</td>
+                                <td>{{ $lkjip->created_at->format('d') . ' ' . $lkjip->created_at->monthName . ', ' . $lkjip->created_at->year }}
+                                </td>
+                                <td><a href="{{ route('landing.integration.downloadFileLkjip', ['slug' => $lkjip->slug]) }}"
+                                        class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

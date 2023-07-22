@@ -5,29 +5,29 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
         </div>
         <div class="page-header__shape-1 float-bob-y">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-1.png') }}" alt="">
         </div>
         <div class="page-header__shape-3 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-3.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-3.png') }}" alt="">
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>{{$sop->title_sop}}</h2>
+                <h2>{{ $sop->title_sop }}</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Integrasi Data</li>
                         <li><span>/</span></li>
                         <li>SOP</li>
                         <li><span>/</span></li>
-                        <li>{{$sop->title_sop}}</li>
+                        <li>{{ $sop->title_sop }}</li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="section-title__tagline-box">
                     <span class="section-title__tagline">BPKAD KALTIM</span>
                 </div>
-                <h2 class="section-title__title">{{$sop->title_sop}}</span></h2>
+                <h2 class="section-title__title">{{ $sop->title_sop }}</span></h2>
             </div>
         </div>
     </section>
@@ -59,11 +59,13 @@
                     </thead>
                     <tbody>
                         @foreach ($sop->filesop as $filesop)
-                        <tr>
-                            <td>{{$filesop->name_filesop}}</td>
-                            <td>{{ $filesop->created_at->format('d').' '.$filesop->created_at->monthName.', '.$filesop->created_at->year }}</td>
-                            <td><a href="{{route('landing.integration.downloadFileSop',['slug'=>$filesop->slug])}}" class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
-                        </tr>
+                            <tr>
+                                <td>{{ $filesop->name_filesop }}</td>
+                                <td>{{ $filesop->created_at->format('d') . ' ' . $filesop->created_at->monthName . ', ' . $filesop->created_at->year }}
+                                </td>
+                                <td><a href="{{ route('landing.integration.downloadFileSop', ['slug' => $filesop->slug]) }}"
+                                        class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

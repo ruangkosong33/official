@@ -5,7 +5,7 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../../../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
             <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
@@ -54,7 +54,7 @@
                             <ul class="services-details__category-list list-unstyled">
                                 @foreach ($apbds as $apbdItem)
                                     <li class="{{ $apbdItem->periode == $apbd->periode ? 'active' : '' }}">
-                                        <a href="{{ route('landing.integration.apbd',['slug'=>$apbdItem->slug]) }}">{{ $apbdItem->periode }}
+                                        <a href="{{ route('landing.integration.apbd', ['slug' => $apbdItem->slug]) }}">{{ $apbdItem->periode }}
                                             <span class="icon-right-arrow"></span>
                                         </a>
                                 @endforeach
@@ -79,7 +79,8 @@
                                         <td>{{ $fileapbd->citykab->name_citykab }}</td>
                                         <td>{{ $fileapbd->title_fileapbd }}</td>
                                         <td>{{ $apbd->periode }}</td>
-                                        <td><a href="{{route('landing.integration.downloadFiledApbd',['slug'=>$fileapbd->slug])}}" class="thm-btn calculator-menu__btn" target="_blank"
+                                        <td><a href="{{ route('landing.integration.downloadFiledApbd', ['slug' => $fileapbd->slug]) }}"
+                                                class="thm-btn calculator-menu__btn" target="_blank"
                                                 rel="nofollow">Unduh</a></td>
                                     </tr>
                                 @endforeach

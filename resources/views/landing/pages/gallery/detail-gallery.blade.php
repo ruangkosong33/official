@@ -2,23 +2,23 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
         </div>
         <div class="page-header__shape-1 float-bob-y">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-1.png') }}" alt="">
         </div>
         <div class="page-header__shape-3 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-3.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-3.png') }}" alt="">
         </div>
         <div class="container">
             <div class="page-header__inner">
                 <h2>Detail Galeri</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Detail Galeri</li>
                     </ul>
@@ -35,9 +35,10 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="news-details__left">
                         <div class="news-details__img">
-                            <img src="{{asset('uploads/image-gallery/'.$gallery->image_gallery)}}" alt="">
+                            <img src="{{ asset('uploads/image-gallery/' . $gallery->image_gallery) }}" alt="">
                             <div class="news-details__date">
-                                <p>{{ $gallery->created_at->format('d').' '.$gallery->created_at->monthName.', '.$gallery->created_at->year }}</p>
+                                <p>{{ $gallery->created_at->format('d') . ' ' . $gallery->created_at->monthName . ', ' . $gallery->created_at->year }}
+                                </p>
                             </div>
                         </div>
                         <div class="news-details__content">
@@ -47,11 +48,11 @@
                                         <span class="fas fa-tags"></span>
                                     </div>
                                     <div class="text">
-                                        <p>{{$gallery->category->title_category}}</p>
+                                        <p>{{ $gallery->category->title_category }}</p>
                                     </div>
                                 </li>
                             </ul>
-                            <h3 class="news-details__title-1">{{$gallery->title_gallery}}</h3>
+                            <h3 class="news-details__title-1">{{ $gallery->title_gallery }}</h3>
                         </div>
                         <div class="news-details__bottom">
                             <p class="news-details__tags">
@@ -81,13 +82,15 @@
                                 @foreach ($latestPosts as $latestPost)
                                     <li>
                                         <div class="sidebar__post-image">
-                                            <img src="{{asset('uploads/image-post/'.$latestPost->image_post)}}" alt="">
+                                            <img src="{{ asset('uploads/image-post/' . $latestPost->image_post) }}"
+                                                alt="">
                                         </div>
                                         <div class="sidebar__post-content">
                                             <h3>
                                                 <span class="sidebar__post-content-meta"><i
-                                                        class="fas fa-tags"></i>{{$latestPost->category->title_category}}</span>
-                                                <a href="{{route('berita.detail',['slug'=>$latestPost->slug])}}">{{ substr($latestPost->title_post, 0, 35) . '...' }}</a>
+                                                        class="fas fa-tags"></i>{{ $latestPost->category->title_category }}</span>
+                                                <a
+                                                    href="{{ route('berita.detail', ['slug' => $latestPost->slug]) }}">{{ substr($latestPost->title_post, 0, 35) . '...' }}</a>
                                             </h3>
                                         </div>
                                     </li>
@@ -98,7 +101,7 @@
                             <h3 class="sidebar__title">Kategori</h3>
                             <div class="sidebar__tags-list">
                                 @foreach ($categories as $category)
-                                    <a href="#">{{$category->title_category}}</a>
+                                    <a href="#">{{ $category->title_category }}</a>
                                 @endforeach
                             </div>
                         </div>
@@ -108,5 +111,4 @@
         </div>
     </section>
     <!--News Details End-->
-
 @endsection

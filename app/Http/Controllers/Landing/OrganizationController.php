@@ -12,9 +12,15 @@ class OrganizationController extends Controller
     {
         $division = Division::where('slug',$slug)->first();
         $kepalaBidang = $division->employee()->where('level',1)->latest()->first();
-        $KepalaSeksi = $division->employee()->where('level',2)->get();
+        $kepalaSeksi = $division->employee()->where('level',2)->get();
         $staff = $division->employee()->where('level',3)->get();
         $tenagaAlihDaya = $division->employee()->where('level',4)->get();
-        return view('landing.pages.organization.index-organization',['division'=>$division]);
+        return view('landing.pages.organization.index-organization',[
+            'division'=>$division,
+            'kepalaBidang'=>$kepalaBidang,
+            'kepalaSeksi'=>$kepalaSeksi,
+            'staff'=>$staff,
+            'tenagaAlihDaya'=>$tenagaAlihDaya,
+        ]);
     }
 }

@@ -3,7 +3,7 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
             <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
@@ -39,13 +39,14 @@
                         <div class="news-one__single">
                             <div class="news-one__img-box">
                                 <div class="news-one__img">
-                                    <img src="{{asset('uploads/image-post/'.$post->image_post)}}" alt="">
-                                    <a href="{{route('berita.detail',['slug'=>$post->slug])}}">
+                                    <img src="{{ asset('uploads/image-post/' . $post->image_post) }}" alt="">
+                                    <a href="{{ route('berita.detail', ['slug' => $post->slug]) }}">
                                         <span class="news-one__plus"></span>
                                     </a>
                                 </div>
                                 <div class="news-one__date">
-                                    <p>{{ $post->created_at->format('d').' '.$post->created_at->monthName.', '.$post->created_at->year }}</p>
+                                    <p>{{ $post->created_at->format('d') . ' ' . $post->created_at->monthName . ', ' . $post->created_at->year }}
+                                    </p>
                                 </div>
                             </div>
                             <div class="news-one__content">
@@ -55,20 +56,27 @@
                                             <span class="fas fa-tags"></span>
                                         </div>
                                         <div class="text">
-                                            <p>{{$post->category->title_category}}</p>
+                                            <p>{{ $post->category->title_category }}</p>
                                         </div>
                                     </li>
                                 </ul>
-                                <h3 class="news-one__title"><a href="{{route('berita.detail',['slug'=>$post->slug])}}">{{$post->title_post}}</a></h3>
-                                <p class="news-one__text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}</p>
+                                <h3 class="news-one__title"><a
+                                        href="{{ route('berita.detail', ['slug' => $post->slug]) }}">{{ $post->title_post }}</a>
+                                </h3>
+                                <p class="news-one__text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}
+                                </p>
                             </div>
                             <div class="news-one__hover">
                                 <div class="news-one__hover-content">
-                                    <h3 class="news-one__hover-title"><a href="{{route('berita.detail',['slug'=>$post->slug])}}">{{$post->title_post}}</a></h3>
-                                    <p class="news-one__hover-text">{{ substr(strip_tags($post->description_post), 0, 100) . '...' }}</p>
+                                    <h3 class="news-one__hover-title"><a
+                                            href="{{ route('berita.detail', ['slug' => $post->slug]) }}">{{ $post->title_post }}</a>
+                                    </h3>
+                                    <p class="news-one__hover-text">
+                                        {{ substr(strip_tags($post->description_post), 0, 100) . '...' }}</p>
                                 </div>
                                 <div class="news-one__hover-btn-box">
-                                    <a href="{{route('berita.detail',['slug'=>$post->slug])}}">Baca Selengkapnya<span class="icon-right-arrow"></span></a>
+                                    <a href="{{ route('berita.detail', ['slug' => $post->slug]) }}">Baca Selengkapnya<span
+                                            class="icon-right-arrow"></span></a>
                                 </div>
                             </div>
                         </div>

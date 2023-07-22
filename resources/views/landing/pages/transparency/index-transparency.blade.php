@@ -5,23 +5,23 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
         </div>
         <div class="page-header__shape-1 float-bob-y">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-1.png') }}" alt="">
         </div>
         <div class="page-header__shape-3 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-3.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-3.png') }}" alt="">
         </div>
         <div class="container">
             <div class="page-header__inner">
                 <h2>Transparansi Pengelolaan Anggaran</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Transparansi Pengelolaan Anggaran</li>
                     </ul>
@@ -50,34 +50,36 @@
                     <div class="faq-page__single">
                         <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
                             @foreach ($transparencies as $transparency)
-                            <div class="accrodion  {{ $loop->iteration == 1 ? 'active':''}}">
-                                <div class="accrodion-title">
-                                    <h4>{{ $loop->iteration }}. {{ $transparency->title_transparency }}</h4>
+                                <div class="accrodion  {{ $loop->iteration == 1 ? 'active' : '' }}">
+                                    <div class="accrodion-title">
+                                        <h4>{{ $loop->iteration }}. {{ $transparency->title_transparency }}</h4>
+                                    </div>
+                                    <div class="accrodion-content">
+                                        <div class="inner">
+                                            <table class="display datatable-transparency" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Judul</th>
+                                                        <th>Dibuat</th>
+                                                        <th>Unduh</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($transparency->filetransparency as $filetransparency)
+                                                        <tr>
+                                                            <td>{{ $filetransparency->title_filetransparency }}</td>
+                                                            <td>{{ $filetransparency->created_at->format('d') . ' ' . $filetransparency->created_at->monthName . ', ' . $filetransparency->created_at->year }}
+                                                            </td>
+                                                            <td><a href="{{ route('landing.transparency.downloadFile', ['slug' => $filetransparency->slug]) }}"
+                                                                    class="thm-btn calculator-menu__btn" target="_blank"
+                                                                    rel="nofollow">Unduh</a></td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div><!-- /.inner -->
+                                    </div>
                                 </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <table class="display datatable-transparency" style="width:100%">
-                                            <thead>
-                                                <tr>
-                                                    <th>Judul</th>
-                                                    <th>Dibuat</th>
-                                                    <th>Unduh</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($transparency->filetransparency as $filetransparency)
-
-                                                <tr>
-                                                    <td>{{$filetransparency->title_filetransparency}}</td>
-                                                    <td>{{ $filetransparency->created_at->format('d').' '.$filetransparency->created_at->monthName.', '.$filetransparency->created_at->year }}</td>
-                                                    <td><a href="{{route('landing.transparency.downloadFile',['slug'=>$filetransparency->slug])}}" class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>

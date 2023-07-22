@@ -5,23 +5,23 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
         </div>
         <div class="page-header__shape-1 float-bob-y">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-1.png') }}" alt="">
         </div>
         <div class="page-header__shape-3 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-3.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-3.png') }}" alt="">
         </div>
         <div class="container">
             <div class="page-header__inner">
                 <h2>Agenda Kegiatan</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Profil</li>
                         <li><span>/</span></li>
@@ -59,27 +59,25 @@
                     </thead>
                     <tbody>
                         @foreach ($events as $event)
-                        <tr>
-                            <td>{{$event->title_event}}</td>
-                            <td>{{$event->place}}</td>
-                            <td>{{$event->description_event}}</td>
-                            @php
-                                $date_event = \Carbon\Carbon::parse($event->date_event);
-                            @endphp
-                            <td>{{ $date_event->format('d').' '.$date_event->monthName.', '.$date_event->year }}</td>
-                            <td>
-                                @if ($today < $date_event)
-                                    
-                                    <a href="javascript:;" class="btn btn-warning" rel="nofollow">Akan Datang</a>
-                                @elseif ($today > $date_event)
-
-                                    <a href="javascript:;" class="btn btn-secondary" rel="nofollow">Selesai</a>
-                                @else
-                                    
-                                    <a href="javascript:;" class="btn btn-info" rel="nofollow">Hari Ini</a>
-                                @endif
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>{{ $event->title_event }}</td>
+                                <td>{{ $event->place }}</td>
+                                <td>{{ $event->description_event }}</td>
+                                @php
+                                    $date_event = \Carbon\Carbon::parse($event->date_event);
+                                @endphp
+                                <td>{{ $date_event->format('d') . ' ' . $date_event->monthName . ', ' . $date_event->year }}
+                                </td>
+                                <td>
+                                    @if ($today < $date_event)
+                                        <a href="javascript:;" class="btn btn-warning" rel="nofollow">Akan Datang</a>
+                                    @elseif ($today > $date_event)
+                                        <a href="javascript:;" class="btn btn-secondary" rel="nofollow">Selesai</a>
+                                    @else
+                                        <a href="javascript:;" class="btn btn-info" rel="nofollow">Hari Ini</a>
+                                    @endif
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

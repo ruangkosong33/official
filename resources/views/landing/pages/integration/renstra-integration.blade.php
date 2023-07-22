@@ -5,23 +5,23 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
         </div>
         <div class="page-header__shape-1 float-bob-y">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-1.png') }}" alt="">
         </div>
         <div class="page-header__shape-3 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-3.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-3.png') }}" alt="">
         </div>
         <div class="container">
             <div class="page-header__inner">
                 <h2>Rencana Strategi</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Integrasi Data</li>
                         <li><span>/</span></li>
@@ -58,12 +58,14 @@
                     </thead>
                     <tbody>
                         @foreach ($renstras as $renstra)
-                        <tr>
-                            <td>{{$renstra->title_renstra}}</td>
-                            <td>{{$renstra->year}}</td>
-                            <td>{{ $renstra->created_at->format('d').' '.$renstra->created_at->monthName.', '.$renstra->created_at->year }}</td>
-                            <td><a href="{{route('landing.integration.downloadFileRenstra',['slug'=>$renstra->slug])}}" class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
-                        </tr>
+                            <tr>
+                                <td>{{ $renstra->title_renstra }}</td>
+                                <td>{{ $renstra->year }}</td>
+                                <td>{{ $renstra->created_at->format('d') . ' ' . $renstra->created_at->monthName . ', ' . $renstra->created_at->year }}
+                                </td>
+                                <td><a href="{{ route('landing.integration.downloadFileRenstra', ['slug' => $renstra->slug]) }}"
+                                        class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

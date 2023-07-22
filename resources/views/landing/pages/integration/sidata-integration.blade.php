@@ -5,23 +5,23 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/service-three-bg.jpg);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-2.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
         </div>
         <div class="page-header__shape-1 float-bob-y">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-1.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-1.png') }}" alt="">
         </div>
         <div class="page-header__shape-3 float-bob-x">
-            <img src="{{asset('fk88/assets/images/shapes/page-header-shape-3.png')}}" alt="">
+            <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-3.png') }}" alt="">
         </div>
         <div class="container">
             <div class="page-header__inner">
                 <h2>Sistem Informasi Data</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="{{route('dashboard.index')}}">Beranda</a></li>
+                        <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Integrasi Data</li>
                         <li><span>/</span></li>
@@ -57,11 +57,13 @@
                     </thead>
                     <tbody>
                         @foreach ($sidatas as $sidata)
-                        <tr>
-                            <td>{{$sidata->title_sidata}}</td>
-                            <td>{{ $sidata->created_at->format('d').' '.$sidata->created_at->monthName.', '.$sidata->created_at->year }}</td>
-                            <td><a href="{{route('landing.integration.downloadFileSidata',['slug'=>$sidata->slug])}}" class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
-                        </tr>
+                            <tr>
+                                <td>{{ $sidata->title_sidata }}</td>
+                                <td>{{ $sidata->created_at->format('d') . ' ' . $sidata->created_at->monthName . ', ' . $sidata->created_at->year }}
+                                </td>
+                                <td><a href="{{ route('landing.integration.downloadFileSidata', ['slug' => $sidata->slug]) }}"
+                                        class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
