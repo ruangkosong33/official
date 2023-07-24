@@ -54,62 +54,65 @@
                 </div>
             </div>
             <h3 class="project-details__title-2">Kepala Bidang</h3>
-            <div class="team-details__top pt-5 pb-3" style="border-bottom: none">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="team-details__left">
-                            <div class="team-details__img">
-                                <img src="{{ asset('uploads/image-pegawai/' . $kepalaBidang->image_employee) }}"
-                                    alt="">
+            @if ($kepalaBidang != null)
+                <div class="team-details__top pt-5 pb-3" style="border-bottom: none">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="team-details__left">
+                                <div class="team-details__img">
+                                    <img src="{{ asset('uploads/image-pegawai/' . $kepalaBidang->image_employee) }}"
+                                        alt="">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="team-details__right">
-                            <div class="team-details__top-content">
-                                <h3 class="team-details__top-name">{{ $kepalaBidang->name_employee }}</h3>
-                                <p class="team-details__top-sub-title">{{ $kepalaBidang->position }}</p>
-                                <div class="sip-calculation" style="box-shadow: none;">
-                                    <div class="sip-calculation-content total-sip-form-sip" style="padding: 5px 0;">
-                                        <div class="total-sip-form-calculation">
-                                            <div class="sip-calculation-details">
-                                                <p class="sip-form-calculation">
-                                                    <span>Nip</span>
-                                                    <b><i id="monthly-sip"
-                                                            style="font-size: 16px !important;">{{ $kepalaBidang->nip }}</i></b>
-                                                </p>
-                                                <p class="sip-form-calculation">
-                                                    <span>Agama</span>
-                                                    <b><i id="total-interest"
-                                                            style="font-size: 16px !important;">{{ $kepalaBidang->religion }}</i></b>
-                                                </p>
-                                                <p class="sip-form-calculation">
-                                                    <span> Status PNS</span>
-                                                    <b><i id="total-amount"
-                                                            style="font-size: 16px !important;">{{ $kepalaBidang->status }}</i></b>
-                                                </p>
-                                                <p class="sip-form-calculation">
-                                                    <span> Pendidikan Terakhir</span>
-                                                    <b><i id="total-amount"
-                                                            style="font-size: 16px !important;">{{ $kepalaBidang->education_school }}</i></b>
-                                                </p>
-                                                <p class="sip-form-calculation">
-                                                    <span> Pendidikan Struktural terakhir</span>
-                                                    <b><i id="total-amount"
-                                                            style="font-size: 16px !important;">{{ $kepalaBidang->education_work }}</i></b>
-                                                </p>
-                                            </div>
-                                        </div><!-- total-sip-form-calculation -->
-                                    </div><!-- sip-calculation-content -->
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="team-details__right">
+                                <div class="team-details__top-content">
+                                    <h3 class="team-details__top-name">{{ $kepalaBidang->name_employee }}</h3>
+                                    <p class="team-details__top-sub-title">{{ $kepalaBidang->position }}</p>
+                                    <div class="sip-calculation" style="box-shadow: none;">
+                                        <div class="sip-calculation-content total-sip-form-sip" style="padding: 5px 0;">
+                                            <div class="total-sip-form-calculation">
+                                                <div class="sip-calculation-details">
+                                                    <p class="sip-form-calculation">
+                                                        <span>Nip</span>
+                                                        <b><i id="monthly-sip"
+                                                                style="font-size: 16px !important;">{{ $kepalaBidang->nip }}</i></b>
+                                                    </p>
+                                                    <p class="sip-form-calculation">
+                                                        <span>Agama</span>
+                                                        <b><i id="total-interest"
+                                                                style="font-size: 16px !important;">{{ $kepalaBidang->religion }}</i></b>
+                                                    </p>
+                                                    <p class="sip-form-calculation">
+                                                        <span> Status PNS</span>
+                                                        <b><i id="total-amount"
+                                                                style="font-size: 16px !important;">{{ $kepalaBidang->status }}</i></b>
+                                                    </p>
+                                                    <p class="sip-form-calculation">
+                                                        <span> Pendidikan Terakhir</span>
+                                                        <b><i id="total-amount"
+                                                                style="font-size: 16px !important;">{{ $kepalaBidang->education_school }}</i></b>
+                                                    </p>
+                                                    <p class="sip-form-calculation">
+                                                        <span> Pendidikan Struktural terakhir</span>
+                                                        <b><i id="total-amount"
+                                                                style="font-size: 16px !important;">{{ $kepalaBidang->education_work }}</i></b>
+                                                    </p>
+                                                </div>
+                                            </div><!-- total-sip-form-calculation -->
+                                        </div><!-- sip-calculation-content -->
+                                    </div>
+                                    <!--sip-calculation-->
                                 </div>
-                                <!--sip-calculation-->
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
             <div class="row mt-1">
                 <h3 class="project-details__title-2">Kepala Seksi</h3>
+                
                 @foreach ($kepalaSeksi as $employee)
                     <!--Team One Single Start-->
                     <div class="col-xl-4 col-lg-4 col-md-6">
