@@ -92,6 +92,7 @@ class EmployeeController extends Controller
 
     public function update(Request $request, $id)
     {
+        
         $employee=$request->validate([
             'name_employee'=>'required',
             'nip'=>'required',
@@ -103,8 +104,10 @@ class EmployeeController extends Controller
             'education_work'=>'required',
             'level'=>'required'
         ]);
-
+        
         $employee=Employee::findOrFail($id);
+
+        $employees=$employee->image_employee;
 
         if($request->file('image_employee'))
         {
@@ -124,6 +127,7 @@ class EmployeeController extends Controller
             'nip'=>$request->nip,
             'position'=>$request->position,
             'status'=>$request->status,
+            'image_employee'=>$employees,
             'religion'=>$request->religion,
             'education_school'=>$request->education_school,
             'education_work'=>$request->education_work,
