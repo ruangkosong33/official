@@ -25,4 +25,9 @@ class Citykab extends Model
     {
         return $this->hasMany(Filesp2d::class, 'filesp2d_id', 'id')   ;
     }
+
+    public function filebbh()
+    {
+        return $this->hasMany(Filebbh::class, 'filebbh_id', 'id')   ;
+    }
 } 

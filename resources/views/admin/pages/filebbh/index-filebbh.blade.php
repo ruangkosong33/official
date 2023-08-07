@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Kategori File APBD</h1>
+                    <h1 class="m-0">File Belanja Bagi Hasil</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data File APBD</h3>
+                    <h3 class="card-title">Data File Belanja Bagi Hasil</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('fileapbd.create', ['apbd'=>$apbd])}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('filebbh.create', ['bbh'=>$bbh])}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -42,27 +42,25 @@
                             <tr>
                                 <th>No</th>
                                 <th>Kota/Kab</th>
-                                <th>Periode</th>
-                                <th>Tahun</th>
                                 <th>Judul</th>
+                                <th>Deskripsi</th>
                                 <th>File</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($fileapbd as $key=>$fileapbds)
+                            @foreach ($filebbh as $key=>$filebbhs)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$fileapbds->citykab->name_citykab}}</td>
-                                <td>{{$fileapbds->apbd->periode}}</td>
-                                <td>{{$fileapbds->apbd->year}}</td>
-                                <td>{{$fileapbds->title_fileapbd}}</td>
-                                <td><a href="{{route('fileapbd.download',$fileapbds->id)}}">{{$fileapbds->file_apbd}}</a></td>
+                                <td>{{$filebbhs->citykab->name_citykab}}</td>
+                                <td>{{$filebbhs->title_filebbh}}</td>
+                                <td>{{$filebbhs->description}}</td>
+                                <td><a href="{{route('filebbh.download',$filebbhs->id)}}">{{$filebbhs->file_bbh}}</a></td>
                                 <td>
-                                    {{-- <a href="" class="btn btn-warning btn-sm">
+                                    <a href="{{route('filebbh.edit', $filebbhs->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
-                                    </a> --}}
-                                    <form method="" action="" class="d-inline">
+                                    </a>
+                                    <form method="post" action="{{route('filebbh.destroy', $filebbhs->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">

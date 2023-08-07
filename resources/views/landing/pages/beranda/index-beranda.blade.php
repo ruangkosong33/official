@@ -861,7 +861,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 mx-auto">
                     <iframe width="100%" height="100%"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.66298776662!2d117.139331!3d-0.501074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67fa0cf3b5609%3A0x9efc250dd531e8b4!2sKantor%20Gubernur%20Kalimantan%20Timur!5e0!3m2!1sen!2sus!4v1686381485332!5m2!1sen!2sus"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15958.686093698549!2d117.1497487!3d-0.491497!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f081824155f%3A0x43fd2c094037eae5!2sBPKAD%20Prov.%20Kaltim!5e0!3m2!1sen!2sid!4v1691318417480!5m2!1sen!2sid"
                         style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -899,7 +899,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Alamat</p>
-                                    <h3>Jl. Kesuma Bangsa No.3 Samarinda 75117</h3>
+                                    <h3>Jl. Kesuma Bangsa No.7 Samarinda 75117</h3>
                                 </div>
                             </li>
                         </ul>

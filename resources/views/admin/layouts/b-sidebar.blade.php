@@ -343,7 +343,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{route('filesp2d.index')}}" class="nav-link @yield('filesp2d.index')">
+            <a href="{{route('bbh.index')}}" class="nav-link @yield('bbh.index')">
               <i class="nav-icon fas fa-cubes"></i>
               <p>
                 Belanja Bagi Hasil

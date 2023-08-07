@@ -9,11 +9,13 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\PortalController;
+use App\Http\Controllers\Bbh\BbhController;
 use App\Http\Controllers\CitykabController;
 use App\Http\Controllers\FilelawController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Bbh\FilebbhController;
 use App\Http\Controllers\Bbh\Filesp2dController;
 use App\Http\Controllers\Profil\EventController;
 use App\Http\Controllers\Profil\IssueController;
@@ -48,10 +50,10 @@ use App\Http\Controllers\Integrasi\ActionplanController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
 use App\Http\Controllers\Organization\DivisionController;
 use App\Http\Controllers\Organization\EmployeeController;
-use App\Http\Controllers\Profil\PolicydirectionController;
-use App\Http\Controllers\Infopublik\FiledownloadController;
 
 // Landing Controller
+use App\Http\Controllers\Profil\PolicydirectionController;
+use App\Http\Controllers\Infopublik\FiledownloadController;
 use App\Http\Controllers\Profil\FormationhistoryController;
 use App\Http\Controllers\Landing\BbhController as LandingBbhController;
 use App\Http\Controllers\Landing\LawController as LandingLawController;
@@ -553,8 +555,25 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::delete('/law/filelaw/{filelaw}', [FilelawController::class, 'destroy'])->name('filelaw.destroy');
     Route::get('/law/filelaw/{filelaw}', [FilelawController::class, 'download'])->name('filelaw.download');
 
-    //Belanja Bagi Hasil( BBH )//
-    //File SP2D
+    //Belanja Bagi Hasil( BBH )
+    //BBH//
+    Route::get('/bbh', [BbhController::class, 'index'])->name('bbh.index');
+    Route::get('/bbh/create', [BbhController::class, 'create'])->name('bbh.create');
+    Route::post('/bbh', [BbhController::class, 'store'])->name('bbh.store');
+    Route::get('/bbh/edit/{id}', [BbhController::class, 'edit'])->name('bbh.edit');
+    Route::put('/bbh/{id}', [BbhController::class, 'update'])->name('bbh.update');
+    Route::delete('/bbh/{id}', [BbhController::class, 'destroy'])->name('bbh.destroy');
+
+    //FileBBH//
+    Route::get('bbh/{bbh}/filebbh', [FilebbhController::class, 'index'])->name('filebbh.index');
+    Route::get('/bbh/{bbh}/filebbh/create', [FilebbhController::class, 'create'])->name('filebbh.create');
+    Route::post('/bbh/{bbh}/filebbh', [FilebbhController::class, 'store'])->name('filebbh.store');
+    Route::get('/bbh/filebbh/edit/{filebbh}', [FilebbhController::class, 'edit'])->name('filebbh.edit');
+    Route::put('/bbh/filebbh/{filebbh}', [FilebbhController::class, 'update'])->name('filebbh.update');
+    Route::delete('/bbh/filebbh/{filebbh}', [FilebbhController::class, 'destroy'])->name('filebbh.destroy');
+    Route::get('/bbh/filebbh/{filebbh}', [FilebbhController::class, 'download'])->name('filebbh.download');
+
+    //FileSP2D
     Route::get('/bbh/filesp2d', [Filesp2dController::class, 'index'])->name('filesp2d.index');
     Route::get('/bbh/filesp2d/create', [Filesp2dController::class, 'create'])->name('filesp2d.create');
     Route::post('/bbh/filesp2d', [Filesp2dController::class, 'store'])->name('filesp2d.store');
@@ -573,19 +592,6 @@ Route::middleware(['auth', 'checklevel:2'])->group(function()
      Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
