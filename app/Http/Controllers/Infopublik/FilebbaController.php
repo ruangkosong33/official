@@ -100,18 +100,18 @@ class FilebbaController extends Controller
         return redirect()->route('filebbh.index', ['bbh'=>$bbh]);
     }
 
-    public function destroy(Filebbh $filebbh)
+    public function destroy(Filebba $filebba)
     {
-        $filebbh=Filebbh::where('id', $filebbh->id);
+        $filebba=Filebba::where('id', $filebba->id);
 
-        $filebbh->delete();
+        $filebba->delete();
 
         Alert::success('Berhasil', 'Data Berhasil Di Hapus');
 
         return redirect()->back();
     }
 
-    public function download(Bba $bba)
+    public function download(filebba $filebba)
     {
         $filepath=public_path("uploads/file-bba/{$filebba->file_bba}");
 

@@ -105,7 +105,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -124,7 +124,7 @@
                         <div class="services-one__left">
                             <div class="section-title text-left">
                                 <div class="section-title__tagline-box">
-                                    <span class="section-title__tagline">what we’re doing</span>
+                                    <span class="section-title__tagline">Pelayanan</span>
                                 </div>
                                 <h2 class="section-title__title">Unit Layanan Kerja</h2>
                             </div>
@@ -180,7 +180,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--Feature Two Single End-->  
+                    <!--Feature Two Single End-->
                     <!--Services One Single Start-->
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                         <div class="feature-two__single">
@@ -222,7 +222,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--Feature Two Single End-->  
+                    <!--Feature Two Single End-->
                 </div>
             </div>
         </div>
@@ -234,45 +234,21 @@
         <div class="container">
             <div class="grow-business__inner">
                 <div class="grow-business__bg"
-                    style="background-image: url(../fk88/assets/images/backgrounds/grow-business-bg.jpg);"></div>
+                    style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);"></div>
                 <div class="row">
                     <div class="col-xl-6">
+                        @foreach ($goal as $goals)
                         <div class="grow-business__left">
                             <div class="section-title text-left">
                                 <div class="section-title__tagline-box">
-                                    <span class="section-title__tagline">Kepala BPKAD Porvinsi Kaltim</span>
+                                    <span class="section-title__tagline">TUJUAN & SASARAN</span>
                                 </div>
-                                <h2 class="section-title__title">H.Fahmi Prima Laksana,SE.,MM</h2>
+                                <h2 class="section-title__title">{{$goals->title_goalobjective}}</h2>
                             </div>
-                            <p class="grow-business__text">Duis aute irure dolor in reprehenderit in voluptate velit
-                                esse cillum dolore eu convenient scheduling, account nulla pariatur.</p>
-                            <ul class="grow-business__points list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <span class="fa fa-check"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Lorem ipsum is not simply random text</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="fa fa-check"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Making this the first true generator on the Internet</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="fa fa-check"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p>Various versions have evolved over the years</p>
-                                    </div>
-                                </li>
-                            </ul>
+                            <p class="grow-business__text">{!! $goals->description_goalobjective !!}
+                            </p>
                         </div>
+                        @endforeach
                     </div>
                     <div class="col-xl-6">
                         <div class="grow-business__right">
@@ -284,11 +260,11 @@
                             <ul class="grow-business__right-points list-unstyled">
                                 <li>
                                     <div class="grow-business__right-points-icon">
-                                        <span class="icon-experience"></span>
+                                        <a href="https://lapor.go.id"><span class="icon-experience"></span></a>
                                     </div>
                                     <h3 class="grow-business__right-points-title">Sistem Informasi Persediaan Aset
                                     </h3>
-                                    <p class="grow-business__right-points-text">Sistem Informasi yang bertujuan mengelola, memelihara, dan 
+                                    <p class="grow-business__right-points-text">Sistem Informasi yang bertujuan mengelola, memelihara, dan
                                         pengawasan terhadap aset-aset penting yang diperlukan untuk menunjang pengambilan keputusan tentang rencana anggaran dan akusisi investasi baru.
                                     </p>
                                 </li>
@@ -298,7 +274,7 @@
                                     </div>
                                     <h3 class="grow-business__right-points-title">Sistem Informasi Standar Harga
                                     </h3>
-                                    <p class="grow-business__right-points-text">SIDIRGA - KALTIM merupakan sistem berbasis web digunakan untuk menampung 
+                                    <p class="grow-business__right-points-text">SIDIRGA - KALTIM merupakan sistem berbasis web digunakan untuk menampung
                                         data Standar Harga sebagai acuan awal perencanaan dan penganggaran.
                                     </p>
                                 </li>
@@ -403,7 +379,7 @@
             </div>
     </section>
     <!-- Berita -->
-    
+
     <!-- Span Lapor -->
     <section class="cta-one">
         <div class="container">
@@ -493,163 +469,6 @@
     </section>
     <!-- Galeri -->
 
-    <!-- List -->
-    <section class="faq-one">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="faq-one__left">
-                        <div class="section-title text-left">
-                            <div class="section-title__tagline-box">
-                                <span class="section-title__tagline">frequently asked questions</span>
-                            </div>
-                            <h2 class="section-title__title">Building a Competitive
-                                Business <span>Sectors</span></h2>
-                        </div>
-                        <div class="faq-one__experience-and-points-box">
-                            {{-- <div class="faq-one__experience">
-                                <div class="faq-one__experience-title-box">
-                                    <div class="faq-one__experience-title-box-bg">
-                                    </div>
-                                    <h2 style="background-image: url(assets/images/backgrounds/experience-bg-1-1.jpg);"
-                                        class="faq-one__experience-title">30</h2>
-                                </div>
-                                <p>Years
-                                    <br> Experience</p>
-                            </div> --}}
-                            <ul class="faq-one__points list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-right-arrow"></span>
-                                    </div>
-                                    <div class="content">
-                                        <h3>Donec Quis felis Commodo</h3>
-                                        <p>Lorem ipsum is simply free text dol sit amet, passage of consectetur
-                                            notted.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-right-arrow"></span>
-                                    </div>
-                                    <div class="content">
-                                        <h3>Passage of consectetur notted.</h3>
-                                        <p>Lorem ipsum is simply free text dol sit amet, passage of consectetur
-                                            notted.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul class="faq-one__points list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-right-arrow"></span>
-                                    </div>
-                                    <div class="content">
-                                        <h3>Donec Quis felis Commodo</h3>
-                                        <p>Lorem ipsum is simply free text dol sit amet, passage of consectetur
-                                            notted.</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-right-arrow"></span>
-                                    </div>
-                                    <div class="content">
-                                        <h3>Passage of consectetur notted.</h3>
-                                        <p>Lorem ipsum is simply free text dol sit amet, passage of consectetur
-                                            notted.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="faq-one__right">
-                        <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
-                            <div class="accrodion">
-                                <div class="accrodion-title">
-                                    <h4>What does your process look like?</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>There are many variations of passages the majority have suffered
-                                            alteration in some fo injected humour, or randomised words believable.
-                                        </p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
-                            <div class="accrodion  active">
-                                <div class="accrodion-title">
-                                    <h4>Learn how we create unmatched solutions</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>There are many variations of passages the majority have suffered
-                                            alteration in some fo injected humour, or randomised words believable.
-                                        </p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
-                            <div class="accrodion">
-                                <div class="accrodion-title">
-                                    <h4>How long do services take to complete?</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>There are many variations of passages the majority have suffered
-                                            alteration in some fo injected humour, or randomised words believable.
-                                        </p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
-                            <div class="accrodion">
-                                <div class="accrodion-title">
-                                    <h4>How can i find my financial record?</h4>
-                                </div>
-                                <div class="accrodion-content">
-                                    <div class="inner">
-                                        <p>There are many variations of passages the majority have suffered
-                                            alteration in some fo injected humour, or randomised words believable.
-                                        </p>
-                                    </div><!-- /.inner -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- List -->
-
-    {{-- <div class="services-details__points">
-        <div class="row">
-            <div class="col-xl-6 col-md-6">
-                <div class="services-details__points-single">
-                    <div class="icon">
-                        <span class="icon-writer"></span>
-                    </div>
-                    <div class="content">
-                        <h3>Business Solution</h3>
-                        <p>There are many of lorem Ipsum the majori have suffered.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-md-6">
-                <div class="services-details__points-single">
-                    <div class="icon">
-                        <span class="icon-data-analysis"></span>
-                    </div>
-                    <div class="content">
-                        <h3>Market Rules</h3>
-                        <p>There are many of lorem Ipsum the majori have suffered.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
     <!-- Sosial Media -->
     <section class="news-one" style="padding-top: 20px">
         <div class="container">
@@ -673,7 +492,7 @@
                             <h3 class="sidebar__title">Jadwal Kegiatan</h3>
                             <ul class="sidebar__post-list list-unstyled">
                                 @forelse ($latestEvent as $event)
-                                    
+
                                 <li>
                                     <div class="sidebar__post-content">
                                         <h3>
@@ -691,7 +510,7 @@
                                     <div style="height: 400px;" class="text-center">
                                         <p style="vertical-align: middle;">Belum ada jadwal kegiatan</p>
                                     </div>
-                                @endforelse 
+                                @endforelse
                             </ul>
                             <div class="about-one__btn-box text-center mt-5" style="display: block;">
                                 <a href="{{ route('profil.event') }}" class="about-one__btn thm-btn">Jadwal Kegiatan
@@ -909,7 +728,7 @@
         </div>
     </section>
     <!-- Kontak -->
-    
+
 @endsection
 
 @push('js')
