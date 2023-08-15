@@ -18,6 +18,6 @@ class Bba extends Model
 
     public function filebba()
     {
-        return $this->hasMany(Filebba::class, 'filebba_id', 'id');
+        return $this->hasMany(Filebba::class, 'bba_id', 'id');
     }
 }

@@ -56,7 +56,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($bbas->filebba as $filebbas)
+                        @foreach ($bbaWithFiles->filebba as $filebbas)
                             <tr>
                                 <td>{{ $filebbas->citykab->name_citykab }}</td>
                                 <td><a class="team-one__hover-sub-title"

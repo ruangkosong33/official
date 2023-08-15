@@ -41,7 +41,7 @@ class FilebbaController extends Controller
             $file=$request->file('file_bba');
             $extension=$file->getClientOriginalName();
             $filebbas=$extension;
-            $file->move('/uploads/file-bba', $filebbas);
+            $file->move('uploads/file-bba', $filebbas);
         }
 
         $filebba=Filebba::create([

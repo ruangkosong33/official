@@ -31,15 +31,16 @@ class PublicinfoController extends Controller
 
     public function bba($slug)
     {
-        $bbas = Bba::with('filebba')->first();
-        // dd($download->filedownload);
-        return view('landing.pages.publicinfo.bba-publicinfo',['bbas'=>$bbas]);
+        $bbaWithFiles = Bba::with('filebba')->first();
+        // dd($bbaWithFiles->filebba);
+        return view('landing.pages.publicinfo.bba-publicinfo',['bbaWithFiles'=>$bbaWithFiles]);
     }
 
     public function downloadFileBba($slug)
     {
-        $bba = Filedownload::where('slug',$slug)->first();
-        $file = public_path('uploads/file-bba/').$bba->file_download;
+        $bba = Filebba::where('slug',$slug)->first();
+        // dd($slug);
+        $file = public_path('uploads/file-bba/').$bba->file_bba;
         $headers = ['Content-Type: application/pdf'];
     	$fileName = $bba->slug.'-'.time().'.pdf';
         return response()->download($file, $fileName, $headers);
