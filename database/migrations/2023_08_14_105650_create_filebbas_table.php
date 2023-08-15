@@ -11,18 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('filebbhs', function (Blueprint $table) {
+        Schema::create('filebbas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('bbh_id');
-            $table->foreign('bbh_id')->references('id')->on('bbhs');
-            $table->unsignedBigInteger('citykab_id');
-            $table->foreign('citykab_id')->references('id')->on('citykabs');
-            $table->string('title_filebbh');
+            $table->string('title_filebba');
             $table->string('slug');
-            $table->string('file_bbh');
+            $table->string('file_bba');
             $table->date('date');
             $table->string('description');
             $table->string('total');
+            $table->foreignId('bba_id')->constrained('bbas')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('citykab_id');
+            $table->foreign('citykab_id')->references('id')->on('citykabs');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('filebbhs');
+        Schema::dropIfExists('filebbas');
     }
 };

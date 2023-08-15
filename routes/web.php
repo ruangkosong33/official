@@ -24,6 +24,7 @@ use App\Http\Controllers\Integrasi\SopController;
 use App\Http\Controllers\Potention\PadController;
 use App\Http\Controllers\Profil\LeaderController;
 use App\Http\Controllers\Profil\VisionController;
+use App\Http\Controllers\Infopublik\BbaController;
 use App\Http\Controllers\Integrasi\ApbdController;
 use App\Http\Controllers\Integrasi\CityController;
 use App\Http\Controllers\Integrasi\LppdController;
@@ -40,6 +41,7 @@ use App\Http\Controllers\Integrasi\FilesopController;
 use App\Http\Controllers\Integrasi\RenstraController;
 use App\Http\Controllers\Potention\FilepadController;
 use App\Http\Controllers\Infopublik\AuctionController;
+use App\Http\Controllers\Infopublik\FilebbaController;
 use App\Http\Controllers\Integrasi\FileapbdController;
 use App\Http\Controllers\Infopublik\DownloadController;
 use App\Http\Controllers\Profil\ServiceorderController;
@@ -48,10 +50,10 @@ use App\Http\Controllers\Activity\RealisationController;
 use App\Http\Controllers\Activity\ResponsibleController;
 use App\Http\Controllers\Integrasi\ActionplanController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
-use App\Http\Controllers\Organization\DivisionController;
-use App\Http\Controllers\Organization\EmployeeController;
 
 // Landing Controller
+use App\Http\Controllers\Organization\DivisionController;
+use App\Http\Controllers\Organization\EmployeeController;
 use App\Http\Controllers\Profil\PolicydirectionController;
 use App\Http\Controllers\Infopublik\FiledownloadController;
 use App\Http\Controllers\Profil\FormationhistoryController;
@@ -136,6 +138,8 @@ Route::middleware(['landing',])->group(function()
     Route::get('/info-publik/lelang',[LandingPublicinfoController::class,'auction'])->name('landing.publicinfo.auction');
     Route::get('/info-publik/lelang/unduh/{slug}',[LandingPublicinfoController::class,'downloadFileAuction'])->name('landing.publicinfo.downloadFileAuction');
     Route::get('/info-publik/asrama',[LandingPublicinfoController::class,'hostel'])->name('landing.publicinfo.hostel');
+    Route::get('/info-publik/bba/{slug}', [LandingPublicinfoController::class, 'bba'])->name('landing.publicinfo.bba');
+    Route::get('/info-publik/bba/unduh/{slug}', [LandingPublicinfoController::class, 'downloadFileBba'])->name('landing.publicinfo.downloadFileBba');
 
     Route::get('/organisasi/{slug}', [LandingOrganizationController::class,'index'])->name('landing.organization.index');
 
@@ -190,6 +194,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('userlist/show/{id}', [UserController::class, 'show'])->name('userlist.show');
     Route::put('/userlist/{id}', [UserController::class, 'update'])->name('userlist.update');
     Route::delete('/userlist/{id}', [UserController::class, 'destroy'])->name('userlist.destroy');
+
 
     //PROFIL//
     //Taskfunction
@@ -263,6 +268,7 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/profil/event/edit/{id}', [EventController::class, 'edit'])->name('event.edit');
     Route::put('/profil/event/{id}', [EventController::class, 'update'])->name('event.update');
     Route::delete('/profil/event/{id}', [EventController::class, 'destroy'])->name('event.destroy');
+
 
     //ORGANIZATION//
     //Division
@@ -344,6 +350,23 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/infopublik/filedownload/{filedownload}', [FiledownloadController::class, 'update'])->name('filedownload.update');
     Route::delete('/infopublik/filedownload/{filedownload}', [FiledownloadController::class, 'destroy'])->name('filedownload.destroy');
     Route::get('/infopublik/filedownload/{filedownload}', [FiledownloadController::class, 'download'])->name('filedownload.download');
+
+    //Belanja Bagi Hasil
+    Route::get('/infopublik/bba', [BbaController::class, 'index'])->name('bba.index');
+    Route::get('/infopublik/bba/create', [BbaController::class, 'create'])->name('bba.create');
+    Route::post('/infopublik/bba', [BbaController::class, 'store'])->name('bba.store');
+    Route::get('/infopublik/bba/edit/{bba}', [BbaController::class, 'edit'])->name('bba.edit');
+    Route::put('/infopublik/bba/{bba}', [BbaController::class, 'update'])->name('bba.update');
+    Route::delete('/infopublik/bba/{bba}', [BbaController::class, 'destroy'])->name('bba.destroy');
+
+    //File Belanja Bagi Hasil
+    Route::get('/infopublik/{bba}/filebba', [FilebbaController::class, 'index'])->name('filebba.index');
+    Route::get('/infopublik/{bba}/filebba/create', [FilebbaController::class, 'create'])->name('filebba.create');
+    Route::post('/infopublik/{bba}/filebba', [FilebbaController::class, 'store'])->name('filebba.store');
+    Route::get('/infopublik/filebba/edit/{filebba}', [FilebbaController::class, 'edit'])->name('filebba.edit');
+    Route::put('/infopublik/filebba/{filebba}', [FilebbaController::class, 'update'])->name('filebba.update');
+    Route::delete('/infopublik/filebba/{filebba}', [FilebbaController::class, 'destroy'])->name('filebba.destroy');
+    Route::get('infopublik/filebba/{filebba}', [FilebbaController::class, 'download'])->name('filebba.download');
 
 
     //INTEGRATION//
@@ -554,24 +577,6 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::put('/law/filelaw/{filelaw}', [FilelawController::class, 'update'])->name('filelaw.update');
     Route::delete('/law/filelaw/{filelaw}', [FilelawController::class, 'destroy'])->name('filelaw.destroy');
     Route::get('/law/filelaw/{filelaw}', [FilelawController::class, 'download'])->name('filelaw.download');
-
-    //Belanja Bagi Hasil( BBH )
-    //BBH//
-    Route::get('/bbh', [BbhController::class, 'index'])->name('bbh.index');
-    Route::get('/bbh/create', [BbhController::class, 'create'])->name('bbh.create');
-    Route::post('/bbh', [BbhController::class, 'store'])->name('bbh.store');
-    Route::get('/bbh/edit/{id}', [BbhController::class, 'edit'])->name('bbh.edit');
-    Route::put('/bbh/{id}', [BbhController::class, 'update'])->name('bbh.update');
-    Route::delete('/bbh/{id}', [BbhController::class, 'destroy'])->name('bbh.destroy');
-
-    //FileBBH//
-    Route::get('bbh/{bbh}/filebbh', [FilebbhController::class, 'index'])->name('filebbh.index');
-    Route::get('/bbh/{bbh}/filebbh/create', [FilebbhController::class, 'create'])->name('filebbh.create');
-    Route::post('/bbh/{bbh}/filebbh', [FilebbhController::class, 'store'])->name('filebbh.store');
-    Route::get('/bbh/filebbh/edit/{filebbh}', [FilebbhController::class, 'edit'])->name('filebbh.edit');
-    Route::put('/bbh/filebbh/{filebbh}', [FilebbhController::class, 'update'])->name('filebbh.update');
-    Route::delete('/bbh/filebbh/{filebbh}', [FilebbhController::class, 'destroy'])->name('filebbh.destroy');
-    Route::get('/bbh/filebbh/{filebbh}', [FilebbhController::class, 'download'])->name('filebbh.download');
 
     //FileSP2D
     Route::get('/bbh/filesp2d', [Filesp2dController::class, 'index'])->name('filesp2d.index');

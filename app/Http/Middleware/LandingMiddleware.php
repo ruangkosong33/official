@@ -3,16 +3,17 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\View;
-use App\Models\Division;
+use App\Models\Bba;
 use App\Models\Law;
-use App\Models\Citykab;
-use App\Models\Download;
 use App\Models\Pad;
 use App\Models\Sop;
 use App\Models\Apbd;
+use App\Models\Citykab;
+use App\Models\Division;
+use App\Models\Download;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
+use Symfony\Component\HttpFoundation\Response;
 
 class LandingMiddleware
 {
@@ -29,6 +30,7 @@ class LandingMiddleware
         $downloads = Download::all();
         $pads = Pad::all();
         $sops = Sop::all();
+        $bbas = Bba::all();
         $apbdsNav = Apbd::all()->groupBy('year');
         View::share([
             'divisions' => $divisions,
@@ -37,6 +39,7 @@ class LandingMiddleware
             'downloads'=>$downloads,
             'pads'=>$pads,
             'sops'=>$sops,
+            'bbas'=>$bbas,
             'apbdsNav'=>$apbdsNav,
         ]);
         return $next($request);

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Landing;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Download;
-use App\Models\Auction;
-use App\Models\Filedownload;
+use App\Models\Bba;
 use App\Models\Hostel;
+use App\Models\Auction;
+use App\Models\Filebba;
+use App\Models\Download;
+use App\Models\Filedownload;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PublicinfoController extends Controller
 {
@@ -26,13 +28,29 @@ class PublicinfoController extends Controller
     	$fileName = $download->slug.'-'.time().'.pdf';
         return response()->download($file, $fileName, $headers);
     }
-    
+
+    public function bba($slug)
+    {
+        $bbas = Bba::with('filebba')->first();
+        // dd($download->filedownload);
+        return view('landing.pages.publicinfo.bba-publicinfo',['bbas'=>$bbas]);
+    }
+
+    public function downloadFileBba($slug)
+    {
+        $bba = Filedownload::where('slug',$slug)->first();
+        $file = public_path('uploads/file-bba/').$bba->file_download;
+        $headers = ['Content-Type: application/pdf'];
+    	$fileName = $bba->slug.'-'.time().'.pdf';
+        return response()->download($file, $fileName, $headers);
+    }
+
     public function auction()
     {
         $auctions = Auction::latest()->get();
         return view('landing.pages.publicinfo.auction-publicinfo',['auctions'=>$auctions]);
     }
-    
+
     public function downloadFileAuction($slug)
     {
         $auction = Auction::where('slug',$slug)->first();

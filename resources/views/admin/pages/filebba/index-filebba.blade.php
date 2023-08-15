@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Belanja Bagi Hasil</h1>
+                    <h1 class="m-0">File Belanja Bagi Hasil</h1>
                 </div>
             </div>
         </div>
@@ -26,11 +26,11 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Belanja Bagi Hasil</h3>
+                    <h3 class="card-title">Data File Belanja Bagi Hasil</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('bbh.create')}}"><i class="fas fa-plus"></i></a>
+                            <a class="nav-link active" href="{{route('filebba.create', ['bba'=>$bba])}}"><i class="fas fa-plus"></i></a>
                         </li>
                     </ul>
                     </div>
@@ -41,31 +41,32 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Usulan BBH</th>
-                                <th>Tahun</th>
+                                <th>Kota/Kab</th>
+                                <th>Judul</th>
+                                <th>Deskripsi</th>
+                                <th>File</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($bbh as $key=>$bbhs)
+                            @foreach ($filebba as $key=>$filebbas)
                               <tr>
                                 <td>{{$key+1}}</td>
-                                <td>{{$bbhs->title_plan}}</td>
-                                <td>{{$bbhs->year}}</td>
+                                <td>{{$filebbas->citykab->name_citykab}}</td>
+                                <td>{{$filebbas->title_filebba}}</td>
+                                <td>{{$filebbas->description}}</td>
+                                <td><a href="{{route('filebba.download', $filebbas->id)}}">{{$filebbas->file_bba}}</a></td>
                                 <td>
-                                    <a href="{{route('bbh.edit', $bbhs->id)}}" class="btn btn-warning btn-sm">
+                                    <a href="{{route('filebba.edit', $filebbas->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="post" action="{{route('bbh.destroy', $bbhs->id)}}" class="d-inline">
+                                    <form method="post" action="{{route('filebba.destroy', $filebbas->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
                                       <i class="fas fa-trash"></i>
                                     </button>
                                     </form>
-                                    <a href="{{route('filebbh.index', $bbhs)}}" class="btn btn-info btn-sm">
-                                      <i class="fas fa-list"></i>
-                                    </a>
                                 </td>
                               </tr>
                             @endforeach

@@ -102,6 +102,15 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
+                                                <li><a href="javascript:;">Belanja Bagi Hasil</a>
+                                                    <ul class="sub-menu">
+                                                        @foreach ($bbas as $bba)
+                                                            <li><a
+                                                                    href="{{ route('landing.publicinfo.bba', ['slug' => $bba->slug]) }}">{{ $bba->category_bba }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">

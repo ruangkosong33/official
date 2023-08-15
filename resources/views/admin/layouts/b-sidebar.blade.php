@@ -160,6 +160,14 @@
                   </a>
                 </li>
               </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('bba.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Belanja Bagi Hasil</p>
+                  </a>
+                </li>
+              </ul>
           </li>
 
           <li class="nav-item">
@@ -338,15 +346,6 @@
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Transparansi Anggaran
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="{{route('bbh.index')}}" class="nav-link @yield('bbh.index')">
-              <i class="nav-icon fas fa-cubes"></i>
-              <p>
-                Belanja Bagi Hasil
               </p>
             </a>
           </li>

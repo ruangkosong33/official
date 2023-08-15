@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('filebbh.store', ['bbh'=>$bbh])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('filebba.store', ['bba'=>$bba])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
@@ -49,12 +49,12 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="title_filebbh" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="title_filebba" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_filebbh" class="form-control @error('title_filebbh') is-invalid @enderror"
-                                        id="title_filebbh" placeholder="Judul">
+                                        <input type="text" name="title_filebba" class="form-control @error('title_filebba') is-invalid @enderror"
+                                        id="title_filebba" placeholder="Judul">
 
-                                        @error('title_filebbh')
+                                        @error('title_filebba')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -62,12 +62,12 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="file_bbh" class="col-sm-2 col-form-label">File</label>
+                                    <label for="file_bba" class="col-sm-2 col-form-label">File</label>
                                     <div class="col-sm-10">
-                                        <input type="file" name="file_bbh" class="form-control @error('file_bbh') is-invalid @enderror"
-                                        id="file_bbh">
+                                        <input type="file" name="file_bba" class="form-control @error('file_bba') is-invalid @enderror"
+                                        id="file_bba">
 
-                                        @error('file_bbh')
+                                        @error('file_bba')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -114,7 +114,7 @@
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('filebbh.index', ['bbh'=>$bbh])}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('filebba.index', ['bba'=>$bba])}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->
