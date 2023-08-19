@@ -111,7 +111,7 @@
                 </div>
             @endif
             <div class="row mt-1">
-                <h3 class="project-details__title-2">Kepala Seksi</h3>
+                <h3 class="project-details__title-2">Kepala Sub Bidang</h3>
                 
                 @foreach ($kepalaSeksi as $employee)
                     <!--Team One Single Start-->

@@ -666,6 +666,24 @@
             </div>
             <!-- If we need navigation buttons -->
         </div>
+
+        <div class="container">
+            <div class="cta-one__inner">
+                <div class="cta-one__img">
+                    <img src="{{asset('fk88/assets/images/resources/wbs.png')}}" alt="">
+                </div>
+                <div class="cta-one__title">
+                    <h3>“Wilayah Bebas Korupsi",
+                        <br>
+                    Sistem Informasi Pelanggaran
+                    </h3>
+                </div>
+                <div class="cta-one__btn-box">
+                    <a href="https://wbs.bpkp.go.id" class="cta-one__btn thm-btn">Lanjut</a>
+                </div>
+            </div>
+        </div>
+
     </section>
     <!-- Link Eksternal -->
 
