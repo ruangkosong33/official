@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Models\Sk;
 use App\Models\Bba;
 use App\Models\Law;
 use App\Models\Pad;
@@ -31,6 +32,7 @@ class LandingMiddleware
         $pads = Pad::all();
         $sops = Sop::all();
         $bbas = Bba::all();
+        $sks  = Sk::all();
         $apbdsNav = Apbd::all()->groupBy('year');
         View::share([
             'divisions' => $divisions,
@@ -40,6 +42,7 @@ class LandingMiddleware
             'pads'=>$pads,
             'sops'=>$sops,
             'bbas'=>$bbas,
+            'sks'=>$sks,
             'apbdsNav'=>$apbdsNav,
         ]);
         return $next($request);

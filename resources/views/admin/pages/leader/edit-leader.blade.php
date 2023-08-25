@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h3 class="m-0">Kepala Badam</h1>
+                    <h3 class="m-0">Kepala Badan</h1>
                 </div>
             </div>
         </div>
@@ -51,22 +51,11 @@
                                 @enderror
 
                         </div>
-
-                        <div class="form-group row">
-                            <label for="description_issue" class="form-label col-sm-2">Deskripsi</label>
-                                <textarea class="form-control @error('description_issue') is-invalid @enderror" name="description_issue"
-                                id="description_issue">{{old('description_issue') ?? $issue->description_issue}}</textarea>
-
-                                @error ('description_issue')
-                                    <span class="invalid-feedback">{{$message}}</span>
-                                @enderror
-
-                        </div>
                     </div>
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-info">Simpan</button>
-                        <a href="{{route('issue.index')}}" button type="submit" class="btn btn-default">Kembali</a></button>
+                        <a href="{{route('leader.index')}}" button type="submit" class="btn btn-default">Kembali</a></button>
                     </div>
                 </form>
                 <!-- End Form -->

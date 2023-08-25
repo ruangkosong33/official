@@ -33,7 +33,7 @@
                                             <i class="fas fa-fax"></i>
                                         </div>
                                         <div class="text">
-                                            <p>Jl. Kesuma Bangsa No.3 Samarinda 75117</p>
+                                            <p>Jl. Kesuma Bangsa No.7 Samarinda 75117</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -41,7 +41,7 @@
                             <div class="main-menu-three__top-right">
                                 <div class="main-menu-three__social">
                                     <a href="https://twitter.com/bpkadkaltim"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.facebook.com/pages/BPKAD%20Prov.%20Kaltim/1900010416967704/"><i
+                                    <a href="https://www.facebook.com/profile.php?id=61550414739484"><i
                                             class="fab fa-facebook"></i></a>
                                     <a href="https://www.instagram.com/bpkadkaltim/"><i
                                             class="fab fa-instagram"></i></a>
@@ -111,6 +111,7 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
+                                                <li><a href="{{ route('landing.publicinfo.sk') }}">SK Belanja Bagi Hasil</a></li>
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">

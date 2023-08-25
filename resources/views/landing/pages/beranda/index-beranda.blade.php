@@ -260,7 +260,7 @@
                             <ul class="grow-business__right-points list-unstyled">
                                 <li>
                                     <div class="grow-business__right-points-icon">
-                                        <a href="https://lapor.go.id"><span class="icon-experience"></span></a>
+                                        <a href="https://sikap.kaltimprov.go.id"><span class="icon-experience"></span></a>
                                     </div>
                                     <h3 class="grow-business__right-points-title">Sistem Informasi Persediaan Aset
                                     </h3>
@@ -270,7 +270,7 @@
                                 </li>
                                 <li>
                                     <div class="grow-business__right-points-icon">
-                                        <span class="icon-consumer-behavior"></span>
+                                        <a href="http://sidirga.kaltimprov.go.id" span class="icon-consumer-behavior"></span></a>
                                     </div>
                                     <h3 class="grow-business__right-points-title">Sistem Informasi Standar Harga
                                     </h3>
@@ -666,6 +666,24 @@
             </div>
             <!-- If we need navigation buttons -->
         </div>
+
+        <div class="container">
+            <div class="cta-one__inner">
+                <div class="cta-one__img">
+                    <img src="{{asset('fk88/assets/images/resources/wbs.png')}}" alt="">
+                </div>
+                <div class="cta-one__title">
+                    <h3>“Wilayah Bebas Korupsi",
+                        <br>
+                    Sistem Informasi Pelanggaran
+                    </h3>
+                </div>
+                <div class="cta-one__btn-box">
+                    <a href="https://wbs.bpkp.go.id" class="cta-one__btn thm-btn">Lanjut</a>
+                </div>
+            </div>
+        </div>
+
     </section>
     <!-- Link Eksternal -->
 
