@@ -37,6 +37,7 @@ use App\Http\Controllers\Integrasi\RpjmdController;
 use App\Http\Controllers\Potention\AssetController;
 use App\Http\Controllers\FiletransparencyController;
 use App\Http\Controllers\Integrasi\SidataController;
+use App\Http\Controllers\Infopublik\FileskController;
 use App\Http\Controllers\Infopublik\HostelController;
 use App\Http\Controllers\Integrasi\FilesopController;
 use App\Http\Controllers\Integrasi\RenstraController;
@@ -49,9 +50,9 @@ use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
 use App\Http\Controllers\Activity\RealisationController;
 use App\Http\Controllers\Activity\ResponsibleController;
-use App\Http\Controllers\Integrasi\ActionplanController;
 
 // Landing Controller
+use App\Http\Controllers\Integrasi\ActionplanController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
 use App\Http\Controllers\Organization\DivisionController;
 use App\Http\Controllers\Organization\EmployeeController;
@@ -141,8 +142,9 @@ Route::middleware(['landing',])->group(function()
     Route::get('/info-publik/asrama',[LandingPublicinfoController::class,'hostel'])->name('landing.publicinfo.hostel');
     Route::get('/info-publik/bba/{slug}', [LandingPublicinfoController::class, 'bba'])->name('landing.publicinfo.bba');
     Route::get('/info-publik/bba/unduh/{slug}', [LandingPublicinfoController::class, 'downloadFileBba'])->name('landing.publicinfo.downloadFileBba');
-    Route::get('/info-publik/sk', [LandingPublicinfoController::class, 'sk'])->name('landing.publicinfo.sk');
+    Route::get('/info-publik/sk/{slug}', [LandingPublicinfoController::class, 'sk'])->name('landing.publicinfo.sk');
     Route::get('/info-publik/sk/unduh/{slug}', [LandingPublicinfoController::class, 'downloadSk'])->name('landing.publicinfo.downloadSk');
+
 
     Route::get('/organisasi/{slug}', [LandingOrganizationController::class,'index'])->name('landing.organization.index');
 
@@ -378,7 +380,16 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/infopublik/sk/edit/{sk}', [SkController::class, 'edit'])->name('sk.edit');
     Route::put('/infopublik/sk/{sk}', [SkController::class, 'update'])->name('sk.update');
     Route::delete('/infopublik/sk/{sk}', [SkController::class, 'destroy'])->name('sk.destroy');
-    Route::get('/infopublik/sk/download/{sk}', [SkController::class, 'download'])->name('sk.download');
+
+    //File Belanja Bagi Hesk
+    Route::get('/infopublik/{sk}/filesk', [FileskController::class, 'index'])->name('filesk.index');
+    Route::get('/infopublik/{sk}/filesk/create', [FileskController::class, 'create'])->name('filesk.create');
+    Route::post('/infopublik/{sk}/filesk', [FileskController::class, 'store'])->name('filesk.store');
+    Route::get('/infopublik/filesk/edit/{filesk}', [FileskController::class, 'edit'])->name('filesk.edit');
+    Route::put('/infopublik/filesk/{filesk}', [FileskController::class, 'update'])->name('filesk.update');
+    Route::delete('/infopublik/filesk/{filesk}', [FileskController::class, 'destroy'])->name('filesk.destroy');
+    Route::get('infopublik/filesk/{filesk}', [FileskController::class, 'download'])->name('filesk.download');
+
 
 
     //INTEGRATION//

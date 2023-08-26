@@ -111,7 +111,15 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
-                                                <li><a href="{{ route('landing.publicinfo.sk') }}">SK Belanja Bagi Hasil</a></li>
+                                                <li><a href="javascript:;">SK Belanja Bagi Hasil</a>
+                                                    <ul class="sub-menu">
+                                                        @foreach ($sks as $sk)
+                                                            <li><a
+                                                                    href="{{ route('landing.publicinfo.sk', ['slug' => $sk->slug]) }}">{{ $sk->title_sk }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">

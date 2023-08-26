@@ -26,21 +26,11 @@ class SkController extends Controller
     {
         $this->validate($request, [
             'title_sk'=>'required',
-            'file_sk'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:60000',
         ]);
-
-        if($request->file('file_sk'))
-        {
-            $file=$request->file('file_sk');
-            $extension=$file->getClientOriginalName();
-            $sks=$extension;
-            $file->move('uploads/file-sk', $sks);
-        }
 
         $sk=Sk::create([
             'title_sk'=>$request->title_sk,
             'slug'=>Str::slug($request->title_sk),
-            'file_sk'=>$sks,
         ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Simpan');
@@ -57,16 +47,12 @@ class SkController extends Controller
     {
         $this->validate($request, [
             'title_sk'=>'required',
-            'file_sk'=>'mimes:pdf|max:60000'
         ]);
 
-        if($request->file('file_sk'))
-        {
-            $file=$request->file('file_sk');
-            $extension=$file->getClientOriginalName();
-            $sks=$extension;
-            $file->move('uploads/file-sk', $sks);
-        }
+        $sk->update([
+            'title_sk'=>$request->title_sk,
+            'slug'=>Str::slug($request->title_sk),
+        ]);
 
         Alert::success('Berhasil', 'Data Berhasil Di Update');
 

@@ -11,7 +11,13 @@ class Sk extends Model
 
     protected $table='sks';
 
-    protected $fillable=['title_sk', 'slug', 'file_sk'];
+    protected $fillable=['title_sk', 'slug'];
 
     protected $hidden=[];
+
+
+    public function filesk()
+    {
+        return $this->hasMany(Filesk::class, 'sk_id', 'id');
+    }
 }

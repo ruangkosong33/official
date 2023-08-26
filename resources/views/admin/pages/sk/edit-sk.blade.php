@@ -45,19 +45,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group row">
-                                    <label for="file_sidata" class="col-sm-2 col-form-label">File</label>
-                                    <div class="col-sm-10">
-                                        <input type="file" name="file_sk" class="form-control @error('file_sk') is-invalid @enderror"
-                                        id="file_sk">
-
-                                        @error('file_sk')
-                                        <span class="invalid-feedback">{{$message}}</span>
-                                        @enderror
-
-                                    </div>
-                                </div>
-
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>

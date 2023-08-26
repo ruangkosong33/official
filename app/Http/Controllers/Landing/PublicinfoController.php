@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Landing;
 
 use App\Models\Sk;
 use App\Models\Bba;
+use App\Models\Filesk;
 use App\Models\Hostel;
 use App\Models\Auction;
 use App\Models\Filebba;
@@ -70,16 +71,20 @@ class PublicinfoController extends Controller
 
     public function sk()
     {
-        $sks = Sk::latest()->get();
-        return view('landing.pages.publicinfo.sk-publicinfo',['sks'=>$sks]);
+        $skss = Sk::with('filesk')->first();
+        // dd($bbaWithFiles->filebba);
+        return view('landing.pages.publicinfo.sk-publicinfo',['skss'=>$skss]);
     }
 
     public function downloadSk($slug)
     {
-        $sk = Sk::where('slug',$slug)->first();
+        $sk = Filesk::where('slug',$slug)->first();
+        // dd($slug);
         $file = public_path('uploads/file-sk/').$sk->file_sk;
         $headers = ['Content-Type: application/pdf'];
     	$fileName = $sk->slug.'-'.time().'.pdf';
         return response()->download($file, $fileName, $headers);
     }
+
+
 }

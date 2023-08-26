@@ -18,12 +18,10 @@
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>Info Publik</h2>
+                <h2>SK Belanja Bagi Hasil</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
-                        <li><span>/</span></li>
-                        <li>Info Publik</li>
                         <li><span>/</span></li>
                         <li>SK Belanja Bagi Hasil</li>
                     </ul>
@@ -39,7 +37,7 @@
                 <div class="section-title__tagline-box">
                     <span class="section-title__tagline">BPKAD KALTIM</span>
                 </div>
-                <h2 class="section-title__title">Download SK Belanja Bagi Hasil</span></h2>
+                <h2 class="section-title__title">SK Belanja Bagi Hasil</span></h2>
             </div>
         </div>
     </section>
@@ -47,20 +45,19 @@
     <section>
         <div class="container">
             <div class="row pb-5">
-                <table id="datatable1" class="display" style="width:100%">
+                <table id="example" class="display" style="width:100%">
                     <thead>
                         <tr>
                             <th>Judul</th>
-                            <th>Dibuat</th>
+                            <th>Tanggal</th>
                             <th>Unduh</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($sks as $sk)
+                        @foreach ($skss->filesk as $sk)
                             <tr>
-                                <td>{{ $sk->title_sk }}</td>
-                                <td>{{ $sk->created_at->format('d') . ' ' . $sk->created_at->monthName . ', ' . $sk->created_at->year }}
-                                </td>
+                                <td>{{ $sk->title_filesk }}</td>
+                                <td>{{ $sk->created_at->format('d') . ' ' . $sk->created_at->monthName . ', ' . $sk->created_at->year }}</td>
                                 <td><a href="{{ route('landing.publicinfo.downloadSk', ['slug' => $sk->slug]) }}"
                                         class="thm-btn calculator-menu__btn" target="_blank" rel="nofollow">Unduh</a></td>
                             </tr>
@@ -75,10 +72,11 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#datatable1').DataTable({
+            $('#example').DataTable({
                 language: {
                     url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/id.json',
                 },
+                ordering: false
             });
         });
     </script>

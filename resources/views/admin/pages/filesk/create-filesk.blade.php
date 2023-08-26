@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="mb-0">SK Belanja Bagi Hasil</h1>
+                    <h1 class="mb-0">File SK Belanja Bagi Hasil</h1>
                 </div>
             </div>
         </div>
@@ -24,20 +24,33 @@
                 <div class="col-md-12">
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Tambah Data SK Belanja Bagi Hasil</h3>
+                            <h3 class="card-title">Tambah File SK Belanja Bagi Hasil</h3>
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('sk.store')}}" class="form-horizontal" enctype="multipart/form-data" method="post">
+                        <form action="{{route('filesk.store', ['sk'=>$sk])}}" class="form-horizontal" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="title_sidata" class="col-sm-2 col-form-label">Judul</label>
+                                    <label for="title_filesk" class="col-sm-2 col-form-label">Judul</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="title_sk" class="form-control @error('title_sk') is-invalid @enderror"
-                                        id="title_sk" placeholder="Judul">
+                                        <input type="text" name="title_filesk" class="form-control @error('title_filesk') is-invalid @enderror"
+                                        id="title_filesk" placeholder="Judul">
 
-                                        @error('title_sk')
+                                        @error('title_filesk')
+                                        <span class="invalid-feedback">{{$message}}</span>
+                                        @enderror
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="file_sk" class="col-sm-2 col-form-label">File</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" name="file_sk" class="form-control @error('file_sk') is-invalid @enderror"
+                                        id="file_sk">
+
+                                        @error('file_sk')
                                         <span class="invalid-feedback">{{$message}}</span>
                                         @enderror
 
@@ -47,7 +60,7 @@
                             </div>
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                <a href="{{route('sk.index')}}" button type="submit" class="btn btn-default">Kembali</button></a>
+                                <a href="{{route('filesk.index', ['sk'=>$sk])}}" button type="submit" class="btn btn-default">Kembali</button></a>
                             </div>
                         </form>
                         <!-- End Form -->
