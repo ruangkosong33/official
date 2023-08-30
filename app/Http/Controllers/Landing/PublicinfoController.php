@@ -33,7 +33,7 @@ class PublicinfoController extends Controller
 
     public function bba($slug)
     {
-        $bbaWithFiles = Bba::with('filebba')->first();
+        $bbaWithFiles = Bba::where('slug', $slug)->first();
         // dd($bbaWithFiles->filebba);
         return view('landing.pages.publicinfo.bba-publicinfo',['bbaWithFiles'=>$bbaWithFiles]);
     }

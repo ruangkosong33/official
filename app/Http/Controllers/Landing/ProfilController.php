@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\Landing;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Vision;
-use App\Models\Formationhistory;
-use App\Models\Issue;
-use App\Models\Goalobjective;
-use App\Models\Taskfunction;
-use App\Models\Policydirection;
-use App\Models\Serviceorder;
-use App\Models\Leader;
-use App\Models\Event;
 use Carbon\Carbon;
+use App\Models\Event;
+use App\Models\Issue;
+use App\Models\Leader;
+use App\Models\Vision;
+use App\Models\Structure;
 use Illuminate\Support\Arr;
+use App\Models\Serviceorder;
+use App\Models\Taskfunction;
+use Illuminate\Http\Request;
+use App\Models\Goalobjective;
+use App\Models\Policydirection;
+use App\Models\Formationhistory;
+use App\Http\Controllers\Controller;
 
 class ProfilController extends Controller
 {
@@ -38,7 +39,11 @@ class ProfilController extends Controller
         $goalobjective = Goalobjective::firstOrFail();
         return view('landing.pages.profil.goalobjective-profil',['goalobjective'=>$goalobjective]);
     }
-
+    public function structure()
+    {
+        $structure = Structure::firstOrFail();
+        return view('landing.pages.profil.structure-profil',['structure'=>$structure]);
+    }
     public function taskfunction()
     {
         $taskfunction = Taskfunction::firstOrFail();

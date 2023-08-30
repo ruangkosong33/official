@@ -6,8 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>BPKAD - PROV KALTIM</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="PFY" name="description">
+  <meta content="PFY" name="keywords">
 
   <!-- Favicons -->
   <link href="{{asset('portal/assets/img/favicon.png')}}" rel="icon">
@@ -46,7 +46,7 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box">
             <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="{{route('dashboard.index')}}">Website</a></h3>
+            <h3><a href="{{route('dashboard.index')}}">WEBSITE</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">

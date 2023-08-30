@@ -37,6 +37,7 @@ use App\Http\Controllers\Integrasi\RpjmdController;
 use App\Http\Controllers\Potention\AssetController;
 use App\Http\Controllers\FiletransparencyController;
 use App\Http\Controllers\Integrasi\SidataController;
+use App\Http\Controllers\Profil\StructureController;
 use App\Http\Controllers\Infopublik\FileskController;
 use App\Http\Controllers\Infopublik\HostelController;
 use App\Http\Controllers\Integrasi\FilesopController;
@@ -49,9 +50,9 @@ use App\Http\Controllers\Infopublik\DownloadController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
 use App\Http\Controllers\Activity\RealisationController;
-use App\Http\Controllers\Activity\ResponsibleController;
 
 // Landing Controller
+use App\Http\Controllers\Activity\ResponsibleController;
 use App\Http\Controllers\Integrasi\ActionplanController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
 use App\Http\Controllers\Organization\DivisionController;
@@ -105,9 +106,10 @@ Route::middleware(['landing',])->group(function()
     Route::get('/galeri/{slug}',[LandingGalleryController::class,'detail'])->name('landing.gallery.detail');
 
     Route::get('/profil/visi&misi',[LandingProfilController::class,'vision'])->name('profil.vision');
+    Route::get('/profil/struktur-organisasi',[LandingProfilController::class,'structure'])->name('profil.structure');
     Route::get('/profil/sejarah-pembentukan',[LandingProfilController::class,'formationhistory'])->name('profil.formationhistory');
     Route::get('/profil/isu-strategis',[LandingProfilController::class,'issue'])->name('profil.issue');
-    Route::get('/profil/tujuan-dan-saran',[LandingProfilController::class,'goalobjective'])->name('profil.goalobjective');
+    Route::get('/profil/tujuan-dan-sasaran',[LandingProfilController::class,'goalobjective'])->name('profil.goalobjective');
     Route::get('/profil/tugas-dan-fungsi',[LandingProfilController::class,'taskfunction'])->name('profil.taskfunction');
     Route::get('/profil/arah-kebijakan',[LandingProfilController::class,'policydirection'])->name('profil.policydirection');
     Route::get('/profil/tertib-pelayanan',[LandingProfilController::class,'serviceorder'])->name('profil.serviceorder');
@@ -209,6 +211,14 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/profil/taskfunction/edit/{id}', [TaskfunctionController::class, 'edit'])->name('taskfunction.edit');
     Route::put('/profil/taskfunction/{id}', [TaskfunctionController::class, 'update'])->name('taskfunction.update');
     Route::delete('/profil/taskfunction/{id}', [TaskfunctionController::class, 'destroy'])->name('taskfunction.destroy');
+
+    //Structure Organization
+    Route::get('/profil/structure', [StructureController::class, 'index'])->name('structure.index');
+    Route::get('/profil/structure/create', [StructureController::class, 'create'])->name('structure.create');
+    Route::post('/profil/structure', [StructureController::class, 'store'])->name('structure.store');
+    Route::get('/profil/structure/edit/{structure}', [StructureController::class, 'edit'])->name('structure.edit');
+    Route::put('/profil/structure/{structure}', [Structure::class, 'edit'])->name('structure.update');
+    Route::delete('/profil/structure/{structure}', [StructureController::class, 'destroy'])->name('structure.destroy');
 
     //Vision
     Route::get('/profil/vision', [VisionController::class, 'index'])->name('vision.index');

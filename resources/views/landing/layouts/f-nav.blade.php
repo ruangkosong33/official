@@ -68,6 +68,7 @@
                                                 <li><a href="{{ route('profil.issue') }}">Isu Strategis</a></li>
                                                 <li><a href="{{ route('profil.goalobjective') }}">Tujuan & Sasaran</a>
                                                 </li>
+                                                <li><a href="{{ route('profil.structure') }}">Struktur Organisasi</a></li>
                                                 <li><a href="{{ route('profil.taskfunction') }}">Tugas Pokok &
                                                         Fungsi</a></li>
                                                 <li><a href="{{ route('profil.policydirection') }}">Arah Kebijakan</a>

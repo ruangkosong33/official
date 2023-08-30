@@ -64,6 +64,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{route('structure.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Struktur Organisasi</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('goalobjective.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tujuan & Sasaran</p>

@@ -15,49 +15,41 @@
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>Tertib Pelayanan</h2>
+                <h2>{{ $structure->title_structure }}</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
-                        <li>Profil</li>
+                        <li>Struktur Organisasi</li>
                         <li><span>/</span></li>
-                        <li>Tertib Pelayanan</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
     <!--Page Header End-->
-
-    <!--About Four Start-->
-    <section class="about-four">
+    <!--Faq Search Start-->
+    <section class="faq-search" style="padding-bottom: 10px">
+        <div class="container">
+            <div class="section-title text-center">
+                <div class="section-title__tagline-box">
+                    <span class="section-title__tagline">Struktur Organisasi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Faq Search End-->
+    <!--Team Page Start-->
+    <section class="team-page" style="padding-top: 0px">
         <div class="container">
             <div class="row">
-
-                <div class="col-xl-6">
-                    <div class="about-four__right" style="margin-right:70px;margin-left: 0px">
-                        <div class="section-title text-left">
-                            <h2 class="section-title__title">{{ $serviceorder->title_serviceorder }}</h2>
-                        </div>
-                        <p class="about-four__text">{!! $serviceorder->description_serviceorder !!}</p>
-                    </div>
-                </div>
-                <div class="col-xl-6">
-                    <div class="about-four__left">
-                        <div class="about-four__img-box">
-                            <div class="about-four__img">
-                                <img src="{{ asset('fk88/assets/images/bpkad/tertib-pelayanan.png') }}" alt="">
-                            </div>
-                            {{-- <div class="about-four__img-two">
-                                <img src="{{ asset('fk88/assets/images/resources/about-four-img-2.jpg') }}" alt="">
-                            </div> --}}
-                            <div class="about-four__shape-1 img-bounce"></div>
-                        </div>
+                <div class="col-xl-12">
+                    <div class="project-details__img mt-3">
+                        <img src="{{ asset('uploads/image-structure/' . $structure->image_structure) }}" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--About Four End-->
+    <!--Team Page End-->
 @endsection
