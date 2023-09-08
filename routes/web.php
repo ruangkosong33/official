@@ -181,7 +181,7 @@ Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('aut
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //Check Level 1
-Route::middleware(['auth', 'checklevel:1'])->group(function()
+Route::middleware(['auth', 'checklevel:1,2'])->group(function()
 {
     //Dashboard
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
@@ -621,27 +621,4 @@ Route::middleware(['auth', 'checklevel:1'])->group(function()
     Route::get('/bbh/filesp2d/{sp2d}', [Filesp2dControllerr::class, 'download'])->name('filesp2d.download');
 
 });
-
-
-//Check Level 2
-Route::middleware(['auth', 'checklevel:2'])->group(function()
-{
-     //Dashboard
-     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
-
-});
-
-
-
-
-// Route::group(['middleware' => ['auth']], function () {
-//     Route::group(['middleware' => ['checklevel:1']], function () {
-//         Route::get('/user', [UserController::class, 'userlist'])->name('userlist.index');
-//         Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('userlist.edit');
-//     });
-//     Route::group(['middleware' => ['checklevel:2']], function () {
-//         Route::resource('category', CategoryController::class);
-//         Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('userlist.edit');
-//     });
-// });
 

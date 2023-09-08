@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function userlist()
     {
-        $user=User::where('status', 'inactive')->orWhere('level', '2')->get();
+        $user=User::where('status', 'inactive')->orWhere('status', 'active')->get();
 
         return view('admin.pages.user.index-user', ['user'=>$user]);
     }

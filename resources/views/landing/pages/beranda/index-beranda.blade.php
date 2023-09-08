@@ -736,7 +736,7 @@
                                 </div>
                                 <div class="text">
                                     <p>Alamat</p>
-                                    <h3>Jl. Kesuma Bangsa No.7 Samarinda 75117</h3>
+                                    <h3>Jl. Kesuma Bangsa No.3 Samarinda 75117</h3>
                                 </div>
                             </li>
                         </ul>

@@ -33,7 +33,7 @@
                                             <i class="fas fa-fax"></i>
                                         </div>
                                         <div class="text">
-                                            <p>Jl. Kesuma Bangsa No.7 Samarinda 75117</p>
+                                            <p>Jl. Kesuma Bangsa No.3 Samarinda 75117</p>
                                         </div>
                                     </li>
                                 </ul>

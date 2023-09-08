@@ -36,6 +36,8 @@
           </li>
           <li class="nav-header">Menu</li>
 
+          @if(auth()->user()->level == 1)
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
@@ -354,7 +356,6 @@
             </a>
           </li>
 
-
           <li class="nav-item">
             <a href="{{route('transparency.index')}}" class="nav-link @yield('law.index')">
               <i class="nav-icon fas fa-copy"></i>
@@ -409,6 +410,78 @@
             </a>
           </li>
 
+          @endif
+
+          @if(auth()->user()->level == 2)
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-bullhorn"></i>
+              <p>
+                Info Publik
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('bba.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Belanja Bagi Hasil</p>
+                  </a>
+                </li>
+            </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('sk.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SK Belanja Bagi Hasil</p>
+                  </a>
+                </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('logout')}}" class="nav-link @yield('userlist.index')">
+              <i class="nav-icon fas fa-key"></i>
+              <p>
+                Logout
+              </p>
+            </a>
+          </li>
+
+          @endif
+
+          @if(auth()->user()->level == 3)
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Profil
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('event.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Event</p>
+                  </a>
+                </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('logout')}}" class="nav-link @yield('userlist.index')">
+              <i class="nav-icon fas fa-key"></i>
+              <p>
+                Logout
+              </p>
+            </a>
+          </li>
+
+          @endif
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
