@@ -481,7 +481,7 @@
                 <!--SOSMED Single Start-->
                 <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                     <div class="news-one__single">
-                        <div class="elfsight-app-15d06d74-1030-470f-8553-3a63214fe751"></div>
+                        <div class="elfsight-app-3acdcc4b-0803-48e8-a9c7-2ca3295ffc0a"></div>
                     </div>
                 </div>
                 <!--SOSMED Single End-->
