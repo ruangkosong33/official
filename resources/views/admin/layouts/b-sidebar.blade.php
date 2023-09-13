@@ -532,6 +532,37 @@
 
           @endif
 
+          @if(auth()->user()->level == 4)
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Profil
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('event.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Event</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('logout')}}" class="nav-link">
+              <i class="nav-icon fas fa-key"></i>
+              <p>
+                Logout
+              </p>
+            </a>
+          </li>
+
+          @endif
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
