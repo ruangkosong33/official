@@ -60,6 +60,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Judul</th>
+                                                        <th>Di Buat</th>
                                                         <th>Unduh</th>
                                                     </tr>
                                                 </thead>
@@ -67,7 +68,7 @@
                                                     @foreach ($transparency->filetransparency as $filetransparency)
                                                         <tr>
                                                             <td>{{ $filetransparency->title_filetransparency }}</td>
-                                                            </td>
+                                                            <td>{{ $filetransparency->created_at->format('d') . ' ' . $filetransparency->created_at->monthName . ', ' . $filetransparency->created_at->year }}</td>
                                                             <td><a href="{{ route('landing.transparency.downloadFile', ['slug' => $filetransparency->slug]) }}"
                                                                     class="thm-btn calculator-menu__btn" target="_blank"
                                                                     rel="nofollow">Unduh</a></td>
