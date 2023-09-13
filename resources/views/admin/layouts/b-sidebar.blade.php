@@ -455,33 +455,74 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
+              <i class="nav-icon fas fa-bullhorn"></i>
               <p>
-                Profil
+                Info Publik
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('hostel.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Asrama</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{route('event.index')}}" class="nav-link">
+                  <a href="{{route('auction.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Event</p>
+                    <p>Lelang</p>
                   </a>
                 </li>
-            </ul>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('download.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Download</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('bba.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Belanja Bagi Hasil</p>
+                  </a>
+                </li>
+              </ul>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('sk.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>SK Belanja Bagi Hasil</p>
+                  </a>
+                </li>
+              </ul>
           </li>
 
           <li class="nav-item">
-            <a href="{{route('logout')}}" class="nav-link @yield('userlist.index')">
-              <i class="nav-icon fas fa-key"></i>
+            <a href="{{route('law.index')}}" class="nav-link @yield('law.index')">
+              <i class="nav-icon fas fa-gavel"></i>
               <p>
-                Logout
+                Produk Hukum
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{route('transparency.index')}}" class="nav-link @yield('law.index')">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Transparansi Anggaran
               </p>
             </a>
           </li>
 
           @endif
-          
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
