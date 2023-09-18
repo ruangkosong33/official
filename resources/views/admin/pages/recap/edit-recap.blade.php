@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Form -->
-                        <form action="{{route('recap.store')}}" class="form-horizontal" method="post">
+                        <form action="{{route('recap.update', $recap->id)}}" class="form-horizontal" method="post">
                             @csrf
                             @method('PUT')
                             <div class="card-body">
@@ -48,8 +48,8 @@
                                 <div class="form-group row">
                                     <label for="years" class="col-sm-2 col-form-label">Tahun</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name="years" class="form-control @error('years') is-invalid @enderror"
-                                        id="years" placeholder="Tahun" value="{{old('years') ?? $recap->years}}">
+                                        <input type="text" name="year" class="form-control @error('years') is-invalid @enderror"
+                                        id="years" placeholder="Tahun" value="{{old('year') ?? $recap->year}}">
 
                                         @error('years')
                                         <span class="invalid-feedback">{{$message}}</span>

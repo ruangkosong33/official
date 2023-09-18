@@ -5,7 +5,7 @@
 @section('f-content')
     <!--Page Header Start-->
     <section class="page-header">
-        <div class="page-header__bg" style="background-image: url(../../../fk88/assets/images/backgrounds/services-three-bg.png);">
+        <div class="page-header__bg" style="background-image: url(../fk88/assets/images/backgrounds/services-three-bg.png);">
         </div>
         <div class="page-header__shape-2 float-bob-x">
             <img src="{{ asset('fk88/assets/images/shapes/page-header-shape-2.png') }}" alt="">
@@ -18,14 +18,12 @@
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>Anggaran Pendapatan dan Belanja Daerah</h2>
+                <h2>Rekapitulasi Bagi Hasil</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
-                        <li>Integrasi Data</li>
-                        <li><span>/</span></li>
-                        <li>Anggaran Pendapatan dan Belanja Daerah</li>
+                        <li>Rekapitulasi Bagi Hasil</li>
                     </ul>
                 </div>
             </div>
@@ -39,65 +37,60 @@
                 <div class="section-title__tagline-box">
                     <span class="section-title__tagline">BPKAD KALTIM</span>
                 </div>
-                <h2 class="section-title__title">Anggaran Pendapatan dan Belanja Daerah <br> {{ $recap->year }}</span></h2>
+                <h2 class="section-title__title">Rekapitulasi Bagi Hasil</span></h2>
             </div>
         </div>
     </section>
-    <!--Services Details Start-->
-    <section class="services-details" style="padding-top: 0px">
+    <!--Faq Search End-->
+    <!--Faq Page Start-->
+    <section class="faq-page">
         <div class="container">
             <div class="row">
-                <div class="col-xl-3 col-lg-3">
-                    <div class="services-details__left">
-                        <div class="services-details__category">
-                            <h3 class="services-details__category-title">Periode</h3>
-                            <ul class="services-details__category-list list-unstyled">
-                                @foreach ($recaps as $recapItem)
-                                    <li class="{{ $recapItem->periode == $recap->periode ? 'active' : '' }}">
-                                        <a href="{{route('landing.publicinfo.recap', ['slug' => $recapItem->slug]) }}">{{ $recapItem->periode }}
-                                            <span class="icon-right-arrow"></span>
-                                        </a>
-                                @endforeach
-                            </ul>
+                <div class="col-xl-12 col-lg-12">
+                    <div class="faq-page__single">
+                        <div class="accrodion-grp faq-one-accrodion" data-grp-name="faq-one-accrodion-1">
+                            @foreach ($recaps as $recap)
+                                <div class="accrodion  {{ $loop->iteration == 1 ? 'active' : '' }}">
+                                    <div class="accrodion-title">
+                                        <h4>{{ $loop->iteration }}.{{$recap->periode}}-{{ $recap->year }}</h4>
+                                    </div>
+                                    <div class="accrodion-content">
+                                        <div class="inner">
+                                            <table class="display datatable-recap" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Kota/Kabupaten</th>
+                                                        <th>Unduh</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach ($recap->filerecap as $filerecaps)
+                                                        <tr>
+                                                            <td>{{ $filerecaps->citykab->name_citykab }}</td>
+                                                            <td><a href="{{ route('landing.publicinfo.downloadFileRecap', ['slug' => $filerecaps->slug]) }}"
+                                                                    class="thm-btn calculator-menu__btn" target="_blank"
+                                                                    rel="nofollow">Unduh</a></td>
+                                                        </tr>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div><!-- /.inner -->
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-9 col-lg-9">
-                    <div class="services-details__right">
-                        <table id="datatable1" class="display" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Kota</th>
-                                    <th>Judul</th>
-                                    <th>Periode</th>
-                                    <th>Unduh</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($recap->filerecap as $filerecap)
-                                    <tr>
-                                        <td>{{ $filerecap->citykab->name_citykab }}</td>
-                                        <td>{{ $filerecap->title_filerecap }}</td>
-                                        <td>{{ $recap->periode}}</td>
-                                        <td><a href="{{ route('landing.publicinfo.downloadFileRecap', ['slug' => $filerecap->slug]) }}"
-                                                class="thm-btn calculator-menu__btn" target="_blank"
-                                                rel="nofollow">Unduh</a></td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
-    <!--Services Details End-->
+    <!--Faq Page End-->
 @endsection
 @push('js')
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#datatable1').DataTable({
+            $('.datatable-recap').DataTable({
                 language: {
                     url: '//cdn.datatables.net/plug-ins/1.13.4/i18n/id.json',
                 },

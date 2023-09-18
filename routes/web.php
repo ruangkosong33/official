@@ -148,8 +148,8 @@ Route::middleware(['landing',])->group(function()
     Route::get('/info-publik/bba/unduh/{slug}', [LandingPublicinfoController::class, 'downloadFileBba'])->name('landing.publicinfo.downloadFileBba');
     Route::get('/info-publik/sk/{slug}', [LandingPublicinfoController::class, 'sk'])->name('landing.publicinfo.sk');
     Route::get('/info-publik/sk/unduh/{slug}', [LandingPublicinfoController::class, 'downloadSk'])->name('landing.publicinfo.downloadSk');
-    Route::get('/info-publik/rekap/periode/{slug}', [LandingPublicinfoController::class, 'recap'])->name('landing.publicinfo.recap');
-    Route::get('/info-publik/rekap/periode/unduh/{slug}', [LandingPublicinfoController::class, 'downloadFileRecap'])->name('landing.publicinfo.downloadFileRecap');
+    Route::get('/info-publik/rekap', [LandingPublicinfoController::class, 'recap'])->name('landing.publicinfo.recap');
+    Route::get('/info-publik/rekap/unduh/{slug}', [LandingPublicinfoController::class, 'downloadFileRecap'])->name('landing.publicinfo.downloadFileRecap');
 
 
     Route::get('/organisasi/{slug}', [LandingOrganizationController::class,'index'])->name('landing.organization.index');

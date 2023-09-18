@@ -121,14 +121,9 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
-                                                <li><a href="javascript:;">Rekapitulasi Bagi Hasil</a>
-                                                    <ul>
-                                                        @foreach ($recapsNav as $key=> $recapNav)
-                                                            <li><a
-                                                                    href="{{ route('landing.publicinfo.recap',['slug'=>$recapNav[0]->slug]) }}">{{ $key }}</a>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
+                                                <li>
+                                                    <a href="{{ route('landing.publicinfo.recap') }}">Rekapitulasi Bagi Hasil
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </li>

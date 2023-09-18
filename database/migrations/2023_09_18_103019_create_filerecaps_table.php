@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('filerecaps', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('citykab_id');
+            $table->foreign('citykab_id')->references('id')->on('citykabs');
             $table->unsignedBigInteger('recap_id');
             $table->foreign('recap_id')->references('id')->on('recaps');
             $table->string('title_filerecap');

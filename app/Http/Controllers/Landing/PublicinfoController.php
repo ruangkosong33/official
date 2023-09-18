@@ -88,17 +88,18 @@ class PublicinfoController extends Controller
         return response()->download($file, $fileName, $headers);
     }
 
-    public function recap($slug)
+    public function recap()
     {
-        $recap = Recap::where('slug',$slug)->first();
-        $recaps = Recap::where('year',$recap->year)->get();
-        return view('landing.pages.publicinfo.recap-publicinfo',['recap'=>$recap, 'recaps'=>$recaps]);
+        $recaps=Recap::latest()->get();
+        return view('landing.pages.publicinfo.recap-publicinfo',['recaps'=>$recaps]);
     }
 
     public function downloadFileRecap($slug)
     {
         $filerecap = Filerecap::where('slug',$slug)->first();
         $file = public_path('uploads/file-recap/').$filerecap->file_recap;
-        return response()->download($file, $filerecap->file_recap);
+        $headers = ['Content-Type: application/pdf'];
+    	$fileName = $filerecap->slug.'-'.time().'.pdf';
+        return response()->download($file, $fileName, $headers);
     }
 }
