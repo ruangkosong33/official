@@ -159,7 +159,7 @@
                     <p>Lelang</p>
                   </a>
                 </li>
-              </ul>
+            </ul>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="{{route('download.index')}}" class="nav-link">
@@ -167,7 +167,7 @@
                     <p>Download</p>
                   </a>
                 </li>
-              </ul>
+            </ul>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="{{route('bba.index')}}" class="nav-link">
@@ -175,15 +175,23 @@
                     <p>Belanja Bagi Hasil</p>
                   </a>
                 </li>
-              </ul>
-              <ul class="nav nav-treeview">
+            </ul>
+            <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="{{route('sk.index')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>SK Belanja Bagi Hasil</p>
                   </a>
                 </li>
-              </ul>
+            </ul>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('recap.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Recap Bagi Hasil</p>
+                  </a>
+                </li>
+            </ul>
           </li>
 
           <li class="nav-item">

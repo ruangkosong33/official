@@ -30,4 +30,9 @@ class Citykab extends Model
     {
         return $this->hasMany(Filebba::class, 'filebba_id', 'id')   ;
     }
+
+    public function recap()
+    {
+        return $this->hasMany(Filerecap::class, 'recap_id', 'id');
+    }
 }

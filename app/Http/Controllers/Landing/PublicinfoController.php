@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Landing;
 
 use App\Models\Sk;
 use App\Models\Bba;
+use App\Models\Recap;
 use App\Models\Filesk;
 use App\Models\Hostel;
 use App\Models\Auction;
 use App\Models\Filebba;
 use App\Models\Download;
+use App\Models\Filerecap;
 use App\Models\Filedownload;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -86,5 +88,17 @@ class PublicinfoController extends Controller
         return response()->download($file, $fileName, $headers);
     }
 
+    public function recap($slug)
+    {
+        $recap = Recap::where('slug',$slug)->first();
+        $recaps = Recap::where('year',$recap->year)->get();
+        return view('landing.pages.publicinfo.recap-publicinfo',['recap'=>$recap, 'recaps'=>$recaps]);
+    }
 
+    public function downloadFileRecap($slug)
+    {
+        $filerecap = Filerecap::where('slug',$slug)->first();
+        $file = public_path('uploads/file-recap/').$filerecap->file_recap;
+        return response()->download($file, $filerecap->file_recap);
+    }
 }

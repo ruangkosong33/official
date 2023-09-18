@@ -9,6 +9,7 @@ use App\Models\Law;
 use App\Models\Pad;
 use App\Models\Sop;
 use App\Models\Apbd;
+use App\Models\Recap;
 use App\Models\Citykab;
 use App\Models\Division;
 use App\Models\Download;
@@ -33,6 +34,7 @@ class LandingMiddleware
         $sops = Sop::all();
         $bbas = Bba::all();
         $sks  = Sk::all();
+        $recapsNav=Recap::all()->groupBy('year');
         $apbdsNav = Apbd::all()->groupBy('year');
         View::share([
             'divisions' => $divisions,
@@ -44,6 +46,7 @@ class LandingMiddleware
             'bbas'=>$bbas,
             'sks'=>$sks,
             'apbdsNav'=>$apbdsNav,
+            'recapsNav'=>$recapsNav,
         ]);
         return $next($request);
     }

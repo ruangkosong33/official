@@ -121,6 +121,15 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
+                                                <li><a href="javascript:;">Rekapitulasi Bagi Hasil</a>
+                                                    <ul>
+                                                        @foreach ($recapsNav as $key=> $recapNav)
+                                                            <li><a
+                                                                    href="{{ route('landing.publicinfo.recap',['slug'=>$recapNav[0]->slug]) }}">{{ $key }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                             </ul>
                                         </li>
                                         <li class="dropdown" style="margin-left: 15px">

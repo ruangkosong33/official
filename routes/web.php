@@ -36,6 +36,7 @@ use App\Http\Controllers\Integrasi\RenjaController;
 use App\Http\Controllers\Integrasi\RpjmdController;
 use App\Http\Controllers\Potention\AssetController;
 use App\Http\Controllers\FiletransparencyController;
+use App\Http\Controllers\Infopublik\RecapController;
 use App\Http\Controllers\Integrasi\SidataController;
 use App\Http\Controllers\Profil\StructureController;
 use App\Http\Controllers\Infopublik\FileskController;
@@ -49,10 +50,11 @@ use App\Http\Controllers\Integrasi\FileapbdController;
 use App\Http\Controllers\Infopublik\DownloadController;
 use App\Http\Controllers\Profil\ServiceorderController;
 use App\Http\Controllers\Profil\TaskfunctionController;
-use App\Http\Controllers\Activity\RealisationController;
 
 // Landing Controller
+use App\Http\Controllers\Activity\RealisationController;
 use App\Http\Controllers\Activity\ResponsibleController;
+use App\Http\Controllers\Infopublik\FilerecapController;
 use App\Http\Controllers\Integrasi\ActionplanController;
 use App\Http\Controllers\Profil\GoalobjectiveController;
 use App\Http\Controllers\Organization\DivisionController;
@@ -146,6 +148,8 @@ Route::middleware(['landing',])->group(function()
     Route::get('/info-publik/bba/unduh/{slug}', [LandingPublicinfoController::class, 'downloadFileBba'])->name('landing.publicinfo.downloadFileBba');
     Route::get('/info-publik/sk/{slug}', [LandingPublicinfoController::class, 'sk'])->name('landing.publicinfo.sk');
     Route::get('/info-publik/sk/unduh/{slug}', [LandingPublicinfoController::class, 'downloadSk'])->name('landing.publicinfo.downloadSk');
+    Route::get('/info-publik/rekap/periode/{slug}', [LandingPublicinfoController::class, 'recap'])->name('landing.publicinfo.recap');
+    Route::get('/info-publik/rekap/periode/unduh/{slug}', [LandingPublicinfoController::class, 'downloadFileRecap'])->name('landing.publicinfo.downloadFileRecap');
 
 
     Route::get('/organisasi/{slug}', [LandingOrganizationController::class,'index'])->name('landing.organization.index');
@@ -391,7 +395,7 @@ Route::middleware(['auth', 'checklevel:1,2'])->group(function()
     Route::put('/infopublik/sk/{sk}', [SkController::class, 'update'])->name('sk.update');
     Route::delete('/infopublik/sk/{sk}', [SkController::class, 'destroy'])->name('sk.destroy');
 
-    //File Belanja Bagi Hesk
+    //File SK Belanja Bagi Hasil
     Route::get('/infopublik/{sk}/filesk', [FileskController::class, 'index'])->name('filesk.index');
     Route::get('/infopublik/{sk}/filesk/create', [FileskController::class, 'create'])->name('filesk.create');
     Route::post('/infopublik/{sk}/filesk', [FileskController::class, 'store'])->name('filesk.store');
@@ -400,6 +404,22 @@ Route::middleware(['auth', 'checklevel:1,2'])->group(function()
     Route::delete('/infopublik/filesk/{filesk}', [FileskController::class, 'destroy'])->name('filesk.destroy');
     Route::get('infopublik/filesk/{filesk}', [FileskController::class, 'download'])->name('filesk.download');
 
+    //Recap
+    Route::get('/infopublik/recap', [RecapController::class, 'index'])->name('recap.index');
+    Route::get('/infopublik/recap/create', [RecapController::class, 'create'])->name('recap.create');
+    Route::post('/infopublik/recap', [RecapController::class, 'store'])->name('recap.store');
+    Route::get('/infopublik/recap/edit/{recap}', [RecapController::class, 'edit'])->name('recap.edit');
+    Route::put('/infopublik/recap/{recap}', [RecapController::class, 'update'])->name('recap.update');
+    Route::delete('/infopublik/recap/{recap}', [RecapController::class, 'destroy'])->name('recap.destroy');
+
+     //File Recap
+     Route::get('/infopublik/{recap}/filerecap', [FilerecapController::class, 'index'])->name('filerecap.index');
+     Route::get('/infopublik/{recap}/filerecap/create', [FilerecapController::class, 'create'])->name('filerecap.create');
+     Route::post('/infopublik/{recap}/filerecap', [FilerecapController::class, 'store'])->name('filerecap.store');
+     Route::get('/infopublik/filerecap/edit/{filerecap}', [FilerecapController::class, 'edit'])->name('filerecap.edit');
+     Route::put('/infopublik/filerecap/{filerecap}', [FilerecapController::class, 'update'])->name('filerecap.update');
+     Route::delete('/infopublik/filerecap/{filerecap}', [FilerecapController::class, 'destroy'])->name('filerecap.destroy');
+     Route::get('infopublik/filerecap/{filerecap}', [FilerecapController::class, 'download'])->name('filerecap.download');
 
 
     //INTEGRATION//
