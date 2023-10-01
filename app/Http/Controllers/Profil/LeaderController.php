@@ -26,7 +26,6 @@ class LeaderController extends Controller
     {
         $leader=$request->validate([
             'name_leader'=>'required',
-            // 'nip_leader'=>'required',
             'image_leader'=>'mimes:jpeg,jpg,png',
             'periode'=>'required',
         ]);
@@ -42,7 +41,6 @@ class LeaderController extends Controller
         $leader=Leader::create([
             'name_leader'=>$request->name_leader,
             'slug'=>Str::slug($request->name_leader),
-            // 'nip_leader'=>$request->nip_leader,
             'image_leader'=>$imageleaders,
             'periode'=>$request->periode,
         ]);
@@ -63,7 +61,6 @@ class LeaderController extends Controller
     {
         $leader=$request->validate([
             'name_leader'=>'required',
-            'nip_leader'=>'required',
             'image_leader'=>'mimes:jpeg,jpg,png',
             'periode'=>'required',
         ]);
@@ -81,8 +78,7 @@ class LeaderController extends Controller
         $leader->update([
             'name_leader'=>$request->name_leader,
             'slug'=>Str::slug($request->name_leader),
-            'nip_leader'=>$request->nip_leader,
-            'image_leader'=>$imageleader,
+            'image_leader'=>$imageleaders,
             'periode'=>$request->periode,
         ]);
 

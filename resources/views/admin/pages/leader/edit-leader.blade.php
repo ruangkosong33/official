@@ -26,7 +26,7 @@
                 </div>
 
                 <!-- Form -->
-                <form action="{{route('leader.update', $leader->id)}}" method="post" class="form-horizontal">
+                <form action="{{route('leader.update', $leader->id)}}" method="post" class="form-horizontal" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="card-body">
@@ -36,6 +36,17 @@
                                 id="name_leader" value="{{old('name_leader') ?? $leader->name_leader}}">
 
                                 @error('name_leader')
+                                <span class="invalid-feedback">{{$message}}</span>
+                                @enderror
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="image_leader" class="form-label col-sm-2">Foto</label>
+                                <input type="file" class="form-control @error('image_leader') is-invalid @enderror" name="image_leader" id="image_leader" accept="image/*"
+                                value="{{old('image_leader')}}" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
+
+                                @error('image_leader')
                                 <span class="invalid-feedback">{{$message}}</span>
                                 @enderror
 
