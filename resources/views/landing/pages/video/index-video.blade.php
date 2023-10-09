@@ -21,7 +21,7 @@
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
-                        <li>Vidio</li>
+                        <li>Video</li>
                     </ul>
                 </div>
             </div>
@@ -56,7 +56,7 @@
                                             <span class="fas fa-tags"></span>
                                         </div>
                                         <div class="text">
-                                            <p>Vidio</p>
+                                            <p>Video</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -71,7 +71,7 @@
                                     </h3>
                                 </div>
                                 <div class="news-one__hover-btn-box">
-                                    <a href="{{ route('landing.video.detail', ['slug' => $video->slug]) }}">Baca
+                                    <a href="{{ route('landing.video.detail', ['slug' => $video->slug]) }}">Lihat
                                         Selengkapnya<span class="icon-right-arrow"></span></a>
                                 </div>
                             </div>

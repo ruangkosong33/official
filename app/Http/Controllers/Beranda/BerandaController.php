@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Beranda;
 
 use App\Models\Post;
 use App\Models\Event;
+use App\Models\Video;
 use App\Models\Banner;
 use App\Models\Gallery;
 use Illuminate\Http\Request;
@@ -18,6 +19,7 @@ class BerandaController extends Controller
         $latestEvent=Event::latest()->take(4)->get();
         $latestGallery=Gallery::latest()->take(15)->get();
         $latestPost=Post::latest()->take(6)->get();
+        $latestVideo=Video::latest()->take(3)->get();
         $goal=Goalobjective::latest()->get();
 
 
@@ -26,6 +28,7 @@ class BerandaController extends Controller
             'latestPost'=>$latestPost,
             'latestEvent'=>$latestEvent,
             'latestGallery'=>$latestGallery,
+            'latestVideo'=>$latestVideo,
             'goal'=>$goal,
         ]);
     }

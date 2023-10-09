@@ -15,12 +15,12 @@
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>Detail Vidio</h2>
+                <h2>Detail Video</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
-                        <li>Detail Vidio</li>
+                        <li>Detail Video</li>
                     </ul>
                 </div>
             </div>
@@ -48,20 +48,20 @@
                                         <span class="fas fa-tags"></span>
                                     </div>
                                     <div class="text">
-                                        <p>{{ $video->category->title_category }}</p>
+                                        <p>{{ $video->title_video }}</p>
                                     </div>
                                 </li>
                             </ul>
                             <h3 class="news-details__title-1">{{ $video->title_video }}</h3>
                             <div class="team-details__btn-box">
                                 <a href="{{ $video->link }}" target="__BLANK" class="team-details__btn thm-btn">Putar
-                                    Vidio</a>
+                                    Video</a>
                             </div>
                         </div>
                         <div class="news-details__bottom">
                             <p class="news-details__tags">
                                 <span>Kategori</span>
-                                <a href="#">{{ $video->category->title_category }}</a>
+                                <a href="#">{{ $video->title_video }}</a>
                             </p>
                             <div class="news-details__social-list">
                                 <a href="#"><i class="fab fa-twitter"></i></a>

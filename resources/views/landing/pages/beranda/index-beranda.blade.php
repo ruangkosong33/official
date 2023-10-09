@@ -380,6 +380,73 @@
     </section>
     <!-- Berita -->
 
+    <!-- Video -->
+    <section class="news-one">
+            <div class="container">
+                <div class="section-title text-center">
+                    <div class="section-title__tagline-box">
+                        <span class="section-title__tagline">Video Terbaru BPKAD</span>
+                    </div>
+                    <h2 class="section-title__title">Video Terbaru</h2>
+                </div>
+                <div class="row">
+                    @foreach ($latestVideo as $video)
+                        <!--News One Single Start-->
+                        <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="news-one__single">
+                                <div class="news-one__img-box">
+                                    <div class="news-one__img">
+                                        <img src="{{ asset('uploads/image-video/' . $video->image_video) }}" alt="">
+                                        <a href="{{ route('landing.video.detail', ['slug' => $video->slug]) }}">
+                                            <span class="news-one__plus"></span>
+                                        </a>
+                                    </div>
+                                    <div class="news-one__date">
+                                        <p>{{ $video->created_at->format('d') . ' ' . $video->created_at->monthName . ', ' . $video->created_at->year }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="news-one__content">
+                                    <ul class="news-one__meta list-unstyled">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fas fa-tags"></span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <h3 class="news-one__title"><a
+                                            href="{{ route('landing.video.detail', ['slug' => $video->slug]) }}">{{ $video->title_video }}</a>
+                                    </h3>
+                                    <p class="news-one__text">
+                                        {{ substr(strip_tags($video->description_video), 0, 100) . '...' }}
+                                    </p>
+                                </div>
+                                <div class="news-one__hover">
+                                    <div class="news-one__hover-content">
+                                        <h3 class="news-one__hover-title"><a
+                                                href="{{ route('landing.video.detail', ['slug' => $video->slug]) }}">{{ $video->title_post }}</a>
+                                        </h3>
+                                        <p class="news-one__hover-text">
+                                            {{ substr(strip_tags($video->description_video), 0, 100) . '...' }}
+                                        </p>
+                                    </div>
+                                    <div class="news-one__hover-btn-box">
+                                        <a href="{{ route('landing.video.detail', ['slug' => $video->slug]) }}">Baca Selengkapnya<span
+                                                class="icon-right-arrow"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--News One Single End-->
+                    @endforeach
+                </div>
+                <div class="about-one__btn-box text-center" style="display: block;">
+                    <a href="{{ route('landing.video.index') }}" class="about-one__btn thm-btn">Video Terbaru Lainnya</a>
+                </div>
+            </div>
+    </section>
+    <!-- Video -->
+
     <!-- Span Lapor -->
     <section class="cta-one">
         <div class="container">
