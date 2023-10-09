@@ -16,7 +16,7 @@
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>Vidio</h2>
+                <h2>Video</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
