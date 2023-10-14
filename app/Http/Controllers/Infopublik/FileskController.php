@@ -70,6 +70,8 @@ class FileskController extends Controller
             $file->move('uploads/file-sk', $filesks);
         }
 
+        $filesks=$filesk->file_sk;
+
         $filesk->update([
             'title_filesk'=>$request->title_filesk,
             'slug'=>Str::slug($request->title_filesk),
