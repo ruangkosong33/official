@@ -54,6 +54,42 @@ class FilerecapController extends Controller
         return redirect()->route('filerecap.index', ['recap'=>$recap]);
     }
 
+    public function edit(Filerecap $filerecap)
+    {
+        $citykab=Citykab::all();
+
+        return view('admin.pages.filerecap.edit-filerecap', ['filerecap'=>$filerecap, 'citykab'=>$citykab]);
+    }
+
+    public function update(Request $request, Filerecap $filerecap)
+    {
+        $this->validate($request, [
+            'title_filerecap'=>'required',
+            'file_recap'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
+        ]);
+
+        if($request->file('file_recap'))
+        {
+            $file=$request->file('file_recap');
+            $extension=$file->getClientOriginalName();
+            $filerecaps=$extension;
+            $file->move('uploads/file-recap', $filerecaps);
+        }
+
+        $filerecaps=$filerecap->file_recap;
+
+        $filerecap->update([
+            'citykab_id'=>$request->citykab_id,
+            'title_filerecap'=>$request->title_filerecap,
+            'slug'=>Str::slug($request->title_filerecap),
+            'file_recap'=>$filerecaps,
+        ]);
+
+        Alert::success('Berhasil', 'Data Berhasil Di Update');
+
+        return redirect()->route('recap.index');
+    }
+
     public function destroy(Filerecap $filerecap)
     {
         $filerecap=Filerecap::where('id', $filerecap->id);

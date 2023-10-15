@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">SIDATA</h1>
+                    <h1 class="m-0">Satu Data & SPBE</h1>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data SIDATA</h3>
+                    <h3 class="card-title">Data Satu Data & SPBE</h3>
                     <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
                         <li class="nav-item">

@@ -18,14 +18,14 @@
         </div>
         <div class="container">
             <div class="page-header__inner">
-                <h2>Sistem Informasi Data</h2>
+                <h2>Satu Data & SPBE</h2>
                 <div class="thm-breadcrumb__inner">
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="{{ route('dashboard.index') }}">Beranda</a></li>
                         <li><span>/</span></li>
                         <li>Integrasi Data</li>
                         <li><span>/</span></li>
-                        <li>Sistem Informasi Data</li>
+                        <li>Satu Data & SPBE</li>
                     </ul>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="section-title__tagline-box">
                     <span class="section-title__tagline">BPKAD KALTIM</span>
                 </div>
-                <h2 class="section-title__title">Sistem Informasi Data</span></h2>
+                <h2 class="section-title__title">Satu Data & SPBE</span></h2>
             </div>
         </div>
     </section>

@@ -412,14 +412,14 @@ Route::middleware(['auth', 'checklevel:1,2'])->group(function()
     Route::put('/infopublik/recap/{recap}', [RecapController::class, 'update'])->name('recap.update');
     Route::delete('/infopublik/recap/{recap}', [RecapController::class, 'destroy'])->name('recap.destroy');
 
-     //File Recap
-     Route::get('/infopublik/{recap}/filerecap', [FilerecapController::class, 'index'])->name('filerecap.index');
-     Route::get('/infopublik/{recap}/filerecap/create', [FilerecapController::class, 'create'])->name('filerecap.create');
-     Route::post('/infopublik/{recap}/filerecap', [FilerecapController::class, 'store'])->name('filerecap.store');
-     Route::get('/infopublik/filerecap/edit/{filerecap}', [FilerecapController::class, 'edit'])->name('filerecap.edit');
-     Route::put('/infopublik/filerecap/{filerecap}', [FilerecapController::class, 'update'])->name('filerecap.update');
-     Route::delete('/infopublik/filerecap/{filerecap}', [FilerecapController::class, 'destroy'])->name('filerecap.destroy');
-     Route::get('infopublik/filerecap/{filerecap}', [FilerecapController::class, 'download'])->name('filerecap.download');
+    //File Recap
+    Route::get('/infopublik/{recap}/filerecap', [FilerecapController::class, 'index'])->name('filerecap.index');
+    Route::get('/infopublik/{recap}/filerecap/create', [FilerecapController::class, 'create'])->name('filerecap.create');
+    Route::post('/infopublik/{recap}/filerecap', [FilerecapController::class, 'store'])->name('filerecap.store');
+    Route::get('/infopublik/filerecap/edit/{filerecap}', [FilerecapController::class, 'edit'])->name('filerecap.edit');
+    Route::put('/infopublik/filerecap/{filerecap}', [FilerecapController::class, 'update'])->name('filerecap.update');
+    Route::delete('/infopublik/filerecap/{filerecap}', [FilerecapController::class, 'destroy'])->name('filerecap.destroy');
+    Route::get('infopublik/filerecap/{filerecap}', [FilerecapController::class, 'download'])->name('filerecap.download');
 
 
     //INTEGRATION//

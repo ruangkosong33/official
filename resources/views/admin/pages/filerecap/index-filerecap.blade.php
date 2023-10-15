@@ -59,10 +59,10 @@
                                 <td>{{$filerecaps->title_filerecap}}</td>
                                 <td><a href="{{route('filerecap.download', $filerecaps->id)}}">{{$filerecaps->file_recap}}</a></td>
                                 <td>
-                                    {{-- <a href="" class="btn btn-warning btn-sm">
+                                    <a href="{{route('filerecap.edit',$filerecaps->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
-                                    </a> --}}
-                                    <form method="" action="" class="d-inline">
+                                    </a>
+                                    <form method="{{route('filerecap.destroy', $filerecaps->id)}}" action="post" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
