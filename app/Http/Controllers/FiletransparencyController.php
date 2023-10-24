@@ -58,7 +58,7 @@ class FiletransparencyController extends Controller
     {
         $filetransparency=$request->validate([
             'title_filetransparency'=>'requried',
-            'file_transparency'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:60000',
+            'file_transparency'=>'mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:200000',
         ]);
 
         if($request->file('file_transparency'))
