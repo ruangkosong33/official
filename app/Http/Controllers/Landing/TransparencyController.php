@@ -19,8 +19,8 @@ class TransparencyController extends Controller
     {
         $filetransparency = Filetransparency::where('slug',$slug)->first();
         $file = public_path('uploads/file-transparansi/').$filetransparency->file_transparency;
-        $headers = ['Content-Type: application/pdf'];
-    	$fileName = $filetransparency->slug.'-'.time().'.pdf';
-        return response()->download($file, $fileName, $headers);
+        // $headers = ['Content-Type: application/pdf'];
+    	$fileName = $filetransparency->slug.'-'.time();
+        return response()->download($file, $fileName);
     }
 }
