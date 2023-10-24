@@ -58,7 +58,7 @@ class FilelawController extends Controller
     {
         $this->validate($request,[
             'title_filelaw'=>'required',
-            'file_filelaw'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:40000',
+            'file_filelaw'=>'required|mimes:pdf,ppt,pptx,rar,zip,doc,docx,xls,xlsx|max:200000',
         ]);
 
         $filelaw=Filelaw::where('id', $filelaw->id)->update([
