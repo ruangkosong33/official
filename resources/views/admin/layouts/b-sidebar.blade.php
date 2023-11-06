@@ -579,7 +579,7 @@
 
           @endif
 
-          @if(auth()->user()->level ==5)
+          @if(auth()->user()->level == 5)
 
           <li class="nav-item">
             <a href="{{route('post.index')}}" class="nav-link">
