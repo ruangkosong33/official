@@ -45,7 +45,7 @@ class User extends Authenticatable
     ];
 
     protected $attributes=[
-        'level'=> 4,
+        'level'=> 6,
     ];
 
 
