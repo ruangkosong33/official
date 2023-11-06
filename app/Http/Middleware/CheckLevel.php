@@ -16,7 +16,7 @@ class CheckLevel
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->level == 1 || Auth::user()->level == 2 || Auth::user()->level == 3 || Auth::user()->level == 4 )
+        if(Auth::user()->level == 1 || Auth::user()->level == 2 || Auth::user()->level == 3 || Auth::user()->level == 4 || Auth::user()->level == 5 )
         {
             return $next($request);
         }
