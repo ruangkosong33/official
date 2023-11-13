@@ -62,7 +62,7 @@
                                     <a href="{{route('filerecap.edit',$filerecaps->id)}}" class="btn btn-warning btn-sm">
                                       <i class="fas fa-edit"></i>
                                     </a>
-                                    <form method="{{route('filerecap.destroy', $filerecaps->id)}}" action="post" class="d-inline">
+                                    <form method="post" action="{{route('filerecap.destroy', $filerecaps->id)}}" class="d-inline">
                                       @csrf
                                       @method('DELETE')
                                     <button class="btn btn-sm btn-danger btn-delete">
