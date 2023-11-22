@@ -71,9 +71,9 @@ class PublicinfoController extends Controller
         return view('landing.pages.publicinfo.hostel-publicinfo',['hostels'=>$hostels]);
     }
 
-    public function sk()
+    public function sk($slug)
     {
-        $skss = Sk::with('filesk')->first();
+        $skss = Sk::where('slug',$slug)->first();
         // dd($bbaWithFiles->filebba);
         return view('landing.pages.publicinfo.sk-publicinfo',['skss'=>$skss]);
     }
