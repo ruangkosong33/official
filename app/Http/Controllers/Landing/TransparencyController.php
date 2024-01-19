@@ -15,29 +15,29 @@ class TransparencyController extends Controller
         return view('landing.pages.transparency.index-transparency',['transparencies'=>$transparencies]);
     }
 
-    public function downloadFile($slug, $type = null)
+    public function downloadFile($slug)
     {
         $filetransparency = Filetransparency::where('slug',$slug)->first();
         $file = public_path('uploads/file-transparansi/').$filetransparency->file_transparency;
-        // $headers = ['Content-Type: application/pdf'];
-    	// $fileName = $filetransparency->slug.'-'.time().'.pdf';
-        // return response()->download($file, $fileName, $headers);
+        $headers = ['Content-Type: application/pdf'];
+    	$fileName = $filetransparency->slug.'-'.time().'.pdf';
+        return response()->download($file, $fileName, $headers);
 
-        $headers = ['Content-Type: application/octet-stream'];
+        // $headers = ['Content-Type: application/octet-stream'];
 
-        if ($type === 'pdf') {
-            $headers = ['Content-Type: application/pdf'];
-        } elseif ($type === 'zip') {
-            $headers = ['Content-Type: application/zip'];
-        } elseif ($type !== null) {
-            return response()->json(['error' => 'Unsupported file type'], 400);
-        }
+        // if ($type === 'pdf') {
+        //     $headers = ['Content-Type: application/pdf'];
+        // } elseif ($type === 'zip') {
+        //     $headers = ['Content-Type: application/zip'];
+        // } elseif ($type !== null) {
+        //     return response()->json(['error' => 'Unsupported file type'], 400);
+        // }
 
-        $fileName = $filetransparency->slug . '-' . time();
+        // $fileName = $filetransparency->slug . '-' . time();
 
-        if ($type) {
-            $fileName .= '.' . $type;
-        }
+        // if ($type) {
+        //     $fileName .= '.' . $type;
+        // }
 
         return response()->download($file, $fileName, $headers);
     }
