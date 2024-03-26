@@ -22,7 +22,7 @@
                     <div class="about-one__left">
                         <div class="about-one__img-box wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
                             <div class="about-one__img">
-                                <img src="{{ asset('fk88/assets/images/bpkad/400x504.png') }}" alt="">
+                                <img src="{{ asset('fk88/assets/images/bpkad/a-m.png') }}" alt="">
                                 <div class="about-one__shape-1 float-bob-x">
                                     <img src="{{ asset('fk88/assets/images/shapes/about-one-shape-1.png') }}"
                                         alt="">
@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="about-one__img-2">
-                                <img src="{{ asset('fk88/assets/images/bpkad/404x440.png') }}" alt="">
+                                <img src="{{ asset('fk88/assets/images/bpkad/am.png') }}" alt="">
                             </div>
                         </div>
                     </div>
